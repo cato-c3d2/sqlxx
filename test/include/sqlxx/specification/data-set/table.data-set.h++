@@ -1,0 +1,177 @@
+/*!
+ * @file table.data-set.h++
+ */
+
+#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_HXX
+
+#include <vector>
+
+#include <sql++/specification/table.class.h++>
+
+#include "./table.data-set-element.class.h++"
+
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+
+BOOST_AUTO_TEST_SUITE(class__Table)
+
+using sqlxx::specification::Table;
+
+/*!
+ * @brief  データセットを返却する
+ *
+ * @return データセット
+ *
+ * @see sqlxx::specification::Table              テスト対象クラス
+ * @see sqlxx::specification::Table::to_string() テスト対象メンバ関数
+ */
+auto data_set_for_to_string() -> std::vector<DataSetElement>
+{
+    // clang-format off
+    return {
+        ////////////////////////////////////////////////////////////////////////
+        // + table_name : 未指定
+        ////////////////////////////////////////////////////////////////////////
+        // _0
+        {
+            // + alias_name : 未指定
+            Table {},
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+        // _1
+        {
+            // + alias_name : 空文字列
+            Table {}.alias_name(""),
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+        // _2
+        {
+            // + alias_name : 不適格(半角スペース)
+            Table {}.alias_name(" "),
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+        // _3
+        {
+            // + alias_name : 適格
+            Table {}.alias_name("p"),
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+
+        ////////////////////////////////////////////////////////////////////////
+        // + table_name : 空文字列
+        ////////////////////////////////////////////////////////////////////////
+        // _4
+        {
+            // + alias_name : 未指定
+            Table { "" },
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+        // _5
+        {
+            // + alias_name : 空文字列
+            Table { "", "" },
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+        // _6
+        {
+            // + alias_name : 不適格(半角スペース)
+            Table { "", " " },
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+        // _7
+        {
+            // + alias_name : 適格
+            Table { "", "p" },
+            // SQL 文字列 : 不適格(空文字列)
+            ""
+        },
+
+        ////////////////////////////////////////////////////////////////////////
+        // + table_name : 不適格(半角スペース)
+        ////////////////////////////////////////////////////////////////////////
+        // _8
+        {
+            // + alias_name : 未指定
+            Table { " " },
+            // SQL 文字列 : 不適格(空文字列)
+            // ""
+            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
+            " "
+        },
+        // _9
+        {
+            // + alias_name : 空文字列
+            Table { " ", "" },
+            // SQL 文字列 : 不適格(空文字列)
+            // ""
+            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
+            " "
+        },
+        // _10
+        {
+            // + alias_name : 不適格(半角スペース)
+            Table { " ", " " },
+            // SQL 文字列 : 不適格(空文字列)
+            // ""
+            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
+            "  AS  "
+        },
+        // _11
+        {
+            // + alias_name : 適格
+            Table { " ", "p" },
+            // SQL 文字列 : 不適格(空文字列)
+            // ""
+            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
+            "  AS p"
+        },
+
+        ////////////////////////////////////////////////////////////////////////
+        // + table_name : 適格
+        ////////////////////////////////////////////////////////////////////////
+        // _12
+        {
+            // + alias_name : 未指定
+            Table { "people" },
+            // SQL 文字列 : 適格
+            "people"
+        },
+        // _13
+        {
+            // + alias_name : 空文字列
+            Table { "people", "" },
+            // SQL 文字列 : 適格
+            "people"
+        },
+        // _14
+        {
+            // + alias_name : 不適格(半角スペース)
+            Table { "people", " " },
+            // SQL 文字列 : 適格
+            // "people"
+            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
+            "people AS  "
+        },
+        // _15
+        {
+            // + alias_name : 適格
+            Table { "people", "p" },
+            // SQL 文字列 : 適格
+            "people AS p"
+        }
+    };
+    // clang-format on
+}
+
+BOOST_AUTO_TEST_SUITE_END(/* class__Table */)
+
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+
+#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_HXX */
