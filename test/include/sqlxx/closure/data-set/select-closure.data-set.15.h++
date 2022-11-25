@@ -61,7 +61,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
         // _242
         {
@@ -73,7 +73,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
         // _243
         {
@@ -85,7 +85,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
         // _244
         {
@@ -97,7 +97,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
 
         ////////////////////////////////
@@ -114,7 +114,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
         // _246
         {
@@ -126,7 +126,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
         // _247
         {
@@ -138,7 +138,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
         // _248
         {
@@ -150,7 +150,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
             // SQL 文字列 : 適格
             // "SELECT id"
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , "
+            "SELECT id AS  "
         },
 
         ////////////////////////////////

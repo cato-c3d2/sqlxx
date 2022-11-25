@@ -61,7 +61,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
         // _146
         {
@@ -73,7 +73,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
         // _147
         {
@@ -85,7 +85,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
         // _148
         {
@@ -97,7 +97,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
 
         ////////////////////////////////
@@ -114,7 +114,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
         // _150
         {
@@ -126,7 +126,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
         // _151
         {
@@ -138,7 +138,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
         // _152
         {
@@ -150,7 +150,7 @@ auto data_set_for_to_string_09() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT  , "
+            "SELECT  "
         },
 
         ////////////////////////////////
