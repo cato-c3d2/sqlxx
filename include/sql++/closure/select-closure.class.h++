@@ -106,8 +106,15 @@ namespace sqlxx::closure
         std::string column_list = "";
         std::string delimiter   = "";
         for (auto && column : this->_column_list) {
-            column_list += delimiter + column.to_string();
+            auto const column_specification = column.to_string();
+            if (column_specification.empty()) {
+                continue;
+            }
+            column_list += delimiter + column_specification;
             delimiter = ", ";
+        }
+        if (column_list.empty()) {
+            return "";
         }
         return "SELECT " + column_list;
     }

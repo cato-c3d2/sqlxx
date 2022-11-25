@@ -61,7 +61,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
         // _178
         {
@@ -73,7 +73,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
         // _179
         {
@@ -85,7 +85,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
         // _180
         {
@@ -97,7 +97,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
 
         ////////////////////////////////
@@ -114,7 +114,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
         // _182
         {
@@ -126,7 +126,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
         // _183
         {
@@ -138,7 +138,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
         // _184
         {
@@ -150,7 +150,7 @@ auto data_set_for_to_string_11() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS  , "
+            "SELECT   AS  "
         },
 
         ////////////////////////////////

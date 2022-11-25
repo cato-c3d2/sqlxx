@@ -232,9 +232,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT id FROM people AS p"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id,  FROM people AS p"
+            "SELECT id FROM people AS p"
         },
         // _25
         {
@@ -250,9 +248,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT id FROM people"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id,  FROM people"
+            "SELECT id FROM people"
         },
         // _26
         {
@@ -270,7 +266,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, "
+            "SELECT id"
         },
         // _27
         {
@@ -288,7 +284,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, "
+            "SELECT id"
         },
 
         ////////////////////////////////
@@ -311,9 +307,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT id FROM people AS p"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id,  FROM people AS p"
+            "SELECT id FROM people AS p"
         },
         // _29
         {
@@ -329,9 +323,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT id FROM people"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id,  FROM people"
+            "SELECT id FROM people"
         },
         // _30
         {
@@ -349,7 +341,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, "
+            "SELECT id"
         },
         // _31
         {
@@ -367,7 +359,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, "
+            "SELECT id"
         }
     };
 }

@@ -82,9 +82,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT name AS p.name FROM people AS p"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name AS p.name FROM people AS p"
+            "SELECT name AS p.name FROM people AS p"
         },
         // _49
         {
@@ -100,9 +98,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT name AS p.name FROM people"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name AS p.name FROM people"
+            "SELECT name AS p.name FROM people"
         },
         // _50
         {
@@ -120,7 +116,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name AS p.name"
+            "SELECT name AS p.name"
         },
         // _51
         {
@@ -138,7 +134,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name AS p.name"
+            "SELECT name AS p.name"
         },
 
         ////////////////////////////////
@@ -161,9 +157,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT name FROM people AS p"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name FROM people AS p"
+            "SELECT name FROM people AS p"
         },
         // _53
         {
@@ -179,9 +173,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 適格
-            // "SELECT name FROM people"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name FROM people"
+            "SELECT name FROM people"
         },
         // _54
         {
@@ -199,7 +191,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name"
+            "SELECT name"
         },
         // _55
         {
@@ -217,7 +209,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , name"
+            "SELECT name"
         },
 
         ////////////////////////////////
@@ -242,7 +234,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT ,  FROM people AS p"
+            "FROM people AS p"
         },
         // _57
         {
@@ -260,7 +252,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT ,  FROM people"
+            "FROM people"
         },
         // _58
         {
@@ -276,9 +268,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , "
+            ""
         },
         // _59
         {
@@ -294,9 +284,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , "
+            ""
         },
 
         ////////////////////////////////
@@ -321,7 +309,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT ,  FROM people AS p"
+            "FROM people AS p"
         },
         // _61
         {
@@ -339,7 +327,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
             // SQL 文字列 : 不適格(空文字列)
             // ""
             // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT ,  FROM people"
+            "FROM people"
         },
         // _62
         {
@@ -355,9 +343,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , "
+            ""
         },
         // _63
         {
@@ -373,9 +359,7 @@ auto data_set_for_to_string_03() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT , "
+            ""
         }
     };
 }
