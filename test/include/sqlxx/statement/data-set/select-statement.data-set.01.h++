@@ -114,9 +114,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, name AS p.name"
+            ""
         },
         // _19
         {
@@ -132,9 +130,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, name AS p.name"
+            ""
         },
 
         ////////////////////////////////
@@ -189,9 +185,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, name"
+            ""
         },
         // _23
         {
@@ -207,9 +201,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id, name"
+            ""
         },
 
         ////////////////////////////////
@@ -264,9 +256,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id"
+            ""
         },
         // _27
         {
@@ -282,9 +272,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id"
+            ""
         },
 
         ////////////////////////////////
@@ -339,9 +327,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id"
+            ""
         },
         // _31
         {
@@ -357,9 +343,7 @@ auto data_set_for_to_string_01() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id"
+            ""
         }
     };
 }
