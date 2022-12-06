@@ -114,9 +114,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT name AS p.name"
+            ""
         },
         // _35
         {
@@ -132,9 +130,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT name AS p.name"
+            ""
         },
 
         ////////////////////////////////
@@ -189,9 +185,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT name"
+            ""
         },
         // _39
         {
@@ -207,9 +201,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT name"
+            ""
         },
 
         ////////////////////////////////
@@ -232,9 +224,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM people AS p"
+            ""
         },
         // _41
         {
@@ -250,9 +240,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM people"
+            ""
         },
         // _42
         {
@@ -307,9 +295,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM people AS p"
+            ""
         },
         // _45
         {
@@ -325,9 +311,7 @@ auto data_set_for_to_string_02() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM people"
+            ""
         },
         // _46
         {

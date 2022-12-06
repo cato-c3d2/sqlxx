@@ -118,13 +118,16 @@ namespace sqlxx::statement
         std::vector<std::string> closures;
 
         std::string const select_closure = this->_select_closure.to_string();
-        if (! select_closure.empty()) {
-            closures.push_back(select_closure);
+        if (select_closure.empty()) {
+            return "";
         }
+        closures.push_back(select_closure);
+
         std::string const from_closure = this->_from_closure.to_string();
-        if (! from_closure.empty()) {
-            closures.push_back(from_closure);
+        if (from_closure.empty()) {
+            return "";
         }
+        closures.push_back(from_closure);
 
         std::string text      = "";
         std::string delimiter = "";
