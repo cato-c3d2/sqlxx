@@ -117,9 +117,7 @@ auto data_set_for_to_string_04() -> std::vector<DataSetElement>
                 }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT   AS ,, . AS ; FROM ' AS \\"
+            ""
         }
     };
 }
