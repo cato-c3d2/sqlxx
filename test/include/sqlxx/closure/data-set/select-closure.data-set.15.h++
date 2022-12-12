@@ -59,9 +59,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column {}
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
         // _242
         {
@@ -71,9 +69,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column {}.alias_name("")
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
         // _243
         {
@@ -83,9 +79,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column {}.alias_name(" ")
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
         // _244
         {
@@ -95,9 +89,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column {}.alias_name("p.name")
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
 
         ////////////////////////////////
@@ -112,9 +104,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
         // _246
         {
@@ -124,9 +114,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "", "" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
         // _247
         {
@@ -136,9 +124,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "", " " }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
         // _248
         {
@@ -148,9 +134,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "", "p.name" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  "
+            "SELECT id"
         },
 
         ////////////////////////////////
@@ -165,9 +149,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { " " }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  ,  "
+            "SELECT id"
         },
         // _250
         {
@@ -177,9 +159,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { " ", "" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  ,  "
+            "SELECT id"
         },
         // _251
         {
@@ -189,9 +169,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { " ", " " }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  ,   AS  "
+            "SELECT id"
         },
         // _252
         {
@@ -201,9 +179,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { " ", "p.name" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  ,   AS p.name"
+            "SELECT id"
         },
 
         ////////////////////////////////
@@ -218,9 +194,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "name" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id, name"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , name"
+            "SELECT id, name"
         },
         // _254
         {
@@ -230,9 +204,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "name", "" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id, name"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , name"
+            "SELECT id, name"
         },
         // _255
         {
@@ -242,9 +214,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "name", " " }
             },
             // SQL 文字列 : 適格
-            // "SELECT id, name"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , name AS  "
+            "SELECT id, name"
         },
         // _256
         {
@@ -254,9 +224,7 @@ auto data_set_for_to_string_15() -> std::vector<DataSetElement>
                 Column { "name", "p.name" }
             },
             // SQL 文字列 : 適格
-            // "SELECT id, name AS p.name"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "SELECT id AS  , name AS p.name"
+            "SELECT id, name AS p.name"
         }
     };
     // clang-format on

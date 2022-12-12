@@ -101,36 +101,28 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
             // + alias_name : 未指定
             Table { " " },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            " "
+            ""
         },
         // _9
         {
             // + alias_name : 空文字列
             Table { " ", "" },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            " "
+            ""
         },
         // _10
         {
             // + alias_name : 不適格(半角スペース)
             Table { " ", " " },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "  AS  "
+            ""
         },
         // _11
         {
             // + alias_name : 適格
             Table { " ", "p" },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "  AS p"
+            ""
         },
 
         ////////////////////////////////////////////////////////////////////////
@@ -155,9 +147,7 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
             // + alias_name : 不適格(半角スペース)
             Table { "people", " " },
             // SQL 文字列 : 適格
-            // "people"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "people AS  "
+            "people"
         },
         // _15
         {
