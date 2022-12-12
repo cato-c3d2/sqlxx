@@ -134,9 +134,7 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
                 Table { " " }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM  "
+            ""
         },
         // _10
         {
@@ -145,9 +143,7 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
                 Table { " ", "" }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM  "
+            ""
         },
         // _11
         {
@@ -156,9 +152,7 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
                 Table { " ", " " }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM   AS  "
+            ""
         },
         // _12
         {
@@ -167,9 +161,7 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
                 Table { " ", "p" }
             },
             // SQL 文字列 : 不適格(空文字列)
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM   AS p"
+            ""
         },
 
         ////////////////////////////////
@@ -201,9 +193,7 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
                 Table { "people", " " }
             },
             // SQL 文字列 : 適格
-            // "FROM people"
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "FROM people AS  "
+            "FROM people"
         },
         // _16
         {

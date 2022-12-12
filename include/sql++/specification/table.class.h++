@@ -87,6 +87,8 @@ namespace sqlxx::specification
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <regex>
+
 namespace sqlxx::specification
 {
     Table::Table() : _table_name(), _alias_name()
@@ -110,11 +112,16 @@ namespace sqlxx::specification
 
     auto Table::to_string() const -> std::string
     {
-        if (this->_table_name.empty()) {
+        // NOTE 識別子の命名規則について :
+        // 先頭の文字として, アルファベットまたはアンダースコアが使用できる.
+        // 以降の文字として, アルファベット, アンダースコアまたは数字が使用できる.
+        std::regex const naming_rule { R"([a-zA-Z_][a-zA-Z_\d]*)" };
+
+        if (! std::regex_search(this->_table_name, naming_rule)) {
             return "";
         }
         std::string text = this->_table_name;
-        if (! this->_alias_name.empty()) {
+        if (std::regex_search(this->_alias_name, naming_rule)) {
             text += " AS " + this->_alias_name;
         }
         return text;
