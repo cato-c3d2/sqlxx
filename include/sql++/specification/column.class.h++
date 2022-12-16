@@ -87,7 +87,7 @@ namespace sqlxx::specification
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <regex>
+#include <sql++/specification/naming-rule.class.h++>
 
 namespace sqlxx::specification
 {
@@ -112,19 +112,12 @@ namespace sqlxx::specification
 
     auto Column::to_string() const -> std::string
     {
-        // NOTE 識別子の命名規則について :
-        // 先頭の文字として, アルファベットまたはアンダースコアが使用できる.
-        // 以降の文字として, アルファベット, アンダースコアまたは数字が使用できる.
-        // clang-format off
-        std::regex const column_naming_rule { R"([a-zA-Z_][\w]*)" };
-        std::regex const alias_naming_rule  { R"([a-zA-Z_][\w]*\.[a-zA-Z_][\w]*)" };
-        // clang-format on
-
-        if (! std::regex_search(this->_column_name, column_naming_rule)) {
+        if (! NamingRule::is_legal(this->_column_name)) {
             return "";
         }
+
         std::string text = this->_column_name;
-        if (std::regex_search(this->_alias_name, alias_naming_rule)) {
+        if (NamingRule::is_legal(this->_alias_name, ".")) {
             text += " AS " + this->_alias_name;
         }
         return text;
