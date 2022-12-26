@@ -79,16 +79,20 @@ namespace sqlxx::specification
     auto NamingRule::is_legal(std::string identifier) -> bool
     {
         return std::regex_search(
-            identifier, std::regex { NamingRule::pattern() });
+            identifier, std::regex { "^" + NamingRule::pattern() + "$" });
     }
 
     auto NamingRule::is_legal(std::string identifier, std::string delimiter)
         -> bool
     {
+        // clang-format off
         return std::regex_search(
             identifier,
-            std::regex { NamingRule::pattern() + delimiter
-                         + NamingRule::pattern() });
+            std::regex {
+                "^" + NamingRule::pattern()
+                    + delimiter
+                    + NamingRule::pattern() + "$" });
+        // clang-format on
     }
 
     auto NamingRule::pattern() -> std::string

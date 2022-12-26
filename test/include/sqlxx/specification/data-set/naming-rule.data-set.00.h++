@@ -70,10 +70,8 @@ auto data_set_for_is_legal_() -> std::vector<DataSetElement>
             //   + 全ての数字(0 ~ 9)
             //   + アンダースコア
             "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_",
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
             // 期待結果 : 不適格
-            // false
-            true
+            false
         }
     };
     // clang-format on
