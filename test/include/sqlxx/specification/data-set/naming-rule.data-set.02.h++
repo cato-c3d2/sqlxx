@@ -53,24 +53,16 @@ auto data_set_for_is_legal_02A() -> std::vector<DataSetElement>
 
         {
             // アンダースコア以外の記号(ドルマーク)
-            "A$", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "A$", false
         }, {
             // 空白文字
-            "A ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "A ", false
         }, {
             // 制御文字(改行)
-            "A\n", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "A\n", false
         }, {
             // 全角文字
-            "Aあ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "Aあ", false
         }
     };
     // clang-format on
@@ -116,24 +108,16 @@ auto data_set_for_is_legal_02a() -> std::vector<DataSetElement>
 
         {
             // アンダースコア以外の記号(ドルマーク)
-            "a$", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "a$", false
         }, {
             // 空白文字
-            "a ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "a ", false
         }, {
             // 制御文字(改行)
-            "a\n", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "a\n", false
         }, {
             // 全角文字
-            "aあ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "aあ", false
         }
     };
     // clang-format on
@@ -179,24 +163,16 @@ auto data_set_for_is_legal_02c() -> std::vector<DataSetElement>
 
         {
             // アンダースコア以外の記号(ドルマーク)
-            "_$", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "_$", false
         }, {
             // 空白文字
-            "_ ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "_ ", false
         }, {
             // 制御文字(改行)
-            "_\n", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "_\n", false
         }, {
             // 全角文字
-            "_あ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "_あ", false
         }
     };
     // clang-format on
@@ -224,19 +200,13 @@ auto data_set_for_is_legal_02d() -> std::vector<DataSetElement>
 
         {
             // アルファベット大文字
-            "0Z", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "0Z", false
         }, {
             // アルファベット小文字
-            "0z", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "0z", false
         }, {
             // アンダースコア
-            "0_", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "0_", false
         }, {
             // 数字
             "09", false
@@ -279,19 +249,13 @@ auto data_set_for_is_legal_02e() -> std::vector<DataSetElement>
 
         {
             // アルファベット大文字
-            "$Z", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "$Z", false
         }, {
             // アルファベット小文字
-            "$z", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "$z", false
         }, {
             // アンダースコア
-            "$_", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "$_", false
         }, {
             // 数字
             "$9", false
@@ -334,19 +298,13 @@ auto data_set_for_is_legal_02f() -> std::vector<DataSetElement>
 
         {
             // アルファベット大文字
-            " Z", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            " Z", false
         }, {
             // アルファベット小文字
-            " z", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            " z", false
         }, {
             // アンダースコア
-            " _", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            " _", false
         }, {
             // 数字
             " 9", false
@@ -389,19 +347,13 @@ auto data_set_for_is_legal_02g() -> std::vector<DataSetElement>
 
         {
             // アルファベット大文字
-            "\nZ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "\nZ", false
         }, {
             // アルファベット小文字
-            "\nz", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "\nz", false
         }, {
             // アンダースコア
-            "\n_", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "\n_", false
         }, {
             // 数字
             "\n9", false
@@ -444,19 +396,13 @@ auto data_set_for_is_legal_02h() -> std::vector<DataSetElement>
 
         {
             // アルファベット大文字
-            "あZ", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "あZ", false
         }, {
             // アルファベット小文字
-            "あz", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "あz", false
         }, {
             // アンダースコア
-            "あ_", // false
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            true
+            "あ_", false
         }, {
             // 数字
             "あ9", false
