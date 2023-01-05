@@ -52,6 +52,14 @@ namespace sqlxx::closure
             -> SelectClosure &;
 
         /*!
+         * @brief このオブジェクトが空か判定する
+         *
+         * @return このオブジェクトが空の場合は @c true を,
+         *         そうではない場合は @c false を返却する
+         */
+        auto empty() const -> bool;
+
+        /*!
          * @brief このオブジェクトの文字列表現を返却する
          *
          * @return このオブジェクトの文字列表現
@@ -98,6 +106,24 @@ namespace sqlxx::closure
         return *this;
     }
 
+    auto SelectClosure::empty() const -> bool
+    {
+        // この SELECT 句が保持するカラムオブジェクトが 0 個の場合,
+        // この SELECT 句 を空とみなす.
+        if (this->_column_list.empty()) {
+            return true;
+        }
+
+        // この SELECT 句が保持するカラムオブジェクトがいずれも空の場合,
+        // この SELECT 句を空とみなす.
+        return std::all_of(
+            std::begin(this->_column_list),
+            std::end(this->_column_list),
+            [](auto && column) {
+                return column.empty();
+            });
+    }
+
     auto SelectClosure::to_string() const -> std::string
     {
         if (this->_column_list.empty()) {
@@ -106,11 +132,10 @@ namespace sqlxx::closure
         std::string column_list = "";
         std::string delimiter   = "";
         for (auto && column : this->_column_list) {
-            auto const column_specification = column.to_string();
-            if (column_specification.empty()) {
+            if (column.empty()) {
                 continue;
             }
-            column_list += delimiter + column_specification;
+            column_list += delimiter + column.to_string();
             delimiter = ", ";
         }
         if (column_list.empty()) {

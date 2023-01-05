@@ -59,6 +59,14 @@ namespace sqlxx::specification
         auto alias_name(AliasNameType alias_name) -> Column &;
 
         /*!
+         * @brief このオブジェクトが空か判定する
+         *
+         * @return このオブジェクトが空の場合は @c true を,
+         *         そうではない場合は @c false を返却する
+         */
+        auto empty() const -> bool;
+
+        /*!
          * @brief このオブジェクトの文字列表現を返却する
          *
          * @return このオブジェクトの文字列表現
@@ -108,6 +116,11 @@ namespace sqlxx::specification
     {
         this->_alias_name = alias_name;
         return *this;
+    }
+
+    auto Column::empty() const -> bool
+    {
+        return ! NamingRule::is_legal(this->_column_name);
     }
 
     auto Column::to_string() const -> std::string

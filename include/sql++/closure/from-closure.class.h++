@@ -45,6 +45,14 @@ namespace sqlxx::closure
         auto table(specification::Table table) -> FromClosure &;
 
         /*!
+         * @brief このオブジェクトが空か判定する
+         *
+         * @return このオブジェクトが空の場合は @c true を,
+         *         そうではない場合は @c false を返却する
+         */
+        auto empty() const -> bool;
+
+        /*!
          * @brief このオブジェクトの文字列表現を返却する
          *
          * @return このオブジェクトの文字列表現
@@ -87,13 +95,17 @@ namespace sqlxx::closure
         return *this;
     }
 
+    auto FromClosure::empty() const -> bool
+    {
+        return this->_table.empty();
+    }
+
     auto FromClosure::to_string() const -> std::string
     {
-        std::string const table = this->_table.to_string();
-        if (table.empty()) {
+        if (this->_table.empty()) {
             return "";
         }
-        return "FROM " + table;
+        return "FROM " + this->_table.to_string();
     }
 
     ////////////////////////////////////////////////////////////////////////////
