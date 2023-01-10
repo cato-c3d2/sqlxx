@@ -23,8 +23,10 @@ using sqlxx::specification::Table;
  * @return データセット
  *
  * @see sqlxx::specification::Table              テスト対象クラス
+ * @see sqlxx::specification::Table::empty()     テスト対象メンバ関数
  * @see sqlxx::specification::Table::to_string() テスト対象メンバ関数
  */
+// TODO [要名称変更] data_set_for_to_string => data_set
 auto data_set_for_to_string() -> std::vector<DataSetElement>
 {
     // clang-format off
@@ -36,6 +38,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 未指定
             Table {},
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -43,6 +47,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 空文字列
             Table {}.alias_name(""),
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -50,6 +56,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 不適格(半角スペース)
             Table {}.alias_name(" "),
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -57,6 +65,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 適格
             Table {}.alias_name("p"),
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -68,6 +78,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 未指定
             Table { "" },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -75,6 +87,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 空文字列
             Table { "", "" },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -82,6 +96,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 不適格(半角スペース)
             Table { "", " " },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -89,6 +105,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 適格
             Table { "", "p" },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -100,6 +118,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 未指定
             Table { " " },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -107,6 +127,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 空文字列
             Table { " ", "" },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -114,6 +136,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 不適格(半角スペース)
             Table { " ", " " },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -121,6 +145,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 適格
             Table { " ", "p" },
+            // 空判定 : 真
+            true,
             // SQL 文字列 : 不適格(空文字列)
             ""
         },
@@ -132,6 +158,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 未指定
             Table { "people" },
+            // 空判定 : 偽
+            false,
             // SQL 文字列 : 適格
             "people"
         },
@@ -139,6 +167,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 空文字列
             Table { "people", "" },
+            // 空判定 : 偽
+            false,
             // SQL 文字列 : 適格
             "people"
         },
@@ -146,6 +176,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 不適格(半角スペース)
             Table { "people", " " },
+            // 空判定 : 偽
+            false,
             // SQL 文字列 : 適格
             "people"
         },
@@ -153,6 +185,8 @@ auto data_set_for_to_string() -> std::vector<DataSetElement>
         {
             // + alias_name : 適格
             Table { "people", "p" },
+            // 空判定 : 偽
+            false,
             // SQL 文字列 : 適格
             "people AS p"
         }

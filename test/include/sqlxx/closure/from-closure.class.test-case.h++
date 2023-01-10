@@ -51,6 +51,29 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
+ *        様々な @c FromClosure オブジェクトを構築し, @c empty メンバ関数を呼び出す
+ *
+ * @see sqlxx::closure::FromClosure
+ * @see sqlxx::closure::FromClosure::empty()
+ * @see data_set_for_to_string()
+ */
+BOOST_DATA_TEST_CASE(
+    empty,
+    boost::unit_test::data::make(data_set_for_to_string()),
+    data_set_element)
+{
+    // テスト対象オブジェクト
+    FromClosure const from_closure = data_set_element.from_closure;
+
+    // テスト対象メンバ関数の期待結果
+    bool const expectation = data_set_element.expectation_of_empty;
+
+    // テスト対象メンバ関数の実行結果と期待結果が一致すること
+    BOOST_CHECK_EQUAL(from_closure.empty(), expectation);
+}
+
+/*!
+ * @brief テストパターン :
  *        様々な @c FromClosure オブジェクトに対して SQL 文字列を生成する
  *
  * @see sqlxx::closure::FromClosure
