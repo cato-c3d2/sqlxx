@@ -19,12 +19,15 @@ using sqlxx::specification::Column;
 /*!
  * @brief データセットの要素
  *
- * テスト対象のオブジェクトと生成される SQL 文字列の期待結果を保持する.
+ * テスト対象のオブジェクトとテスト対象のメンバ関数の戻り値の期待結果を保持する.
  */
 struct DataSetElement
 {
     /*! @brief テスト対象オブジェクト */
     Column column;
+
+    /*! @brief 空判定の期待結果 */
+    bool expectation_of_empty;
 
     /*! @brief 生成される SQL 文字列の期待結果 */
     std::string expectation_of_to_string;
@@ -42,6 +45,8 @@ auto operator<<(std::ostream & out, DataSetElement const & data_set_element)
     -> std::ostream &
 {
     return out << "{ column : \"" << data_set_element.column
+               << "\", expectation_of_empty : \""
+               << data_set_element.expectation_of_empty
                << "\", expectation_of_to_string : \""
                << data_set_element.expectation_of_to_string << "\" }";
 }

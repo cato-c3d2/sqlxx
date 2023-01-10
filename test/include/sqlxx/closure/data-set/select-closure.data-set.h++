@@ -39,8 +39,10 @@ BOOST_AUTO_TEST_SUITE(class__SelectClosure)
  * @return データセット
  *
  * @see sqlxx::closure::SelectClosure              テスト対象クラス
+ * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
+// TODO [要名称変更] data_set_for_to_string => data_set
 auto data_set_for_to_string() -> std::vector<DataSetElement>
 {
     std::vector<std::vector<DataSetElement>> data_set_parts = {

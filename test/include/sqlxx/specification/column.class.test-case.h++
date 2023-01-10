@@ -48,6 +48,29 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
+ *        様々な @c Column オブジェクトを構築し, @c empty メンバ関数を呼び出す
+ *
+ * @see sqlxx::specification::Column
+ * @see sqlxx::specification::Column::empty()
+ * @see data_set_for_to_string()
+ */
+BOOST_DATA_TEST_CASE(
+    empty,
+    boost::unit_test::data::make(data_set_for_to_string()),
+    data_set_element)
+{
+    // テスト対象オブジェクト
+    Column const column = data_set_element.column;
+
+    // テスト対象メンバ関数の期待結果
+    bool const expectation = data_set_element.expectation_of_empty;
+
+    // テスト対象メンバ関数の実行結果と期待結果が一致すること
+    BOOST_CHECK_EQUAL(column.empty(), expectation);
+}
+
+/*!
+ * @brief テストパターン :
  *        様々な @c Column オブジェクトに対して SQL 文字列を生成する
  *
  * @see sqlxx::specification::Column

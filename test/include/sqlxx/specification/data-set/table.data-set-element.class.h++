@@ -26,6 +26,9 @@ struct DataSetElement
     /*! @brief テスト対象オブジェクト */
     Table table;
 
+    /*! @brief 空判定の期待結果 */
+    bool expectation_of_empty;
+
     /*! @brief 生成される SQL 文字列の期待結果 */
     std::string expectation_of_to_string;
 };
@@ -42,6 +45,8 @@ auto operator<<(std::ostream & out, DataSetElement const & data_set_element)
     -> std::ostream &
 {
     return out << "{ table : \"" << data_set_element.table
+               << "\", expectation_of_empty : \""
+               << data_set_element.expectation_of_empty
                << "\", expectation_of_to_string : \""
                << data_set_element.expectation_of_to_string << "\" }";
 }
