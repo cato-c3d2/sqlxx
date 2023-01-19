@@ -27,15 +27,15 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
  * @see sqlxx::closure::SelectStatement              テスト対象クラス
  * @see sqlxx::closure::SelectStatement::to_string() テスト対象メンバ関数
  */
-auto data_set_for_to_string() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<DataSetElement>
 {
     std::vector<std::vector<DataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_for_to_string_00(),
-        data_set_for_to_string_01(),
-        data_set_for_to_string_02(),
-        data_set_for_to_string_03(),
-        data_set_for_to_string_04()
+        data_set_00(),
+        data_set_01(),
+        data_set_02(),
+        data_set_03(),
+        data_set_04()
         // clang-format on
     };
 

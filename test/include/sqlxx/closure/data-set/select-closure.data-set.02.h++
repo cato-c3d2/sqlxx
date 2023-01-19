@@ -38,7 +38,7 @@ using sqlxx::specification::Column;
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_for_to_string_02() -> std::vector<DataSetElement>
+auto data_set_02() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {

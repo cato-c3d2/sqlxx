@@ -25,26 +25,26 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<DataSetElement>
 {
     std::vector<std::vector<DataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_for_is_legal_(),
-        data_set_for_is_legal_00(),
-        data_set_for_is_legal_01A(),
-        data_set_for_is_legal_01a(),
-        data_set_for_is_legal_01d(),
-        data_set_for_is_legal_01s(),
-        data_set_for_is_legal_01x(),
-        data_set_for_is_legal_01z(),
-        data_set_for_is_legal_02A(),
-        data_set_for_is_legal_02a(),
-        data_set_for_is_legal_02c(),
-        data_set_for_is_legal_02d(),
-        data_set_for_is_legal_02e(),
-        data_set_for_is_legal_02f(),
-        data_set_for_is_legal_02g(),
-        data_set_for_is_legal_02h()
+        data_set_(),
+        data_set_00(),
+        data_set_01A(),
+        data_set_01a(),
+        data_set_01d(),
+        data_set_01s(),
+        data_set_01x(),
+        data_set_01z(),
+        data_set_02A(),
+        data_set_02a(),
+        data_set_02c(),
+        data_set_02d(),
+        data_set_02e(),
+        data_set_02f(),
+        data_set_02g(),
+        data_set_02h()
         // clang-format on
     };
 

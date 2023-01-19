@@ -57,12 +57,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  *
  * @see sqlxx::closure::SelectClosure
  * @see sqlxx::closure::SelectClosure::empty()
- * @see data_set_for_to_string()
+ * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
-    empty,
-    boost::unit_test::data::make(data_set_for_to_string()),
-    data_set_element)
+    empty, boost::unit_test::data::make(data_set()), data_set_element)
 {
     // テスト対象オブジェクト
     SelectClosure const select_closure = data_set_element.select_closure;
@@ -80,12 +78,10 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::closure::SelectClosure
  * @see sqlxx::closure::SelectClosure::to_string()
- * @see data_set_for_to_string()
+ * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
-    to_string,
-    boost::unit_test::data::make(data_set_for_to_string()),
-    data_set_element)
+    to_string, boost::unit_test::data::make(data_set()), data_set_element)
 {
     // テスト対象オブジェクト
     SelectClosure const select_closure = data_set_element.select_closure;

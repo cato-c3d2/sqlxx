@@ -25,7 +25,7 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_01A() -> std::vector<DataSetElement>
+auto data_set_01A() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -98,7 +98,7 @@ auto data_set_for_is_legal_01A() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_01a() -> std::vector<DataSetElement>
+auto data_set_01a() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -171,7 +171,7 @@ auto data_set_for_is_legal_01a() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_01d() -> std::vector<DataSetElement>
+auto data_set_01d() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -212,7 +212,7 @@ auto data_set_for_is_legal_01d() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_01s() -> std::vector<DataSetElement>
+auto data_set_01s() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -308,7 +308,7 @@ auto data_set_for_is_legal_01s() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_01x() -> std::vector<DataSetElement>
+auto data_set_01x() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -356,7 +356,7 @@ auto data_set_for_is_legal_01x() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_01z() -> std::vector<DataSetElement>
+auto data_set_01z() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {

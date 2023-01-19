@@ -52,12 +52,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  *
  * @see sqlxx::specification::Column
  * @see sqlxx::specification::Column::empty()
- * @see data_set_for_to_string()
+ * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
-    empty,
-    boost::unit_test::data::make(data_set_for_to_string()),
-    data_set_element)
+    empty, boost::unit_test::data::make(data_set()), data_set_element)
 {
     // テスト対象オブジェクト
     Column const column = data_set_element.column;
@@ -75,12 +73,10 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::specification::Column
  * @see sqlxx::specification::Column::to_string()
- * @see data_set_for_to_string()
+ * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
-    to_string,
-    boost::unit_test::data::make(data_set_for_to_string()),
-    data_set_element)
+    to_string, boost::unit_test::data::make(data_set()), data_set_element)
 {
     // テスト対象オブジェクト
     Column const column = data_set_element.column;
