@@ -28,8 +28,7 @@ using sqlxx::specification::Table;
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-// TODO [要名称変更] data_set_for_to_string => data_set
-auto data_set_for_to_string() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {

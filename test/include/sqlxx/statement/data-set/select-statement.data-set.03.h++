@@ -51,7 +51,7 @@ using sqlxx::statement::SelectStatement;
  * @see sqlxx::closure::SelectStatement              テスト対象クラス
  * @see sqlxx::closure::SelectStatement::to_string() テスト対象メンバ関数
  */
-auto data_set_for_to_string_03() -> std::vector<DataSetElement>
+auto data_set_03() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {

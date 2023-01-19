@@ -25,7 +25,7 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02A() -> std::vector<DataSetElement>
+auto data_set_02A() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -80,7 +80,7 @@ auto data_set_for_is_legal_02A() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02a() -> std::vector<DataSetElement>
+auto data_set_02a() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -135,7 +135,7 @@ auto data_set_for_is_legal_02a() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02c() -> std::vector<DataSetElement>
+auto data_set_02c() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -190,7 +190,7 @@ auto data_set_for_is_legal_02c() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02d() -> std::vector<DataSetElement>
+auto data_set_02d() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -239,7 +239,7 @@ auto data_set_for_is_legal_02d() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02e() -> std::vector<DataSetElement>
+auto data_set_02e() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -288,7 +288,7 @@ auto data_set_for_is_legal_02e() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02f() -> std::vector<DataSetElement>
+auto data_set_02f() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -337,7 +337,7 @@ auto data_set_for_is_legal_02f() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02g() -> std::vector<DataSetElement>
+auto data_set_02g() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
@@ -386,7 +386,7 @@ auto data_set_for_is_legal_02g() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_for_is_legal_02h() -> std::vector<DataSetElement>
+auto data_set_02h() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {

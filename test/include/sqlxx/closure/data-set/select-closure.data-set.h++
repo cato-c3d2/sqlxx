@@ -42,28 +42,27 @@ BOOST_AUTO_TEST_SUITE(class__SelectClosure)
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-// TODO [要名称変更] data_set_for_to_string => data_set
-auto data_set_for_to_string() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<DataSetElement>
 {
     std::vector<std::vector<DataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_for_to_string_00(),
-        data_set_for_to_string_01(),
-        data_set_for_to_string_02(),
-        data_set_for_to_string_03(),
-        data_set_for_to_string_04(),
-        data_set_for_to_string_05(),
-        data_set_for_to_string_06(),
-        data_set_for_to_string_07(),
-        data_set_for_to_string_08(),
-        data_set_for_to_string_09(),
-        data_set_for_to_string_10(),
-        data_set_for_to_string_11(),
-        data_set_for_to_string_12(),
-        data_set_for_to_string_13(),
-        data_set_for_to_string_14(),
-        data_set_for_to_string_15(),
-        data_set_for_to_string_16()
+        data_set_00(),
+        data_set_01(),
+        data_set_02(),
+        data_set_03(),
+        data_set_04(),
+        data_set_05(),
+        data_set_06(),
+        data_set_07(),
+        data_set_08(),
+        data_set_09(),
+        data_set_10(),
+        data_set_11(),
+        data_set_12(),
+        data_set_13(),
+        data_set_14(),
+        data_set_15(),
+        data_set_16()
         // clang-format on
     };
 

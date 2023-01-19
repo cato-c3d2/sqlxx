@@ -55,12 +55,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  *
  * @see sqlxx::closure::FromClosure
  * @see sqlxx::closure::FromClosure::empty()
- * @see data_set_for_to_string()
+ * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
-    empty,
-    boost::unit_test::data::make(data_set_for_to_string()),
-    data_set_element)
+    empty, boost::unit_test::data::make(data_set()), data_set_element)
 {
     // テスト対象オブジェクト
     FromClosure const from_closure = data_set_element.from_closure;
@@ -78,12 +76,10 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::closure::FromClosure
  * @see sqlxx::closure::FromClosure::to_string()
- * @see data_set_for_to_string()
+ * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
-    to_string,
-    boost::unit_test::data::make(data_set_for_to_string()),
-    data_set_element)
+    to_string, boost::unit_test::data::make(data_set()), data_set_element)
 {
     // テスト対象オブジェクト
     FromClosure const from_closure = data_set_element.from_closure;
