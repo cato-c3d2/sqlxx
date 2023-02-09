@@ -40,15 +40,16 @@ using sqlxx::specification::Column;
  */
 auto data_set_13() -> std::vector<DataSetElement>
 {
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + columns[0] :
+    //     + column_name : 適格
+    //     + alias_name  : 未指定
+    ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
-        ////////////////////////////////////////////////////////////////////////
-        // + columns[0] :
-        //     + column_name : 適格
-        //     + alias_name  : 未指定
-        ////////////////////////////////////////////////////////////////////////
-
         ////////////////////////////////
+        // [条件(1)]
         // + columns[1] :
         //     + column_name : 未指定
         ////////////////////////////////
@@ -56,52 +57,61 @@ auto data_set_13() -> std::vector<DataSetElement>
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column {}
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _210
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column {}.alias_name("")
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _211
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column {}.alias_name(" ")
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _212
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column {}.alias_name("p.name")
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + columns[1] :
         //     + column_name : 空文字列
         ////////////////////////////////
@@ -109,52 +119,61 @@ auto data_set_13() -> std::vector<DataSetElement>
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column { "" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _214
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column { "", "" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _215
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column { "", " " }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _216
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column { "", "p.name" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + columns[1] :
         //     + column_name : 不適格(半角スペース)
         ////////////////////////////////
@@ -162,52 +181,61 @@ auto data_set_13() -> std::vector<DataSetElement>
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column { " " }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _218
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column { " ", "" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _219
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column { " ", " " }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _220
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column { " ", "p.name" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + columns[1] :
         //     + column_name : 適格
         ////////////////////////////////
@@ -215,48 +243,56 @@ auto data_set_13() -> std::vector<DataSetElement>
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column { "name" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id, name"
         },
         // _222
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column { "name", "" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id, name"
         },
         // _223
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column { "name", " " }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id, name"
         },
         // _224
         {
             SelectClosure {
                 Column { "id" },
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column { "name", "p.name" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id, name AS p.name"
         }
     };

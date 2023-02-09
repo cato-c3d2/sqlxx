@@ -33,218 +33,254 @@ using sqlxx::specification::Column;
  */
 auto data_set_00() -> std::vector<DataSetElement>
 {
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + columns[1] : 未指定
+    ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
-        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////
+        // [条件(1)]
         // + columns[0] : 未指定
-        // + columns[1] : 未指定
-        ////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////
         // _0
         {
             SelectClosure {},
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
-        ////////////////////////////////////////////////////////////////////////
-        // + columns[1] : 未指定
-        ////////////////////////////////////////////////////////////////////////
-
         ////////////////////////////////
+        // [条件(1)]
         // + columns[0] :
         //     + column_name : 未指定
         ////////////////////////////////
         // _1
         {
             SelectClosure {
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column {}
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _2
         {
             SelectClosure {
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column {}.alias_name("")
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _3
         {
             SelectClosure {
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column {}.alias_name(" ")
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _4
         {
             SelectClosure {
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column {}.alias_name("p.id")
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + columns[0] :
         //     + column_name : 空文字列
         ////////////////////////////////
         // _5
         {
             SelectClosure {
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column { "" }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _6
         {
             SelectClosure {
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column { "", "" }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _7
         {
             SelectClosure {
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column { "", " " }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _8
         {
             SelectClosure {
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column { "", "p.id" }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + columns[0] :
         //     + column_name : 不適格(半角スペース)
         ////////////////////////////////
         // _9
         {
             SelectClosure {
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column { " " }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _10
         {
             SelectClosure {
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column { " ", "" }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _11
         {
             SelectClosure {
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column { " ", " " }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _12
         {
             SelectClosure {
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column { " ", "p.id" }
             },
-            // 空判定 : 真
+            // [期待結果] empty メンバ関数
             true,
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + columns[0] :
         //     + column_name : 適格
         ////////////////////////////////
         // _13
         {
             SelectClosure {
-                // + alias_name : 未指定
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 未指定
                 Column { "id" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _14
         {
             SelectClosure {
-                // + alias_name : 空文字列
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 空文字列
                 Column { "id", "" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _15
         {
             SelectClosure {
-                // + alias_name : 不適格(半角スペース)
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 不適格(半角スペース)
                 Column { "id", " " }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id"
         },
         // _16
         {
             SelectClosure {
-                // + alias_name : 適格
+                // [条件(2)]
+                // + columns[1] :
+                //     + alias_name : 適格
                 Column { "id", "p.id" }
             },
-            // 空判定 : 偽
+            // [期待結果] empty メンバ関数
             false,
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT id AS p.id"
         }
     };

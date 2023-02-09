@@ -39,74 +39,65 @@ auto data_set_04() -> std::vector<DataSetElement>
 {
     // clang-format off
     return {
-        ////////////////////////////////////////////////////////////////////////
-        // + select_closure : 未指定
-        // + from_closure   : 未指定
-        ////////////////////////////////////////////////////////////////////////
         // _64
         {
+            // [条件]
+            // + select_closure : 未指定
+            // + from_closure   : 未指定
             SelectStatement {},
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
-
-        ////////////////////////////////////////////////////////////////////////
-        // + select_closure :
-        //     + columns  : 未指定
-        // + from_closure : 未指定
-        ////////////////////////////////////////////////////////////////////////
         // _65
         {
+            // [条件]
+            // + select_closure :
+            //     + columns  : 未指定
+            // + from_closure : 未指定
             SelectStatement {
                 SelectClosure {}
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
-
-        ////////////////////////////////////////////////////////////////////////
-        // + select_closure : 未指定
-        // + from_closure   :
-        //     + table      : 未指定
-        ////////////////////////////////////////////////////////////////////////
         // _66
         {
+            // [条件]
+            // + select_closure : 未指定
+            // + from_closure   :
+            //     + table      : 未指定
             SelectStatement {}.from(FromClosure {}),
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
-
-        ////////////////////////////////////////////////////////////////////////
-        // + select_closure :
-        //     + columns : 未指定
-        // + from_closure :
-        //     + table   : 未指定
-        ////////////////////////////////////////////////////////////////////////
         // _67
         {
+            // [条件]
+            // + select_closure :
+            //     + columns : 未指定
+            // + from_closure :
+            //     + table   : 未指定
             SelectStatement {
                 SelectClosure {},
                 FromClosure {}
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
-
-        ////////////////////////////////////////////////////////////////////////
-        // + select_closure :
-        //     + columns[0] :
-        //         + column_name : 不適格
-        //         + alias_name  : 不適格
-        //     + columns[1] :
-        //         + column_name : 不適格
-        //         + alias_name  : 不適格
-        // + from_closure :
-        //     + table :
-        //         + table_name  : 不適格
-        //         + alias_name  : 不適格
-        ////////////////////////////////////////////////////////////////////////
         // _68
         {
+            // [条件]
+            // + select_closure :
+            //     + columns[0] :
+            //         + column_name : 不適格
+            //         + alias_name  : 不適格
+            //     + columns[1] :
+            //         + column_name : 不適格
+            //         + alias_name  : 不適格
+            // + from_closure :
+            //     + table :
+            //         + table_name  : 不適格
+            //         + alias_name  : 不適格
             SelectStatement {
                 SelectClosure {{
                     Column { " ", "," },
@@ -116,7 +107,7 @@ auto data_set_04() -> std::vector<DataSetElement>
                     Table { "\'", "\\" }
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         }
     };
