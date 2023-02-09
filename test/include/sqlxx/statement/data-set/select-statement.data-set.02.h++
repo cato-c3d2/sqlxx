@@ -53,16 +53,17 @@ using sqlxx::statement::SelectStatement;
  */
 auto data_set_02() -> std::vector<DataSetElement>
 {
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + select_closure :
+    //     + columns[0] :
+    //         + column_name : 未指定
+    //         + alias_name  : 指定
+    ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
-        ////////////////////////////////////////////////////////////////////////
-        // + select_closure :
-        //     + columns[0] :
-        //         + column_name : 未指定
-        //         + alias_name  : 指定
-        ////////////////////////////////////////////////////////////////////////
-
         ////////////////////////////////
+        // [条件(1)]
         // + select_closure :
         //     + columns[1] :
         //         + column_name : 指定
@@ -75,13 +76,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name", "p.name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 指定
                     Table { "people", "p" }
                 }
             },
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT name AS p.name FROM people AS p"
         },
         // _33
@@ -91,13 +95,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name", "p.name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 未指定
                     Table { "people" }
                 }
             },
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT name AS p.name FROM people"
         },
         // _34
@@ -107,13 +114,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name", "p.name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 指定
                     Table {}.alias_name("p")
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _35
@@ -123,17 +133,21 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name", "p.name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 未指定
                     Table {}
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + select_closure :
         //     + columns[1] :
         //         + column_name : 指定
@@ -146,13 +160,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 指定
                     Table { "people", "p" }
                 }
             },
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT name FROM people AS p"
         },
         // _37
@@ -162,13 +179,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 未指定
                     Table { "people" }
                 }
             },
-            // SQL 文字列 : 適格
+            // [期待結果] to_string メンバ関数
             "SELECT name FROM people"
         },
         // _38
@@ -178,13 +198,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 指定
                     Table {}.alias_name("p")
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _39
@@ -194,17 +217,21 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column { "name" }
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 未指定
                     Table {}
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + select_closure :
         //     + columns[1] :
         //         + column_name : 未指定
@@ -217,13 +244,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}.alias_name("p.name")
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 指定
                     Table { "people", "p" }
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _41
@@ -233,13 +263,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}.alias_name("p.name")
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 未指定
                     Table { "people" }
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _42
@@ -249,13 +282,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}.alias_name("p.name")
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 指定
                     Table {}.alias_name("p")
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _43
@@ -265,17 +301,21 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}.alias_name("p.name")
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 未指定
                     Table {}
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
 
         ////////////////////////////////
+        // [条件(1)]
         // + select_closure :
         //     + columns[1] :
         //         + column_name : 未指定
@@ -288,13 +328,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 指定
                     Table { "people", "p" }
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _45
@@ -304,13 +347,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 指定
-                    // + alias_name : 未指定
                     Table { "people" }
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _46
@@ -320,13 +366,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 指定
                     Table {}.alias_name("p")
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         },
         // _47
@@ -336,13 +385,16 @@ auto data_set_02() -> std::vector<DataSetElement>
                     Column {}.alias_name("p.id"),
                     Column {}
                 }},
+                // [条件(2)]
+                // + from_closure :
+                //     + table :
+                //         + table_name : 未指定
+                //         + alias_name : 未指定
                 FromClosure {
-                    // + table_name : 未指定
-                    // + alias_name : 未指定
                     Table {}
                 }
             },
-            // SQL 文字列 : 不適格(空文字列)
+            // [期待結果] to_string メンバ関数
             ""
         }
     };

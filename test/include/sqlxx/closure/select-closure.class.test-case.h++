@@ -26,7 +26,7 @@ using sqlxx::specification::Column;
  * @brief テストパターン :
  *        @c SelectClosure オブジェクトがコピー代入可能であることを検証する
  *
- * @see sqlxx::closure::SelectClosure
+ * @see sqlxx::closure::SelectClosure テスト対象クラス
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
@@ -53,11 +53,11 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
- *        様々な @c SelectClosure オブジェクトを構築し, @c empty メンバ関数を呼び出す
+ *        様々な @c SelectClosure オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::closure::SelectClosure
- * @see sqlxx::closure::SelectClosure::empty()
- * @see data_set()
+ * @see sqlxx::closure::SelectClosure          テスト対象クラス
+ * @see sqlxx::closure::SelectClosure::empty() テスト対象メンバ関数
+ * @see data_set()                             データセット
  */
 BOOST_DATA_TEST_CASE(
     empty, boost::unit_test::data::make(data_set()), data_set_element)
@@ -74,11 +74,11 @@ BOOST_DATA_TEST_CASE(
 
 /*!
  * @brief テストパターン :
- *        様々な @c SelectClosure オブジェクトに対して SQL 文字列を生成する
+ *        様々な @c SelectClosure オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::closure::SelectClosure
- * @see sqlxx::closure::SelectClosure::to_string()
- * @see data_set()
+ * @see sqlxx::closure::SelectClosure              テスト対象クラス
+ * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
+ * @see data_set()                                 データセット
  */
 BOOST_DATA_TEST_CASE(
     to_string, boost::unit_test::data::make(data_set()), data_set_element)
@@ -86,10 +86,10 @@ BOOST_DATA_TEST_CASE(
     // テスト対象オブジェクト
     SelectClosure const select_closure = data_set_element.select_closure;
 
-    // 生成される SQL 文字列の期待結果
+    // テスト対象メンバ関数の期待結果
     std::string const expectation = data_set_element.expectation_of_to_string;
 
-    // テスト対象オブジェクトから生成された SQL 文字列が期待結果と一致すること
+    // テスト対象メンバ関数の実行結果と期待結果が一致すること
     BOOST_CHECK_EQUAL(select_closure.to_string(), expectation);
 }
 

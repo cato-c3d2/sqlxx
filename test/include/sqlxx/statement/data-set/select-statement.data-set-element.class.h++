@@ -19,14 +19,14 @@ using sqlxx::statement::SelectStatement;
 /*!
  * @brief データセットの要素
  *
- * テスト対象のオブジェクトと生成される SQL 文字列の期待結果を保持する.
+ * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
  */
 struct DataSetElement
 {
     /*! @brief テスト対象オブジェクト */
     SelectStatement select_statement;
 
-    /*! @brief 生成される SQL 文字列の期待結果 */
+    /*! @brief @c to_string メンバ関数の期待結果 */
     std::string expectation_of_to_string;
 };
 
