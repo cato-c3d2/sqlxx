@@ -19,6 +19,12 @@ BOOST_AUTO_TEST_SUITE(class__FromClosure)
 using sqlxx::closure::FromClosure;
 using sqlxx::specification::Table;
 
+auto data_set_a() -> std::vector<DataSetElement>;
+auto data_set_b() -> std::vector<DataSetElement>;
+auto data_set_c() -> std::vector<DataSetElement>;
+auto data_set_d() -> std::vector<DataSetElement>;
+auto data_set_e() -> std::vector<DataSetElement>;
+
 /*!
  * @brief  データセットを返却する
  *
@@ -30,26 +36,80 @@ using sqlxx::specification::Table;
  */
 auto data_set() -> std::vector<DataSetElement>
 {
+    std::vector<std::vector<DataSetElement>> data_set_parts = {
+        // clang-format off
+        data_set_a(),
+        data_set_b(),
+        data_set_c(),
+        data_set_d(),
+        data_set_e()
+        // clang-format on
+    };
+
+    auto data_set = std::vector<DataSetElement>();
+    for (auto && data_set_part : data_set_parts) {
+        data_set.insert(
+            std::end(data_set),
+            std::begin(data_set_part),
+            std::end(data_set_part));
+    }
+    return data_set;
+}
+
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン :
+ *
+ * @c table : 未指定
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::FromClosure              テスト対象クラス
+ * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+ */
+auto data_set_a() -> std::vector<DataSetElement>
+{
     // clang-format off
     return {
-        ////////////////////////////////////////////////////////////////////////
-        // [条件]
-        // + table : 未指定
-        ////////////////////////////////////////////////////////////////////////
         // _0
         {
+            // [条件]
+            // + table : 未指定
             FromClosure {},
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
             ""
-        },
+        }
+    };
+}
 
-        ////////////////////////////////////////////////////////////////////////
-        // [条件(0)]
-        // + table :
-        //     + table_name : 未指定
-        ////////////////////////////////////////////////////////////////////////
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン :
+ *
+ * @c table : @n
+ * @li @c table_name : 未指定
+ * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::FromClosure              テスト対象クラス
+ * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+ */
+auto data_set_b() -> std::vector<DataSetElement>
+{
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + table :
+    //     + table_name : 未指定
+    ////////////////////////////////////////////////////////////////////////////
+    // clang-format off
+    return {
         // _1
         {
             FromClosure {
@@ -101,13 +161,34 @@ auto data_set() -> std::vector<DataSetElement>
             true,
             // [期待結果] to_string メンバ関数
             ""
-        },
+        }
+    };
+}
 
-        ////////////////////////////////////////////////////////////////////////
-        // [条件(0)]
-        // + table :
-        //     + table_name : 空文字列
-        ////////////////////////////////////////////////////////////////////////
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン :
+ *
+ * @c table : @n
+ * @li @c table_name : 空文字列
+ * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::FromClosure              テスト対象クラス
+ * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+ */
+auto data_set_c() -> std::vector<DataSetElement>
+{
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + table :
+    //     + table_name : 空文字列
+    ////////////////////////////////////////////////////////////////////////////
+    // clang-format off
+    return {
         // _5
         {
             FromClosure {
@@ -160,12 +241,33 @@ auto data_set() -> std::vector<DataSetElement>
             // [期待結果] to_string メンバ関数
             ""
         },
+    };
+}
 
-        ////////////////////////////////////////////////////////////////////////
-        // [条件(0)]
-        // + table :
-        //     + table_name : 不適格(半角スペース)
-        ////////////////////////////////////////////////////////////////////////
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン :
+ *
+ * @c table : @n
+ * @li @c table_name : 不適格(半角スペース)
+ * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::FromClosure              テスト対象クラス
+ * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+ */
+auto data_set_d() -> std::vector<DataSetElement>
+{
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + table :
+    //     + table_name : 不適格(半角スペース)
+    ////////////////////////////////////////////////////////////////////////////
+    // clang-format off
+    return {
         // _9
         {
             FromClosure {
@@ -217,13 +319,34 @@ auto data_set() -> std::vector<DataSetElement>
             true,
             // [期待結果] to_string メンバ関数
             ""
-        },
+        }
+    };
+}
 
-        ////////////////////////////////////////////////////////////////////////
-        // [条件(0)]
-        // + table :
-        //     + table_name : 適格
-        ////////////////////////////////////////////////////////////////////////
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン :
+ *
+ * @c table : @n
+ * @li @c table_name : 適格
+ * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::FromClosure              テスト対象クラス
+ * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+ */
+auto data_set_e() -> std::vector<DataSetElement>
+{
+    ////////////////////////////////////////////////////////////////////////////
+    // [条件(0)]
+    // + table :
+    //     + table_name : 適格
+    ////////////////////////////////////////////////////////////////////////////
+    // clang-format off
+    return {
         // _13
         {
             FromClosure {

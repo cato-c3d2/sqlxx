@@ -23,6 +23,36 @@ using sqlxx::specification::Column;
  * @brief データセットを返却する
  *
  * データパターン : @n
+ * @li @c columns : 未指定
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::SelectClosure              テスト対象クラス
+ * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
+ */
+auto data_set_00_a() -> std::vector<DataSetElement>
+{
+    // clang-format off
+    return {
+        // _0
+        {
+            // [条件]
+            // + columns : 未指定
+            SelectClosure {},
+            // [期待結果] empty メンバ関数
+            true,
+            // [期待結果] to_string メンバ関数
+            ""
+        }
+    };
+    // clang-format on
+}
+
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン : @n
  * @li @c columns[1] : 未指定
  *
  * @return データセット
@@ -31,7 +61,7 @@ using sqlxx::specification::Column;
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_00() -> std::vector<DataSetElement>
+auto data_set_00_b() -> std::vector<DataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
@@ -39,19 +69,6 @@ auto data_set_00() -> std::vector<DataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
-        ////////////////////////////////
-        // [条件(1)]
-        // + columns[0] : 未指定
-        ////////////////////////////////
-        // _0
-        {
-            SelectClosure {},
-            // [期待結果] empty メンバ関数
-            true,
-            // [期待結果] to_string メンバ関数
-            ""
-        },
-
         ////////////////////////////////
         // [条件(1)]
         // + columns[0] :
