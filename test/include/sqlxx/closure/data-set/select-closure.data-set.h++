@@ -46,7 +46,8 @@ auto data_set() -> std::vector<DataSetElement>
 {
     std::vector<std::vector<DataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_00(),
+        data_set_00_a(),
+        data_set_00_b(),
         data_set_01(),
         data_set_02(),
         data_set_03(),
