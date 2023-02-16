@@ -13,7 +13,7 @@
 #include <sql++/specification/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
-#include "./select-statement.data-set-element.class.h++"
+#include "./select-statement-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 
@@ -35,7 +35,7 @@ using sqlxx::statement::SelectStatement;
  * @see sqlxx::closure::SelectStatement              テスト対象クラス
  * @see sqlxx::closure::SelectStatement::to_string() テスト対象メンバ関数
  */
-auto data_set_04() -> std::vector<DataSetElement>
+auto data_set_04() -> std::vector<SelectStatementDataSetElement>
 {
     // clang-format off
     return {

@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include "./naming-rule.data-set-element.class.h++"
+#include "./naming-rule-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
 
@@ -25,7 +25,7 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02A() -> std::vector<DataSetElement>
+auto data_set_02A() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -80,7 +80,7 @@ auto data_set_02A() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02a() -> std::vector<DataSetElement>
+auto data_set_02a() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -135,7 +135,7 @@ auto data_set_02a() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02c() -> std::vector<DataSetElement>
+auto data_set_02c() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -190,7 +190,7 @@ auto data_set_02c() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02d() -> std::vector<DataSetElement>
+auto data_set_02d() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -239,7 +239,7 @@ auto data_set_02d() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02e() -> std::vector<DataSetElement>
+auto data_set_02e() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -288,7 +288,7 @@ auto data_set_02e() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02f() -> std::vector<DataSetElement>
+auto data_set_02f() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -337,7 +337,7 @@ auto data_set_02f() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02g() -> std::vector<DataSetElement>
+auto data_set_02g() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -386,7 +386,7 @@ auto data_set_02g() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02h() -> std::vector<DataSetElement>
+auto data_set_02h() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {

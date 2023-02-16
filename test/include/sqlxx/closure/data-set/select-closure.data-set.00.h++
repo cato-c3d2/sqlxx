@@ -10,7 +10,7 @@
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/specification/column.class.h++>
 
-#include "./select-closure.data-set-element.class.h++"
+#include "./select-closure-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
@@ -31,7 +31,7 @@ using sqlxx::specification::Column;
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_00_a() -> std::vector<DataSetElement>
+auto data_set_00_a() -> std::vector<SelectClosureDataSetElement>
 {
     // clang-format off
     return {
@@ -61,7 +61,7 @@ auto data_set_00_a() -> std::vector<DataSetElement>
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_00_b() -> std::vector<DataSetElement>
+auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]

@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include "./naming-rule.data-set-element.class.h++"
+#include "./naming-rule-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
 
@@ -28,7 +28,7 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_() -> std::vector<DataSetElement>
+auto data_set_() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -88,7 +88,7 @@ auto data_set_() -> std::vector<DataSetElement>
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_00() -> std::vector<DataSetElement>
+auto data_set_00() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {

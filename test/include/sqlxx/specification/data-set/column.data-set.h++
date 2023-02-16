@@ -9,7 +9,7 @@
 
 #include <sql++/specification/column.class.h++>
 
-#include "./column.data-set-element.class.h++"
+#include "./column-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
 
@@ -26,7 +26,7 @@ using sqlxx::specification::Column;
  * @see sqlxx::specification::Column::empty()     テスト対象メンバ関数
  * @see sqlxx::specification::Column::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<ColumnDataSetElement>
 {
     // clang-format off
     return {

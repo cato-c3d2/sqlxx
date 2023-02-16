@@ -1,5 +1,5 @@
 /*!
- * @file naming-rule.data-set-element.class.h++
+ * @file naming-rule-data-set-element.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
@@ -21,7 +21,7 @@ using sqlxx::specification::NamingRule;
  *
  * テスト対象関数に指定する引数と返却される論理値の期待結果を保持する.
  */
-struct DataSetElement
+struct NamingRuleDataSetElement
 {
     /*! @brief テスト対象関数に指定する引数 */
     std::string argument_of_is_legal;
@@ -38,7 +38,8 @@ struct DataSetElement
  *
  * @return 出力ストリーム
  */
-auto operator<<(std::ostream & out, DataSetElement const & data_set_element)
+auto operator<<(
+    std::ostream & out, NamingRuleDataSetElement const & data_set_element)
     -> std::ostream &
 {
     return out << "{ argument_of_is_legal : \""

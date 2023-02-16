@@ -1,5 +1,5 @@
 /*!
- * @file select-statement.data-set-element.class.h++
+ * @file select-statement-data-set-element.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_ELEMENT_CLASS_HXX
@@ -21,7 +21,7 @@ using sqlxx::statement::SelectStatement;
  *
  * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
  */
-struct DataSetElement
+struct SelectStatementDataSetElement
 {
     /*! @brief テスト対象オブジェクト */
     SelectStatement select_statement;
@@ -38,7 +38,8 @@ struct DataSetElement
  *
  * @return 出力ストリーム
  */
-auto operator<<(std::ostream & out, DataSetElement const & data_set_element)
+auto operator<<(
+    std::ostream & out, SelectStatementDataSetElement const & data_set_element)
     -> std::ostream &
 {
     return out << "{ select_statement : \"" << data_set_element.select_statement
