@@ -8,7 +8,7 @@
 #include <iterator>
 #include <vector>
 
-#include "./select-statement.data-set-element.class.h++"
+#include "./select-statement-data-set-element.class.h++"
 #include "./select-statement.data-set.00.h++"
 #include "./select-statement.data-set.01.h++"
 #include "./select-statement.data-set.02.h++"
@@ -27,9 +27,9 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
  * @see sqlxx::closure::SelectStatement              テスト対象クラス
  * @see sqlxx::closure::SelectStatement::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<SelectStatementDataSetElement>
 {
-    std::vector<std::vector<DataSetElement>> data_set_parts = {
+    std::vector<std::vector<SelectStatementDataSetElement>> data_set_parts = {
         // clang-format off
         data_set_00(),
         data_set_01(),
@@ -39,7 +39,7 @@ auto data_set() -> std::vector<DataSetElement>
         // clang-format on
     };
 
-    auto data_set = std::vector<DataSetElement>();
+    auto data_set = std::vector<SelectStatementDataSetElement>();
     for (auto && data_set_part : data_set_parts) {
         data_set.insert(
             std::end(data_set),

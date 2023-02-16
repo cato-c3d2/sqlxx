@@ -1,5 +1,5 @@
 /*!
- * @file table.data-set-element.class.h++
+ * @file table-data-set-element.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_ELEMENT_CLASS_HXX
@@ -21,7 +21,7 @@ using sqlxx::specification::Table;
  *
  * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
  */
-struct DataSetElement
+struct TableDataSetElement
 {
     /*! @brief テスト対象オブジェクト */
     Table table;
@@ -41,7 +41,8 @@ struct DataSetElement
  *
  * @return 出力ストリーム
  */
-auto operator<<(std::ostream & out, DataSetElement const & data_set_element)
+auto operator<<(
+    std::ostream & out, TableDataSetElement const & data_set_element)
     -> std::ostream &
 {
     return out << "{ table : \"" << data_set_element.table

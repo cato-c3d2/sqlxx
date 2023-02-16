@@ -8,7 +8,7 @@
 #include <iterator>
 #include <vector>
 
-#include "./naming-rule.data-set-element.class.h++"
+#include "./naming-rule-data-set-element.class.h++"
 #include "./naming-rule.data-set.00.h++"
 #include "./naming-rule.data-set.01.h++"
 #include "./naming-rule.data-set.02.h++"
@@ -25,9 +25,9 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::specification::NamingRule             テスト対象クラス
  * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<NamingRuleDataSetElement>
 {
-    std::vector<std::vector<DataSetElement>> data_set_parts = {
+    std::vector<std::vector<NamingRuleDataSetElement>> data_set_parts = {
         // clang-format off
         data_set_(),
         data_set_00(),
@@ -48,7 +48,7 @@ auto data_set() -> std::vector<DataSetElement>
         // clang-format on
     };
 
-    auto data_set = std::vector<DataSetElement>();
+    auto data_set = std::vector<NamingRuleDataSetElement>();
     for (auto && data_set_part : data_set_parts) {
         data_set.insert(
             std::end(data_set),

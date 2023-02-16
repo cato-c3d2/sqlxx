@@ -10,7 +10,7 @@
 
 #include <sql++/closure/select-closure.class.h++>
 
-#include "./select-closure.data-set-element.class.h++"
+#include "./select-closure-data-set-element.class.h++"
 #include "./select-closure.data-set.00.h++"
 #include "./select-closure.data-set.01.h++"
 #include "./select-closure.data-set.02.h++"
@@ -42,9 +42,9 @@ BOOST_AUTO_TEST_SUITE(class__SelectClosure)
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<SelectClosureDataSetElement>
 {
-    std::vector<std::vector<DataSetElement>> data_set_parts = {
+    std::vector<std::vector<SelectClosureDataSetElement>> data_set_parts = {
         // clang-format off
         data_set_00_a(),
         data_set_00_b(),
@@ -67,7 +67,7 @@ auto data_set() -> std::vector<DataSetElement>
         // clang-format on
     };
 
-    auto data_set = std::vector<DataSetElement>();
+    auto data_set = std::vector<SelectClosureDataSetElement>();
     for (auto && data_set_part : data_set_parts) {
         data_set.insert(
             std::end(data_set),

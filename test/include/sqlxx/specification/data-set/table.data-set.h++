@@ -9,7 +9,7 @@
 
 #include <sql++/specification/table.class.h++>
 
-#include "./table.data-set-element.class.h++"
+#include "./table-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
 
@@ -26,7 +26,7 @@ using sqlxx::specification::Table;
  * @see sqlxx::specification::Table::empty()     テスト対象メンバ関数
  * @see sqlxx::specification::Table::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<DataSetElement>
+auto data_set() -> std::vector<TableDataSetElement>
 {
     // clang-format off
     return {

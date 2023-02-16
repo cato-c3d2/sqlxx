@@ -1,30 +1,30 @@
 /*!
- * @file column.data-set-element.class.h++
+ * @file select-closure-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
-#include <sql++/specification/column.class.h++>
+#include <sql++/closure/select-closure.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
-BOOST_AUTO_TEST_SUITE(class__Column)
+BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
-using sqlxx::specification::Column;
+using sqlxx::closure::SelectClosure;
 
 /*!
  * @brief データセットの要素
  *
  * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
  */
-struct DataSetElement
+struct SelectClosureDataSetElement
 {
     /*! @brief テスト対象オブジェクト */
-    Column column;
+    SelectClosure select_closure;
 
     /*! @brief @c empty メンバ関数の期待結果 */
     bool expectation_of_empty;
@@ -41,18 +41,19 @@ struct DataSetElement
  *
  * @return 出力ストリーム
  */
-auto operator<<(std::ostream & out, DataSetElement const & data_set_element)
+auto operator<<(
+    std::ostream & out, SelectClosureDataSetElement const & data_set_element)
     -> std::ostream &
 {
-    return out << "{ column : \"" << data_set_element.column
+    return out << "{ select_closure : \"" << data_set_element.select_closure
                << "\", expectation_of_empty : \""
                << data_set_element.expectation_of_empty
                << "\", expectation_of_to_string : \""
                << data_set_element.expectation_of_to_string << "\" }";
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__Column */)
+BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX */
