@@ -2,19 +2,19 @@
  * @file naming-rule-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
-#include <sql++/specification/naming-rule.class.h++>
+#include <sql++/identifier/naming-rule.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__NamingRule)
 
-using sqlxx::specification::NamingRule;
+using sqlxx::identifier::NamingRule;
 
 /*!
  * @brief データセットの要素
@@ -50,6 +50,6 @@ auto operator<<(
 
 BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX */

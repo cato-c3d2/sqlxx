@@ -2,30 +2,30 @@
  * @file naming-rule.class.test-case.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__NAMING_RULE_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__NAMING_RULE_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__NAMING_RULE_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__NAMING_RULE_CLASS_TEST_CASE_HXX
 
 #include <string>
 
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/specification/naming-rule.class.h++>
+#include <sql++/identifier/naming-rule.class.h++>
 
 #include "./data-set/naming-rule.data-set.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__NamingRule)
 
-using sqlxx::specification::NamingRule;
+using sqlxx::identifier::NamingRule;
 
 /*!
  * @brief テストパターン :
  *        様々な文字列に対して命名規則に合致しているか判定する
  *
- * @see sqlxx::specification::NamingRule
- * @see sqlxx::specification::NamingRule::is_legal()
+ * @see sqlxx::identifier::NamingRule
+ * @see sqlxx::identifier::NamingRule::is_legal()
  * @see data_set()
  */
 BOOST_DATA_TEST_CASE(
@@ -43,6 +43,6 @@ BOOST_DATA_TEST_CASE(
 
 BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__NAMING_RULE_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__NAMING_RULE_CLASS_TEST_CASE_HXX */

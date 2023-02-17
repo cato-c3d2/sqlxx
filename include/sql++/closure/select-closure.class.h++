@@ -11,7 +11,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/specification/column.class.h++>
+#include <sql++/identifier/column.class.h++>
 
 #include <initializer_list>
 #include <string>
@@ -26,7 +26,7 @@ namespace sqlxx::closure
     {
     public:
         /*! @brief "カラム指定のリスト" の型 */
-        using ColumnListType = std::vector<specification::Column>;
+        using ColumnListType = std::vector<identifier::Column>;
 
         /*!
          * @brief デフォルトコンストラクタ
@@ -38,7 +38,7 @@ namespace sqlxx::closure
          *
          * @param[in] column_list "カラム指定" の文法オブジェクトの初期化リスト
          */
-        SelectClosure(std::initializer_list<specification::Column> column_list);
+        SelectClosure(std::initializer_list<identifier::Column> column_list);
 
         /*!
          * @brief "カラム指定のリスト" を設定する
@@ -47,8 +47,7 @@ namespace sqlxx::closure
          *
          * @return このオブジェクトの参照
          */
-        auto
-        column_list(std::initializer_list<specification::Column> column_list)
+        auto column_list(std::initializer_list<identifier::Column> column_list)
             -> SelectClosure &;
 
         /*!
@@ -94,12 +93,12 @@ namespace sqlxx::closure
     {}
 
     SelectClosure::SelectClosure(
-        std::initializer_list<specification::Column> column_list)
+        std::initializer_list<identifier::Column> column_list)
         : _column_list(column_list)
     {}
 
     auto SelectClosure::column_list(
-        std::initializer_list<specification::Column> column_list)
+        std::initializer_list<identifier::Column> column_list)
         -> SelectClosure &
     {
         this->_column_list = column_list;

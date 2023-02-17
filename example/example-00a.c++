@@ -16,7 +16,7 @@
  */
 auto main() -> int
 {
-    using namespace sqlxx::specification;
+    using namespace sqlxx::identifier;
     using namespace sqlxx::closure;
     using namespace sqlxx::statement;
 

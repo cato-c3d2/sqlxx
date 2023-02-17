@@ -2,29 +2,29 @@
  * @file table.class.test-case.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__TABLE_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__TABLE_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__TABLE_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__TABLE_CLASS_TEST_CASE_HXX
 
 #include <string>
 
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/specification/table.class.h++>
+#include <sql++/identifier/table.class.h++>
 
 #include "./data-set/table.data-set.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__Table)
 
-using sqlxx::specification::Table;
+using sqlxx::identifier::Table;
 
 /*!
  * @brief テストパターン :
  *        @c Table オブジェクトがコピー代入可能であることを検証する
  *
- * @see sqlxx::specification::Table テスト対象クラス
+ * @see sqlxx::identifier::Table テスト対象クラス
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
@@ -50,8 +50,8 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  * @brief テストパターン :
  *        様々な @c Table オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::specification::Table          テスト対象クラス
- * @see sqlxx::specification::Table::empty() テスト対象メンバ関数
+ * @see sqlxx::identifier::Table          テスト対象クラス
+ * @see sqlxx::identifier::Table::empty() テスト対象メンバ関数
  * @see data_set()                           データセット
  */
 BOOST_DATA_TEST_CASE(
@@ -71,8 +71,8 @@ BOOST_DATA_TEST_CASE(
  * @brief テストパターン :
  *        様々な @c Table オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::specification::Table              テスト対象クラス
- * @see sqlxx::specification::Table::to_string() テスト対象メンバ関数
+ * @see sqlxx::identifier::Table              テスト対象クラス
+ * @see sqlxx::identifier::Table::to_string() テスト対象メンバ関数
  * @see data_set()                               データセット
  */
 BOOST_DATA_TEST_CASE(
@@ -90,6 +90,6 @@ BOOST_DATA_TEST_CASE(
 
 BOOST_AUTO_TEST_SUITE_END(/* class__Table */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__TABLE_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__TABLE_CLASS_TEST_CASE_HXX */

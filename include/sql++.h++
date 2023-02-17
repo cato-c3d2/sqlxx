@@ -7,8 +7,8 @@
 
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/specification/column.class.h++>
-#include <sql++/specification/table.class.h++>
+#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 /*!

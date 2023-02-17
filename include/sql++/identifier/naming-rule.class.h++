@@ -2,8 +2,8 @@
  * @file naming-rule.class.h++
  */
 
-#ifndef SQLXX__SPECIFICATION__NAMING_RULE_CLASS_HXX
-#define SQLXX__SPECIFICATION__NAMING_RULE_CLASS_HXX
+#ifndef SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX
+#define SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -13,7 +13,7 @@
 
 #include <string>
 
-namespace sqlxx::specification
+namespace sqlxx::identifier
 {
     /*!
      * @brief 識別子の命名規則に関するクラス
@@ -74,7 +74,7 @@ namespace sqlxx::specification
 
 #include <regex>
 
-namespace sqlxx::specification
+namespace sqlxx::identifier
 {
     auto NamingRule::is_legal(std::string identifier) -> bool
     {
@@ -102,4 +102,4 @@ namespace sqlxx::specification
     }
 }
 
-#endif // SQLXX__SPECIFICATION__NAMING_RULE_CLASS_HXX
+#endif // SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX

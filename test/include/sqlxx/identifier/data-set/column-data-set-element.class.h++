@@ -2,19 +2,19 @@
  * @file column-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
-#include <sql++/specification/column.class.h++>
+#include <sql++/identifier/column.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__Column)
 
-using sqlxx::specification::Column;
+using sqlxx::identifier::Column;
 
 /*!
  * @brief データセットの要素
@@ -54,6 +54,6 @@ auto operator<<(
 
 BOOST_AUTO_TEST_SUITE_END(/* class__Column */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX */

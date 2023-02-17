@@ -2,14 +2,14 @@
  * @file naming-rule.data-set.00.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_00_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_00_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_00_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_00_HXX
 
 #include <vector>
 
 #include "./naming-rule-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__NamingRule)
 
@@ -25,8 +25,8 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  *
  * @return データセット
  *
- * @see sqlxx::specification::NamingRule             テスト対象クラス
- * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
+ * @see sqlxx::identifier::NamingRule             テスト対象クラス
+ * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
 auto data_set_() -> std::vector<NamingRuleDataSetElement>
 {
@@ -85,8 +85,8 @@ auto data_set_() -> std::vector<NamingRuleDataSetElement>
  *
  * @return データセット
  *
- * @see sqlxx::specification::NamingRule             テスト対象クラス
- * @see sqlxx::specification::NamingRule::is_legal() テスト対象メンバ関数
+ * @see sqlxx::identifier::NamingRule             テスト対象クラス
+ * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
 auto data_set_00() -> std::vector<NamingRuleDataSetElement>
 {
@@ -102,6 +102,6 @@ auto data_set_00() -> std::vector<NamingRuleDataSetElement>
 
 BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__NAMING_RULE_DATA_SET_00_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_00_HXX */

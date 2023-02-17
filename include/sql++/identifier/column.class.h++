@@ -1,9 +1,9 @@
 /*!
- * @file table.class.h++
+ * @file column.class.h++
  */
 
-#ifndef SQLXX__SPECIFICATION__TABLE_CLASS_HXX
-#define SQLXX__SPECIFICATION__TABLE_CLASS_HXX
+#ifndef SQLXX__IDENTIFIER__COLUMN_CLASS_HXX
+#define SQLXX__IDENTIFIER__COLUMN_CLASS_HXX
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -13,16 +13,16 @@
 
 #include <string>
 
-namespace sqlxx::specification
+namespace sqlxx::identifier
 {
     /*!
-     * @brief テーブル指定の文法クラス
+     * @brief カラム指定の文法クラス
      */
-    class Table
+    class Column
     {
     public:
-        /*! @brief テーブル名の型 */
-        using TableNameType = std::string;
+        /*! @brief カラム名の型 */
+        using ColumnNameType = std::string;
 
         /*! @brief エイリアス名の型 */
         using AliasNameType = std::string;
@@ -30,24 +30,24 @@ namespace sqlxx::specification
         /*!
          * @brief デフォルトコンストラクタ
          */
-        Table();
+        Column();
 
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] table_name テーブル名
-         * @param[in] alias_name エイリアス名
+         * @param[in] column_name カラム名
+         * @param[in] alias_name  エイリアス名
          */
-        Table(TableNameType table_name, AliasNameType alias_name = "");
+        Column(ColumnNameType column_name, AliasNameType alias_name = "");
 
         /*!
-         * @brief テーブル名を設定する
+         * @brief カラム名を設定する
          *
-         * @param[in] table_name テーブル名
+         * @param[in] column_name カラム名
          *
          * @return このオブジェクトの参照
          */
-        auto table_name(TableNameType table_name) -> Table &;
+        auto column_name(ColumnNameType column_name) -> Column &;
 
         /*!
          * @brief エイリアス名を設定する
@@ -56,7 +56,7 @@ namespace sqlxx::specification
          *
          * @return このオブジェクトの参照
          */
-        auto alias_name(AliasNameType alias_name) -> Table &;
+        auto alias_name(AliasNameType alias_name) -> Column &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -74,19 +74,19 @@ namespace sqlxx::specification
         auto to_string() const -> std::string;
 
     private:
-        TableNameType _table_name;
-        AliasNameType _alias_name;
+        ColumnNameType _column_name;
+        AliasNameType  _alias_name;
     };
 
     /**
      * @brief ストリーム出力演算
      *
-     * @param[in] out   出力ストリーム
-     * @param[in] table テーブル指定の文法オブジェクト
+     * @param[in] out    出力ストリーム
+     * @param[in] column カラム指定オブジェクト
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, Table const table) -> std::ostream &;
+    auto operator<<(std::ostream & out, Column const column) -> std::ostream &;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -95,41 +95,42 @@ namespace sqlxx::specification
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/specification/naming-rule.class.h++>
+#include <sql++/identifier/naming-rule.class.h++>
 
-namespace sqlxx::specification
+namespace sqlxx::identifier
 {
-    Table::Table() : _table_name(), _alias_name()
+    Column::Column() : _column_name(), _alias_name()
     {}
 
-    Table::Table(TableNameType table_name, AliasNameType alias_name)
-        : _table_name(table_name), _alias_name(alias_name)
+    Column::Column(ColumnNameType column_name, AliasNameType alias_name)
+        : _column_name(column_name), _alias_name(alias_name)
     {}
 
-    auto Table::table_name(TableNameType table_name) -> Table &
+    auto Column::column_name(ColumnNameType column_name) -> Column &
     {
-        this->_table_name = table_name;
+        this->_column_name = column_name;
         return *this;
     }
 
-    auto Table::alias_name(AliasNameType alias_name) -> Table &
+    auto Column::alias_name(AliasNameType alias_name) -> Column &
     {
         this->_alias_name = alias_name;
         return *this;
     }
 
-    auto Table::empty() const -> bool
+    auto Column::empty() const -> bool
     {
-        return ! NamingRule::is_legal(this->_table_name);
+        return ! NamingRule::is_legal(this->_column_name);
     }
 
-    auto Table::to_string() const -> std::string
+    auto Column::to_string() const -> std::string
     {
-        if (! NamingRule::is_legal(this->_table_name)) {
+        if (! NamingRule::is_legal(this->_column_name)) {
             return "";
         }
-        std::string text = this->_table_name;
-        if (NamingRule::is_legal(this->_alias_name)) {
+
+        std::string text = this->_column_name;
+        if (NamingRule::is_legal(this->_alias_name, ".")) {
             text += " AS " + this->_alias_name;
         }
         return text;
@@ -139,11 +140,11 @@ namespace sqlxx::specification
     // Function definition
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, Table const table) -> std::ostream &
+    auto operator<<(std::ostream & out, Column const column) -> std::ostream &
     {
-        out << table.to_string();
+        out << column.to_string();
         return out;
     }
 }
 
-#endif // SQLXX__SPECIFICATION__TABLE_CLASS_HXX
+#endif // SQLXX__IDENTIFIER__COLUMN_CLASS_HXX

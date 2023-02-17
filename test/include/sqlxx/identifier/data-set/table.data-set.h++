@@ -2,29 +2,29 @@
  * @file table.data-set.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_HXX
-#define TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_HXX
 
 #include <vector>
 
-#include <sql++/specification/table.class.h++>
+#include <sql++/identifier/table.class.h++>
 
 #include "./table-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__specification)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__Table)
 
-using sqlxx::specification::Table;
+using sqlxx::identifier::Table;
 
 /*!
  * @brief  データセットを返却する
  *
  * @return データセット
  *
- * @see sqlxx::specification::Table              テスト対象クラス
- * @see sqlxx::specification::Table::empty()     テスト対象メンバ関数
- * @see sqlxx::specification::Table::to_string() テスト対象メンバ関数
+ * @see sqlxx::identifier::Table              テスト対象クラス
+ * @see sqlxx::identifier::Table::empty()     テスト対象メンバ関数
+ * @see sqlxx::identifier::Table::to_string() テスト対象メンバ関数
  */
 auto data_set() -> std::vector<TableDataSetElement>
 {
@@ -235,6 +235,6 @@ auto data_set() -> std::vector<TableDataSetElement>
 
 BOOST_AUTO_TEST_SUITE_END(/* class__Table */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__specification */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__SPECIFICATION__DATA_SET__TABLE_DATA_SET_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_HXX */

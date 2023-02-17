@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/specification/column.class.h++>
+#include <sql++/identifier/column.class.h++>
 
 #include "./data-set/select-closure.data-set.h++"
 
@@ -20,7 +20,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
 using sqlxx::closure::SelectClosure;
-using sqlxx::specification::Column;
+using sqlxx::identifier::Column;
 
 /*!
  * @brief テストパターン :
