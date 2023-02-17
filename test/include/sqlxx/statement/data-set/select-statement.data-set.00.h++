@@ -9,8 +9,8 @@
 
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/specification/column.class.h++>
-#include <sql++/specification/table.class.h++>
+#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 #include "./select-statement-data-set-element.class.h++"
@@ -21,8 +21,8 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 
 using sqlxx::closure::FromClosure;
 using sqlxx::closure::SelectClosure;
-using sqlxx::specification::Column;
-using sqlxx::specification::Table;
+using sqlxx::identifier::Column;
+using sqlxx::identifier::Table;
 using sqlxx::statement::SelectStatement;
 
 /*!

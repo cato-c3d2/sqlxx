@@ -8,7 +8,7 @@
 #include <vector>
 
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/specification/column.class.h++>
+#include <sql++/identifier/column.class.h++>
 
 #include "./select-closure-data-set-element.class.h++"
 
@@ -17,7 +17,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
 using sqlxx::closure::SelectClosure;
-using sqlxx::specification::Column;
+using sqlxx::identifier::Column;
 
 /*!
  * @brief データセットを返却する

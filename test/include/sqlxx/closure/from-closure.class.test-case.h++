@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/from-closure.class.h++>
-#include <sql++/specification/table.class.h++>
+#include <sql++/identifier/table.class.h++>
 
 #include "./data-set/from-closure.data-set.h++"
 
@@ -20,7 +20,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__FromClosure)
 
 using sqlxx::closure::FromClosure;
-using sqlxx::specification::Table;
+using sqlxx::identifier::Table;
 
 /*!
  * @brief テストパターン :

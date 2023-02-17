@@ -11,7 +11,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/specification/table.class.h++>
+#include <sql++/identifier/table.class.h++>
 
 #include <string>
 
@@ -33,7 +33,7 @@ namespace sqlxx::closure
          *
          * @param[in] table "テーブル指定" の文法オブジェクト
          */
-        FromClosure(specification::Table table);
+        FromClosure(identifier::Table table);
 
         /*!
          * @brief "テーブル指定" を設定する
@@ -42,7 +42,7 @@ namespace sqlxx::closure
          *
          * @return このオブジェクトの参照
          */
-        auto table(specification::Table table) -> FromClosure &;
+        auto table(identifier::Table table) -> FromClosure &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -60,7 +60,7 @@ namespace sqlxx::closure
         auto to_string() const -> std::string;
 
     private:
-        specification::Table _table;
+        identifier::Table _table;
     };
 
     /**
@@ -86,10 +86,10 @@ namespace sqlxx::closure
     FromClosure::FromClosure() : _table()
     {}
 
-    FromClosure::FromClosure(specification::Table table) : _table(table)
+    FromClosure::FromClosure(identifier::Table table) : _table(table)
     {}
 
-    auto FromClosure::table(specification::Table table) -> FromClosure &
+    auto FromClosure::table(identifier::Table table) -> FromClosure &
     {
         this->_table = table;
         return *this;

@@ -9,9 +9,9 @@
 #endif
 
 // clang-format off
-#include "./include/sqlxx/specification/column.class.test-case.h++"
-#include "./include/sqlxx/specification/table.class.test-case.h++"
-#include "./include/sqlxx/specification/naming-rule.class.test-case.h++"
+#include "./include/sqlxx/identifier/column.class.test-case.h++"
+#include "./include/sqlxx/identifier/table.class.test-case.h++"
+#include "./include/sqlxx/identifier/naming-rule.class.test-case.h++"
 #include "./include/sqlxx/closure/select-closure.class.test-case.h++"
 #include "./include/sqlxx/closure/from-closure.class.test-case.h++"
 #include "./include/sqlxx/statement/select-statement.class.test-case.h++"
