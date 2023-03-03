@@ -7,33 +7,42 @@ build_options = $(CXXFLAGS) -I $(include_home)
 all : clean format build test compare-example document
 
 .PHONY : build
-build : build/example-00.exe
+build : build/example-00a.exe \
+        build/example-00b.exe
 
-build/example-00.exe : ./example/example-00.c++
+build/example-00a.exe : ./example/example-00a.c++
 	$(CXX) $< -o $@ $(build_options)
     # NOTE 自動変数が展開され, 下記のコマンドが評価される :
-    #      $(CXX) ./example/example-00.c++ -o build/example-00.exe $(build_options)
+    #      $(CXX) ./example/example-00a.c++ -o build/example-00a.exe $(build_options)
     #
     #      自動変数の意味 :
     #      $@ ... ターゲットファイル名
     #      $< ... 最初の依存ファイル名
+
+build/example-00b.exe : ./example/example-00b.c++
+	$(CXX) $< -o $@ $(build_options)
 
 .PHONY : clean
 clean :
 	$(RM) ./build/*.exe
 
 .PHONY : compare-example
-compare-example : compare-example-00
+compare-example : compare-example-00a \
+                  compare-example-00b
 
 # サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し,
 # 差異があれば標準エラー出力にリダイレクトするユーザ定義関数
 run_and_compare_result = diff -u $(1) <($(2)) 1>&2
 
-.PHONY : compare-example-00
-compare-example-00 : ./build/example-00.exe
-	$(call run_and_compare_result, ./example/output/example-00.txt, $<)
+.PHONY : compare-example-00a
+compare-example-00a : ./build/example-00a.exe
+	$(call run_and_compare_result, ./example/output/example-00a.txt, $<)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
-    #      $(call run_and_compare_result, ./example/output/example-00.txt, ./build/example-00.exe)
+    #      $(call run_and_compare_result, ./example/output/example-00a.txt, ./build/example-00a.exe)
+
+.PHONY : compare-example-00b
+compare-example-00b : ./build/example-00b.exe
+	$(call run_and_compare_result, ./example/output/example-00b.txt, $<)
 
 ################################################################################
 # document (Doxygen)
