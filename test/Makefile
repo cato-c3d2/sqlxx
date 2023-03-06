@@ -27,7 +27,25 @@ build/test-module.exe : ./test-module.c++
 clean :
 	$(RM) ./build/*.exe
 
+# ------------------------------------------------------------------------------
+# Boost.Test の実行時オプション
+#
+# Boost.Test の実行時オプションを
+# make コマンドのコマンドライン引数として指定できる.
+#
+# e.g. 実行されるテストケースをフィルタリングする場合 :
+#
+# ```
+# $ make run TEST_RUNTIME_OPTIONS=--run_test=*/class__Column
+# ```
+#
+# refarence :
+# https://www.boost.org/doc/libs/1_71_0/libs/test/doc/html/boost_test/runtime_config/test_unit_filtering.html
+# ------------------------------------------------------------------------------
+TEST_RUNTIME_OPTIONS =
+
 .PHONY : run
 run : ./build/test-module.exe
-	$<
-    # NOTE 最初の依存ファイルであるテストモジュールを実行する
+	$< $(TEST_RUNTIME_OPTIONS)
+    # NOTE 自動変数が展開され, 下記のコマンドが実行される :
+    #      build/test-module.exe $(TEST_RUNTIME_OPTIONS)
