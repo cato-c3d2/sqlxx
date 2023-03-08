@@ -11,6 +11,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <sql++/closure/as-closure.class.h++>
+
 #include <string>
 
 namespace sqlxx::identifier
@@ -25,7 +27,7 @@ namespace sqlxx::identifier
         using TableNameType = std::string;
 
         /*! @brief エイリアス名の型 */
-        using AliasNameType = std::string;
+        using AliasNameType = closure::AsClosure::AliasNameType;
 
         /*!
          * @brief デフォルトコンストラクタ
@@ -36,9 +38,17 @@ namespace sqlxx::identifier
          * @brief コンストラクタ
          *
          * @param[in] table_name テーブル名
+         * @param[in] as_closure "AS 句" の文法オブジェクト
+         */
+        Table(TableNameType table_name, closure::AsClosure as_closure = {});
+
+        /*!
+         * @brief コンストラクタ
+         *
+         * @param[in] table_name テーブル名
          * @param[in] alias_name エイリアス名
          */
-        Table(TableNameType table_name, AliasNameType alias_name = "");
+        Table(TableNameType table_name, AliasNameType alias_name);
 
         /*!
          * @brief テーブル名を設定する
@@ -48,6 +58,15 @@ namespace sqlxx::identifier
          * @return このオブジェクトの参照
          */
         auto table_name(TableNameType table_name) -> Table &;
+
+        /*!
+         * @brief "AS 句" を設定する
+         *
+         * @param[in] as_closure "AS 句" の文法オブジェクト
+         *
+         * @return このオブジェクトの参照
+         */
+        auto as(closure::AsClosure as_closure) -> Table &;
 
         /*!
          * @brief エイリアス名を設定する
@@ -74,8 +93,8 @@ namespace sqlxx::identifier
         auto to_string() const -> std::string;
 
     private:
-        TableNameType _table_name;
-        AliasNameType _alias_name;
+        TableNameType      _table_name;
+        closure::AsClosure _as_closure;
     };
 
     /**
@@ -99,11 +118,16 @@ namespace sqlxx::identifier
 
 namespace sqlxx::identifier
 {
-    Table::Table() : _table_name(), _alias_name()
+    Table::Table() : _table_name(), _as_closure()
+    {}
+
+    Table::Table(TableNameType table_name, closure::AsClosure as_closure)
+        : _table_name(table_name), _as_closure(as_closure)
     {}
 
     Table::Table(TableNameType table_name, AliasNameType alias_name)
-        : _table_name(table_name), _alias_name(alias_name)
+        : _table_name(table_name)
+        , _as_closure(closure::AsClosure { alias_name })
     {}
 
     auto Table::table_name(TableNameType table_name) -> Table &
@@ -112,9 +136,15 @@ namespace sqlxx::identifier
         return *this;
     }
 
+    auto Table::as(closure::AsClosure as_closure) -> Table &
+    {
+        this->_as_closure = as_closure;
+        return *this;
+    }
+
     auto Table::alias_name(AliasNameType alias_name) -> Table &
     {
-        this->_alias_name = alias_name;
+        this->_as_closure.alias_name(alias_name);
         return *this;
     }
 
@@ -129,8 +159,8 @@ namespace sqlxx::identifier
             return "";
         }
         std::string text = this->_table_name;
-        if (NamingRule::is_legal(this->_alias_name)) {
-            text += " AS " + this->_alias_name;
+        if (NamingRule::is_legal(this->_as_closure.alias_name())) {
+            text += " " + this->_as_closure.to_string();
         }
         return text;
     }

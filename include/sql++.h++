@@ -5,6 +5,7 @@
 #ifndef SQLXX__SQLXX_HXX
 #define SQLXX__SQLXX_HXX
 
+#include <sql++/closure/as-closure.class.h++>
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column.class.h++>

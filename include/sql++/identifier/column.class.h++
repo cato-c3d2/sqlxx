@@ -11,6 +11,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <sql++/closure/as-closure.class.h++>
+
 #include <string>
 
 namespace sqlxx::identifier
@@ -25,7 +27,7 @@ namespace sqlxx::identifier
         using ColumnNameType = std::string;
 
         /*! @brief エイリアス名の型 */
-        using AliasNameType = std::string;
+        using AliasNameType = closure::AsClosure::AliasNameType;
 
         /*!
          * @brief デフォルトコンストラクタ
@@ -36,9 +38,17 @@ namespace sqlxx::identifier
          * @brief コンストラクタ
          *
          * @param[in] column_name カラム名
+         * @param[in] as_closure  "AS 句" の文法オブジェクト
+         */
+        Column(ColumnNameType column_name, closure::AsClosure as_closure = {});
+
+        /*!
+         * @brief コンストラクタ
+         *
+         * @param[in] column_name カラム名
          * @param[in] alias_name  エイリアス名
          */
-        Column(ColumnNameType column_name, AliasNameType alias_name = "");
+        Column(ColumnNameType column_name, AliasNameType alias_name);
 
         /*!
          * @brief カラム名を設定する
@@ -48,6 +58,15 @@ namespace sqlxx::identifier
          * @return このオブジェクトの参照
          */
         auto column_name(ColumnNameType column_name) -> Column &;
+
+        /*!
+         * @brief "AS 句" を設定する
+         *
+         * @param[in] as_closure "AS 句" の文法オブジェクト
+         *
+         * @return このオブジェクトの参照
+         */
+        auto as(closure::AsClosure as_closure) -> Column &;
 
         /*!
          * @brief エイリアス名を設定する
@@ -74,8 +93,8 @@ namespace sqlxx::identifier
         auto to_string() const -> std::string;
 
     private:
-        ColumnNameType _column_name;
-        AliasNameType  _alias_name;
+        ColumnNameType     _column_name;
+        closure::AsClosure _as_closure;
     };
 
     /**
@@ -99,11 +118,16 @@ namespace sqlxx::identifier
 
 namespace sqlxx::identifier
 {
-    Column::Column() : _column_name(), _alias_name()
+    Column::Column() : _column_name(), _as_closure()
+    {}
+
+    Column::Column(ColumnNameType column_name, closure::AsClosure as_closure)
+        : _column_name(column_name), _as_closure(as_closure)
     {}
 
     Column::Column(ColumnNameType column_name, AliasNameType alias_name)
-        : _column_name(column_name), _alias_name(alias_name)
+        : _column_name(column_name)
+        , _as_closure(closure::AsClosure { alias_name })
     {}
 
     auto Column::column_name(ColumnNameType column_name) -> Column &
@@ -112,9 +136,15 @@ namespace sqlxx::identifier
         return *this;
     }
 
+    auto Column::as(closure::AsClosure as_closure) -> Column &
+    {
+        this->_as_closure = as_closure;
+        return *this;
+    }
+
     auto Column::alias_name(AliasNameType alias_name) -> Column &
     {
-        this->_alias_name = alias_name;
+        this->_as_closure.alias_name(alias_name);
         return *this;
     }
 
@@ -130,8 +160,8 @@ namespace sqlxx::identifier
         }
 
         std::string text = this->_column_name;
-        if (NamingRule::is_legal(this->_alias_name, ".")) {
-            text += " AS " + this->_alias_name;
+        if (NamingRule::is_legal(this->_as_closure.alias_name(), ".")) {
+            text += " " + this->_as_closure.to_string();
         }
         return text;
     }
