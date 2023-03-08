@@ -29,9 +29,18 @@ auto main() -> int
     Column people_name_column;
     Table  people_table;
 
-    people_id_column.column_name("id").alias_name("p.id");
-    people_name_column.column_name("name").alias_name("p.name");
-    people_table.table_name("people").alias_name("p");
+    AsClosure people_id_alias;
+    AsClosure people_name_alias;
+    AsClosure people_alias;
+
+    people_id_alias.alias_name("p.id");
+    people_name_alias.alias_name("p.name");
+    people_alias.alias_name("p");
+
+    people_id_column.column_name("id").as(people_id_alias);
+    people_name_column.column_name("name").as(people_name_alias);
+
+    people_table.table_name("people").as(people_alias);
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);
