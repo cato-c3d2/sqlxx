@@ -89,6 +89,8 @@ namespace sqlxx::closure
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <sql++/identifier/naming-rule.class.h++>
+
 namespace sqlxx::closure
 {
     AsClosure::AsClosure() : _alias_name()
@@ -110,7 +112,13 @@ namespace sqlxx::closure
 
     auto AsClosure::empty() const -> bool
     {
-        return this->_alias_name.empty();
+        bool is_legal;
+        if (this->_alias_name.find(".") == std::string::npos) {
+            is_legal = identifier::NamingRule::is_legal(this->_alias_name);
+        } else {
+            is_legal = identifier::NamingRule::is_legal(this->_alias_name, ".");
+        }
+        return ! is_legal;
     }
 
     auto AsClosure::to_string() const -> std::string
