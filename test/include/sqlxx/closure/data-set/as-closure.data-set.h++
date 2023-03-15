@@ -56,13 +56,9 @@ auto data_set() -> std::vector<AsClosureDataSetElement>
             // + alias_name : 不適格(半角スペース)
             AsClosure { " " },
             // [期待結果] empty メンバ関数
-            // true,
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            // ""
-            // FIXME [要不具合修正] 実行結果と期待結果が一致しない
-            "AS  "
+            ""
         },
         // _3
         {
