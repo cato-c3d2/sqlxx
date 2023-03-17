@@ -21,9 +21,9 @@ auto main() -> int
     using namespace sqlxx::statement;
 
     SelectStatement const select_statement {
-        SelectClosure { { Column { "id", AsClosure { "p.id" } },
-                          Column { "name", AsClosure { "p.name" } } } },
-        FromClosure { Table { "people", AsClosure { "p" } } }
+        Select { { Column { "id", As { "p.id" } },
+                   Column { "name", As { "p.name" } } } },
+        From { Table { "people", As { "p" } } }
     };
 
     std::cout << select_statement << std::endl;
