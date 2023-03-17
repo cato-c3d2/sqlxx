@@ -12,6 +12,12 @@
 #include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Alias declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
 /*!
  * @namespace sqlxx
  *
@@ -19,6 +25,20 @@
  *
  * C++ の文法上の制約のため @c sql++ ではなく @c sqlxx としている. @n
  */
+namespace sqlxx
+{
+    namespace closure
+    {
+        /*! @brief @c AsClosure のエイリアス */
+        using As = AsClosure;
+
+        /*! @brief @c SelectClosure のエイリアス */
+        using Select = SelectClosure;
+
+        /*! @brief @c FromClosure のエイリアス */
+        using From = FromClosure;
+    }
+}
 
 // NOTE `namespace sqlxx` のドキュメントコメントはこのファイルに記述している
 
