@@ -74,8 +74,14 @@ namespace sqlxx::identifier
          * @param[in] alias_name エイリアス名
          *
          * @return このオブジェクトの参照
+         *
+         * @deprecated @link Column::as(closure::AsClosure as_closure) @endlink を使用してください
          */
-        auto alias_name(AliasNameType alias_name) -> Column &;
+        // clang-format off
+        [[deprecated("please use 'Column::as(closure::AsClosure)'")]]
+        // clang-format on
+        auto
+        alias_name(AliasNameType alias_name) -> Column &;
 
         /*!
          * @brief このオブジェクトが空か判定する
