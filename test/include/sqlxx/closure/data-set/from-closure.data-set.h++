@@ -129,7 +129,7 @@ auto data_set_b() -> std::vector<FromClosureDataSetElement>
                 // [条件(1)]
                 // + table :
                 //     + alias_name : 空文字列
-                Table {}.alias_name("")
+                Table {}.as({ "" })
             },
             // [期待結果] empty メンバ関数
             true,
@@ -142,7 +142,7 @@ auto data_set_b() -> std::vector<FromClosureDataSetElement>
                 // [条件(1)]
                 // + table :
                 //     + alias_name : 不適格(半角スペース)
-                Table {}.alias_name(" ")
+                Table {}.as({ " " })
             },
             // [期待結果] empty メンバ関数
             true,
@@ -155,7 +155,7 @@ auto data_set_b() -> std::vector<FromClosureDataSetElement>
                 // [条件(1)]
                 // + table :
                 //     + alias_name : 適格
-                Table {}.alias_name("p")
+                Table {}.as({ "p" })
             },
             // [期待結果] empty メンバ関数
             true,

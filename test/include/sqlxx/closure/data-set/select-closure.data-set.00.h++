@@ -93,7 +93,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
                 // [条件(2)]
                 // + columns[1] :
                 //     + alias_name : 空文字列
-                Column {}.alias_name("")
+                Column {}.as({ "" })
             },
             // [期待結果] empty メンバ関数
             true,
@@ -106,7 +106,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
                 // [条件(2)]
                 // + columns[1] :
                 //     + alias_name : 不適格(半角スペース)
-                Column {}.alias_name(" ")
+                Column {}.as({ " " })
             },
             // [期待結果] empty メンバ関数
             true,
@@ -119,7 +119,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
                 // [条件(2)]
                 // + columns[1] :
                 //     + alias_name : 適格
-                Column {}.alias_name("p.id")
+                Column {}.as({ "p.id" })
             },
             // [期待結果] empty メンバ関数
             true,
