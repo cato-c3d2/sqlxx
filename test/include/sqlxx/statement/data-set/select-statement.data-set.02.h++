@@ -73,7 +73,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name", "p.name" }
                 }},
                 // [条件(2)]
@@ -92,7 +92,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name", "p.name" }
                 }},
                 // [条件(2)]
@@ -111,7 +111,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name", "p.name" }
                 }},
                 // [条件(2)]
@@ -120,7 +120,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
                 //         + table_name : 未指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table {}.alias_name("p")
+                    Table {}.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -130,7 +130,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name", "p.name" }
                 }},
                 // [条件(2)]
@@ -157,7 +157,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -176,7 +176,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -195,7 +195,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -204,7 +204,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
                 //         + table_name : 未指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table {}.alias_name("p")
+                    Table {}.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -214,7 +214,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -241,8 +241,8 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
-                    Column {}.alias_name("p.name")
+                    Column {}.as({ "p.id" }),
+                    Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -260,8 +260,8 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
-                    Column {}.alias_name("p.name")
+                    Column {}.as({ "p.id" }),
+                    Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -279,8 +279,8 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
-                    Column {}.alias_name("p.name")
+                    Column {}.as({ "p.id" }),
+                    Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -288,7 +288,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
                 //         + table_name : 未指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table {}.alias_name("p")
+                    Table {}.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -298,8 +298,8 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
-                    Column {}.alias_name("p.name")
+                    Column {}.as({ "p.id" }),
+                    Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -325,7 +325,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column {}
                 }},
                 // [条件(2)]
@@ -344,7 +344,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column {}
                 }},
                 // [条件(2)]
@@ -363,7 +363,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column {}
                 }},
                 // [条件(2)]
@@ -372,7 +372,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
                 //         + table_name : 未指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table {}.alias_name("p")
+                    Table {}.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -382,7 +382,7 @@ auto data_set_02() -> std::vector<SelectStatementDataSetElement>
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {}.alias_name("p.id"),
+                    Column {}.as({ "p.id" }),
                     Column {}
                 }},
                 // [条件(2)]
