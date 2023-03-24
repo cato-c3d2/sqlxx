@@ -57,7 +57,22 @@ namespace sqlxx::identifier
          *
          * @return このオブジェクトの参照
          */
-        auto column_name(ColumnNameType column_name) -> Column &;
+        auto name(ColumnNameType column_name) -> Column &;
+
+        /*!
+         * @brief カラム名を設定する
+         *
+         * @param[in] column_name カラム名
+         *
+         * @return このオブジェクトの参照
+         *
+         * @deprecated @link Column::name(ColumnNameType column_name) @endlink を使用してください
+         */
+        // clang-format off
+        [[deprecated("please use 'Column::name(ColumnNameType)'")]]
+        // clang-format on
+        auto
+        column_name(ColumnNameType column_name) -> Column &;
 
         /*!
          * @brief "AS 句" を設定する
@@ -135,6 +150,12 @@ namespace sqlxx::identifier
         : _column_name(column_name)
         , _as_closure(closure::AsClosure { alias_name })
     {}
+
+    auto Column::name(ColumnNameType column_name) -> Column &
+    {
+        this->_column_name = column_name;
+        return *this;
+    }
 
     auto Column::column_name(ColumnNameType column_name) -> Column &
     {

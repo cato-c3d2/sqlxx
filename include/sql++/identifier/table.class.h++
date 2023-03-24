@@ -57,7 +57,22 @@ namespace sqlxx::identifier
          *
          * @return このオブジェクトの参照
          */
-        auto table_name(TableNameType table_name) -> Table &;
+        auto name(TableNameType table_name) -> Table &;
+
+        /*!
+         * @brief テーブル名を設定する
+         *
+         * @param[in] table_name テーブル名
+         *
+         * @return このオブジェクトの参照
+         *
+         * @deprecated @link Table::name(TableNameType table_name) @endlink を使用してください
+         */
+        // clang-format off
+        [[deprecated("please use 'Table::name(TableNameType)'")]]
+        // clang-format on
+        auto
+        table_name(TableNameType table_name) -> Table &;
 
         /*!
          * @brief "AS 句" を設定する
@@ -135,6 +150,12 @@ namespace sqlxx::identifier
         : _table_name(table_name)
         , _as_closure(closure::AsClosure { alias_name })
     {}
+
+    auto Table::name(TableNameType table_name) -> Table &
+    {
+        this->_table_name = table_name;
+        return *this;
+    }
 
     auto Table::table_name(TableNameType table_name) -> Table &
     {
