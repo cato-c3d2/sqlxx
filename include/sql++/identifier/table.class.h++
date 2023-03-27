@@ -24,7 +24,7 @@ namespace sqlxx::identifier
     {
     public:
         /*! @brief テーブル名の型 */
-        using TableNameType = std::string;
+        using NameType = std::string;
 
         /*! @brief エイリアス名の型 */
         using AliasNameType = closure::AsClosure::AliasNameType;
@@ -37,42 +37,42 @@ namespace sqlxx::identifier
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] table_name テーブル名
+         * @param[in] name       テーブル名
          * @param[in] as_closure "AS 句" の文法オブジェクト
          */
-        Table(TableNameType table_name, closure::AsClosure as_closure = {});
+        Table(NameType name, closure::AsClosure as_closure = {});
 
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] table_name テーブル名
+         * @param[in] name       テーブル名
          * @param[in] alias_name エイリアス名
          */
-        Table(TableNameType table_name, AliasNameType alias_name);
+        Table(NameType name, AliasNameType alias_name);
 
         /*!
          * @brief テーブル名を設定する
          *
-         * @param[in] table_name テーブル名
+         * @param[in] name テーブル名
          *
          * @return このオブジェクトの参照
          */
-        auto name(TableNameType table_name) -> Table &;
+        auto name(NameType name) -> Table &;
 
         /*!
          * @brief テーブル名を設定する
          *
-         * @param[in] table_name テーブル名
+         * @param[in] name テーブル名
          *
          * @return このオブジェクトの参照
          *
-         * @deprecated @link Table::name(TableNameType table_name) @endlink を使用してください
+         * @deprecated @link Table::name(NameType table_name) @endlink を使用してください
          */
         // clang-format off
-        [[deprecated("please use 'Table::name(TableNameType)'")]]
+        [[deprecated("please use 'Table::name(NameType)'")]]
         // clang-format on
         auto
-        table_name(TableNameType table_name) -> Table &;
+        table_name(NameType name) -> Table &;
 
         /*!
          * @brief "AS 句" を設定する
@@ -114,7 +114,7 @@ namespace sqlxx::identifier
         auto to_string() const -> std::string;
 
     private:
-        TableNameType      _table_name;
+        NameType           _name;
         closure::AsClosure _as_closure;
     };
 
@@ -139,27 +139,26 @@ namespace sqlxx::identifier
 
 namespace sqlxx::identifier
 {
-    Table::Table() : _table_name(), _as_closure()
+    Table::Table() : _name(), _as_closure()
     {}
 
-    Table::Table(TableNameType table_name, closure::AsClosure as_closure)
-        : _table_name(table_name), _as_closure(as_closure)
+    Table::Table(NameType name, closure::AsClosure as_closure)
+        : _name(name), _as_closure(as_closure)
     {}
 
-    Table::Table(TableNameType table_name, AliasNameType alias_name)
-        : _table_name(table_name)
-        , _as_closure(closure::AsClosure { alias_name })
+    Table::Table(NameType name, AliasNameType alias_name)
+        : _name(name), _as_closure(closure::AsClosure { alias_name })
     {}
 
-    auto Table::name(TableNameType table_name) -> Table &
+    auto Table::name(NameType name) -> Table &
     {
-        this->_table_name = table_name;
+        this->_name = name;
         return *this;
     }
 
-    auto Table::table_name(TableNameType table_name) -> Table &
+    auto Table::table_name(NameType name) -> Table &
     {
-        this->_table_name = table_name;
+        this->_name = name;
         return *this;
     }
 
@@ -177,15 +176,15 @@ namespace sqlxx::identifier
 
     auto Table::empty() const -> bool
     {
-        return ! NamingRule::is_legal(this->_table_name);
+        return ! NamingRule::is_legal(this->_name);
     }
 
     auto Table::to_string() const -> std::string
     {
-        if (! NamingRule::is_legal(this->_table_name)) {
+        if (! NamingRule::is_legal(this->_name)) {
             return "";
         }
-        std::string text = this->_table_name;
+        std::string text = this->_name;
         if (NamingRule::is_legal(this->_as_closure.alias_name())) {
             text += " " + this->_as_closure.to_string();
         }

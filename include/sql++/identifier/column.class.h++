@@ -24,7 +24,7 @@ namespace sqlxx::identifier
     {
     public:
         /*! @brief カラム名の型 */
-        using ColumnNameType = std::string;
+        using NameType = std::string;
 
         /*! @brief エイリアス名の型 */
         using AliasNameType = closure::AsClosure::AliasNameType;
@@ -37,42 +37,42 @@ namespace sqlxx::identifier
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] column_name カラム名
-         * @param[in] as_closure  "AS 句" の文法オブジェクト
+         * @param[in] name       カラム名
+         * @param[in] as_closure "AS 句" の文法オブジェクト
          */
-        Column(ColumnNameType column_name, closure::AsClosure as_closure = {});
+        Column(NameType name, closure::AsClosure as_closure = {});
 
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] column_name カラム名
-         * @param[in] alias_name  エイリアス名
+         * @param[in] name       カラム名
+         * @param[in] alias_name エイリアス名
          */
-        Column(ColumnNameType column_name, AliasNameType alias_name);
+        Column(NameType name, AliasNameType alias_name);
 
         /*!
          * @brief カラム名を設定する
          *
-         * @param[in] column_name カラム名
+         * @param[in] name カラム名
          *
          * @return このオブジェクトの参照
          */
-        auto name(ColumnNameType column_name) -> Column &;
+        auto name(NameType name) -> Column &;
 
         /*!
          * @brief カラム名を設定する
          *
-         * @param[in] column_name カラム名
+         * @param[in] name カラム名
          *
          * @return このオブジェクトの参照
          *
-         * @deprecated @link Column::name(ColumnNameType column_name) @endlink を使用してください
+         * @deprecated @link Column::name(NameType column_name) @endlink を使用してください
          */
         // clang-format off
-        [[deprecated("please use 'Column::name(ColumnNameType)'")]]
+        [[deprecated("please use 'Column::name(NameType)'")]]
         // clang-format on
         auto
-        column_name(ColumnNameType column_name) -> Column &;
+        column_name(NameType name) -> Column &;
 
         /*!
          * @brief "AS 句" を設定する
@@ -114,7 +114,7 @@ namespace sqlxx::identifier
         auto to_string() const -> std::string;
 
     private:
-        ColumnNameType     _column_name;
+        NameType           _name;
         closure::AsClosure _as_closure;
     };
 
@@ -139,27 +139,26 @@ namespace sqlxx::identifier
 
 namespace sqlxx::identifier
 {
-    Column::Column() : _column_name(), _as_closure()
+    Column::Column() : _name(), _as_closure()
     {}
 
-    Column::Column(ColumnNameType column_name, closure::AsClosure as_closure)
-        : _column_name(column_name), _as_closure(as_closure)
+    Column::Column(NameType name, closure::AsClosure as_closure)
+        : _name(name), _as_closure(as_closure)
     {}
 
-    Column::Column(ColumnNameType column_name, AliasNameType alias_name)
-        : _column_name(column_name)
-        , _as_closure(closure::AsClosure { alias_name })
+    Column::Column(NameType name, AliasNameType alias_name)
+        : _name(name), _as_closure(closure::AsClosure { alias_name })
     {}
 
-    auto Column::name(ColumnNameType column_name) -> Column &
+    auto Column::name(NameType name) -> Column &
     {
-        this->_column_name = column_name;
+        this->_name = name;
         return *this;
     }
 
-    auto Column::column_name(ColumnNameType column_name) -> Column &
+    auto Column::column_name(NameType name) -> Column &
     {
-        this->_column_name = column_name;
+        this->_name = name;
         return *this;
     }
 
@@ -177,16 +176,16 @@ namespace sqlxx::identifier
 
     auto Column::empty() const -> bool
     {
-        return ! NamingRule::is_legal(this->_column_name);
+        return ! NamingRule::is_legal(this->_name);
     }
 
     auto Column::to_string() const -> std::string
     {
-        if (! NamingRule::is_legal(this->_column_name)) {
+        if (! NamingRule::is_legal(this->_name)) {
             return "";
         }
 
-        std::string text = this->_column_name;
+        std::string text = this->_name;
         if (NamingRule::is_legal(this->_as_closure.alias_name(), ".")) {
             text += " " + this->_as_closure.to_string();
         }
