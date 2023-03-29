@@ -92,7 +92,7 @@ auto data_set_a() -> std::vector<FromClosureDataSetElement>
  * データパターン :
  *
  * @c table : @n
- * @li @c table_name : 未指定
+ * @li @c name       : 未指定
  * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
@@ -106,7 +106,7 @@ auto data_set_b() -> std::vector<FromClosureDataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + table :
-    //     + table_name : 未指定
+    //     + name : 未指定
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
@@ -171,7 +171,7 @@ auto data_set_b() -> std::vector<FromClosureDataSetElement>
  * データパターン :
  *
  * @c table : @n
- * @li @c table_name : 空文字列
+ * @li @c name       : 空文字列
  * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
@@ -185,7 +185,7 @@ auto data_set_c() -> std::vector<FromClosureDataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + table :
-    //     + table_name : 空文字列
+    //     + name : 空文字列
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
@@ -250,7 +250,7 @@ auto data_set_c() -> std::vector<FromClosureDataSetElement>
  * データパターン :
  *
  * @c table : @n
- * @li @c table_name : 不適格(半角スペース)
+ * @li @c name       : 不適格(半角スペース)
  * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
@@ -264,7 +264,7 @@ auto data_set_d() -> std::vector<FromClosureDataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + table :
-    //     + table_name : 不適格(半角スペース)
+    //     + name : 不適格(半角スペース)
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
@@ -329,7 +329,7 @@ auto data_set_d() -> std::vector<FromClosureDataSetElement>
  * データパターン :
  *
  * @c table : @n
- * @li @c table_name : 適格
+ * @li @c name       : 適格
  * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
@@ -343,7 +343,7 @@ auto data_set_e() -> std::vector<FromClosureDataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + table :
-    //     + table_name : 適格
+    //     + name : 適格
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {

@@ -25,12 +25,12 @@ using sqlxx::identifier::Column;
  * データパターン :
  *
  * @c columns[0] : @n
- * @li @c column_name : 空文字列
- * @li @c alias_name  : 適格
+ * @li @c name       : 空文字列
+ * @li @c alias_name : 適格
  *
  * @c columns[1] : @n
- * @li @c column_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
- * @li @c alias_name  : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ * @li @c name       : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
  *
@@ -43,15 +43,15 @@ auto data_set_08() -> std::vector<SelectClosureDataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + columns[0] :
-    //     + column_name : 空文字列
-    //     + alias_name  : 適格
+    //     + name       : 空文字列
+    //     + alias_name : 適格
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
         ////////////////////////////////
         // [条件(1)]
         // + columns[1] :
-        //     + column_name : 未指定
+        //     + name : 未指定
         ////////////////////////////////
         // _129
         {
@@ -112,7 +112,7 @@ auto data_set_08() -> std::vector<SelectClosureDataSetElement>
 
         ////////////////////////////////
         // + columns[1] :
-        //     + column_name : 空文字列
+        //     + name : 空文字列
         ////////////////////////////////
         // _133
         {
@@ -173,7 +173,7 @@ auto data_set_08() -> std::vector<SelectClosureDataSetElement>
 
         ////////////////////////////////
         // + columns[1] :
-        //     + column_name : 不適格(半角スペース)
+        //     + name : 不適格(半角スペース)
         ////////////////////////////////
         // _137
         {
@@ -234,7 +234,7 @@ auto data_set_08() -> std::vector<SelectClosureDataSetElement>
 
         ////////////////////////////////
         // + columns[1] :
-        //     + column_name : 適格
+        //     + name : 適格
         ////////////////////////////////
         // _141
         {

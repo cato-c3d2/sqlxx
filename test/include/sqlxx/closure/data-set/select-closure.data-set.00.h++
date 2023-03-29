@@ -72,7 +72,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         ////////////////////////////////
         // [条件(1)]
         // + columns[0] :
-        //     + column_name : 未指定
+        //     + name : 未指定
         ////////////////////////////////
         // _1
         {
@@ -130,7 +130,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         ////////////////////////////////
         // [条件(1)]
         // + columns[0] :
-        //     + column_name : 空文字列
+        //     + name : 空文字列
         ////////////////////////////////
         // _5
         {
@@ -188,7 +188,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         ////////////////////////////////
         // [条件(1)]
         // + columns[0] :
-        //     + column_name : 不適格(半角スペース)
+        //     + name : 不適格(半角スペース)
         ////////////////////////////////
         // _9
         {
@@ -246,7 +246,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         ////////////////////////////////
         // [条件(1)]
         // + columns[0] :
-        //     + column_name : 適格
+        //     + name : 適格
         ////////////////////////////////
         // _13
         {
