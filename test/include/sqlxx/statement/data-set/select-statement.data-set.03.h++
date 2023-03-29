@@ -33,18 +33,18 @@ using sqlxx::statement::SelectStatement;
  * @c select_closure :
  *
  * @c columns[0] : @n
- * @li @c column_name : 未指定
- * @li @c alias_name  : 未指定
+ * @li @c name       : 未指定
+ * @li @c alias_name : 未指定
  *
  * @c columns[1] : @n
- * @li @c column_name : 指定 or 未指定
- * @li @c alias_name  : 指定 or 未指定
+ * @li @c name       : 指定 or 未指定
+ * @li @c alias_name : 指定 or 未指定
  *
  * @c from_closure :
  *
  * @c table : @n
- * @li @c table_name  : 指定 or 未指定
- * @li @c alias_name  : 指定 or 未指定
+ * @li @c name       : 指定 or 未指定
+ * @li @c alias_name : 指定 or 未指定
  *
  * @return データセット
  *
@@ -57,8 +57,8 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
     // [条件(0)]
     // + select_closure :
     //     + columns[0] :
-    //         + column_name : 未指定
-    //         + alias_name  : 未指定
+    //         + name       : 未指定
+    //         + alias_name : 未指定
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
@@ -66,8 +66,8 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
         // [条件(1)]
         // + select_closure :
         //     + columns[1] :
-        //         + column_name : 指定
-        //         + alias_name  : 指定
+        //         + name       : 指定
+        //         + alias_name : 指定
         ////////////////////////////////
         // _48
         {
@@ -79,7 +79,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table { "people", "p" }
@@ -98,7 +98,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table { "people" }
@@ -117,7 +117,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table {}.as({ "p" })
@@ -136,7 +136,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table {}
@@ -150,8 +150,8 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
         // [条件(1)]
         // + select_closure :
         //     + columns[1] :
-        //         + column_name : 指定
-        //         + alias_name  : 未指定
+        //         + name       : 指定
+        //         + alias_name : 未指定
         ////////////////////////////////
         // _52
         {
@@ -163,7 +163,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table { "people", "p" }
@@ -182,7 +182,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table { "people" }
@@ -201,7 +201,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table {}.as({ "p" })
@@ -220,7 +220,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table {}
@@ -234,8 +234,8 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
         // [条件(1)]
         // + select_closure :
         //     + columns[1] :
-        //         + column_name : 未指定
-        //         + alias_name  : 指定
+        //         + name       : 未指定
+        //         + alias_name : 指定
         ////////////////////////////////
         // _56
         {
@@ -247,7 +247,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table { "people", "p" }
@@ -266,7 +266,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table { "people" }
@@ -285,7 +285,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table {}.as({ "p" })
@@ -304,7 +304,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table {}
@@ -318,8 +318,8 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
         // [条件(1)]
         // + select_closure :
         //     + columns[1] :
-        //         + column_name : 未指定
-        //         + alias_name  : 未指定
+        //         + name       : 未指定
+        //         + alias_name : 未指定
         ////////////////////////////////
         // _60
         {
@@ -331,7 +331,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table { "people", "p" }
@@ -350,7 +350,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 指定
+                //         + name       : 指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table { "people" }
@@ -369,7 +369,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 指定
                 FromClosure {
                     Table {}.as({ "p" })
@@ -388,7 +388,7 @@ auto data_set_03() -> std::vector<SelectStatementDataSetElement>
                 // [条件(2)]
                 // + from_closure :
                 //     + table :
-                //         + table_name : 未指定
+                //         + name       : 未指定
                 //         + alias_name : 未指定
                 FromClosure {
                     Table {}
