@@ -26,8 +26,12 @@ namespace sqlxx::identifier
         /*! @brief テーブル名の型 */
         using NameType = std::string;
 
-        /*! @brief エイリアス名の型 */
-        using AliasNameType = closure::AsClosure::AliasNameType;
+        /*!
+         * @brief エイリアス名の型
+         *
+         * @deprecated
+         */
+        using AliasNameType [[deprecated]] = closure::AsClosure::AliasNameType;
 
         /*!
          * @brief デフォルトコンストラクタ
@@ -47,7 +51,14 @@ namespace sqlxx::identifier
          *
          * @param[in] name       テーブル名
          * @param[in] alias_name エイリアス名
+         *
+         * @deprecated @link
+         *             Table::Table(NameType name, closure::AsClosure as_closure = {})
+         *             @endlink を使用してください
          */
+        // clang-format off
+        [[deprecated("please use 'Table::Table(NameType, AsClosure)'")]]
+        // clang-format on
         Table(NameType name, AliasNameType alias_name);
 
         /*!
