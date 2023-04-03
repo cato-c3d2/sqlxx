@@ -74,7 +74,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
             SelectStatement {
                 SelectClosure {{
                     Column { "id" },
-                    Column { "name", "p.name" }
+                    Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -82,7 +82,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
                 //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table { "people", "p" }
+                    Table { "people" }.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -93,7 +93,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
             SelectStatement {
                 SelectClosure {{
                     Column { "id" },
-                    Column { "name", "p.name" }
+                    Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -112,7 +112,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
             SelectStatement {
                 SelectClosure {{
                     Column { "id" },
-                    Column { "name", "p.name" }
+                    Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -131,7 +131,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
             SelectStatement {
                 SelectClosure {{
                     Column { "id" },
-                    Column { "name", "p.name" }
+                    Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
                 // + from_closure :
@@ -166,7 +166,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
                 //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table { "people", "p" }
+                    Table { "people" }.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -250,7 +250,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
                 //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table { "people", "p" }
+                    Table { "people" }.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数
@@ -334,7 +334,7 @@ auto data_set_01() -> std::vector<SelectStatementDataSetElement>
                 //         + name       : 指定
                 //         + alias_name : 指定
                 FromClosure {
-                    Table { "people", "p" }
+                    Table { "people" }.as({ "p" })
                 }
             },
             // [期待結果] to_string メンバ関数

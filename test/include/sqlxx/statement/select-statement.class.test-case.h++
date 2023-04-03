@@ -39,10 +39,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     SelectStatement const source      = {}; // コピー元のオブジェクト
     SelectStatement       destination = {   // コピー先のオブジェクト
         SelectClosure {
-            Column { "p", "p.id" },
-            Column { "name", "p.name" }
+            Column { "p" }.as({ "p.id" }),
+            Column { "name" }.as({ "p.name" })
         },
-        FromClosure { Table { "people", "p" } }
+        FromClosure { Table { "people" }.as({ "p" }) }
     };
     // clang-format on
 

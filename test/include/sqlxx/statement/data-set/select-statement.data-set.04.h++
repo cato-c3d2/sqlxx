@@ -100,11 +100,11 @@ auto data_set_04() -> std::vector<SelectStatementDataSetElement>
             //         + alias_name : 不適格
             SelectStatement {
                 SelectClosure {{
-                    Column { " ", "," },
-                    Column { ".", ";" }
+                    Column { " " }.as({ "," }),
+                    Column { "." }.as({ ";" })
                 }},
                 FromClosure {
-                    Table { "\'", "\\" }
+                    Table { "\'" }.as({ "\\" })
                 }
             },
             // [期待結果] to_string メンバ関数

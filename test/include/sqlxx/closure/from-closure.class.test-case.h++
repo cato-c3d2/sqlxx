@@ -33,7 +33,7 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     // clang-format off
     FromClosure const source      = {}; // コピー元のオブジェクト
     FromClosure       destination = {   // コピー先のオブジェクト
-        Table { "people", "p" }};
+        Table { "people" }.as({ "p" })};
     // clang-format on
 
     // 二つのオブジェクトは等価ではないこと
