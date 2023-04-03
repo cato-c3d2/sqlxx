@@ -101,7 +101,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 空文字列
-            Table { "", "" },
+            Table { "" }.as({ "" }),
             // [期待結果] empty()
             true,
             // [期待結果] to_string()
@@ -112,7 +112,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 不適格(半角スペース)
-            Table { "", " " },
+            Table { "" }.as({ " " }),
             // [期待結果] empty()
             true,
             // [期待結果] to_string()
@@ -123,7 +123,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 適格
-            Table { "", "p" },
+            Table { "" }.as({ "p" }),
             // [期待結果] empty()
             true,
             // [期待結果] to_string()
@@ -151,7 +151,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 空文字列
-            Table { " ", "" },
+            Table { " " }.as({ "" }),
             // [期待結果] empty()
             true,
             // [期待結果] to_string()
@@ -162,7 +162,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 不適格(半角スペース)
-            Table { " ", " " },
+            Table { " " }.as({ " " }),
             // [期待結果] empty()
             true,
             // [期待結果] to_string()
@@ -173,7 +173,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 適格
-            Table { " ", "p" },
+            Table { " " }.as({ "p" }),
             // [期待結果] empty()
             true,
             // [期待結果] to_string()
@@ -201,7 +201,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 空文字列
-            Table { "people", "" },
+            Table { "people" }.as({ "" }),
             // [期待結果] empty()
             false,
             // [期待結果] to_string()
@@ -212,7 +212,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 不適格(半角スペース)
-            Table { "people", " " },
+            Table { "people" }.as({ " " }),
             // [期待結果] empty()
             false,
             // [期待結果] to_string()
@@ -223,7 +223,7 @@ auto data_set() -> std::vector<TableDataSetElement>
             // [条件(1)]
             // + table :
             //     + alias_name : 適格
-            Table { "people", "p" },
+            Table { "people" }.as({ "p" }),
             // [期待結果] empty()
             false,
             // [期待結果] to_string()

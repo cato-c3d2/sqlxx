@@ -33,8 +33,8 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     // clang-format off
     SelectClosure const source      = {}; // コピー元のオブジェクト
     SelectClosure       destination = {   // コピー先のオブジェクト
-        Column { "p", "p.id" },
-        Column { "name", "p.name" }
+        Column { "p" }.as({ "p.id" }),
+        Column { "name" }.as({ "p.name" })
     };
     // clang-format on
 

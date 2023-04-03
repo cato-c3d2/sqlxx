@@ -101,7 +101,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 空文字列
-            Column { "", "" },
+            Column { "" }.as({ "" }),
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
@@ -112,7 +112,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 不適格(半角スペース)
-            Column { "", " " },
+            Column { "" }.as({ " " }),
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
@@ -123,7 +123,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 適格
-            Column { "", "p.id" },
+            Column { "" }.as({ "p.id" }),
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
@@ -151,7 +151,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 空文字列
-            Column { " ", "" },
+            Column { " " }.as({ "" }),
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
@@ -162,7 +162,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 不適格(半角スペース)
-            Column { " ", " " },
+            Column { " " }.as({ " " }),
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
@@ -173,7 +173,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 適格
-            Column { " ", "p.id" },
+            Column { " " }.as({ "p.id" }),
             // [期待結果] empty メンバ関数
             true,
             // [期待結果] to_string メンバ関数
@@ -201,7 +201,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 空文字列
-            Column { "id", "" },
+            Column { "id" }.as({ "" }),
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
@@ -212,7 +212,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 不適格(半角スペース)
-            Column { "id", " " },
+            Column { "id" }.as({ " " }),
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
@@ -223,7 +223,7 @@ auto data_set() -> std::vector<ColumnDataSetElement>
             // [条件(1)]
             // + column :
             //     + alias_name : 適格
-            Column { "id", "p.id" },
+            Column { "id" }.as({ "p.id" }),
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
