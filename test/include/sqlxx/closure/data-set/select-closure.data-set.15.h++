@@ -26,11 +26,11 @@ using sqlxx::identifier::Column;
  *
  * @c columns[0] : @n
  * @li @c name       : 適格
- * @li @c alias_name : 不適格(半角スペース)
+ * @li @c as_closure : 不適格(半角スペース)
  *
  * @c columns[1] : @n
  * @li @c name       : 未指定, 空文字列, 不適格(半角スペース) or 適格
- * @li @c alias_name : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
  *
@@ -44,7 +44,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
     // [条件(0)]
     // + columns[0] :
     //     + name       : 適格
-    //     + alias_name : 不適格(半角スペース)
+    //     + as_closure : 不適格(半角スペース)
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
@@ -59,7 +59,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 未指定
+                //     + as_closure : 未指定
                 Column {}
             },
             // [期待結果] empty メンバ関数
@@ -73,7 +73,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 空文字列
+                //     + as_closure : 空文字列
                 Column {}.as({ "" })
             },
             // [期待結果] empty メンバ関数
@@ -87,7 +87,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 不適格(半角スペース)
+                //     + as_closure : 不適格(半角スペース)
                 Column {}.as({ " " })
             },
             // [期待結果] empty メンバ関数
@@ -101,7 +101,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 適格
+                //     + as_closure : 適格
                 Column {}.as({ "p.name" })
             },
             // [期待結果] empty メンバ関数
@@ -121,7 +121,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 未指定
+                //     + as_closure : 未指定
                 Column { "" }
             },
             // [期待結果] empty メンバ関数
@@ -135,7 +135,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 空文字列
+                //     + as_closure : 空文字列
                 Column { "" }.as({ "" })
             },
             // [期待結果] empty メンバ関数
@@ -149,7 +149,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 不適格(半角スペース)
+                //     + as_closure : 不適格(半角スペース)
                 Column { "" }.as({ " " })
             },
             // [期待結果] empty メンバ関数
@@ -163,7 +163,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 適格
+                //     + as_closure : 適格
                 Column { "" }.as({ "p.name" })
             },
             // [期待結果] empty メンバ関数
@@ -183,7 +183,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 未指定
+                //     + as_closure : 未指定
                 Column { " " }
             },
             // [期待結果] empty メンバ関数
@@ -197,7 +197,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 空文字列
+                //     + as_closure : 空文字列
                 Column { " " }.as({ "" })
             },
             // [期待結果] empty メンバ関数
@@ -211,7 +211,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 不適格(半角スペース)
+                //     + as_closure : 不適格(半角スペース)
                 Column { " " }.as({ " " })
             },
             // [期待結果] empty メンバ関数
@@ -225,7 +225,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 適格
+                //     + as_closure : 適格
                 Column { " " }.as({ "p.name" })
             },
             // [期待結果] empty メンバ関数
@@ -245,7 +245,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 未指定
+                //     + as_closure : 未指定
                 Column { "name" }
             },
             // [期待結果] empty メンバ関数
@@ -259,7 +259,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 空文字列
+                //     + as_closure : 空文字列
                 Column { "name" }.as({ "" })
             },
             // [期待結果] empty メンバ関数
@@ -273,7 +273,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 不適格(半角スペース)
+                //     + as_closure : 不適格(半角スペース)
                 Column { "name" }.as({ " " })
             },
             // [期待結果] empty メンバ関数
@@ -287,7 +287,7 @@ auto data_set_15() -> std::vector<SelectClosureDataSetElement>
                 Column { "id" }.as({ " " }),
                 // [条件(2)]
                 // + columns[1] :
-                //     + alias_name : 適格
+                //     + as_closure : 適格
                 Column { "name" }.as({ "p.name" })
             },
             // [期待結果] empty メンバ関数
