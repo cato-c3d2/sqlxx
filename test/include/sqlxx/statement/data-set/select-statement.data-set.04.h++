@@ -90,14 +90,14 @@ auto data_set_04() -> std::vector<SelectStatementDataSetElement>
             // + select_closure :
             //     + columns[0] :
             //         + name       : 不適格
-            //         + alias_name : 不適格
+            //         + as_closure : 不適格
             //     + columns[1] :
             //         + name       : 不適格
-            //         + alias_name : 不適格
+            //         + as_closure : 不適格
             // + from_closure :
             //     + table :
             //         + name       : 不適格
-            //         + alias_name : 不適格
+            //         + as_closure : 不適格
             SelectStatement {
                 SelectClosure {{
                     Column { " " }.as({ "," }),
