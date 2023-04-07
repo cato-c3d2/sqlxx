@@ -78,7 +78,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column {}
             },
@@ -91,7 +91,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column {}.as({ "" })
             },
@@ -104,7 +104,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column {}.as({ " " })
             },
@@ -117,7 +117,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
                 Column {}.as({ "p.id" })
             },
@@ -136,7 +136,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column { "" }
             },
@@ -149,7 +149,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column { "" }.as({ "" })
             },
@@ -162,7 +162,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column { "" }.as({ " " })
             },
@@ -175,7 +175,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
                 Column { "" }.as({ "p.id" })
             },
@@ -194,7 +194,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column { " " }
             },
@@ -207,7 +207,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column { " " }.as({ "" })
             },
@@ -220,7 +220,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column { " " }.as({ " " })
             },
@@ -233,7 +233,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
                 Column { " " }.as({ "p.id" })
             },
@@ -252,7 +252,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column { "id" }
             },
@@ -265,7 +265,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column { "id" }.as({ "" })
             },
@@ -278,7 +278,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column { "id" }.as({ " " })
             },
@@ -291,7 +291,7 @@ auto data_set_00_b() -> std::vector<SelectClosureDataSetElement>
         {
             SelectClosure {
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
                 Column { "id" }.as({ "p.id" })
             },
