@@ -25,12 +25,12 @@ using sqlxx::identifier::Column;
  * データパターン :
  *
  * @c columns[0] : @n
- * @li @c name        : 未指定
- * @li @c as_closure  : 未指定
+ * @li @c name       : 未指定
+ * @li @c as_closure : 未指定
  *
  * @c columns[1] : @n
- * @li @c name        : 未指定, 空文字列, 不適格(半角スペース) or 適格
- * @li @c as_closure  : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ * @li @c name       : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
  *
  * @return データセット
  *
@@ -43,8 +43,8 @@ auto data_set_01() -> std::vector<SelectClosureDataSetElement>
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + columns[0] :
-    //     + name        : 未指定
-    //     + as_closure  : 未指定
+    //     + name       : 未指定
+    //     + as_closure : 未指定
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
