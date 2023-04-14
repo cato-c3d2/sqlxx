@@ -13,7 +13,9 @@
 
 #include <string>
 
-namespace sqlxx::closure
+namespace sqlxx
+{
+inline namespace closure
 {
     /*!
      * @brief "AS 句" の文法クラス
@@ -82,6 +84,7 @@ namespace sqlxx::closure
     auto operator<<(std::ostream & out, AsClosure const as_closure)
         -> std::ostream &;
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -91,7 +94,9 @@ namespace sqlxx::closure
 
 #include <sql++/identifier/naming-rule.class.h++>
 
-namespace sqlxx::closure
+namespace sqlxx
+{
+inline namespace closure
 {
     AsClosure::AsClosure() : _alias_name()
     {}
@@ -139,6 +144,7 @@ namespace sqlxx::closure
         out << as_closure.to_string();
         return out;
     }
+}
 }
 
 #endif // SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX

@@ -15,7 +15,9 @@
 
 #include <string>
 
-namespace sqlxx::closure
+namespace sqlxx
+{
+inline namespace closure
 {
     /*!
      * @brief "FROM 句" の文法クラス
@@ -74,6 +76,7 @@ namespace sqlxx::closure
     auto operator<<(std::ostream & out, FromClosure const from_closure)
         -> std::ostream &;
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -81,7 +84,9 @@ namespace sqlxx::closure
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-namespace sqlxx::closure
+namespace sqlxx
+{
+inline namespace closure
 {
     FromClosure::FromClosure() : _table()
     {}
@@ -118,6 +123,7 @@ namespace sqlxx::closure
         out << from_closure.to_string();
         return out;
     }
+}
 }
 
 #endif // SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX

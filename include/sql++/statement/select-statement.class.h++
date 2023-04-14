@@ -17,7 +17,9 @@
 #include <initializer_list>
 #include <string>
 
-namespace sqlxx::statement
+namespace sqlxx
+{
+inline namespace statement
 {
     /*!
      * @brief "SELECT 文" の文法クラス
@@ -81,6 +83,7 @@ namespace sqlxx::statement
     auto operator<<(std::ostream & out, SelectStatement const select_statement)
         -> std::ostream &;
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -88,7 +91,9 @@ namespace sqlxx::statement
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-namespace sqlxx::statement
+namespace sqlxx
+{
+inline namespace statement
 {
     SelectStatement::SelectStatement() : _select_closure(), _from_closure()
     {}
@@ -146,6 +151,7 @@ namespace sqlxx::statement
         out << select_statement.to_string();
         return out;
     }
+}
 }
 
 #endif // SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX

@@ -16,9 +16,7 @@
  */
 auto main() -> int
 {
-    using namespace sqlxx::identifier;
-    using namespace sqlxx::closure;
-    using namespace sqlxx::statement;
+    using namespace sqlxx;
 
     SelectStatement const select_statement {
         Select { { Column { "id", As { "p.id" } },

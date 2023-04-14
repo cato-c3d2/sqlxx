@@ -15,7 +15,9 @@
 
 #include <string>
 
-namespace sqlxx::identifier
+namespace sqlxx
+{
+inline namespace identifier
 {
     /*!
      * @brief カラム指定の文法クラス
@@ -139,6 +141,7 @@ namespace sqlxx::identifier
      */
     auto operator<<(std::ostream & out, Column const column) -> std::ostream &;
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -148,7 +151,9 @@ namespace sqlxx::identifier
 
 #include <sql++/identifier/naming-rule.class.h++>
 
-namespace sqlxx::identifier
+namespace sqlxx
+{
+inline namespace identifier
 {
     Column::Column() : _name(), _as_closure()
     {}
@@ -212,6 +217,7 @@ namespace sqlxx::identifier
         out << column.to_string();
         return out;
     }
+}
 }
 
 #endif // SQLXX__IDENTIFIER__COLUMN_CLASS_HXX
