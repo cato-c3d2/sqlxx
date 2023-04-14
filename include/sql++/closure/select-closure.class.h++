@@ -17,7 +17,9 @@
 #include <string>
 #include <vector>
 
-namespace sqlxx::closure
+namespace sqlxx
+{
+inline namespace closure
 {
     /*!
      * @brief "SELECT 句" の文法クラス
@@ -80,6 +82,7 @@ namespace sqlxx::closure
     auto operator<<(std::ostream & out, SelectClosure const select_closure)
         -> std::ostream &;
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -87,7 +90,9 @@ namespace sqlxx::closure
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-namespace sqlxx::closure
+namespace sqlxx
+{
+inline namespace closure
 {
     SelectClosure::SelectClosure() : _column_list()
     {}
@@ -153,6 +158,7 @@ namespace sqlxx::closure
         out << select_closure.to_string();
         return out;
     }
+}
 }
 
 #endif // SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX

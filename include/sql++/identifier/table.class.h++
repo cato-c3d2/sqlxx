@@ -15,7 +15,9 @@
 
 #include <string>
 
-namespace sqlxx::identifier
+namespace sqlxx
+{
+inline namespace identifier
 {
     /*!
      * @brief テーブル指定の文法クラス
@@ -139,6 +141,7 @@ namespace sqlxx::identifier
      */
     auto operator<<(std::ostream & out, Table const table) -> std::ostream &;
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -148,7 +151,9 @@ namespace sqlxx::identifier
 
 #include <sql++/identifier/naming-rule.class.h++>
 
-namespace sqlxx::identifier
+namespace sqlxx
+{
+inline namespace identifier
 {
     Table::Table() : _name(), _as_closure()
     {}
@@ -211,6 +216,7 @@ namespace sqlxx::identifier
         out << table.to_string();
         return out;
     }
+}
 }
 
 #endif // SQLXX__IDENTIFIER__TABLE_CLASS_HXX

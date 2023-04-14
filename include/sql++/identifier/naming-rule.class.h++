@@ -13,7 +13,9 @@
 
 #include <string>
 
-namespace sqlxx::identifier
+namespace sqlxx
+{
+inline namespace identifier
 {
     /*!
      * @brief 識別子の命名規則に関するクラス
@@ -65,6 +67,7 @@ namespace sqlxx::identifier
         static auto pattern() -> std::string;
     };
 }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -74,7 +77,9 @@ namespace sqlxx::identifier
 
 #include <regex>
 
-namespace sqlxx::identifier
+namespace sqlxx
+{
+inline namespace identifier
 {
     auto NamingRule::is_legal(std::string identifier) -> bool
     {
@@ -100,6 +105,7 @@ namespace sqlxx::identifier
         static auto const value = R"([a-zA-Z_]\w*)";
         return value;
     }
+}
 }
 
 #endif // SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX

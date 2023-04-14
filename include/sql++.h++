@@ -27,17 +27,17 @@
  */
 namespace sqlxx
 {
-    namespace closure
-    {
-        /*! @brief @c AsClosure のエイリアス */
-        using As = AsClosure;
+inline namespace closure
+{
+    /*! @brief @c AsClosure のエイリアス */
+    using As = AsClosure;
 
-        /*! @brief @c SelectClosure のエイリアス */
-        using Select = SelectClosure;
+    /*! @brief @c SelectClosure のエイリアス */
+    using Select = SelectClosure;
 
-        /*! @brief @c FromClosure のエイリアス */
-        using From = FromClosure;
-    }
+    /*! @brief @c FromClosure のエイリアス */
+    using From = FromClosure;
+}
 }
 
 // NOTE `namespace sqlxx` のドキュメントコメントはこのファイルに記述している
