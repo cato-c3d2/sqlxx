@@ -75,8 +75,8 @@ inline namespace closure
      */
     auto operator<<(std::ostream & out, FromClosure const from_closure)
         -> std::ostream &;
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -123,7 +123,7 @@ inline namespace closure
         out << from_closure.to_string();
         return out;
     }
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 #endif // SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX

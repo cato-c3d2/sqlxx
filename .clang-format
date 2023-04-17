@@ -77,7 +77,7 @@ DisableFormat: false
 
 ExperimentalAutoDetectBinPacking: false
 
-FixNamespaceComments: false
+FixNamespaceComments: true
 
 ForEachMacros:
   - foreach

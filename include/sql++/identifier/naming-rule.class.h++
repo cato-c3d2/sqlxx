@@ -66,8 +66,8 @@ inline namespace identifier
          */
         static auto pattern() -> std::string;
     };
-}
-}
+} // namespace identifier
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -105,7 +105,7 @@ inline namespace identifier
         static auto const value = R"([a-zA-Z_]\w*)";
         return value;
     }
-}
-}
+} // namespace identifier
+} // namespace sqlxx
 
 #endif // SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX

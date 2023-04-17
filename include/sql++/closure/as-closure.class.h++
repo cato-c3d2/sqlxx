@@ -83,8 +83,8 @@ inline namespace closure
      */
     auto operator<<(std::ostream & out, AsClosure const as_closure)
         -> std::ostream &;
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -144,7 +144,7 @@ inline namespace closure
         out << as_closure.to_string();
         return out;
     }
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 #endif // SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX
