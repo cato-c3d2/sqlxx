@@ -82,8 +82,8 @@ inline namespace statement
      */
     auto operator<<(std::ostream & out, SelectStatement const select_statement)
         -> std::ostream &;
-}
-}
+} // namespace statement
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -151,7 +151,7 @@ inline namespace statement
         out << select_statement.to_string();
         return out;
     }
-}
-}
+} // namespace statement
+} // namespace sqlxx
 
 #endif // SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX

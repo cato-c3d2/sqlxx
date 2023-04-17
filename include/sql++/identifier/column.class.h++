@@ -140,8 +140,8 @@ inline namespace identifier
      * @return 出力ストリーム
      */
     auto operator<<(std::ostream & out, Column const column) -> std::ostream &;
-}
-}
+} // namespace identifier
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -217,7 +217,7 @@ inline namespace identifier
         out << column.to_string();
         return out;
     }
-}
-}
+} // namespace identifier
+} // namespace sqlxx
 
 #endif // SQLXX__IDENTIFIER__COLUMN_CLASS_HXX

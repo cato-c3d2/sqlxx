@@ -140,8 +140,8 @@ inline namespace identifier
      * @return 出力ストリーム
      */
     auto operator<<(std::ostream & out, Table const table) -> std::ostream &;
-}
-}
+} // namespace identifier
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -216,7 +216,7 @@ inline namespace identifier
         out << table.to_string();
         return out;
     }
-}
-}
+} // namespace identifier
+} // namespace sqlxx
 
 #endif // SQLXX__IDENTIFIER__TABLE_CLASS_HXX

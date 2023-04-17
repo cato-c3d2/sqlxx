@@ -81,8 +81,8 @@ inline namespace closure
      */
     auto operator<<(std::ostream & out, SelectClosure const select_closure)
         -> std::ostream &;
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -158,7 +158,7 @@ inline namespace closure
         out << select_closure.to_string();
         return out;
     }
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 #endif // SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX

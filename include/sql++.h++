@@ -37,8 +37,8 @@ inline namespace closure
 
     /*! @brief @c FromClosure のエイリアス */
     using From = FromClosure;
-}
-}
+} // namespace closure
+} // namespace sqlxx
 
 // NOTE `namespace sqlxx` のドキュメントコメントはこのファイルに記述している
 
