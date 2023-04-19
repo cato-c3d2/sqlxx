@@ -2,6 +2,8 @@
  * @file sql++.h++
  */
 
+// NOTE 各名前空間のドキュメントコメントはこのファイルに記述している
+
 #ifndef SQLXX__SQLXX_HXX
 #define SQLXX__SQLXX_HXX
 
@@ -27,6 +29,20 @@
  */
 namespace sqlxx
 {
+
+/*!
+ * @namespace identifier
+ *
+ * @brief SQL の識別子 ( identifier ) に関するインライン名前空間
+ */
+inline namespace identifier
+{}
+
+/*!
+ * @namespace closure
+ *
+ * @brief SQL の句 ( closure ) に関するインライン名前空間
+ */
 inline namespace closure
 {
     /*! @brief @c AsClosure のエイリアス */
@@ -38,8 +54,14 @@ inline namespace closure
     /*! @brief @c FromClosure のエイリアス */
     using From = FromClosure;
 } // namespace closure
-} // namespace sqlxx
 
-// NOTE `namespace sqlxx` のドキュメントコメントはこのファイルに記述している
+/*!
+ * @namespace statement
+ *
+ * @brief SQL の文 ( statement ) に関するインライン名前空間
+ */
+inline namespace statement
+{}
+} // namespace sqlxx
 
 #endif /* SQLXX__SQLXX_HXX */
