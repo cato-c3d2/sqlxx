@@ -68,6 +68,9 @@ inline namespace closure
         auto to_string() const -> std::string;
 
     private:
+        /*!
+         * @brief "カラム指定のリスト"
+         */
         ColumnListType _column_list;
     };
 

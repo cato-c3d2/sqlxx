@@ -127,7 +127,14 @@ inline namespace identifier
         auto to_string() const -> std::string;
 
     private:
-        NameType           _name;
+        /*!
+         * @brief カラム名
+         */
+        NameType _name;
+
+        /*!
+         * @brief "AS 句"
+         */
         closure::AsClosure _as_closure;
     };
 

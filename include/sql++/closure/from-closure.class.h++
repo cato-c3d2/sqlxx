@@ -62,6 +62,9 @@ inline namespace closure
         auto to_string() const -> std::string;
 
     private:
+        /*!
+         * @brief "テーブル指定"
+         */
         identifier::Table _table;
     };
 
