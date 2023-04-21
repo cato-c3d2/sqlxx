@@ -70,6 +70,9 @@ inline namespace closure
         auto to_string() const -> std::string;
 
     private:
+        /*!
+         * @brief "AS 句"
+         */
         AliasNameType _alias_name;
     };
 

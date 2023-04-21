@@ -68,8 +68,15 @@ inline namespace statement
         auto to_string() const -> std::string;
 
     private:
+        /*!
+         * @brief "SELECT 句"
+         */
         closure::SelectClosure _select_closure;
-        closure::FromClosure   _from_closure;
+
+        /*!
+         * @brief "FROM 句"
+         */
+        closure::FromClosure _from_closure;
     };
 
     /**
