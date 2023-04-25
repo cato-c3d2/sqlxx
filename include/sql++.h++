@@ -45,13 +45,19 @@ inline namespace identifier
  */
 inline namespace closure
 {
-    /*! @brief @c AsClosure のエイリアス */
+    /*!
+     * @brief @c AsClosure のエイリアス
+     */
     using As = AsClosure;
 
-    /*! @brief @c SelectClosure のエイリアス */
+    /*!
+     * @brief @c SelectClosure のエイリアス
+     */
     using Select = SelectClosure;
 
-    /*! @brief @c FromClosure のエイリアス */
+    /*!
+     * @brief @c FromClosure のエイリアス
+     */
     using From = FromClosure;
 } // namespace closure
 

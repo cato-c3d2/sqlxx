@@ -23,13 +23,19 @@ using sqlxx::identifier::Column;
  */
 struct ColumnDataSetElement
 {
-    /*! @brief テスト対象オブジェクト */
+    /*!
+     * @brief テスト対象オブジェクト
+     */
     Column column;
 
-    /*! @brief @c empty メンバ関数の期待結果 */
+    /*!
+     * @brief @c empty メンバ関数の期待結果
+     */
     bool expectation_of_empty;
 
-    /*! @brief @c to_string メンバ関数の期待結果 */
+    /*!
+     * @brief @c to_string メンバ関数の期待結果
+     */
     std::string expectation_of_to_string;
 };
 

@@ -23,10 +23,14 @@ using sqlxx::identifier::NamingRule;
  */
 struct NamingRuleDataSetElement
 {
-    /*! @brief テスト対象関数に指定する引数 */
+    /*!
+     * @brief テスト対象関数に指定する引数
+     */
     std::string argument_of_is_legal;
 
-    /*! @brief 返却される論理値の期待結果 */
+    /*!
+     * @brief 返却される論理値の期待結果
+     */
     bool expectation_of_is_legal;
 };
 

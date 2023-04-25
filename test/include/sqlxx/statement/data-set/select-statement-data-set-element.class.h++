@@ -23,10 +23,14 @@ using sqlxx::statement::SelectStatement;
  */
 struct SelectStatementDataSetElement
 {
-    /*! @brief テスト対象オブジェクト */
+    /*!
+     * @brief テスト対象オブジェクト
+     */
     SelectStatement select_statement;
 
-    /*! @brief @c to_string メンバ関数の期待結果 */
+    /*!
+     * @brief @c to_string メンバ関数の期待結果
+     */
     std::string expectation_of_to_string;
 };
 
