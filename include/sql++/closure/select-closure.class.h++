@@ -27,7 +27,9 @@ inline namespace closure
     class SelectClosure
     {
     public:
-        /*! @brief "カラム指定のリスト" の型 */
+        /*!
+         * @brief "カラム指定のリスト" の型
+         */
         using ColumnListType = std::vector<identifier::Column>;
 
         /*!

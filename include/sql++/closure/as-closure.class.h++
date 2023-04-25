@@ -23,7 +23,9 @@ inline namespace closure
     class AsClosure
     {
     public:
-        /*! @brief エイリアス名の型 */
+        /*!
+         * @brief エイリアス名の型
+         */
         using AliasNameType = std::string;
 
         /*!

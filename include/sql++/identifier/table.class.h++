@@ -25,7 +25,9 @@ inline namespace identifier
     class Table
     {
     public:
-        /*! @brief テーブル名の型 */
+        /*!
+         * @brief テーブル名の型
+         */
         using NameType = std::string;
 
         /*!

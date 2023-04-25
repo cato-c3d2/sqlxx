@@ -25,7 +25,9 @@ inline namespace identifier
     class Column
     {
     public:
-        /*! @brief カラム名の型 */
+        /*!
+         * @brief カラム名の型
+         */
         using NameType = std::string;
 
         /*!
