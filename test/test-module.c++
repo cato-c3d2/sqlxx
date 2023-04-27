@@ -1,3 +1,10 @@
+/*!
+ * @file test-module.c++
+ */
+
+/*!
+ * @brief sql++ のテストモジュール
+ */
 #define BOOST_TEST_MODULE sqlxx
 
 #ifdef LINK_BOOST_TEST_AS_STATIC_LIBRARY
