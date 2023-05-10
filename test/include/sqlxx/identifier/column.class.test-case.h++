@@ -53,7 +53,7 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  *        様々な @c Column オブジェクトに対して @c empty メンバ関数を呼び出す
  *
  * @see sqlxx::identifier::Column::empty() テスト対象メンバ関数
- * @see data_set()                            データセット
+ * @see data_set()                         データセット
  */
 BOOST_DATA_TEST_CASE(
     empty, boost::unit_test::data::make(data_set()), data_set_element)
@@ -73,7 +73,7 @@ BOOST_DATA_TEST_CASE(
  *        様々な @c Column オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
  * @see sqlxx::identifier::Column::to_string() テスト対象メンバ関数
- * @see data_set()                                データセット
+ * @see data_set()                             データセット
  */
 BOOST_DATA_TEST_CASE(
     to_string, boost::unit_test::data::make(data_set()), data_set_element)
