@@ -24,9 +24,9 @@ using sqlxx::identifier::NamingRule;
  * @brief テストパターン :
  *        様々な文字列に対して命名規則に合致しているか判定する
  *
- * @see sqlxx::identifier::NamingRule
- * @see sqlxx::identifier::NamingRule::is_legal()
- * @see data_set()
+ * @see sqlxx::identifier::NamingRule             テスト対象クラス
+ * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
+ * @see data_set()                                データセット
  */
 BOOST_DATA_TEST_CASE(
     is_legal, boost::unit_test::data::make(data_set()), data_set_element)
