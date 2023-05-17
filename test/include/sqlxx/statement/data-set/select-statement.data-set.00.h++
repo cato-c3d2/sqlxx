@@ -48,8 +48,8 @@ using sqlxx::statement::SelectStatement;
  *
  * @return データセット
  *
- * @see sqlxx::closure::SelectStatement              テスト対象クラス
- * @see sqlxx::closure::SelectStatement::to_string() テスト対象メンバ関数
+ * @see sqlxx::statement::SelectStatement              テスト対象クラス
+ * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
  */
 auto data_set_00() -> std::vector<SelectStatementDataSetElement>
 {
