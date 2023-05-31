@@ -38,7 +38,8 @@ using sqlxx::identifier::Column;
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_02() -> std::vector<SelectClosureDataSetElement>
+auto SelectClosureDataSet::for_some_test_case_02()
+    -> std::vector<SelectClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]

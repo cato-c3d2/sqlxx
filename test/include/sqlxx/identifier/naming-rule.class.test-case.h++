@@ -26,10 +26,12 @@ using sqlxx::identifier::NamingRule;
  *
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
- * @see data_set()                                データセット
+ * @see NamingRuleDataSet::for_is_legal()         データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
-    is_legal, boost::unit_test::data::make(data_set()), data_set_element)
+    is_legal,
+    boost::unit_test::data::make(NamingRuleDataSet::for_is_legal()),
+    data_set_element)
 {
     // テスト対象関数に指定する引数
     std::string const identifier = data_set_element.argument_of_is_legal;

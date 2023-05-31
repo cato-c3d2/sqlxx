@@ -50,12 +50,14 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  * @brief テストパターン :
  *        様々な @c AsClosure オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::closure::AsClosure          テスト対象クラス
- * @see sqlxx::closure::AsClosure::empty() テスト対象メンバ関数
- * @see data_set()                         データセット
+ * @see sqlxx::closure::AsClosure              テスト対象クラス
+ * @see sqlxx::closure::AsClosure::empty()     テスト対象メンバ関数
+ * @see AsClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
-    empty, boost::unit_test::data::make(data_set()), data_set_element)
+    empty,
+    boost::unit_test::data::make(AsClosureDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     AsClosure const as_closure = data_set_element.as_closure;
@@ -73,10 +75,12 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::closure::AsClosure              テスト対象クラス
  * @see sqlxx::closure::AsClosure::to_string() テスト対象メンバ関数
- * @see data_set()                             データセット
+ * @see AsClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
-    to_string, boost::unit_test::data::make(data_set()), data_set_element)
+    to_string,
+    boost::unit_test::data::make(AsClosureDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     AsClosure const as_closure = data_set_element.as_closure;

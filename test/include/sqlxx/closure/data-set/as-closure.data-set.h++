@@ -18,6 +18,15 @@ BOOST_AUTO_TEST_SUITE(class__AsClosure)
 using sqlxx::closure::AsClosure;
 
 /*!
+ * @brief @c AsClosure クラスのテストケースで使用するデータセット
+ */
+class AsClosureDataSet
+{
+public:
+    static auto for_some_test_case() -> std::vector<AsClosureDataSetElement>;
+};
+
+/*!
  * @brief  データセットを返却する
  *
  * [ データパターン表 ] @n
@@ -44,7 +53,8 @@ using sqlxx::closure::AsClosure;
  * @see sqlxx::closure::AsClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::AsClosure::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<AsClosureDataSetElement>
+auto AsClosureDataSet::for_some_test_case()
+    -> std::vector<AsClosureDataSetElement>
 {
     // clang-format off
     return {

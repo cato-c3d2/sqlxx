@@ -52,12 +52,14 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  * @brief テストパターン :
  *        様々な @c Table オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::identifier::Table          テスト対象クラス
- * @see sqlxx::identifier::Table::empty() テスト対象メンバ関数
- * @see data_set()                        データセット
+ * @see sqlxx::identifier::Table           テスト対象クラス
+ * @see sqlxx::identifier::Table::empty()  テスト対象メンバ関数
+ * @see TableDataSet::for_some_test_case() データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
-    empty, boost::unit_test::data::make(data_set()), data_set_element)
+    empty,
+    boost::unit_test::data::make(TableDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     Table const table = data_set_element.table;
@@ -75,10 +77,12 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::identifier::Table              テスト対象クラス
  * @see sqlxx::identifier::Table::to_string() テスト対象メンバ関数
- * @see data_set()                            データセット
+ * @see TableDataSet::for_some_test_case()    データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
-    to_string, boost::unit_test::data::make(data_set()), data_set_element)
+    to_string,
+    boost::unit_test::data::make(TableDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     Table const table = data_set_element.table;

@@ -65,10 +65,12 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  *
  * @see sqlxx::statement::SelectStatement              テスト対象クラス
  * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
- * @see data_set()                                     データセット
+ * @see SelectStatementDataSet::for_some_test_case()   データセット
  */
 BOOST_DATA_TEST_CASE(
-    to_string, boost::unit_test::data::make(data_set()), data_set_element)
+    to_string,
+    boost::unit_test::data::make(SelectStatementDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     SelectStatement const select_statement = data_set_element.select_statement;

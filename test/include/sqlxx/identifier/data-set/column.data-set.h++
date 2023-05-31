@@ -18,6 +18,15 @@ BOOST_AUTO_TEST_SUITE(class__Column)
 using sqlxx::identifier::Column;
 
 /*!
+ * @brief @c Column クラスのテストケースで使用するデータセット
+ */
+class ColumnDataSet
+{
+public:
+    static auto for_some_test_case() -> std::vector<ColumnDataSetElement>;
+};
+
+/*!
  * @brief  データセットを返却する
  *
  * [ データパターン表 ] @n
@@ -60,7 +69,7 @@ using sqlxx::identifier::Column;
  * @see sqlxx::identifier::Column::empty()     テスト対象メンバ関数
  * @see sqlxx::identifier::Column::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<ColumnDataSetElement>
+auto ColumnDataSet::for_some_test_case() -> std::vector<ColumnDataSetElement>
 {
     // clang-format off
     return {

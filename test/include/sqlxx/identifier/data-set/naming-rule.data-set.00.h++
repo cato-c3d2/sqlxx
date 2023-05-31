@@ -28,7 +28,7 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_() -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -88,7 +88,8 @@ auto data_set_() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_00() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_00()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
