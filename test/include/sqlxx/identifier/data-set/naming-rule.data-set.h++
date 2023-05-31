@@ -9,13 +9,37 @@
 #include <vector>
 
 #include "./naming-rule-data-set-element.class.h++"
-#include "./naming-rule.data-set.00.h++"
-#include "./naming-rule.data-set.01.h++"
-#include "./naming-rule.data-set.02.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__NamingRule)
+
+/*!
+ * @brief @c NamingRule クラスのテストケースで使用するデータセット
+ */
+class NamingRuleDataSet
+{
+public:
+    static auto for_is_legal() -> std::vector<NamingRuleDataSetElement>;
+
+private:
+    static auto for_is_legal_() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_00() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_01A() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_01a() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_01d() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_01s() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_01x() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_01z() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02A() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02a() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02c() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02d() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02e() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02f() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02g() -> std::vector<NamingRuleDataSetElement>;
+    static auto for_is_legal_02h() -> std::vector<NamingRuleDataSetElement>;
+};
 
 /*!
  * @brief  データセットを返却する
@@ -25,26 +49,26 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal() -> std::vector<NamingRuleDataSetElement>
 {
     std::vector<std::vector<NamingRuleDataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_(),
-        data_set_00(),
-        data_set_01A(),
-        data_set_01a(),
-        data_set_01d(),
-        data_set_01s(),
-        data_set_01x(),
-        data_set_01z(),
-        data_set_02A(),
-        data_set_02a(),
-        data_set_02c(),
-        data_set_02d(),
-        data_set_02e(),
-        data_set_02f(),
-        data_set_02g(),
-        data_set_02h()
+        NamingRuleDataSet::for_is_legal_(),
+        NamingRuleDataSet::for_is_legal_00(),
+        NamingRuleDataSet::for_is_legal_01A(),
+        NamingRuleDataSet::for_is_legal_01a(),
+        NamingRuleDataSet::for_is_legal_01d(),
+        NamingRuleDataSet::for_is_legal_01s(),
+        NamingRuleDataSet::for_is_legal_01x(),
+        NamingRuleDataSet::for_is_legal_01z(),
+        NamingRuleDataSet::for_is_legal_02A(),
+        NamingRuleDataSet::for_is_legal_02a(),
+        NamingRuleDataSet::for_is_legal_02c(),
+        NamingRuleDataSet::for_is_legal_02d(),
+        NamingRuleDataSet::for_is_legal_02e(),
+        NamingRuleDataSet::for_is_legal_02f(),
+        NamingRuleDataSet::for_is_legal_02g(),
+        NamingRuleDataSet::for_is_legal_02h()
         // clang-format on
     };
 
@@ -61,5 +85,9 @@ auto data_set() -> std::vector<NamingRuleDataSetElement>
 BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
+
+#include "./naming-rule.data-set.00.h++"
+#include "./naming-rule.data-set.01.h++"
+#include "./naming-rule.data-set.02.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX */

@@ -52,12 +52,14 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  * @brief テストパターン :
  *        様々な @c Column オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::identifier::Column          テスト対象クラス
- * @see sqlxx::identifier::Column::empty() テスト対象メンバ関数
- * @see data_set()                         データセット
+ * @see sqlxx::identifier::Column           テスト対象クラス
+ * @see sqlxx::identifier::Column::empty()  テスト対象メンバ関数
+ * @see ColumnDataSet::for_some_test_case() データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
-    empty, boost::unit_test::data::make(data_set()), data_set_element)
+    empty,
+    boost::unit_test::data::make(ColumnDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     Column const column = data_set_element.column;
@@ -75,10 +77,12 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::identifier::Column              テスト対象クラス
  * @see sqlxx::identifier::Column::to_string() テスト対象メンバ関数
- * @see data_set()                             データセット
+ * @see ColumnDataSet::for_some_test_case()    データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
-    to_string, boost::unit_test::data::make(data_set()), data_set_element)
+    to_string,
+    boost::unit_test::data::make(ColumnDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     Column const column = data_set_element.column;

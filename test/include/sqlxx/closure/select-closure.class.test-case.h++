@@ -55,12 +55,14 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  * @brief テストパターン :
  *        様々な @c SelectClosure オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::closure::SelectClosure          テスト対象クラス
- * @see sqlxx::closure::SelectClosure::empty() テスト対象メンバ関数
- * @see data_set()                             データセット
+ * @see sqlxx::closure::SelectClosure              テスト対象クラス
+ * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
+ * @see SelectClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
-    empty, boost::unit_test::data::make(data_set()), data_set_element)
+    empty,
+    boost::unit_test::data::make(SelectClosureDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     SelectClosure const select_closure = data_set_element.select_closure;
@@ -78,10 +80,12 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::closure::SelectClosure              テスト対象クラス
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
- * @see data_set()                                 データセット
+ * @see SelectClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
-    to_string, boost::unit_test::data::make(data_set()), data_set_element)
+    to_string,
+    boost::unit_test::data::make(SelectClosureDataSet::for_some_test_case()),
+    data_set_element)
 {
     // テスト対象オブジェクト
     SelectClosure const select_closure = data_set_element.select_closure;

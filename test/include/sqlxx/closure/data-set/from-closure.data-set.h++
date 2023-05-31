@@ -19,11 +19,26 @@ BOOST_AUTO_TEST_SUITE(class__FromClosure)
 using sqlxx::closure::FromClosure;
 using sqlxx::identifier::Table;
 
-auto data_set_a() -> std::vector<FromClosureDataSetElement>;
-auto data_set_b() -> std::vector<FromClosureDataSetElement>;
-auto data_set_c() -> std::vector<FromClosureDataSetElement>;
-auto data_set_d() -> std::vector<FromClosureDataSetElement>;
-auto data_set_e() -> std::vector<FromClosureDataSetElement>;
+/*!
+ * @brief @c FromClosure クラスのテストケースで使用するデータセット
+ */
+class FromClosureDataSet
+{
+public:
+    static auto for_some_test_case() -> std::vector<FromClosureDataSetElement>;
+
+private:
+    static auto for_some_test_case_a()
+        -> std::vector<FromClosureDataSetElement>;
+    static auto for_some_test_case_b()
+        -> std::vector<FromClosureDataSetElement>;
+    static auto for_some_test_case_c()
+        -> std::vector<FromClosureDataSetElement>;
+    static auto for_some_test_case_d()
+        -> std::vector<FromClosureDataSetElement>;
+    static auto for_some_test_case_e()
+        -> std::vector<FromClosureDataSetElement>;
+};
 
 /*!
  * @brief  データセットを返却する
@@ -69,11 +84,11 @@ auto data_set_e() -> std::vector<FromClosureDataSetElement>;
  * @li - ... 未指定
  *
  * [[ 構成 ]] @n
- * @li        _0 : @link data_set_a() @endlink
- * @li  _1 ~  _4 : @link data_set_b() @endlink
- * @li  _5 ~  _8 : @link data_set_c() @endlink
- * @li  _9 ~ _12 : @link data_set_d() @endlink
- * @li _13 ~ _16 : @link data_set_e() @endlink
+ * @li        _0 : @link for_some_test_case_a() @endlink
+ * @li  _1 ~  _4 : @link for_some_test_case_b() @endlink
+ * @li  _5 ~  _8 : @link for_some_test_case_c() @endlink
+ * @li  _9 ~ _12 : @link for_some_test_case_d() @endlink
+ * @li _13 ~ _16 : @link for_some_test_case_e() @endlink
  *
  * @return データセット
  *
@@ -81,15 +96,16 @@ auto data_set_e() -> std::vector<FromClosureDataSetElement>;
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<FromClosureDataSetElement>
+auto FromClosureDataSet::for_some_test_case()
+    -> std::vector<FromClosureDataSetElement>
 {
     std::vector<std::vector<FromClosureDataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_a(),
-        data_set_b(),
-        data_set_c(),
-        data_set_d(),
-        data_set_e()
+        FromClosureDataSet::for_some_test_case_a(),
+        FromClosureDataSet::for_some_test_case_b(),
+        FromClosureDataSet::for_some_test_case_c(),
+        FromClosureDataSet::for_some_test_case_d(),
+        FromClosureDataSet::for_some_test_case_e()
         // clang-format on
     };
 
@@ -116,7 +132,8 @@ auto data_set() -> std::vector<FromClosureDataSetElement>
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_a() -> std::vector<FromClosureDataSetElement>
+auto FromClosureDataSet::for_some_test_case_a()
+    -> std::vector<FromClosureDataSetElement>
 {
     // clang-format off
     return {
@@ -148,7 +165,7 @@ auto data_set_a() -> std::vector<FromClosureDataSetElement>
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_b() -> std::vector<FromClosureDataSetElement>
+auto FromClosureDataSet::for_some_test_case_b() -> std::vector<FromClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
@@ -227,7 +244,7 @@ auto data_set_b() -> std::vector<FromClosureDataSetElement>
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_c() -> std::vector<FromClosureDataSetElement>
+auto FromClosureDataSet::for_some_test_case_c() -> std::vector<FromClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
@@ -306,7 +323,7 @@ auto data_set_c() -> std::vector<FromClosureDataSetElement>
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_d() -> std::vector<FromClosureDataSetElement>
+auto FromClosureDataSet::for_some_test_case_d() -> std::vector<FromClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
@@ -385,7 +402,7 @@ auto data_set_d() -> std::vector<FromClosureDataSetElement>
  * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
  */
-auto data_set_e() -> std::vector<FromClosureDataSetElement>
+auto FromClosureDataSet::for_some_test_case_e() -> std::vector<FromClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]

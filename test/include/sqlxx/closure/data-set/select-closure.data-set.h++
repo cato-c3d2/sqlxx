@@ -11,27 +11,58 @@
 #include <sql++/closure/select-closure.class.h++>
 
 #include "./select-closure-data-set-element.class.h++"
-#include "./select-closure.data-set.00.h++"
-#include "./select-closure.data-set.01.h++"
-#include "./select-closure.data-set.02.h++"
-#include "./select-closure.data-set.03.h++"
-#include "./select-closure.data-set.04.h++"
-#include "./select-closure.data-set.05.h++"
-#include "./select-closure.data-set.06.h++"
-#include "./select-closure.data-set.07.h++"
-#include "./select-closure.data-set.08.h++"
-#include "./select-closure.data-set.09.h++"
-#include "./select-closure.data-set.10.h++"
-#include "./select-closure.data-set.11.h++"
-#include "./select-closure.data-set.12.h++"
-#include "./select-closure.data-set.13.h++"
-#include "./select-closure.data-set.14.h++"
-#include "./select-closure.data-set.15.h++"
-#include "./select-closure.data-set.16.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
 BOOST_AUTO_TEST_SUITE(class__SelectClosure)
+
+/*!
+ * @brief @c SelectClosure クラスのテストケースで使用するデータセット
+ */
+class SelectClosureDataSet
+{
+public:
+    static auto for_some_test_case()
+        -> std::vector<SelectClosureDataSetElement>;
+
+private:
+    static auto for_some_test_case_00_a()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_00_b()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_01()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_02()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_03()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_04()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_05()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_06()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_07()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_08()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_09()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_10()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_11()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_12()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_13()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_14()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_15()
+        -> std::vector<SelectClosureDataSetElement>;
+    static auto for_some_test_case_16()
+        -> std::vector<SelectClosureDataSetElement>;
+};
 
 /*!
  * @brief  データセットを返却する
@@ -351,24 +382,24 @@ BOOST_AUTO_TEST_SUITE(class__SelectClosure)
  * @li - ... 未指定
  *
  * [[ 構成 ]] @n
- * @li          _0 : @link data_set_00_a() @endlink @link select-closure.data-set.00.h++ @endlink
- * @li   _1 ~  _16 : @link data_set_00_b() @endlink @link select-closure.data-set.00.h++ @endlink
- * @li  _16 ~  _32 : @link data_set_01()   @endlink @link select-closure.data-set.01.h++ @endlink
- * @li  _33 ~  _48 : @link data_set_02()   @endlink @link select-closure.data-set.02.h++ @endlink
- * @li  _49 ~  _64 : @link data_set_03()   @endlink @link select-closure.data-set.03.h++ @endlink
- * @li  _65 ~  _80 : @link data_set_04()   @endlink @link select-closure.data-set.04.h++ @endlink
- * @li  _81 ~  _96 : @link data_set_05()   @endlink @link select-closure.data-set.05.h++ @endlink
- * @li  _97 ~ _112 : @link data_set_06()   @endlink @link select-closure.data-set.06.h++ @endlink
- * @li _113 ~ _128 : @link data_set_07()   @endlink @link select-closure.data-set.07.h++ @endlink
- * @li _129 ~ _144 : @link data_set_08()   @endlink @link select-closure.data-set.08.h++ @endlink
- * @li _145 ~ _160 : @link data_set_09()   @endlink @link select-closure.data-set.09.h++ @endlink
- * @li _161 ~ _176 : @link data_set_10()   @endlink @link select-closure.data-set.10.h++ @endlink
- * @li _177 ~ _192 : @link data_set_11()   @endlink @link select-closure.data-set.11.h++ @endlink
- * @li _193 ~ _208 : @link data_set_12()   @endlink @link select-closure.data-set.12.h++ @endlink
- * @li _209 ~ _224 : @link data_set_13()   @endlink @link select-closure.data-set.13.h++ @endlink
- * @li _225 ~ _240 : @link data_set_14()   @endlink @link select-closure.data-set.14.h++ @endlink
- * @li _241 ~ _256 : @link data_set_15()   @endlink @link select-closure.data-set.15.h++ @endlink
- * @li _257 ~ _272 : @link data_set_16()   @endlink @link select-closure.data-set.16.h++ @endlink
+ * @li          _0 : @link for_some_test_case_00_a() @endlink @link select-closure.data-set.00.h++ @endlink
+ * @li   _1 ~  _16 : @link for_some_test_case_00_b() @endlink @link select-closure.data-set.00.h++ @endlink
+ * @li  _16 ~  _32 : @link for_some_test_case_01()   @endlink @link select-closure.data-set.01.h++ @endlink
+ * @li  _33 ~  _48 : @link for_some_test_case_02()   @endlink @link select-closure.data-set.02.h++ @endlink
+ * @li  _49 ~  _64 : @link for_some_test_case_03()   @endlink @link select-closure.data-set.03.h++ @endlink
+ * @li  _65 ~  _80 : @link for_some_test_case_04()   @endlink @link select-closure.data-set.04.h++ @endlink
+ * @li  _81 ~  _96 : @link for_some_test_case_05()   @endlink @link select-closure.data-set.05.h++ @endlink
+ * @li  _97 ~ _112 : @link for_some_test_case_06()   @endlink @link select-closure.data-set.06.h++ @endlink
+ * @li _113 ~ _128 : @link for_some_test_case_07()   @endlink @link select-closure.data-set.07.h++ @endlink
+ * @li _129 ~ _144 : @link for_some_test_case_08()   @endlink @link select-closure.data-set.08.h++ @endlink
+ * @li _145 ~ _160 : @link for_some_test_case_09()   @endlink @link select-closure.data-set.09.h++ @endlink
+ * @li _161 ~ _176 : @link for_some_test_case_10()   @endlink @link select-closure.data-set.10.h++ @endlink
+ * @li _177 ~ _192 : @link for_some_test_case_11()   @endlink @link select-closure.data-set.11.h++ @endlink
+ * @li _193 ~ _208 : @link for_some_test_case_12()   @endlink @link select-closure.data-set.12.h++ @endlink
+ * @li _209 ~ _224 : @link for_some_test_case_13()   @endlink @link select-closure.data-set.13.h++ @endlink
+ * @li _225 ~ _240 : @link for_some_test_case_14()   @endlink @link select-closure.data-set.14.h++ @endlink
+ * @li _241 ~ _256 : @link for_some_test_case_15()   @endlink @link select-closure.data-set.15.h++ @endlink
+ * @li _257 ~ _272 : @link for_some_test_case_16()   @endlink @link select-closure.data-set.16.h++ @endlink
  *
  * @return データセット
  *
@@ -376,28 +407,29 @@ BOOST_AUTO_TEST_SUITE(class__SelectClosure)
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<SelectClosureDataSetElement>
+auto SelectClosureDataSet::for_some_test_case()
+    -> std::vector<SelectClosureDataSetElement>
 {
     std::vector<std::vector<SelectClosureDataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_00_a(),
-        data_set_00_b(),
-        data_set_01(),
-        data_set_02(),
-        data_set_03(),
-        data_set_04(),
-        data_set_05(),
-        data_set_06(),
-        data_set_07(),
-        data_set_08(),
-        data_set_09(),
-        data_set_10(),
-        data_set_11(),
-        data_set_12(),
-        data_set_13(),
-        data_set_14(),
-        data_set_15(),
-        data_set_16()
+        SelectClosureDataSet::for_some_test_case_00_a(),
+        SelectClosureDataSet::for_some_test_case_00_b(),
+        SelectClosureDataSet::for_some_test_case_01(),
+        SelectClosureDataSet::for_some_test_case_02(),
+        SelectClosureDataSet::for_some_test_case_03(),
+        SelectClosureDataSet::for_some_test_case_04(),
+        SelectClosureDataSet::for_some_test_case_05(),
+        SelectClosureDataSet::for_some_test_case_06(),
+        SelectClosureDataSet::for_some_test_case_07(),
+        SelectClosureDataSet::for_some_test_case_08(),
+        SelectClosureDataSet::for_some_test_case_09(),
+        SelectClosureDataSet::for_some_test_case_10(),
+        SelectClosureDataSet::for_some_test_case_11(),
+        SelectClosureDataSet::for_some_test_case_12(),
+        SelectClosureDataSet::for_some_test_case_13(),
+        SelectClosureDataSet::for_some_test_case_14(),
+        SelectClosureDataSet::for_some_test_case_15(),
+        SelectClosureDataSet::for_some_test_case_16()
         // clang-format on
     };
 
@@ -414,5 +446,23 @@ auto data_set() -> std::vector<SelectClosureDataSetElement>
 BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
+
+#include "./select-closure.data-set.00.h++"
+#include "./select-closure.data-set.01.h++"
+#include "./select-closure.data-set.02.h++"
+#include "./select-closure.data-set.03.h++"
+#include "./select-closure.data-set.04.h++"
+#include "./select-closure.data-set.05.h++"
+#include "./select-closure.data-set.06.h++"
+#include "./select-closure.data-set.07.h++"
+#include "./select-closure.data-set.08.h++"
+#include "./select-closure.data-set.09.h++"
+#include "./select-closure.data-set.10.h++"
+#include "./select-closure.data-set.11.h++"
+#include "./select-closure.data-set.12.h++"
+#include "./select-closure.data-set.13.h++"
+#include "./select-closure.data-set.14.h++"
+#include "./select-closure.data-set.15.h++"
+#include "./select-closure.data-set.16.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_HXX */

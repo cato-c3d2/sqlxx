@@ -25,7 +25,8 @@ BOOST_AUTO_TEST_SUITE(class__NamingRule)
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02A() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02A()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -80,7 +81,8 @@ auto data_set_02A() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02a() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02a()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -135,7 +137,8 @@ auto data_set_02a() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02c() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02c()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -190,7 +193,8 @@ auto data_set_02c() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02d() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02d()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -239,7 +243,8 @@ auto data_set_02d() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02e() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02e()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -288,7 +293,8 @@ auto data_set_02e() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02f() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02f()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -337,7 +343,8 @@ auto data_set_02f() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02g() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02g()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {
@@ -386,7 +393,8 @@ auto data_set_02g() -> std::vector<NamingRuleDataSetElement>
  * @see sqlxx::identifier::NamingRule             テスト対象クラス
  * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
  */
-auto data_set_02h() -> std::vector<NamingRuleDataSetElement>
+auto NamingRuleDataSet::for_is_legal_02h()
+    -> std::vector<NamingRuleDataSetElement>
 {
     // clang-format off
     return {

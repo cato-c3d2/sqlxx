@@ -9,15 +9,32 @@
 #include <vector>
 
 #include "./select-statement-data-set-element.class.h++"
-#include "./select-statement.data-set.00.h++"
-#include "./select-statement.data-set.01.h++"
-#include "./select-statement.data-set.02.h++"
-#include "./select-statement.data-set.03.h++"
-#include "./select-statement.data-set.04.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 
 BOOST_AUTO_TEST_SUITE(class__SelectStatement)
+
+/*!
+ * @brief @c SelectStatement クラスのテストケースで使用するデータセット
+ */
+class SelectStatementDataSet
+{
+public:
+    static auto for_some_test_case()
+        -> std::vector<SelectStatementDataSetElement>;
+
+private:
+    static auto for_some_test_case_00()
+        -> std::vector<SelectStatementDataSetElement>;
+    static auto for_some_test_case_01()
+        -> std::vector<SelectStatementDataSetElement>;
+    static auto for_some_test_case_02()
+        -> std::vector<SelectStatementDataSetElement>;
+    static auto for_some_test_case_03()
+        -> std::vector<SelectStatementDataSetElement>;
+    static auto for_some_test_case_04()
+        -> std::vector<SelectStatementDataSetElement>;
+};
 
 /*!
  * @brief  データセットを返却する
@@ -115,15 +132,16 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
  * @see sqlxx::statement::SelectStatement              テスト対象クラス
  * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<SelectStatementDataSetElement>
+auto SelectStatementDataSet::for_some_test_case()
+    -> std::vector<SelectStatementDataSetElement>
 {
     std::vector<std::vector<SelectStatementDataSetElement>> data_set_parts = {
         // clang-format off
-        data_set_00(),
-        data_set_01(),
-        data_set_02(),
-        data_set_03(),
-        data_set_04()
+        SelectStatementDataSet::for_some_test_case_00(),
+        SelectStatementDataSet::for_some_test_case_01(),
+        SelectStatementDataSet::for_some_test_case_02(),
+        SelectStatementDataSet::for_some_test_case_03(),
+        SelectStatementDataSet::for_some_test_case_04()
         // clang-format on
     };
 
@@ -140,5 +158,11 @@ auto data_set() -> std::vector<SelectStatementDataSetElement>
 BOOST_AUTO_TEST_SUITE_END(/* class__SelectStatement */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__statement */)
+
+#include "./select-statement.data-set.00.h++"
+#include "./select-statement.data-set.01.h++"
+#include "./select-statement.data-set.02.h++"
+#include "./select-statement.data-set.03.h++"
+#include "./select-statement.data-set.04.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX */

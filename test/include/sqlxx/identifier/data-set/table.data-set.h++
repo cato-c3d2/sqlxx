@@ -18,6 +18,15 @@ BOOST_AUTO_TEST_SUITE(class__Table)
 using sqlxx::identifier::Table;
 
 /*!
+ * @brief @c Table クラスのテストケースで使用するデータセット
+ */
+class TableDataSet
+{
+public:
+    static auto for_some_test_case() -> std::vector<TableDataSetElement>;
+};
+
+/*!
  * @brief  データセットを返却する
  *
  * [ データパターン表 ] @n
@@ -60,7 +69,7 @@ using sqlxx::identifier::Table;
  * @see sqlxx::identifier::Table::empty()     テスト対象メンバ関数
  * @see sqlxx::identifier::Table::to_string() テスト対象メンバ関数
  */
-auto data_set() -> std::vector<TableDataSetElement>
+auto TableDataSet::for_some_test_case() -> std::vector<TableDataSetElement>
 {
     // clang-format off
     return {
