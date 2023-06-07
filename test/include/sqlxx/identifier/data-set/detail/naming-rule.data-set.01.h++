@@ -2,12 +2,12 @@
  * @file naming-rule.data-set.01.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_01_HXX
-#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_01_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DETAIL__NAMING_RULE_DATA_SET_01_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DETAIL__NAMING_RULE_DATA_SET_01_HXX
 
 #include <vector>
 
-#include "./naming-rule-data-set-element.class.h++"
+#include "../naming-rule-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
@@ -393,4 +393,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_01_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DETAIL__NAMING_RULE_DATA_SET_01_HXX */

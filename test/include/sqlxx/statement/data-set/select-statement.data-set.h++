@@ -159,10 +159,10 @@ BOOST_AUTO_TEST_SUITE_END(/* class__SelectStatement */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__statement */)
 
-#include "./select-statement.data-set.00.h++"
-#include "./select-statement.data-set.01.h++"
-#include "./select-statement.data-set.02.h++"
-#include "./select-statement.data-set.03.h++"
-#include "./select-statement.data-set.04.h++"
+#include "./detail/select-statement.data-set.00.h++"
+#include "./detail/select-statement.data-set.01.h++"
+#include "./detail/select-statement.data-set.02.h++"
+#include "./detail/select-statement.data-set.03.h++"
+#include "./detail/select-statement.data-set.04.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX */

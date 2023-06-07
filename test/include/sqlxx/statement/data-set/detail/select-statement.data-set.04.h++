@@ -2,8 +2,8 @@
  * @file select-statement.data-set.04.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_04_HXX
-#define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_04_HXX
+#ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_04_HXX
+#define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_04_HXX
 
 #include <vector>
 
@@ -13,7 +13,7 @@
 #include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
-#include "./select-statement-data-set-element.class.h++"
+#include "../select-statement-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 
@@ -118,4 +118,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__SelectStatement */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__statement */)
 
-#endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_04_HXX */
+#endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_04_HXX */

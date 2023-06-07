@@ -1,16 +1,16 @@
 /*!
- * @file select-closure.data-set.05.h++
+ * @file select-closure.data-set.06.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_05_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_05_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_06_HXX
+#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_06_HXX
 
 #include <vector>
 
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column.class.h++>
 
-#include "./select-closure-data-set-element.class.h++"
+#include "../select-closure-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
@@ -26,7 +26,7 @@ using sqlxx::identifier::Column;
  *
  * @c columns[0] : @n
  * @li @c name       : 空文字列
- * @li @c as_closure : 未指定
+ * @li @c as_closure : 空文字列
  *
  * @c columns[1] : @n
  * @li @c name       : 未指定, 空文字列, 不適格(半角スペース) or 適格
@@ -38,26 +38,26 @@ using sqlxx::identifier::Column;
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto SelectClosureDataSet::for_some_test_case_05()
+auto SelectClosureDataSet::for_some_test_case_06()
     -> std::vector<SelectClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + columns[0] :
     //     + name       : 空文字列
-    //     + as_closure : 未指定
+    //     + as_closure : 空文字列
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
         ////////////////////////////////
         // [条件(1)]
-        // + columns[1]true :
+        // + columns[1] :
         //     + name : 未指定
         ////////////////////////////////
-        // _81
+        // _97
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 未指定
@@ -68,10 +68,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _82
+        // _98
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 空文字列
@@ -82,10 +82,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _83
+        // _99
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 不適格(半角スペース)
@@ -96,10 +96,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _84
+        // _100
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 適格
@@ -116,10 +116,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
         // + columns[1] :
         //     + name : 空文字列
         ////////////////////////////////
-        // _85
+        // _101
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 未指定
@@ -130,10 +130,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _86
+        // _102
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 空文字列
@@ -144,10 +144,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _87
+        // _103
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 不適格(半角スペース)
@@ -158,10 +158,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _88
+        // _104
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 適格
@@ -178,10 +178,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
         // + columns[1] :
         //     + name : 不適格(半角スペース)
         ////////////////////////////////
-        // _89
+        // _105
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 未指定
@@ -192,10 +192,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _90
+        // _106
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 空文字列
@@ -206,10 +206,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _91
+        // _107
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 不適格(半角スペース)
@@ -220,10 +220,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _92
+        // _108
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 適格
@@ -240,10 +240,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
         // + columns[1] :
         //     + name : 適格
         ////////////////////////////////
-        // _93
+        // _109
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 未指定
@@ -254,10 +254,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             "SELECT name"
         },
-        // _94
+        // _110
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 空文字列
@@ -268,10 +268,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             "SELECT name"
         },
-        // _95
+        // _111
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 不適格(半角スペース)
@@ -282,10 +282,10 @@ auto SelectClosureDataSet::for_some_test_case_05()
             // [期待結果] to_string メンバ関数
             "SELECT name"
         },
-        // _96
+        // _112
         {
             SelectClosure {
-                Column { "" },
+                Column { "" }.as({ "" }),
                 // [条件(2)]
                 // + columns[1] :
                 //     + as_closure : 適格
@@ -304,4 +304,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_05_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_06_HXX */

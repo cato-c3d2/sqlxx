@@ -1,9 +1,9 @@
 /*!
- * @file select-statement.data-set.03.h++
+ * @file select-statement.data-set.01.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_03_HXX
-#define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_03_HXX
+#ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_01_HXX
+#define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_01_HXX
 
 #include <vector>
 
@@ -13,7 +13,7 @@
 #include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
-#include "./select-statement-data-set-element.class.h++"
+#include "../select-statement-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 
@@ -33,7 +33,7 @@ using sqlxx::statement::SelectStatement;
  * @c select_closure :
  *
  * @c columns[0] : @n
- * @li @c name       : 未指定
+ * @li @c name       : 指定
  * @li @c as_closure : 未指定
  *
  * @c columns[1] : @n
@@ -48,17 +48,17 @@ using sqlxx::statement::SelectStatement;
  *
  * @return データセット
  *
- * @see sqlxx::statement::SelectStatement              テスト対象クラス
+ * @see sqlxx::statement::SelectStatementnt              テスト対象クラス
  * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
  */
-auto SelectStatementDataSet::for_some_test_case_03()
+auto SelectStatementDataSet::for_some_test_case_01()
     -> std::vector<SelectStatementDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
     // + select_closure :
     //     + columns[0] :
-    //         + name       : 未指定
+    //         + name       : 指定
     //         + as_closure : 未指定
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
@@ -70,11 +70,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
         //         + name       : 指定
         //         + as_closure : 指定
         ////////////////////////////////
-        // _48
+        // _16
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -87,13 +87,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            "SELECT name AS p.name FROM people AS p"
+            "SELECT id, name AS p.name FROM people AS p"
         },
-        // _49
+        // _17
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -106,13 +106,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            "SELECT name AS p.name FROM people"
+            "SELECT id, name AS p.name FROM people"
         },
-        // _50
+        // _18
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -127,11 +127,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _51
+        // _19
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -154,11 +154,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
         //         + name       : 指定
         //         + as_closure : 未指定
         ////////////////////////////////
-        // _52
+        // _20
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -171,13 +171,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            "SELECT name FROM people AS p"
+            "SELECT id, name FROM people AS p"
         },
-        // _53
+        // _21
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -190,13 +190,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            "SELECT name FROM people"
+            "SELECT id, name FROM people"
         },
-        // _54
+        // _22
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -211,11 +211,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _55
+        // _23
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column { "name" }
                 }},
                 // [条件(2)]
@@ -238,11 +238,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
         //         + name       : 未指定
         //         + as_closure : 指定
         ////////////////////////////////
-        // _56
+        // _24
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -255,13 +255,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            ""
+            "SELECT id FROM people AS p"
         },
-        // _57
+        // _25
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -274,13 +274,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            ""
+            "SELECT id FROM people"
         },
-        // _58
+        // _26
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -295,11 +295,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _59
+        // _27
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}.as({ "p.name" })
                 }},
                 // [条件(2)]
@@ -322,11 +322,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
         //         + name       : 未指定
         //         + as_closure : 未指定
         ////////////////////////////////
-        // _60
+        // _28
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}
                 }},
                 // [条件(2)]
@@ -339,13 +339,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            ""
+            "SELECT id FROM people AS p"
         },
-        // _61
+        // _29
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}
                 }},
                 // [条件(2)]
@@ -358,13 +358,13 @@ auto SelectStatementDataSet::for_some_test_case_03()
                 }
             },
             // [期待結果] to_string メンバ関数
-            ""
+            "SELECT id FROM people"
         },
-        // _62
+        // _30
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}
                 }},
                 // [条件(2)]
@@ -379,11 +379,11 @@ auto SelectStatementDataSet::for_some_test_case_03()
             // [期待結果] to_string メンバ関数
             ""
         },
-        // _63
+        // _31
         {
             SelectStatement {
                 SelectClosure {{
-                    Column {},
+                    Column { "id" },
                     Column {}
                 }},
                 // [条件(2)]
@@ -405,4 +405,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__SelectStatement */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__statement */)
 
-#endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_03_HXX */
+#endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_01_HXX */

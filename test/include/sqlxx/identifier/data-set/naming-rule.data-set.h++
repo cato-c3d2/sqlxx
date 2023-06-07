@@ -86,8 +86,8 @@ BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#include "./naming-rule.data-set.00.h++"
-#include "./naming-rule.data-set.01.h++"
-#include "./naming-rule.data-set.02.h++"
+#include "./detail/naming-rule.data-set.00.h++"
+#include "./detail/naming-rule.data-set.01.h++"
+#include "./detail/naming-rule.data-set.02.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX */
