@@ -1,16 +1,16 @@
 /*!
- * @file select-closure.data-set.16.h++
+ * @file select-closure.data-set.00.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_16_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_16_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_00_HXX
+#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_00_HXX
 
 #include <vector>
 
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column.class.h++>
 
-#include "./select-closure-data-set-element.class.h++"
+#include "../select-closure-data-set-element.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
@@ -22,15 +22,8 @@ using sqlxx::identifier::Column;
 /*!
  * @brief データセットを返却する
  *
- * データパターン :
- *
- * @c columns[0] : @n
- * @li @c name       : 適格
- * @li @c as_closure : 適格
- *
- * @c columns[1] : @n
- * @li @c name       : 未指定, 空文字列, 不適格(半角スペース) or 適格
- * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
+ * データパターン : @n
+ * @li @c columns : 未指定
  *
  * @return データセット
  *
@@ -38,263 +31,276 @@ using sqlxx::identifier::Column;
  * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
  * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
  */
-auto SelectClosureDataSet::for_some_test_case_16()
+auto SelectClosureDataSet::for_some_test_case_00_a()
+    -> std::vector<SelectClosureDataSetElement>
+{
+    // clang-format off
+    return {
+        // _0
+        {
+            // [条件]
+            // + columns : 未指定
+            SelectClosure {},
+            // [期待結果] empty メンバ関数
+            true,
+            // [期待結果] to_string メンバ関数
+            ""
+        }
+    };
+    // clang-format on
+}
+
+/*!
+ * @brief データセットを返却する
+ *
+ * データパターン : @n
+ * @li @c columns[1] : 未指定
+ *
+ * @return データセット
+ *
+ * @see sqlxx::closure::SelectClosure              テスト対象クラス
+ * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
+ */
+auto SelectClosureDataSet::for_some_test_case_00_b()
     -> std::vector<SelectClosureDataSetElement>
 {
     ////////////////////////////////////////////////////////////////////////////
     // [条件(0)]
-    // + columns[0] :
-    //     + name       : 適格
-    //     + as_closure : 適格
+    // + columns[1] : 未指定
     ////////////////////////////////////////////////////////////////////////////
     // clang-format off
     return {
         ////////////////////////////////
         // [条件(1)]
-        // + columns[1] :
+        // + columns[0] :
         //     + name : 未指定
         ////////////////////////////////
-        // _257
+        // _1
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column {}
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _258
+        // _2
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column {}.as({ "" })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _259
+        // _3
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column {}.as({ " " })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _260
+        // _4
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
-                Column {}.as({ "p.name" })
+                Column {}.as({ "p.id" })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
 
         ////////////////////////////////
         // [条件(1)]
-        // + columns[1] :
+        // + columns[0] :
         //     + name : 空文字列
         ////////////////////////////////
-        // _261
+        // _5
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column { "" }
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _262
+        // _6
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column { "" }.as({ "" })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _263
+        // _7
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column { "" }.as({ " " })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _264
+        // _8
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
-                Column { "" }.as({ "p.name" })
+                Column { "" }.as({ "p.id" })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
 
         ////////////////////////////////
         // [条件(1)]
-        // + columns[1] :
+        // + columns[0] :
         //     + name : 不適格(半角スペース)
         ////////////////////////////////
-        // _265
+        // _9
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
                 Column { " " }
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _266
+        // _10
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
                 Column { " " }.as({ "" })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _267
+        // _11
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
                 Column { " " }.as({ " " })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
-        // _268
+        // _12
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
-                Column { " " }.as({ "p.name" })
+                Column { " " }.as({ "p.id" })
             },
             // [期待結果] empty メンバ関数
-            false,
+            true,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id"
+            ""
         },
 
         ////////////////////////////////
         // [条件(1)]
-        // + columns[1] :
+        // + columns[0] :
         //     + name : 適格
         ////////////////////////////////
-        // _269
+        // _13
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 未指定
-                Column { "name" }
+                Column { "id" }
             },
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id, name"
+            "SELECT id"
         },
-        // _270
+        // _14
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 空文字列
-                Column { "name" }.as({ "" })
+                Column { "id" }.as({ "" })
             },
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id, name"
+            "SELECT id"
         },
-        // _271
+        // _15
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 不適格(半角スペース)
-                Column { "name" }.as({ " " })
+                Column { "id" }.as({ " " })
             },
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id, name"
+            "SELECT id"
         },
-        // _272
+        // _16
         {
             SelectClosure {
-                Column { "id" }.as({ "p.id" }),
                 // [条件(2)]
-                // + columns[1] :
+                // + columns[0] :
                 //     + as_closure : 適格
-                Column { "name" }.as({ "p.name" })
+                Column { "id" }.as({ "p.id" })
             },
             // [期待結果] empty メンバ関数
             false,
             // [期待結果] to_string メンバ関数
-            "SELECT id AS p.id, name AS p.name"
+            "SELECT id AS p.id"
         }
     };
     // clang-format on
@@ -304,4 +310,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_16_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_00_HXX */
