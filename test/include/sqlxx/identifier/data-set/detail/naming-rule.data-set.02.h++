@@ -9,9 +9,8 @@
 
 #include "../naming-rule-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
-
-BOOST_AUTO_TEST_SUITE(class__NamingRule)
+namespace sqlxx::test
+{
 
 /*!
  * @brief データセットを返却する
@@ -431,8 +430,6 @@ auto NamingRuleDataSet::for_is_legal_02h()
     // clang-format on
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DETAIL__NAMING_RULE_DATA_SET_02_HXX */

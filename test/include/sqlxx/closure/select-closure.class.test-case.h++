@@ -21,6 +21,7 @@ BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
 using sqlxx::closure::SelectClosure;
 using sqlxx::identifier::Column;
+using sqlxx::test::SelectClosureDataSet;
 
 /*!
  * @brief テストパターン :

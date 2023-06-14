@@ -19,6 +19,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 BOOST_AUTO_TEST_SUITE(class__NamingRule)
 
 using sqlxx::identifier::NamingRule;
+using sqlxx::test::NamingRuleDataSet;
 
 /*!
  * @brief テストパターン :

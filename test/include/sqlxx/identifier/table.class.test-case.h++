@@ -21,6 +21,7 @@ BOOST_AUTO_TEST_SUITE(class__Table)
 
 using sqlxx::closure::AsClosure;
 using sqlxx::identifier::Table;
+using sqlxx::test::TableDataSet;
 
 /*!
  * @brief テストパターン :

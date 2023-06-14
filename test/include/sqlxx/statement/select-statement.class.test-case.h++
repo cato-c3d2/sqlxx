@@ -26,6 +26,7 @@ using sqlxx::closure::SelectClosure;
 using sqlxx::identifier::Column;
 using sqlxx::identifier::Table;
 using sqlxx::statement::SelectStatement;
+using sqlxx::test::SelectStatementDataSet;
 
 /*!
  * @brief テストパターン :

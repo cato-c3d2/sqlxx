@@ -12,9 +12,8 @@
 
 #include "./from-closure-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
-
-BOOST_AUTO_TEST_SUITE(class__FromClosure)
+namespace sqlxx::test
+{
 
 using sqlxx::closure::FromClosure;
 using sqlxx::identifier::Table;
@@ -466,8 +465,6 @@ auto FromClosureDataSet::for_some_test_case_e() -> std::vector<FromClosureDataSe
     };
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__FromClosure */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
+}
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX */

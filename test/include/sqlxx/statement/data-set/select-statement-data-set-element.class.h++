@@ -10,9 +10,8 @@
 
 #include <sql++/statement/select-statement.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
-
-BOOST_AUTO_TEST_SUITE(class__SelectStatement)
+namespace sqlxx::test
+{
 
 using sqlxx::statement::SelectStatement;
 
@@ -51,8 +50,6 @@ auto operator<<(
                << data_set_element.expectation_of_to_string << "\" }";
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__SelectStatement */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__statement */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_ELEMENT_CLASS_HXX */

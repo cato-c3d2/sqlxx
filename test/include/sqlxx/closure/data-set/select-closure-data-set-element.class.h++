@@ -10,9 +10,8 @@
 
 #include <sql++/closure/select-closure.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
-
-BOOST_AUTO_TEST_SUITE(class__SelectClosure)
+namespace sqlxx::test
+{
 
 using sqlxx::closure::SelectClosure;
 
@@ -58,8 +57,6 @@ auto operator<<(
                << data_set_element.expectation_of_to_string << "\" }";
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX */

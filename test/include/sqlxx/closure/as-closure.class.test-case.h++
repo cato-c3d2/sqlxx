@@ -19,6 +19,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__AsClosure)
 
 using sqlxx::closure::AsClosure;
+using sqlxx::test::AsClosureDataSet;
 
 /*!
  * @brief テストパターン :
