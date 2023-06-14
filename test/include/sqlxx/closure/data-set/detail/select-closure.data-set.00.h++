@@ -12,9 +12,8 @@
 
 #include "../select-closure-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
-
-BOOST_AUTO_TEST_SUITE(class__SelectClosure)
+namespace sqlxx::test
+{
 
 using sqlxx::closure::SelectClosure;
 using sqlxx::identifier::Column;
@@ -306,8 +305,6 @@ auto SelectClosureDataSet::for_some_test_case_00_b()
     // clang-format on
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DETAIL__SELECT_CLOSURE_DATA_SET_00_HXX */

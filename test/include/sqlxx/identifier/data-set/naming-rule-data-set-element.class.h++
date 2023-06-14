@@ -10,9 +10,8 @@
 
 #include <sql++/identifier/naming-rule.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
-
-BOOST_AUTO_TEST_SUITE(class__NamingRule)
+namespace sqlxx::test
+{
 
 using sqlxx::identifier::NamingRule;
 
@@ -52,8 +51,6 @@ auto operator<<(
                << data_set_element.expectation_of_is_legal << "\" }";
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX */

@@ -21,6 +21,7 @@ BOOST_AUTO_TEST_SUITE(class__Column)
 
 using sqlxx::closure::AsClosure;
 using sqlxx::identifier::Column;
+using sqlxx::test::ColumnDataSet;
 
 /*!
  * @brief テストパターン :

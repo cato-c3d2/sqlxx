@@ -11,9 +11,8 @@
 
 #include "./column-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
-
-BOOST_AUTO_TEST_SUITE(class__Column)
+namespace sqlxx::test
+{
 
 using sqlxx::identifier::Column;
 
@@ -276,8 +275,6 @@ auto ColumnDataSet::for_some_test_case() -> std::vector<ColumnDataSetElement>
     // clang-format on
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__Column */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_HXX */

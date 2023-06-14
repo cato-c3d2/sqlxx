@@ -10,9 +10,8 @@
 
 #include <sql++/identifier/table.class.h++>
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
-
-BOOST_AUTO_TEST_SUITE(class__Table)
+namespace sqlxx::test
+{
 
 using sqlxx::identifier::Table;
 
@@ -58,8 +57,6 @@ auto operator<<(
                << data_set_element.expectation_of_to_string << "\" }";
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__Table */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_ELEMENT_CLASS_HXX */

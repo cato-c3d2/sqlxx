@@ -11,9 +11,8 @@
 
 #include "./as-closure-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
-
-BOOST_AUTO_TEST_SUITE(class__AsClosure)
+namespace sqlxx::test
+{
 
 using sqlxx::closure::AsClosure;
 
@@ -111,8 +110,6 @@ auto AsClosureDataSet::for_some_test_case()
     };
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__AsClosure */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
+}
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX */

@@ -10,9 +10,8 @@
 
 #include "./naming-rule-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
-
-BOOST_AUTO_TEST_SUITE(class__NamingRule)
+namespace sqlxx::test
+{
 
 /*!
  * @brief @c NamingRule クラスのテストケースで使用するデータセット
@@ -82,9 +81,7 @@ auto NamingRuleDataSet::for_is_legal() -> std::vector<NamingRuleDataSetElement>
     return data_set;
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__NamingRule */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
+} // namespace sqlxx::test
 
 #include "./detail/naming-rule.data-set.00.h++"
 #include "./detail/naming-rule.data-set.01.h++"

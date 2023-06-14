@@ -10,9 +10,8 @@
 
 #include "./select-statement-data-set-element.class.h++"
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
-
-BOOST_AUTO_TEST_SUITE(class__SelectStatement)
+namespace sqlxx::test
+{
 
 /*!
  * @brief @c SelectStatement クラスのテストケースで使用するデータセット
@@ -155,9 +154,7 @@ auto SelectStatementDataSet::for_some_test_case()
     return data_set;
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__SelectStatement */)
-
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__statement */)
+} // namespace sqlxx::test
 
 #include "./detail/select-statement.data-set.00.h++"
 #include "./detail/select-statement.data-set.01.h++"
