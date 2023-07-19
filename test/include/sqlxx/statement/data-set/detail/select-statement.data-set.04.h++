@@ -17,102 +17,103 @@
 
 namespace sqlxx::test
 {
-
-using sqlxx::closure::FromClosure;
-using sqlxx::closure::SelectClosure;
-using sqlxx::identifier::Column;
-using sqlxx::identifier::Table;
-using sqlxx::statement::SelectStatement;
-
-/*!
- * @brief  データセットを返却する
- *
- * データパターン : その他
- *
- * @return データセット
- *
- * @see sqlxx::statement::SelectStatement              テスト対象クラス
- * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
- */
-auto SelectStatementDataSet::for_some_test_case_04()
-    -> std::vector<SelectStatementDataSetElement>
+inline namespace
 {
-    // clang-format off
-    return {
-        // _64
-        {
-            // [条件]
-            // + select_closure : 未指定
-            // + from_closure   : 未指定
-            SelectStatement {},
-            // [期待結果] to_string メンバ関数
-            ""
-        },
-        // _65
-        {
-            // [条件]
-            // + select_closure :
-            //     + columns  : 未指定
-            // + from_closure : 未指定
-            SelectStatement {
-                SelectClosure {}
-            },
-            // [期待結果] to_string メンバ関数
-            ""
-        },
-        // _66
-        {
-            // [条件]
-            // + select_closure : 未指定
-            // + from_closure   :
-            //     + table      : 未指定
-            SelectStatement {}.from(FromClosure {}),
-            // [期待結果] to_string メンバ関数
-            ""
-        },
-        // _67
-        {
-            // [条件]
-            // + select_closure :
-            //     + columns : 未指定
-            // + from_closure :
-            //     + table   : 未指定
-            SelectStatement {
-                SelectClosure {},
-                FromClosure {}
-            },
-            // [期待結果] to_string メンバ関数
-            ""
-        },
-        // _68
-        {
-            // [条件]
-            // + select_closure :
-            //     + columns[0] :
-            //         + name       : 不適格
-            //         + as_closure : 不適格
-            //     + columns[1] :
-            //         + name       : 不適格
-            //         + as_closure : 不適格
-            // + from_closure :
-            //     + table :
-            //         + name       : 不適格
-            //         + as_closure : 不適格
-            SelectStatement {
-                SelectClosure {{
-                    Column { " " }.as({ "," }),
-                    Column { "." }.as({ ";" })
-                }},
-                FromClosure {
-                    Table { "\'" }.as({ "\\" })
-                }
-            },
-            // [期待結果] to_string メンバ関数
-            ""
-        }
-    };
-}
+    using sqlxx::closure::FromClosure;
+    using sqlxx::closure::SelectClosure;
+    using sqlxx::identifier::Column;
+    using sqlxx::identifier::Table;
+    using sqlxx::statement::SelectStatement;
 
+    /*!
+     * @brief  データセットを返却する
+     *
+     * データパターン : その他
+     *
+     * @return データセット
+     *
+     * @see sqlxx::statement::SelectStatement              テスト対象クラス
+     * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
+     */
+    auto SelectStatementDataSet::for_some_test_case_04()
+        -> std::vector<SelectStatementDataSetElement>
+    {
+        // clang-format off
+        return {
+            // _64
+            {
+                // [条件]
+                // + select_closure : 未指定
+                // + from_closure   : 未指定
+                SelectStatement {},
+                // [期待結果] to_string メンバ関数
+                ""
+            },
+            // _65
+            {
+                // [条件]
+                // + select_closure :
+                //     + columns  : 未指定
+                // + from_closure : 未指定
+                SelectStatement {
+                    SelectClosure {}
+                },
+                // [期待結果] to_string メンバ関数
+                ""
+            },
+            // _66
+            {
+                // [条件]
+                // + select_closure : 未指定
+                // + from_closure   :
+                //     + table      : 未指定
+                SelectStatement {}.from(FromClosure {}),
+                // [期待結果] to_string メンバ関数
+                ""
+            },
+            // _67
+            {
+                // [条件]
+                // + select_closure :
+                //     + columns : 未指定
+                // + from_closure :
+                //     + table   : 未指定
+                SelectStatement {
+                    SelectClosure {},
+                    FromClosure {}
+                },
+                // [期待結果] to_string メンバ関数
+                ""
+            },
+            // _68
+            {
+                // [条件]
+                // + select_closure :
+                //     + columns[0] :
+                //         + name       : 不適格
+                //         + as_closure : 不適格
+                //     + columns[1] :
+                //         + name       : 不適格
+                //         + as_closure : 不適格
+                // + from_closure :
+                //     + table :
+                //         + name       : 不適格
+                //         + as_closure : 不適格
+                SelectStatement {
+                    SelectClosure {{
+                        Column { " " }.as({ "," }),
+                        Column { "." }.as({ ";" })
+                    }},
+                    FromClosure {
+                        Table { "\'" }.as({ "\\" })
+                    }
+                },
+                // [期待結果] to_string メンバ関数
+                ""
+            }
+        };
+    }
+}
 }
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_04_HXX */
