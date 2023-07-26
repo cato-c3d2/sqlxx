@@ -110,8 +110,9 @@ inline namespace
                 "AS p"
             }
         };
+        // clang-format on
     }
-}
-}
+} // namespace
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX */

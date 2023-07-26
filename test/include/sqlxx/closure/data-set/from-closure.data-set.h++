@@ -149,6 +149,7 @@ inline namespace
                 ""
             }
         };
+        // clang-format on
     }
 
     /*!
@@ -166,7 +167,8 @@ inline namespace
      * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
      * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_b() -> std::vector<FromClosureDataSetElement>
+    auto FromClosureDataSet::for_some_test_case_b()
+        -> std::vector<FromClosureDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -228,6 +230,7 @@ inline namespace
                 ""
             }
         };
+        // clang-format on
     }
 
     /*!
@@ -245,7 +248,8 @@ inline namespace
      * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
      * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_c() -> std::vector<FromClosureDataSetElement>
+    auto FromClosureDataSet::for_some_test_case_c()
+        -> std::vector<FromClosureDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -307,6 +311,7 @@ inline namespace
                 ""
             },
         };
+        // clang-format on
     }
 
     /*!
@@ -324,7 +329,8 @@ inline namespace
      * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
      * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_d() -> std::vector<FromClosureDataSetElement>
+    auto FromClosureDataSet::for_some_test_case_d()
+        -> std::vector<FromClosureDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -386,6 +392,7 @@ inline namespace
                 ""
             }
         };
+        // clang-format on
     }
 
     /*!
@@ -403,7 +410,8 @@ inline namespace
      * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
      * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_e() -> std::vector<FromClosureDataSetElement>
+    auto FromClosureDataSet::for_some_test_case_e()
+        -> std::vector<FromClosureDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -465,8 +473,9 @@ inline namespace
                 "FROM people AS p"
             }
         };
+        // clang-format on
     }
-}
-}
+} // namespace
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX */
