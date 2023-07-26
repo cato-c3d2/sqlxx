@@ -399,8 +399,9 @@ inline namespace
                 ""
             }
         };
+        // clang-format on
     }
-}
-}
+} // namespace
+} // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_00_HXX */
