@@ -21,7 +21,7 @@ inline namespace
 
     /*!
      * @brief データセットを返却する
-
+     *
      * データパターン :
      *
      * @c columns[0] : @n
