@@ -34,7 +34,7 @@ inline namespace
         bool expectation_of_is_legal;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out              出力ストリーム

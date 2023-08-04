@@ -76,7 +76,7 @@ inline namespace closure
         ColumnListType _column_list;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out            出力ストリーム

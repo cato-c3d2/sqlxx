@@ -78,7 +78,7 @@ inline namespace closure
         AliasNameType _alias_name;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out        出力ストリーム

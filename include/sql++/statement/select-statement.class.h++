@@ -79,7 +79,7 @@ inline namespace statement
         closure::FromClosure _from_closure;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out              出力ストリーム
