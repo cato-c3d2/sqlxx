@@ -140,7 +140,7 @@ inline namespace identifier
         closure::AsClosure _as_closure;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out    出力ストリーム

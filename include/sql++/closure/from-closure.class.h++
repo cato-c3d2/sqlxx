@@ -68,7 +68,7 @@ inline namespace closure
         identifier::Table _table;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out          出力ストリーム

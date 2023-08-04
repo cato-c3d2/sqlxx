@@ -34,7 +34,7 @@ inline namespace
         std::string expectation_of_to_string;
     };
 
-    /**
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out              出力ストリーム
