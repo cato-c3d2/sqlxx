@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 #include "./data-set/select-statement-data-set-element.class.h++"
@@ -23,7 +23,7 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 
 using sqlxx::closure::FromClosure;
 using sqlxx::closure::SelectClosure;
-using sqlxx::identifier::Column;
+using sqlxx::identifier::ColumnIdentifier;
 using sqlxx::identifier::Table;
 using sqlxx::statement::SelectStatement;
 using sqlxx::test::SelectStatementDataSet;
@@ -40,8 +40,8 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     SelectStatement const source      = {}; // コピー元のオブジェクト
     SelectStatement       destination = {   // コピー先のオブジェクト
         SelectClosure {
-            Column { "p" }.as({ "p.id" }),
-            Column { "name" }.as({ "p.name" })
+            ColumnIdentifier { "p" }.as({ "p.id" }),
+            ColumnIdentifier { "name" }.as({ "p.name" })
         },
         FromClosure { Table { "people" }.as({ "p" }) }
     };

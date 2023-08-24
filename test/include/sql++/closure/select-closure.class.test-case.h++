@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 
 #include "./data-set/select-closure.data-set.h++"
 
@@ -20,7 +20,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
 using sqlxx::closure::SelectClosure;
-using sqlxx::identifier::Column;
+using sqlxx::identifier::ColumnIdentifier;
 using sqlxx::test::SelectClosureDataSet;
 
 /*!
@@ -34,8 +34,8 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     // clang-format off
     SelectClosure const source      = {}; // コピー元のオブジェクト
     SelectClosure       destination = {   // コピー先のオブジェクト
-        Column { "p" }.as({ "p.id" }),
-        Column { "name" }.as({ "p.name" })
+        ColumnIdentifier { "p" }.as({ "p.id" }),
+        ColumnIdentifier { "name" }.as({ "p.name" })
     };
     // clang-format on
 

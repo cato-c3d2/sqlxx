@@ -22,7 +22,8 @@ inline namespace identifier
      *
      * @deprecated @link ColumnIdentifier @endlink を使用してください
      */
-    using Column = ColumnIdentifier;
+    using Column [[deprecated("please use 'ColumnIdentifier'")]] =
+        ColumnIdentifier;
 } // namespace identifier
 } // namespace sqlxx
 

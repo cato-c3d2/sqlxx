@@ -8,13 +8,13 @@
 #include <iostream>
 #include <string>
 
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 
 namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::identifier::Column;
+    using sqlxx::identifier::ColumnIdentifier;
 
     /*!
      * @brief データセットの要素
@@ -26,7 +26,7 @@ inline namespace
         /*!
          * @brief テスト対象オブジェクト
          */
-        Column column;
+        ColumnIdentifier column;
 
         /*!
          * @brief @c empty メンバ関数の期待結果

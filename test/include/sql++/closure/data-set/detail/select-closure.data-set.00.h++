@@ -8,7 +8,7 @@
 #include <vector>
 
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 
 #include "../select-closure-data-set-element.class.h++"
 
@@ -17,7 +17,7 @@ namespace sqlxx::test
 inline namespace
 {
     using sqlxx::closure::SelectClosure;
-    using sqlxx::identifier::Column;
+    using sqlxx::identifier::ColumnIdentifier;
 
     /*!
      * @brief データセットを返却する
@@ -82,7 +82,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 未指定
-                    Column {}
+                    ColumnIdentifier {}
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -95,7 +95,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 空文字列
-                    Column {}.as({ "" })
+                    ColumnIdentifier {}.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -108,7 +108,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 不適格(半角スペース)
-                    Column {}.as({ " " })
+                    ColumnIdentifier {}.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -121,7 +121,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 適格
-                    Column {}.as({ "p.id" })
+                    ColumnIdentifier {}.as({ "p.id" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -140,7 +140,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 未指定
-                    Column { "" }
+                    ColumnIdentifier { "" }
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -153,7 +153,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 空文字列
-                    Column { "" }.as({ "" })
+                    ColumnIdentifier { "" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -166,7 +166,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 不適格(半角スペース)
-                    Column { "" }.as({ " " })
+                    ColumnIdentifier { "" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -179,7 +179,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 適格
-                    Column { "" }.as({ "p.id" })
+                    ColumnIdentifier { "" }.as({ "p.id" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -198,7 +198,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 未指定
-                    Column { " " }
+                    ColumnIdentifier { " " }
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -211,7 +211,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 空文字列
-                    Column { " " }.as({ "" })
+                    ColumnIdentifier { " " }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -224,7 +224,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 不適格(半角スペース)
-                    Column { " " }.as({ " " })
+                    ColumnIdentifier { " " }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -237,7 +237,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 適格
-                    Column { " " }.as({ "p.id" })
+                    ColumnIdentifier { " " }.as({ "p.id" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -256,7 +256,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 未指定
-                    Column { "id" }
+                    ColumnIdentifier { "id" }
                 },
                 // [期待結果] empty メンバ関数
                 false,
@@ -269,7 +269,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 空文字列
-                    Column { "id" }.as({ "" })
+                    ColumnIdentifier { "id" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
@@ -282,7 +282,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 不適格(半角スペース)
-                    Column { "id" }.as({ " " })
+                    ColumnIdentifier { "id" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 false,
@@ -295,7 +295,7 @@ inline namespace
                     // [条件(2)]
                     // + columns[0] :
                     //     + as_closure : 適格
-                    Column { "id" }.as({ "p.id" })
+                    ColumnIdentifier { "id" }.as({ "p.id" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
