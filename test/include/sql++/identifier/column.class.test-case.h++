@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/as-closure.class.h++>
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 
 #include "./data-set/column.data-set.h++"
 
@@ -20,20 +20,20 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 BOOST_AUTO_TEST_SUITE(class__Column)
 
 using sqlxx::closure::AsClosure;
-using sqlxx::identifier::Column;
+using sqlxx::identifier::ColumnIdentifier;
 using sqlxx::test::ColumnDataSet;
 
 /*!
  * @brief テストパターン :
- *        @c Column オブジェクトがコピー代入可能であることを検証する
+ *        @c ColumnIdentifier オブジェクトがコピー代入可能であることを検証する
  *
- * @see sqlxx::identifier::Column テスト対象クラス
+ * @see sqlxx::identifier::ColumnIdentifier テスト対象クラス
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
     // clang-format off
-    Column const source      = {};                             // コピー元のオブジェクト
-    Column       destination = { "id", AsClosure { "p.id" } }; // コピー先のオブジェクト
+    ColumnIdentifier const source      = {};                             // コピー元のオブジェクト
+    ColumnIdentifier       destination = { "id", AsClosure { "p.id" } }; // コピー先のオブジェクト
     // clang-format on
 
     // 二つのオブジェクトは等価ではないこと
@@ -51,11 +51,11 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
- *        様々な @c Column オブジェクトに対して @c empty メンバ関数を呼び出す
+ *        様々な @c ColumnIdentifier オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::identifier::Column           テスト対象クラス
- * @see sqlxx::identifier::Column::empty()  テスト対象メンバ関数
- * @see ColumnDataSet::for_some_test_case() データセット生成メンバ関数
+ * @see sqlxx::identifier::ColumnIdentifier           テスト対象クラス
+ * @see sqlxx::identifier::ColumnIdentifier::empty()  テスト対象メンバ関数
+ * @see ColumnDataSet::for_some_test_case()           データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
     empty,
@@ -63,7 +63,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    Column const column = data_set_element.column;
+    ColumnIdentifier const column = data_set_element.column;
 
     // テスト対象メンバ関数の期待結果
     bool const expectation = data_set_element.expectation_of_empty;
@@ -74,11 +74,11 @@ BOOST_DATA_TEST_CASE(
 
 /*!
  * @brief テストパターン :
- *        様々な @c Column オブジェクトに対して @c to_string メンバ関数を呼び出す
+ *        様々な @c ColumnIdentifier オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::identifier::Column              テスト対象クラス
- * @see sqlxx::identifier::Column::to_string() テスト対象メンバ関数
- * @see ColumnDataSet::for_some_test_case()    データセット生成メンバ関数
+ * @see sqlxx::identifier::ColumnIdentifier              テスト対象クラス
+ * @see sqlxx::identifier::ColumnIdentifier::to_string() テスト対象メンバ関数
+ * @see ColumnDataSet::for_some_test_case()              データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
     to_string,
@@ -86,7 +86,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    Column const column = data_set_element.column;
+    ColumnIdentifier const column = data_set_element.column;
 
     // テスト対象メンバ関数の期待結果
     std::string const expectation = data_set_element.expectation_of_to_string;

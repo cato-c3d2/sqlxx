@@ -10,7 +10,7 @@
 #include <sql++/closure/as-closure.class.h++>
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
@@ -36,7 +36,12 @@ namespace sqlxx
  * @brief SQL の識別子 ( identifier ) に関するインライン名前空間
  */
 inline namespace identifier
-{}
+{
+    /*!
+     * @brief @c ColumnIdentifier のエイリアス
+     */
+    using Column = ColumnIdentifier;
+} // namespace identifier
 
 /*!
  * @namespace closure

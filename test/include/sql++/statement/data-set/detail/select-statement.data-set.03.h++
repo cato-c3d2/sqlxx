@@ -9,7 +9,7 @@
 
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
-#include <sql++/identifier/column.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
@@ -21,7 +21,7 @@ inline namespace
 {
     using sqlxx::closure::FromClosure;
     using sqlxx::closure::SelectClosure;
-    using sqlxx::identifier::Column;
+    using sqlxx::identifier::ColumnIdentifier;
     using sqlxx::identifier::Table;
     using sqlxx::statement::SelectStatement;
 
@@ -74,8 +74,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -93,8 +93,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -112,8 +112,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -131,8 +131,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -158,8 +158,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -177,8 +177,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -196,8 +196,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -215,8 +215,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column { "name" }
+                        ColumnIdentifier {},
+                        ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -242,8 +242,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -261,8 +261,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -280,8 +280,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -299,8 +299,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}.as({ "p.name" })
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -326,8 +326,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -345,8 +345,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -364,8 +364,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}
                     }},
                     // [条件(2)]
                     // + from_closure :
@@ -383,8 +383,8 @@ inline namespace
             {
                 SelectStatement {
                     SelectClosure {{
-                        Column {},
-                        Column {}
+                        ColumnIdentifier {},
+                        ColumnIdentifier {}
                     }},
                     // [条件(2)]
                     // + from_closure :
