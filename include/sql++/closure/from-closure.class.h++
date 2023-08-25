@@ -11,7 +11,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include <string>
 
@@ -35,7 +35,7 @@ inline namespace closure
          *
          * @param[in] table "テーブル指定" の文法オブジェクト
          */
-        FromClosure(identifier::Table table);
+        FromClosure(identifier::TableIdentifier table);
 
         /*!
          * @brief "テーブル指定" を設定する
@@ -44,7 +44,7 @@ inline namespace closure
          *
          * @return このオブジェクトの参照
          */
-        auto table(identifier::Table table) -> FromClosure &;
+        auto table(identifier::TableIdentifier table) -> FromClosure &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -65,7 +65,7 @@ inline namespace closure
         /*!
          * @brief "テーブル指定"
          */
-        identifier::Table _table;
+        identifier::TableIdentifier _table;
     };
 
     /*!
@@ -94,10 +94,10 @@ inline namespace closure
     FromClosure::FromClosure() : _table()
     {}
 
-    FromClosure::FromClosure(identifier::Table table) : _table(table)
+    FromClosure::FromClosure(identifier::TableIdentifier table) : _table(table)
     {}
 
-    auto FromClosure::table(identifier::Table table) -> FromClosure &
+    auto FromClosure::table(identifier::TableIdentifier table) -> FromClosure &
     {
         this->_table = table;
         return *this;

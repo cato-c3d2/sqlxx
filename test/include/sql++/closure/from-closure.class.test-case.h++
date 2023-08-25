@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/from-closure.class.h++>
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include "./data-set/from-closure.data-set.h++"
 
@@ -20,7 +20,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__FromClosure)
 
 using sqlxx::closure::FromClosure;
-using sqlxx::identifier::Table;
+using sqlxx::identifier::TableIdentifier;
 using sqlxx::test::FromClosureDataSet;
 
 /*!
@@ -34,7 +34,7 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     // clang-format off
     FromClosure const source      = {}; // コピー元のオブジェクト
     FromClosure       destination = {   // コピー先のオブジェクト
-        Table { "people" }.as({ "p" })};
+        TableIdentifier { "people" }.as({ "p" })};
     // clang-format on
 
     // 二つのオブジェクトは等価ではないこと

@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 using sqlxx::closure::FromClosure;
 using sqlxx::closure::SelectClosure;
 using sqlxx::identifier::ColumnIdentifier;
-using sqlxx::identifier::Table;
+using sqlxx::identifier::TableIdentifier;
 using sqlxx::statement::SelectStatement;
 using sqlxx::test::SelectStatementDataSet;
 
@@ -43,7 +43,7 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
             ColumnIdentifier { "p" }.as({ "p.id" }),
             ColumnIdentifier { "name" }.as({ "p.name" })
         },
-        FromClosure { Table { "people" }.as({ "p" }) }
+        FromClosure { TableIdentifier { "people" }.as({ "p" }) }
     };
     // clang-format on
 

@@ -10,7 +10,7 @@
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 #include "../select-statement-data-set-element.class.h++"
@@ -22,7 +22,7 @@ inline namespace
     using sqlxx::closure::FromClosure;
     using sqlxx::closure::SelectClosure;
     using sqlxx::identifier::ColumnIdentifier;
-    using sqlxx::identifier::Table;
+    using sqlxx::identifier::TableIdentifier;
     using sqlxx::statement::SelectStatement;
 
     /*!
@@ -83,7 +83,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table { "people" }.as({ "p" })
+                        TableIdentifier { "people" }.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -102,7 +102,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table { "people" }
+                        TableIdentifier { "people" }
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -121,7 +121,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table {}.as({ "p" })
+                        TableIdentifier {}.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -140,7 +140,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table {}
+                        TableIdentifier {}
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -167,7 +167,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table { "people" }.as({ "p" })
+                        TableIdentifier { "people" }.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -186,7 +186,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table { "people" }
+                        TableIdentifier { "people" }
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -205,7 +205,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table {}.as({ "p" })
+                        TableIdentifier {}.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -224,7 +224,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table {}
+                        TableIdentifier {}
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -251,7 +251,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table { "people" }.as({ "p" })
+                        TableIdentifier { "people" }.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -270,7 +270,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table { "people" }
+                        TableIdentifier { "people" }
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -289,7 +289,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table {}.as({ "p" })
+                        TableIdentifier {}.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -308,7 +308,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table {}
+                        TableIdentifier {}
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -335,7 +335,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table { "people" }.as({ "p" })
+                        TableIdentifier { "people" }.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -354,7 +354,7 @@ inline namespace
                     //         + name       : 指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table { "people" }
+                        TableIdentifier { "people" }
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -373,7 +373,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 指定
                     FromClosure {
-                        Table {}.as({ "p" })
+                        TableIdentifier {}.as({ "p" })
                     }
                 },
                 // [期待結果] to_string メンバ関数
@@ -392,7 +392,7 @@ inline namespace
                     //         + name       : 未指定
                     //         + as_closure : 未指定
                     FromClosure {
-                        Table {}
+                        TableIdentifier {}
                     }
                 },
                 // [期待結果] to_string メンバ関数

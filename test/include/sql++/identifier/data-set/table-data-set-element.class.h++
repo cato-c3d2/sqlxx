@@ -8,13 +8,13 @@
 #include <iostream>
 #include <string>
 
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::identifier::Table;
+    using sqlxx::identifier::TableIdentifier;
 
     /*!
      * @brief データセットの要素
@@ -26,7 +26,7 @@ inline namespace
         /*!
          * @brief テスト対象オブジェクト
          */
-        Table table;
+        TableIdentifier table;
 
         /*!
          * @brief @c empty メンバ関数の期待結果
