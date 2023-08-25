@@ -8,7 +8,7 @@
 #include <vector>
 
 #include <sql++/closure/from-closure.class.h++>
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include "./from-closure-data-set-element.class.h++"
 
@@ -17,7 +17,7 @@ namespace sqlxx::test
 inline namespace
 {
     using sqlxx::closure::FromClosure;
-    using sqlxx::identifier::Table;
+    using sqlxx::identifier::TableIdentifier;
 
     /*!
      * @brief @c FromClosure クラスのテストケースで使用するデータセット
@@ -183,7 +183,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
-                    Table {}
+                    TableIdentifier {}
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -196,7 +196,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
-                    Table {}.as({ "" })
+                    TableIdentifier {}.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -209,7 +209,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
-                    Table {}.as({ " " })
+                    TableIdentifier {}.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -222,7 +222,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
-                    Table {}.as({ "p" })
+                    TableIdentifier {}.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -264,7 +264,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
-                    Table { "" }
+                    TableIdentifier { "" }
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -277,7 +277,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
-                    Table { "" }.as({ "" })
+                    TableIdentifier { "" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -290,7 +290,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
-                    Table { "" }.as({ " " })
+                    TableIdentifier { "" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -303,7 +303,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
-                    Table { "" }.as({ "p" })
+                    TableIdentifier { "" }.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -345,7 +345,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
-                    Table { " " }
+                    TableIdentifier { " " }
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -358,7 +358,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
-                    Table { " " }.as({ "" })
+                    TableIdentifier { " " }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -371,7 +371,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
-                    Table { " " }.as({ " " })
+                    TableIdentifier { " " }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -384,7 +384,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
-                    Table { " " }.as({ "p" })
+                    TableIdentifier { " " }.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
                 true,
@@ -426,7 +426,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
-                    Table { "people" }
+                    TableIdentifier { "people" }
                 },
                 // [期待結果] empty メンバ関数
                 false,
@@ -439,7 +439,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
-                    Table { "people" }.as({ "" })
+                    TableIdentifier { "people" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
@@ -452,7 +452,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
-                    Table { "people" }.as({ " " })
+                    TableIdentifier { "people" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 false,
@@ -465,7 +465,7 @@ inline namespace
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
-                    Table { "people" }.as({ "p" })
+                    TableIdentifier { "people" }.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
                 false,

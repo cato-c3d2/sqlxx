@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include "./table-data-set-element.class.h++"
 
@@ -15,10 +15,10 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::identifier::Table;
+    using sqlxx::identifier::TableIdentifier;
 
     /*!
-     * @brief @c Table クラスのテストケースで使用するデータセット
+     * @brief @c TableIdentifier クラスのテストケースで使用するデータセット
      */
     class TableDataSet
     {
@@ -65,9 +65,9 @@ inline namespace
      *
      * @return データセット
      *
-     * @see sqlxx::identifier::Table              テスト対象クラス
-     * @see sqlxx::identifier::Table::empty()     テスト対象メンバ関数
-     * @see sqlxx::identifier::Table::to_string() テスト対象メンバ関数
+     * @see sqlxx::identifier::TableIdentifier              テスト対象クラス
+     * @see sqlxx::identifier::TableIdentifier::empty()     テスト対象メンバ関数
+     * @see sqlxx::identifier::TableIdentifier::to_string() テスト対象メンバ関数
      */
     auto TableDataSet::for_some_test_case() -> std::vector<TableDataSetElement>
     {
@@ -83,7 +83,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 未指定
-                Table {},
+                TableIdentifier {},
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -94,7 +94,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 空文字列
-                Table {}.as({ "" }),
+                TableIdentifier {}.as({ "" }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -105,7 +105,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 不適格(半角スペース)
-                Table {}.as({ " " }),
+                TableIdentifier {}.as({ " " }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -116,7 +116,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 適格
-                Table {}.as({ "p" }),
+                TableIdentifier {}.as({ "p" }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -133,7 +133,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 未指定
-                Table { "" },
+                TableIdentifier { "" },
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -144,7 +144,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 空文字列
-                Table { "" }.as({ "" }),
+                TableIdentifier { "" }.as({ "" }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -155,7 +155,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 不適格(半角スペース)
-                Table { "" }.as({ " " }),
+                TableIdentifier { "" }.as({ " " }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -166,7 +166,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 適格
-                Table { "" }.as({ "p" }),
+                TableIdentifier { "" }.as({ "p" }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -183,7 +183,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 未指定
-                Table { " " },
+                TableIdentifier { " " },
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -194,7 +194,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 空文字列
-                Table { " " }.as({ "" }),
+                TableIdentifier { " " }.as({ "" }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -205,7 +205,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 不適格(半角スペース)
-                Table { " " }.as({ " " }),
+                TableIdentifier { " " }.as({ " " }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -216,7 +216,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 適格
-                Table { " " }.as({ "p" }),
+                TableIdentifier { " " }.as({ "p" }),
                 // [期待結果] empty()
                 true,
                 // [期待結果] to_string()
@@ -233,7 +233,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 未指定
-                Table { "people" },
+                TableIdentifier { "people" },
                 // [期待結果] empty()
                 false,
                 // [期待結果] to_string()
@@ -244,7 +244,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 空文字列
-                Table { "people" }.as({ "" }),
+                TableIdentifier { "people" }.as({ "" }),
                 // [期待結果] empty()
                 false,
                 // [期待結果] to_string()
@@ -255,7 +255,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 不適格(半角スペース)
-                Table { "people" }.as({ " " }),
+                TableIdentifier { "people" }.as({ " " }),
                 // [期待結果] empty()
                 false,
                 // [期待結果] to_string()
@@ -266,7 +266,7 @@ inline namespace
                 // [条件(1)]
                 // + table :
                 //     + as_closure : 適格
-                Table { "people" }.as({ "p" }),
+                TableIdentifier { "people" }.as({ "p" }),
                 // [期待結果] empty()
                 false,
                 // [期待結果] to_string()

@@ -22,7 +22,8 @@ inline namespace identifier
      *
      * @deprecated @link TableIdentifier @endlink を使用してください
      */
-    using Table = TableIdentifier;
+    using Table [[deprecated("please use 'TableIdentifier'")]] =
+        TableIdentifier;
 } // namespace identifier
 } // namespace sqlxx
 

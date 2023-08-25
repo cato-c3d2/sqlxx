@@ -10,7 +10,7 @@
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 #include "../select-statement-data-set-element.class.h++"
@@ -22,7 +22,7 @@ inline namespace
     using sqlxx::closure::FromClosure;
     using sqlxx::closure::SelectClosure;
     using sqlxx::identifier::ColumnIdentifier;
-    using sqlxx::identifier::Table;
+    using sqlxx::identifier::TableIdentifier;
     using sqlxx::statement::SelectStatement;
 
     /*!
@@ -105,7 +105,7 @@ inline namespace
                         ColumnIdentifier { "." }.as({ ";" })
                     }},
                     FromClosure {
-                        Table { "\'" }.as({ "\\" })
+                        TableIdentifier { "\'" }.as({ "\\" })
                     }
                 },
                 // [期待結果] to_string メンバ関数

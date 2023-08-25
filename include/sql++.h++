@@ -11,7 +11,7 @@
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -41,6 +41,11 @@ inline namespace identifier
      * @brief @c ColumnIdentifier のエイリアス
      */
     using Column = ColumnIdentifier;
+
+    /*!
+     * @brief @c TableIdentifier のエイリアス
+     */
+    using Table = TableIdentifier;
 } // namespace identifier
 
 /*!

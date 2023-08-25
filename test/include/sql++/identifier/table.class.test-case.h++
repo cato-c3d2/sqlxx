@@ -11,7 +11,7 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/closure/as-closure.class.h++>
-#include <sql++/identifier/table.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include "./data-set/table.data-set.h++"
 
@@ -20,20 +20,20 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 BOOST_AUTO_TEST_SUITE(class__Table)
 
 using sqlxx::closure::AsClosure;
-using sqlxx::identifier::Table;
+using sqlxx::identifier::TableIdentifier;
 using sqlxx::test::TableDataSet;
 
 /*!
  * @brief テストパターン :
- *        @c Table オブジェクトがコピー代入可能であることを検証する
+ *        @c TableIdentifier オブジェクトがコピー代入可能であることを検証する
  *
- * @see sqlxx::identifier::Table テスト対象クラス
+ * @see sqlxx::identifier::TableIdentifier テスト対象クラス
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
     // clang-format off
-    Table const source      = {};                              // コピー元のオブジェクト
-    Table       destination = { "people", AsClosure { "p" } }; // コピー先のオブジェクト
+    TableIdentifier const source      = {};                              // コピー元のオブジェクト
+    TableIdentifier       destination = { "people", AsClosure { "p" } }; // コピー先のオブジェクト
     // clang-format on
 
     // 二つのオブジェクトは等価ではないこと
@@ -51,11 +51,11 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
- *        様々な @c Table オブジェクトに対して @c empty メンバ関数を呼び出す
+ *        様々な @c TableIdentifier オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::identifier::Table           テスト対象クラス
- * @see sqlxx::identifier::Table::empty()  テスト対象メンバ関数
- * @see TableDataSet::for_some_test_case() データセット生成メンバ関数
+ * @see sqlxx::identifier::TableIdentifier           テスト対象クラス
+ * @see sqlxx::identifier::TableIdentifier::empty()  テスト対象メンバ関数
+ * @see TableDataSet::for_some_test_case()           データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
     empty,
@@ -63,7 +63,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    Table const table = data_set_element.table;
+    TableIdentifier const table = data_set_element.table;
 
     // テスト対象メンバ関数の期待結果
     bool const expectation = data_set_element.expectation_of_empty;
@@ -74,11 +74,11 @@ BOOST_DATA_TEST_CASE(
 
 /*!
  * @brief テストパターン :
- *        様々な @c Table オブジェクトに対して @c to_string メンバ関数を呼び出す
+ *        様々な @c TableIdentifier オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::identifier::Table              テスト対象クラス
- * @see sqlxx::identifier::Table::to_string() テスト対象メンバ関数
- * @see TableDataSet::for_some_test_case()    データセット生成メンバ関数
+ * @see sqlxx::identifier::TableIdentifier              テスト対象クラス
+ * @see sqlxx::identifier::TableIdentifier::to_string() テスト対象メンバ関数
+ * @see TableDataSet::for_some_test_case()              データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
     to_string,
@@ -86,7 +86,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    Table const table = data_set_element.table;
+    TableIdentifier const table = data_set_element.table;
 
     // テスト対象メンバ関数の期待結果
     std::string const expectation = data_set_element.expectation_of_to_string;
