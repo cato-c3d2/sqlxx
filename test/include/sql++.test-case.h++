@@ -6,8 +6,8 @@
 #define TEST__INCLUDE__SQLXX_TEST_CASE_HXX
 
 // clang-format off
-#include "./sql++/identifier/column.class.test-case.h++"
-#include "./sql++/identifier/table.class.test-case.h++"
+#include "./sql++/identifier/column-identifier.class.test-case.h++"
+#include "./sql++/identifier/table-identifier.class.test-case.h++"
 #include "./sql++/identifier/naming-rule.class.test-case.h++"
 #include "./sql++/closure/as-closure.class.test-case.h++"
 #include "./sql++/closure/select-closure.class.test-case.h++"

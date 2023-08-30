@@ -1,9 +1,9 @@
 /*!
- * @file table-data-set-element.class.h++
+ * @file table-identifier-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
@@ -21,7 +21,7 @@ inline namespace
      *
      * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
      */
-    struct TableDataSetElement
+    struct TableIdentifierDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
@@ -47,8 +47,9 @@ inline namespace
      *
      * @return 出力ストリーム
      */
-    auto
-    operator<<(std::ostream & out, TableDataSetElement const & data_set_element)
+    auto operator<<(
+        std::ostream &                        out,
+        TableIdentifierDataSetElement const & data_set_element)
         -> std::ostream &
     {
         return out << "{ table : \"" << data_set_element.table
@@ -60,4 +61,4 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX */

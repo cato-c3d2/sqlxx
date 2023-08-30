@@ -1,9 +1,9 @@
 /*!
- * @file column-data-set-element.class.h++
+ * @file column-identifier-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
@@ -21,7 +21,7 @@ inline namespace
      *
      * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
      */
-    struct ColumnDataSetElement
+    struct ColumnIdentifierDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
@@ -48,7 +48,8 @@ inline namespace
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream & out, ColumnDataSetElement const & data_set_element)
+        std::ostream &                         out,
+        ColumnIdentifierDataSetElement const & data_set_element)
         -> std::ostream &
     {
         return out << "{ column : \"" << data_set_element.column
@@ -60,4 +61,4 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX */
