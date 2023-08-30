@@ -1,29 +1,30 @@
 /*!
- * @file table.data-set.h++
+ * @file column-identifier.data-set.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_HXX
-#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_HXX
 
 #include <vector>
 
-#include <sql++/identifier/table-identifier.class.h++>
+#include <sql++/identifier/column-identifier.class.h++>
 
-#include "./table-data-set-element.class.h++"
+#include "./column-identifier-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::identifier::TableIdentifier;
+    using sqlxx::identifier::ColumnIdentifier;
 
     /*!
-     * @brief @c TableIdentifier クラスのテストケースで使用するデータセット
+     * @brief @c ColumnIdentifier クラスのテストケースで使用するデータセット
      */
-    class TableDataSet
+    class ColumnIdentifierDataSet
     {
     public:
-        static auto for_some_test_case() -> std::vector<TableDataSetElement>;
+        static auto for_some_test_case()
+            -> std::vector<ColumnIdentifierDataSetElement>;
     };
 
     /*!
@@ -32,7 +33,7 @@ inline namespace
      * [ データパターン表 ] @n
      * <pre>
      * -----------------------
-     * |     |     table     |
+     * |     |    column     |
      * |     | name  |  as   |
      * =======================
      * |  _0 |   -   |   -   |
@@ -65,212 +66,213 @@ inline namespace
      *
      * @return データセット
      *
-     * @see sqlxx::identifier::TableIdentifier              テスト対象クラス
-     * @see sqlxx::identifier::TableIdentifier::empty()     テスト対象メンバ関数
-     * @see sqlxx::identifier::TableIdentifier::to_string() テスト対象メンバ関数
+     * @see sqlxx::identifier::ColumnIdentifier              テスト対象クラス
+     * @see sqlxx::identifier::ColumnIdentifier::empty()     テスト対象メンバ関数
+     * @see sqlxx::identifier::ColumnIdentifier::to_string() テスト対象メンバ関数
      */
-    auto TableDataSet::for_some_test_case() -> std::vector<TableDataSetElement>
+    auto ColumnIdentifierDataSet::for_some_test_case()
+        -> std::vector<ColumnIdentifierDataSetElement>
     {
         // clang-format off
         return {
             ////////////////////////////////////////////////////////////////////
             // [条件(0)]
-            // + table :
+            // + column :
             //     + name : 未指定
             ////////////////////////////////////////////////////////////////////
             // _0
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 未指定
-                TableIdentifier {},
-                // [期待結果] empty()
+                ColumnIdentifier {},
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _1
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 空文字列
-                TableIdentifier {}.as({ "" }),
-                // [期待結果] empty()
+                ColumnIdentifier {}.as({ "" }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _2
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 不適格(半角スペース)
-                TableIdentifier {}.as({ " " }),
-                // [期待結果] empty()
+                ColumnIdentifier {}.as({ " " }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _3
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 適格
-                TableIdentifier {}.as({ "p" }),
-                // [期待結果] empty()
+                ColumnIdentifier {}.as({ "p.id" }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
 
             ////////////////////////////////////////////////////////////////////
             // [条件(0)]
-            // + table :
+            // + column :
             //     + name : 空文字列
             ////////////////////////////////////////////////////////////////////
             // _4
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 未指定
-                TableIdentifier { "" },
-                // [期待結果] empty()
+                ColumnIdentifier { "" },
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _5
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 空文字列
-                TableIdentifier { "" }.as({ "" }),
-                // [期待結果] empty()
+                ColumnIdentifier { "" }.as({ "" }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _6
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 不適格(半角スペース)
-                TableIdentifier { "" }.as({ " " }),
-                // [期待結果] empty()
+                ColumnIdentifier { "" }.as({ " " }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _7
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 適格
-                TableIdentifier { "" }.as({ "p" }),
-                // [期待結果] empty()
+                ColumnIdentifier { "" }.as({ "p.id" }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
 
             ////////////////////////////////////////////////////////////////////
             // [条件(0)]
-            // + table :
+            // + column :
             //     + name : 不適格(半角スペース)
             ////////////////////////////////////////////////////////////////////
             // _8
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 未指定
-                TableIdentifier { " " },
-                // [期待結果] empty()
+                ColumnIdentifier { " " },
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _9
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 空文字列
-                TableIdentifier { " " }.as({ "" }),
-                // [期待結果] empty()
+                ColumnIdentifier { " " }.as({ "" }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _10
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 不適格(半角スペース)
-                TableIdentifier { " " }.as({ " " }),
-                // [期待結果] empty()
+                ColumnIdentifier { " " }.as({ " " }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
             // _11
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 適格
-                TableIdentifier { " " }.as({ "p" }),
-                // [期待結果] empty()
+                ColumnIdentifier { " " }.as({ "p.id" }),
+                // [期待結果] empty メンバ関数
                 true,
-                // [期待結果] to_string()
+                // [期待結果] to_string メンバ関数
                 ""
             },
 
             ////////////////////////////////////////////////////////////////////
             // [条件(0)]
-            // + table :
+            // + column :
             //     + name : 適格
             ////////////////////////////////////////////////////////////////////
             // _12
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 未指定
-                TableIdentifier { "people" },
-                // [期待結果] empty()
+                ColumnIdentifier { "id" },
+                // [期待結果] empty メンバ関数
                 false,
-                // [期待結果] to_string()
-                "people"
+                // [期待結果] to_string メンバ関数
+                "id"
             },
             // _13
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 空文字列
-                TableIdentifier { "people" }.as({ "" }),
-                // [期待結果] empty()
+                ColumnIdentifier { "id" }.as({ "" }),
+                // [期待結果] empty メンバ関数
                 false,
-                // [期待結果] to_string()
-                "people"
+                // [期待結果] to_string メンバ関数
+                "id"
             },
             // _14
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 不適格(半角スペース)
-                TableIdentifier { "people" }.as({ " " }),
-                // [期待結果] empty()
+                ColumnIdentifier { "id" }.as({ " " }),
+                // [期待結果] empty メンバ関数
                 false,
-                // [期待結果] to_string()
-                "people"
+                // [期待結果] to_string メンバ関数
+                "id"
             },
             // _15
             {
                 // [条件(1)]
-                // + table :
+                // + column :
                 //     + as_closure : 適格
-                TableIdentifier { "people" }.as({ "p" }),
-                // [期待結果] empty()
+                ColumnIdentifier { "id" }.as({ "p.id" }),
+                // [期待結果] empty メンバ関数
                 false,
-                // [期待結果] to_string()
-                "people AS p"
+                // [期待結果] to_string メンバ関数
+                "id AS p.id"
             }
         };
         // clang-format on
@@ -278,4 +280,4 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_DATA_SET_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_HXX */

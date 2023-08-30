@@ -1,9 +1,9 @@
 /*!
- * @file column.class.test-case.h++
+ * @file column-identifier.class.test-case.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_TEST_CASE_HXX
 
 #include <string>
 
@@ -13,7 +13,7 @@
 #include <sql++/closure/as-closure.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
-#include "./data-set/column.data-set.h++"
+#include "./data-set/column-identifier.data-set.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
@@ -21,7 +21,7 @@ BOOST_AUTO_TEST_SUITE(class__Column)
 
 using sqlxx::closure::AsClosure;
 using sqlxx::identifier::ColumnIdentifier;
-using sqlxx::test::ColumnDataSet;
+using sqlxx::test::ColumnIdentifierDataSet;
 
 /*!
  * @brief テストパターン :
@@ -55,11 +55,11 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  *
  * @see sqlxx::identifier::ColumnIdentifier           テスト対象クラス
  * @see sqlxx::identifier::ColumnIdentifier::empty()  テスト対象メンバ関数
- * @see ColumnDataSet::for_some_test_case()           データセット生成メンバ関数
+ * @see ColumnIdentifierDataSet::for_some_test_case() データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
     empty,
-    boost::unit_test::data::make(ColumnDataSet::for_some_test_case()),
+    boost::unit_test::data::make(ColumnIdentifierDataSet::for_some_test_case()),
     data_set_element)
 {
     // テスト対象オブジェクト
@@ -78,11 +78,11 @@ BOOST_DATA_TEST_CASE(
  *
  * @see sqlxx::identifier::ColumnIdentifier              テスト対象クラス
  * @see sqlxx::identifier::ColumnIdentifier::to_string() テスト対象メンバ関数
- * @see ColumnDataSet::for_some_test_case()              データセット生成メンバ関数
+ * @see ColumnIdentifierDataSet::for_some_test_case()    データセット生成メンバ関数
  */
 BOOST_DATA_TEST_CASE(
     to_string,
-    boost::unit_test::data::make(ColumnDataSet::for_some_test_case()),
+    boost::unit_test::data::make(ColumnIdentifierDataSet::for_some_test_case()),
     data_set_element)
 {
     // テスト対象オブジェクト
@@ -99,4 +99,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__Column */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__identifier */)
 
-#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_TEST_CASE_HXX */
