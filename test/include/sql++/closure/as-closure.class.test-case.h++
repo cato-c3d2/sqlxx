@@ -12,7 +12,7 @@
 
 #include <sql++/closure/as-closure.class.h++>
 
-#include "./data-set/as-closure.data-set.h++"
+#include "./data-set/as-closure-data-set.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 

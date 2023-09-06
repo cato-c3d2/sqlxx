@@ -1,5 +1,5 @@
 /*!
- * @file table-identifier.data-set.h++
+ * @file table-identifier.data-set.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_HXX

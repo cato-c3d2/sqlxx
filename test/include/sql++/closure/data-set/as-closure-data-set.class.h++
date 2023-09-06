@@ -1,5 +1,5 @@
 /*!
- * @file as-closure.data-set.h++
+ * @file as-closure-data-set.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX

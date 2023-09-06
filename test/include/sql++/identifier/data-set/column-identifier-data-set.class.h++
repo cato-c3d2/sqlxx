@@ -1,5 +1,5 @@
 /*!
- * @file column-identifier.data-set.h++
+ * @file column-identifier-data-set.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_HXX

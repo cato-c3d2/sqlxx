@@ -13,7 +13,7 @@
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
-#include "./data-set/select-closure.data-set.h++"
+#include "./data-set/select-closure-data-set.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
