@@ -13,7 +13,7 @@
 #include <sql++/closure/as-closure.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 
-#include "./data-set/table-identifier.data-set.h++"
+#include "./data-set/table-identifier.data-set.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 

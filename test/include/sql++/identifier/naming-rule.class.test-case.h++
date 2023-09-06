@@ -12,7 +12,7 @@
 
 #include <sql++/identifier/naming-rule.class.h++>
 
-#include "./data-set/naming-rule.data-set.h++"
+#include "./data-set/naming-rule-data-set.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 

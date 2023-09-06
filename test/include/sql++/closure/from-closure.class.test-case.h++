@@ -13,7 +13,7 @@
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 
-#include "./data-set/from-closure.data-set.h++"
+#include "./data-set/from-closure-data-set.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 

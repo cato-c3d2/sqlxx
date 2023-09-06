@@ -1,5 +1,5 @@
 /*!
- * @file naming-rule.data-set.h++
+ * @file naming-rule-data-set.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX

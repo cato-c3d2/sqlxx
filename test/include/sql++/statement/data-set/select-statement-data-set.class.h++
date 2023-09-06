@@ -1,5 +1,5 @@
 /*!
- * @file select-statement.data-set.h++
+ * @file select-statement-data-set.class.h++
  */
 
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX

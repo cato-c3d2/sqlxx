@@ -15,7 +15,7 @@
 #include <sql++/statement/select-statement.class.h++>
 
 #include "./data-set/select-statement-data-set-element.class.h++"
-#include "./data-set/select-statement.data-set.h++"
+#include "./data-set/select-statement-data-set.class.h++"
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 
