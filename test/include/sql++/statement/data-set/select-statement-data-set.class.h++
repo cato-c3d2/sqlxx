@@ -121,11 +121,11 @@ inline namespace
      * @li - ... 未指定
      *
      * [[ 構成 ]] @n
-     * @li  _0 ~ _15 : @link select-statement.data-set.00.h++ @endlink
-     * @li _16 ~ _31 : @link select-statement.data-set.01.h++ @endlink
-     * @li _32 ~ _47 : @link select-statement.data-set.02.h++ @endlink
-     * @li _48 ~ _63 : @link select-statement.data-set.03.h++ @endlink
-     * @li _64 ~ _68 : @link select-statement.data-set.04.h++ @endlink ... 上記データパターン以外のパターン
+     * @li  _0 ~ _15 : @link select-statement-data-set.class-member.00.h++ @endlink
+     * @li _16 ~ _31 : @link select-statement-data-set.class-member.01.h++ @endlink
+     * @li _32 ~ _47 : @link select-statement-data-set.class-member.02.h++ @endlink
+     * @li _48 ~ _63 : @link select-statement-data-set.class-member.03.h++ @endlink
+     * @li _64 ~ _68 : @link select-statement-data-set.class-member.04.h++ @endlink ... 上記データパターン以外のパターン
      *
      * @return データセット
      *
@@ -158,10 +158,10 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#include "./detail/select-statement.data-set.00.h++"
-#include "./detail/select-statement.data-set.01.h++"
-#include "./detail/select-statement.data-set.02.h++"
-#include "./detail/select-statement.data-set.03.h++"
-#include "./detail/select-statement.data-set.04.h++"
+#include "./detail/select-statement-data-set.class-member.00.h++"
+#include "./detail/select-statement-data-set.class-member.01.h++"
+#include "./detail/select-statement-data-set.class-member.02.h++"
+#include "./detail/select-statement-data-set.class-member.03.h++"
+#include "./detail/select-statement-data-set.class-member.04.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX */
