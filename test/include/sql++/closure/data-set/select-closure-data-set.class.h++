@@ -382,24 +382,24 @@ inline namespace
      * @li - ... 未指定
      *
      * [[ 構成 ]] @n
-     * @li          _0 : @link for_some_test_case_00_a() @endlink @link select-closure.data-set.00.h++ @endlink
-     * @li   _1 ~  _16 : @link for_some_test_case_00_b() @endlink @link select-closure.data-set.00.h++ @endlink
-     * @li  _16 ~  _32 : @link for_some_test_case_01()   @endlink @link select-closure.data-set.01.h++ @endlink
-     * @li  _33 ~  _48 : @link for_some_test_case_02()   @endlink @link select-closure.data-set.02.h++ @endlink
-     * @li  _49 ~  _64 : @link for_some_test_case_03()   @endlink @link select-closure.data-set.03.h++ @endlink
-     * @li  _65 ~  _80 : @link for_some_test_case_04()   @endlink @link select-closure.data-set.04.h++ @endlink
-     * @li  _81 ~  _96 : @link for_some_test_case_05()   @endlink @link select-closure.data-set.05.h++ @endlink
-     * @li  _97 ~ _112 : @link for_some_test_case_06()   @endlink @link select-closure.data-set.06.h++ @endlink
-     * @li _113 ~ _128 : @link for_some_test_case_07()   @endlink @link select-closure.data-set.07.h++ @endlink
-     * @li _129 ~ _144 : @link for_some_test_case_08()   @endlink @link select-closure.data-set.08.h++ @endlink
-     * @li _145 ~ _160 : @link for_some_test_case_09()   @endlink @link select-closure.data-set.09.h++ @endlink
-     * @li _161 ~ _176 : @link for_some_test_case_10()   @endlink @link select-closure.data-set.10.h++ @endlink
-     * @li _177 ~ _192 : @link for_some_test_case_11()   @endlink @link select-closure.data-set.11.h++ @endlink
-     * @li _193 ~ _208 : @link for_some_test_case_12()   @endlink @link select-closure.data-set.12.h++ @endlink
-     * @li _209 ~ _224 : @link for_some_test_case_13()   @endlink @link select-closure.data-set.13.h++ @endlink
-     * @li _225 ~ _240 : @link for_some_test_case_14()   @endlink @link select-closure.data-set.14.h++ @endlink
-     * @li _241 ~ _256 : @link for_some_test_case_15()   @endlink @link select-closure.data-set.15.h++ @endlink
-     * @li _257 ~ _272 : @link for_some_test_case_16()   @endlink @link select-closure.data-set.16.h++ @endlink
+     * @li          _0 : @link for_some_test_case_00_a() @endlink @link select-closure-data-set.class-member.00.h++ @endlink
+     * @li   _1 ~  _16 : @link for_some_test_case_00_b() @endlink @link select-closure-data-set.class-member.00.h++ @endlink
+     * @li  _16 ~  _32 : @link for_some_test_case_01()   @endlink @link select-closure-data-set.class-member.01.h++ @endlink
+     * @li  _33 ~  _48 : @link for_some_test_case_02()   @endlink @link select-closure-data-set.class-member.02.h++ @endlink
+     * @li  _49 ~  _64 : @link for_some_test_case_03()   @endlink @link select-closure-data-set.class-member.03.h++ @endlink
+     * @li  _65 ~  _80 : @link for_some_test_case_04()   @endlink @link select-closure-data-set.class-member.04.h++ @endlink
+     * @li  _81 ~  _96 : @link for_some_test_case_05()   @endlink @link select-closure-data-set.class-member.05.h++ @endlink
+     * @li  _97 ~ _112 : @link for_some_test_case_06()   @endlink @link select-closure-data-set.class-member.06.h++ @endlink
+     * @li _113 ~ _128 : @link for_some_test_case_07()   @endlink @link select-closure-data-set.class-member.07.h++ @endlink
+     * @li _129 ~ _144 : @link for_some_test_case_08()   @endlink @link select-closure-data-set.class-member.08.h++ @endlink
+     * @li _145 ~ _160 : @link for_some_test_case_09()   @endlink @link select-closure-data-set.class-member.09.h++ @endlink
+     * @li _161 ~ _176 : @link for_some_test_case_10()   @endlink @link select-closure-data-set.class-member.10.h++ @endlink
+     * @li _177 ~ _192 : @link for_some_test_case_11()   @endlink @link select-closure-data-set.class-member.11.h++ @endlink
+     * @li _193 ~ _208 : @link for_some_test_case_12()   @endlink @link select-closure-data-set.class-member.12.h++ @endlink
+     * @li _209 ~ _224 : @link for_some_test_case_13()   @endlink @link select-closure-data-set.class-member.13.h++ @endlink
+     * @li _225 ~ _240 : @link for_some_test_case_14()   @endlink @link select-closure-data-set.class-member.14.h++ @endlink
+     * @li _241 ~ _256 : @link for_some_test_case_15()   @endlink @link select-closure-data-set.class-member.15.h++ @endlink
+     * @li _257 ~ _272 : @link for_some_test_case_16()   @endlink @link select-closure-data-set.class-member.16.h++ @endlink
      *
      * @return データセット
      *
@@ -445,22 +445,22 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#include "./detail/select-closure.data-set.00.h++"
-#include "./detail/select-closure.data-set.01.h++"
-#include "./detail/select-closure.data-set.02.h++"
-#include "./detail/select-closure.data-set.03.h++"
-#include "./detail/select-closure.data-set.04.h++"
-#include "./detail/select-closure.data-set.05.h++"
-#include "./detail/select-closure.data-set.06.h++"
-#include "./detail/select-closure.data-set.07.h++"
-#include "./detail/select-closure.data-set.08.h++"
-#include "./detail/select-closure.data-set.09.h++"
-#include "./detail/select-closure.data-set.10.h++"
-#include "./detail/select-closure.data-set.11.h++"
-#include "./detail/select-closure.data-set.12.h++"
-#include "./detail/select-closure.data-set.13.h++"
-#include "./detail/select-closure.data-set.14.h++"
-#include "./detail/select-closure.data-set.15.h++"
-#include "./detail/select-closure.data-set.16.h++"
+#include "./detail/select-closure-data-set.class-member.00.h++"
+#include "./detail/select-closure-data-set.class-member.01.h++"
+#include "./detail/select-closure-data-set.class-member.02.h++"
+#include "./detail/select-closure-data-set.class-member.03.h++"
+#include "./detail/select-closure-data-set.class-member.04.h++"
+#include "./detail/select-closure-data-set.class-member.05.h++"
+#include "./detail/select-closure-data-set.class-member.06.h++"
+#include "./detail/select-closure-data-set.class-member.07.h++"
+#include "./detail/select-closure-data-set.class-member.08.h++"
+#include "./detail/select-closure-data-set.class-member.09.h++"
+#include "./detail/select-closure-data-set.class-member.10.h++"
+#include "./detail/select-closure-data-set.class-member.11.h++"
+#include "./detail/select-closure-data-set.class-member.12.h++"
+#include "./detail/select-closure-data-set.class-member.13.h++"
+#include "./detail/select-closure-data-set.class-member.14.h++"
+#include "./detail/select-closure-data-set.class-member.15.h++"
+#include "./detail/select-closure-data-set.class-member.16.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_HXX */
