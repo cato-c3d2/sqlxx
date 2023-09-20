@@ -1,9 +1,9 @@
 /*!
- * @file select-statement-data-set.class-member.02.h++
+ * @file select-statement-data-set.class-member.00.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_02_HXX
-#define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_02_HXX
+#ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_00_HXX
+#define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_00_HXX
 
 #include <vector>
 
@@ -33,7 +33,7 @@ inline namespace
      * @c select_closure :
      *
      * @c columns[0] : @n
-     * @li @c name       : 未指定
+     * @li @c name       : 指定
      * @li @c as_closure : 指定
      *
      * @c columns[1] : @n
@@ -51,14 +51,14 @@ inline namespace
      * @see sqlxx::statement::SelectStatement              テスト対象クラス
      * @see sqlxx::statement::SelectStatement::to_string() テスト対象メンバ関数
      */
-    auto SelectStatementDataSet::for_some_test_case_02()
+    auto SelectStatementDataSet::for_some_test_case_00()
         -> std::vector<SelectStatementDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
         // + select_closure :
         //     + columns[0] :
-        //         + name       : 未指定
+        //         + name       : 指定
         //         + as_closure : 指定
         ////////////////////////////////////////////////////////////////////////
         // clang-format off
@@ -70,11 +70,11 @@ inline namespace
             //         + name       : 指定
             //         + as_closure : 指定
             ////////////////////////////////
-            // _32
+            // _0
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -87,13 +87,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                "SELECT name AS p.name FROM people AS p"
+                "SELECT id AS p.id, name AS p.name FROM people AS p"
             },
-            // _33
+            // _1
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -106,13 +106,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                "SELECT name AS p.name FROM people"
+                "SELECT id AS p.id, name AS p.name FROM people"
             },
-            // _34
+            // _2
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -127,11 +127,11 @@ inline namespace
                 // [期待結果] to_string メンバ関数
                 ""
             },
-            // _35
+            // _3
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -154,11 +154,11 @@ inline namespace
             //         + name       : 指定
             //         + as_closure : 未指定
             ////////////////////////////////
-            // _36
+            // _4
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
@@ -171,13 +171,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                "SELECT name FROM people AS p"
+                "SELECT id AS p.id, name FROM people AS p"
             },
-            // _37
+            // _5
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
@@ -190,13 +190,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                "SELECT name FROM people"
+                "SELECT id AS p.id, name FROM people"
             },
-            // _38
+            // _6
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
@@ -211,11 +211,11 @@ inline namespace
                 // [期待結果] to_string メンバ関数
                 ""
             },
-            // _39
+            // _7
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
@@ -238,11 +238,11 @@ inline namespace
             //         + name       : 未指定
             //         + as_closure : 指定
             ////////////////////////////////
-            // _40
+            // _8
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -255,13 +255,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id AS p.id FROM people AS p"
             },
-            // _41
+            // _9
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -274,13 +274,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id AS p.id FROM people"
             },
-            // _42
+            // _10
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -295,11 +295,11 @@ inline namespace
                 // [期待結果] to_string メンバ関数
                 ""
             },
-            // _43
+            // _11
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
@@ -322,11 +322,11 @@ inline namespace
             //         + name       : 未指定
             //         + as_closure : 未指定
             ////////////////////////////////
-            // _44
+            // _12
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
@@ -339,13 +339,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id AS p.id FROM people AS p"
             },
-            // _45
+            // _13
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
@@ -358,13 +358,13 @@ inline namespace
                     }
                 },
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id AS p.id FROM people"
             },
-            // _46
+            // _14
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
@@ -379,11 +379,11 @@ inline namespace
                 // [期待結果] to_string メンバ関数
                 ""
             },
-            // _47
+            // _15
             {
                 SelectStatement {
                     SelectClosure {{
-                        ColumnIdentifier {}.as({ "p.id" }),
+                        ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
@@ -404,4 +404,4 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DETAIL__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_02_HXX */
+#endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_00_HXX */
