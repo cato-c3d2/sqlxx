@@ -83,8 +83,8 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#include "./detail/naming-rule-data-set.class-member.00.h++"
-#include "./detail/naming-rule-data-set.class-member.01.h++"
-#include "./detail/naming-rule-data-set.class-member.02.h++"
+#include "./definition/naming-rule-data-set.class-member.00.h++"
+#include "./definition/naming-rule-data-set.class-member.01.h++"
+#include "./definition/naming-rule-data-set.class-member.02.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX */

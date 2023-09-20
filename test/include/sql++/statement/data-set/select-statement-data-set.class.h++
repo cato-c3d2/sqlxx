@@ -158,10 +158,10 @@ inline namespace
 } // namespace
 } // namespace sqlxx::test
 
-#include "./detail/select-statement-data-set.class-member.00.h++"
-#include "./detail/select-statement-data-set.class-member.01.h++"
-#include "./detail/select-statement-data-set.class-member.02.h++"
-#include "./detail/select-statement-data-set.class-member.03.h++"
-#include "./detail/select-statement-data-set.class-member.04.h++"
+#include "./definition/select-statement-data-set.class-member.00.h++"
+#include "./definition/select-statement-data-set.class-member.01.h++"
+#include "./definition/select-statement-data-set.class-member.02.h++"
+#include "./definition/select-statement-data-set.class-member.03.h++"
+#include "./definition/select-statement-data-set.class-member.04.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX */
