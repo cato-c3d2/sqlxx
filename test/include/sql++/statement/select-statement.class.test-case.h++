@@ -10,8 +10,10 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
+#include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
 
 #include "./data-set/select-statement-data-set-element.class.h++"
