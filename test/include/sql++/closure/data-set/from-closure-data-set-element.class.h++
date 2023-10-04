@@ -14,7 +14,7 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::closure::FromClosure;
+    using sqlxx::FromClosure;
 
     /*!
      * @brief データセットの要素

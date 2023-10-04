@@ -14,7 +14,7 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::identifier::ColumnIdentifier;
+    using sqlxx::ColumnIdentifier;
 
     /*!
      * @brief データセットの要素

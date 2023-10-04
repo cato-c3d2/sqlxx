@@ -19,8 +19,8 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__Table)
 
-using sqlxx::closure::AsClosure;
-using sqlxx::identifier::TableIdentifier;
+using sqlxx::AsClosure;
+using sqlxx::TableIdentifier;
 using sqlxx::test::TableIdentifierDataSet;
 
 /*!

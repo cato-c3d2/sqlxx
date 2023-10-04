@@ -16,8 +16,8 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::closure::FromClosure;
-    using sqlxx::identifier::TableIdentifier;
+    using sqlxx::FromClosure;
+    using sqlxx::TableIdentifier;
 
     /*!
      * @brief @c FromClosure クラスのテストケースで使用するデータセット

@@ -15,7 +15,7 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::identifier::TableIdentifier;
+    using sqlxx::TableIdentifier;
 
     /*!
      * @brief @c TableIdentifier クラスのテストケースで使用するデータセット

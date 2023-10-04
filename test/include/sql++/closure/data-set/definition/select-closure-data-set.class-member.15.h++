@@ -16,8 +16,8 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::closure::SelectClosure;
-    using sqlxx::identifier::ColumnIdentifier;
+    using sqlxx::ColumnIdentifier;
+    using sqlxx::SelectClosure;
 
     /*!
      * @brief データセットを返却する

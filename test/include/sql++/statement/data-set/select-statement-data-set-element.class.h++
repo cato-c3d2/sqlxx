@@ -14,7 +14,7 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::statement::SelectStatement;
+    using sqlxx::SelectStatement;
 
     /*!
      * @brief データセットの要素
