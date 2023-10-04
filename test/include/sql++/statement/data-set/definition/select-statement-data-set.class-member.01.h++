@@ -19,11 +19,11 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::closure::FromClosure;
-    using sqlxx::closure::SelectClosure;
-    using sqlxx::identifier::ColumnIdentifier;
-    using sqlxx::identifier::TableIdentifier;
-    using sqlxx::statement::SelectStatement;
+    using sqlxx::ColumnIdentifier;
+    using sqlxx::FromClosure;
+    using sqlxx::SelectClosure;
+    using sqlxx::SelectStatement;
+    using sqlxx::TableIdentifier;
 
     /*!
      * @brief  データセットを返却する

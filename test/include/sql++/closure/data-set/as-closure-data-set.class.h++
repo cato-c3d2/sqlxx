@@ -15,7 +15,7 @@ namespace sqlxx::test
 {
 inline namespace
 {
-    using sqlxx::closure::AsClosure;
+    using sqlxx::AsClosure;
 
     /*!
      * @brief @c AsClosure クラスのテストケースで使用するデータセット

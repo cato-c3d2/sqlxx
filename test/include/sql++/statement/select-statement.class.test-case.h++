@@ -23,11 +23,11 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 
 BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 
-using sqlxx::closure::FromClosure;
-using sqlxx::closure::SelectClosure;
-using sqlxx::identifier::ColumnIdentifier;
-using sqlxx::identifier::TableIdentifier;
-using sqlxx::statement::SelectStatement;
+using sqlxx::ColumnIdentifier;
+using sqlxx::FromClosure;
+using sqlxx::SelectClosure;
+using sqlxx::SelectStatement;
+using sqlxx::TableIdentifier;
 using sqlxx::test::SelectStatementDataSet;
 
 /*!

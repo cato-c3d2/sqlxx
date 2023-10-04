@@ -19,8 +19,8 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__Column)
 
-using sqlxx::closure::AsClosure;
-using sqlxx::identifier::ColumnIdentifier;
+using sqlxx::AsClosure;
+using sqlxx::ColumnIdentifier;
 using sqlxx::test::ColumnIdentifierDataSet;
 
 /*!

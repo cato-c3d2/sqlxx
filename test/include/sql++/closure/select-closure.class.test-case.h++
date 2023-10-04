@@ -19,8 +19,8 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
 BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
-using sqlxx::closure::SelectClosure;
-using sqlxx::identifier::ColumnIdentifier;
+using sqlxx::ColumnIdentifier;
+using sqlxx::SelectClosure;
 using sqlxx::test::SelectClosureDataSet;
 
 /*!
