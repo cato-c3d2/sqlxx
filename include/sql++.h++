@@ -31,7 +31,7 @@ namespace sqlxx
 {
 
 /*!
- * @namespace identifier
+ * @namespace sqlxx::identifier
  *
  * @brief SQL の識別子 ( identifier ) に関するインライン名前空間
  */
@@ -49,7 +49,7 @@ inline namespace identifier
 } // namespace identifier
 
 /*!
- * @namespace closure
+ * @namespace sqlxx::closure
  *
  * @brief SQL の句 ( closure ) に関するインライン名前空間
  */
@@ -72,7 +72,7 @@ inline namespace closure
 } // namespace closure
 
 /*!
- * @namespace statement
+ * @namespace sqlxx::statement
  *
  * @brief SQL の文 ( statement ) に関するインライン名前空間
  */

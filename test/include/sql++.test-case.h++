@@ -5,6 +5,14 @@
 #ifndef TEST__INCLUDE__SQLXX_TEST_CASE_HXX
 #define TEST__INCLUDE__SQLXX_TEST_CASE_HXX
 
+/*!
+ * @namespace sqlxx::test
+ *
+ * @brief @c sql++ のユニットテストに関する名前空間
+ */
+namespace sqlxx::test
+{}
+
 // clang-format off
 #include "./sql++/identifier/column-identifier.class.test-case.h++"
 #include "./sql++/identifier/table-identifier.class.test-case.h++"
