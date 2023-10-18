@@ -11,7 +11,31 @@
  * @brief @c sql++ のユニットテストに関する名前空間
  */
 namespace sqlxx::test
+{
+/*!
+ * @namespace sqlxx::test::identifier
+ *
+ * @brief SQL の識別子 ( identifier ) のユニットテストに関するインライン名前空間
+ */
+inline namespace identifier
 {}
+
+/*!
+ * @namespace sqlxx::test::closure
+ *
+ * @brief SQL の句 ( closure ) のユニットテストに関するインライン名前空間
+ */
+inline namespace closure
+{}
+
+/*!
+ * @namespace sqlxx::test::statement
+ *
+ * @brief SQL の文 ( statement ) のユニットテストに関するインライン名前空間
+ */
+inline namespace statement
+{}
+} // namespace sqlxx::test
 
 // clang-format off
 #include "./sql++/identifier/column-identifier.class.test-case.h++"

@@ -12,7 +12,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace closure
 {
     using sqlxx::FromClosure;
 
@@ -57,7 +57,7 @@ inline namespace
                    << "\", expectation_of_to_string : \""
                    << data_set_element.expectation_of_to_string << "\" }";
     }
-} // namespace
+} // namespace closure
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX */

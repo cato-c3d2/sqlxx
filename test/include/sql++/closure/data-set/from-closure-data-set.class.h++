@@ -14,7 +14,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace closure
 {
     using sqlxx::FromClosure;
     using sqlxx::TableIdentifier;
@@ -475,7 +475,7 @@ inline namespace
         };
         // clang-format on
     }
-} // namespace
+} // namespace closure
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX */

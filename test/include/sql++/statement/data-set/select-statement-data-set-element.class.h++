@@ -12,7 +12,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace statement
 {
     using sqlxx::SelectStatement;
 
@@ -52,7 +52,7 @@ inline namespace
                    << "\", expectation_of_to_string : \""
                    << data_set_element.expectation_of_to_string << "\" }";
     }
-} // namespace
+} // namespace statement
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_ELEMENT_CLASS_HXX */

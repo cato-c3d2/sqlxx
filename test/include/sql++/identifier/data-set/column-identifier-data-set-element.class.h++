@@ -12,7 +12,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace identifier
 {
     using sqlxx::ColumnIdentifier;
 
@@ -58,7 +58,7 @@ inline namespace
                    << "\", expectation_of_to_string : \""
                    << data_set_element.expectation_of_to_string << "\" }";
     }
-} // namespace
+} // namespace identifier
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_ELEMENT_CLASS_HXX */

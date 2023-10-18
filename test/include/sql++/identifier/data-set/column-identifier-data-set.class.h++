@@ -13,7 +13,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace identifier
 {
     using sqlxx::ColumnIdentifier;
 
@@ -277,7 +277,7 @@ inline namespace
         };
         // clang-format on
     }
-} // namespace
+} // namespace identifier
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__COLUMN_IDENTIFIER_DATA_SET_HXX */
