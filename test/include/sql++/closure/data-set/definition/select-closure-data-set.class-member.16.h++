@@ -14,7 +14,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace closure
 {
     using sqlxx::ColumnIdentifier;
     using sqlxx::SelectClosure;
@@ -299,7 +299,7 @@ inline namespace
         };
         // clang-format on
     }
-} // namespace
+} // namespace closure
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_16_HXX */

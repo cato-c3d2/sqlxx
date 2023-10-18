@@ -14,7 +14,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace closure
 {
     /*!
      * @brief @c SelectClosure クラスのテストケースで使用するデータセット
@@ -442,7 +442,7 @@ inline namespace
         }
         return data_set;
     }
-} // namespace
+} // namespace closure
 } // namespace sqlxx::test
 
 #include "./definition/select-closure-data-set.class-member.00.h++"

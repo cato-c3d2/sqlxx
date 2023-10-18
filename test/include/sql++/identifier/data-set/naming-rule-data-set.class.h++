@@ -12,7 +12,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace identifier
 {
     /*!
      * @brief @c NamingRule クラスのテストケースで使用するデータセット
@@ -80,7 +80,7 @@ inline namespace
         }
         return data_set;
     }
-} // namespace
+} // namespace identifier
 } // namespace sqlxx::test
 
 #include "./definition/naming-rule-data-set.class-member.00.h++"

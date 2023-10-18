@@ -11,7 +11,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace identifier
 {
     /*!
      * @brief データセットを返却する
@@ -388,7 +388,7 @@ inline namespace
         };
         // clang-format on
     }
-} // namespace
+} // namespace identifier
 } // namespace sqlxx::test
 
 #endif /* TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DEFINITION__NAMING_RULE_DATA_SET_CLASS_MEMBER_01_HXX */

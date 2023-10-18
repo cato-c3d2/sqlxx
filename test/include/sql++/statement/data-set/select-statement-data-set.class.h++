@@ -12,7 +12,7 @@
 
 namespace sqlxx::test
 {
-inline namespace
+inline namespace statement
 {
     /*!
      * @brief @c SelectStatement クラスのテストケースで使用するデータセット
@@ -155,7 +155,7 @@ inline namespace
         }
         return data_set;
     }
-} // namespace
+} // namespace statement
 } // namespace sqlxx::test
 
 #include "./definition/select-statement-data-set.class-member.00.h++"
