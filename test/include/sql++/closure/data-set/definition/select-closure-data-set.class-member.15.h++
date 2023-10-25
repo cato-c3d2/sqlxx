@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_15_HXX
 #define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_15_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <vector>
 
 #include <sql++/closure/select-closure.class.h++>
