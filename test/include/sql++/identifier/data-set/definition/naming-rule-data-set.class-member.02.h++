@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DEFINITION__NAMING_RULE_DATA_SET_CLASS_MEMBER_02_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DEFINITION__NAMING_RULE_DATA_SET_CLASS_MEMBER_02_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <vector>
 
 #include "../naming-rule-data-set-element.class.h++"

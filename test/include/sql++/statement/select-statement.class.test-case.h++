@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_TEST_CASE_HXX
 #define TEST__INCLUDE__SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_TEST_CASE_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Test case definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <string>
 
 #include <boost/test/data/monomorphic.hpp>

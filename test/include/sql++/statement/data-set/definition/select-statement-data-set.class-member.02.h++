@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_02_HXX
 #define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_02_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <vector>
 
 #include <sql++/closure/from-closure.class.h++>
