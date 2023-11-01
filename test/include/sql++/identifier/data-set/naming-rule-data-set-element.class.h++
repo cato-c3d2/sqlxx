@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_ELEMENT_CLASS_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include <string>
 
@@ -42,6 +48,22 @@ inline namespace identifier
      *
      * @return 出力ストリーム
      */
+    auto operator<<(
+        std::ostream & out, NamingRuleDataSetElement const & data_set_element)
+        -> std::ostream &;
+} // namespace identifier
+} // namespace sqlxx::test
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition / Function definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
+namespace sqlxx::test
+{
+inline namespace identifier
+{
     auto operator<<(
         std::ostream & out, NamingRuleDataSetElement const & data_set_element)
         -> std::ostream &

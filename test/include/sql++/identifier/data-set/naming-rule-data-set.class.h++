@@ -5,7 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX
 
-#include <iterator>
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <vector>
 
 #include "./naming-rule-data-set-element.class.h++"
@@ -20,6 +25,14 @@ inline namespace identifier
     class NamingRuleDataSet
     {
     public:
+        /*!
+        * @brief  データセットを返却する
+        *
+        * @return データセット
+        *
+        * @see sqlxx::identifier::NamingRule             テスト対象クラス
+        * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
+        */
         static auto for_is_legal() -> std::vector<NamingRuleDataSetElement>;
 
     private:
@@ -40,15 +53,21 @@ inline namespace identifier
         static auto for_is_legal_02g() -> std::vector<NamingRuleDataSetElement>;
         static auto for_is_legal_02h() -> std::vector<NamingRuleDataSetElement>;
     };
+} // namespace identifier
+} // namespace sqlxx::test
 
-    /*!
-     * @brief  データセットを返却する
-     *
-     * @return データセット
-     *
-     * @see sqlxx::identifier::NamingRule             テスト対象クラス
-     * @see sqlxx::identifier::NamingRule::is_legal() テスト対象メンバ関数
-     */
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include <iterator>
+
+namespace sqlxx::test
+{
+inline namespace identifier
+{
     auto NamingRuleDataSet::for_is_legal()
         -> std::vector<NamingRuleDataSetElement>
     {
