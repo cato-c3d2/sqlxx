@@ -5,9 +5,13 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_HXX
 
-#include <vector>
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/identifier/table-identifier.class.h++>
+#include <vector>
 
 #include "./table-identifier-data-set-element.class.h++"
 
@@ -15,61 +19,75 @@ namespace sqlxx::test
 {
 inline namespace identifier
 {
-    using sqlxx::TableIdentifier;
-
     /*!
      * @brief @c TableIdentifier クラスのテストケースで使用するデータセット
      */
     class TableIdentifierDataSet
     {
     public:
+        /*!
+        * @brief  データセットを返却する
+        *
+        * [ データパターン表 ] @n
+        * <pre>
+        * -----------------------
+        * |     |     table     |
+        * |     | name  |  as   |
+        * =======================
+        * |  _0 |   -   |   -   |
+        * |  _1 |   -   |   e   |
+        * |  _2 |   -   |   x   |
+        * |  _3 |   -   |   o   |
+        * -----------------------
+        * |  _4 |   e   |   -   |
+        * |  _5 |   e   |   e   |
+        * |  _6 |   e   |   x   |
+        * |  _7 |   e   |   o   |
+        * -----------------------
+        * |  _8 |   x   |   -   |
+        * |  _9 |   x   |   e   |
+        * | _10 |   x   |   x   |
+        * | _11 |   x   |   o   |
+        * -----------------------
+        * | _12 |   o   |   -   |
+        * | _13 |   o   |   e   |
+        * | _14 |   o   |   x   |
+        * | _15 |   o   |   o   |
+        * -----------------------
+        * </pre>
+        *
+        * [[ 凡例 ]] @n
+        * @li o ... 指定(適格)
+        * @li e ... 指定(不適格(空文字列))
+        * @li x ... 指定(不適格(半角スペース))
+        * @li - ... 未指定
+        *
+        * @return データセット
+        *
+        * @see sqlxx::identifier::TableIdentifier              テスト対象クラス
+        * @see sqlxx::identifier::TableIdentifier::empty()     テスト対象メンバ関数
+        * @see sqlxx::identifier::TableIdentifier::to_string() テスト対象メンバ関数
+        */
         static auto for_some_test_case()
             -> std::vector<TableIdentifierDataSetElement>;
     };
+} // namespace identifier
+} // namespace sqlxx::test
 
-    /*!
-     * @brief  データセットを返却する
-     *
-     * [ データパターン表 ] @n
-     * <pre>
-     * -----------------------
-     * |     |     table     |
-     * |     | name  |  as   |
-     * =======================
-     * |  _0 |   -   |   -   |
-     * |  _1 |   -   |   e   |
-     * |  _2 |   -   |   x   |
-     * |  _3 |   -   |   o   |
-     * -----------------------
-     * |  _4 |   e   |   -   |
-     * |  _5 |   e   |   e   |
-     * |  _6 |   e   |   x   |
-     * |  _7 |   e   |   o   |
-     * -----------------------
-     * |  _8 |   x   |   -   |
-     * |  _9 |   x   |   e   |
-     * | _10 |   x   |   x   |
-     * | _11 |   x   |   o   |
-     * -----------------------
-     * | _12 |   o   |   -   |
-     * | _13 |   o   |   e   |
-     * | _14 |   o   |   x   |
-     * | _15 |   o   |   o   |
-     * -----------------------
-     * </pre>
-     *
-     * [[ 凡例 ]] @n
-     * @li o ... 指定(適格)
-     * @li e ... 指定(不適格(空文字列))
-     * @li x ... 指定(不適格(半角スペース))
-     * @li - ... 未指定
-     *
-     * @return データセット
-     *
-     * @see sqlxx::identifier::TableIdentifier              テスト対象クラス
-     * @see sqlxx::identifier::TableIdentifier::empty()     テスト対象メンバ関数
-     * @see sqlxx::identifier::TableIdentifier::to_string() テスト対象メンバ関数
-     */
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition / Function definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include <sql++/identifier/table-identifier.class.h++>
+
+namespace sqlxx::test
+{
+inline namespace identifier
+{
+    using sqlxx::TableIdentifier;
+
     auto TableIdentifierDataSet::for_some_test_case()
         -> std::vector<TableIdentifierDataSetElement>
     {

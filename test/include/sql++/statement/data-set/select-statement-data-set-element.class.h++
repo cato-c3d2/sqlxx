@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_ELEMENT_CLASS_HXX
 #define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_ELEMENT_CLASS_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include <string>
 
@@ -42,6 +48,23 @@ inline namespace statement
      *
      * @return 出力ストリーム
      */
+    auto operator<<(
+        std::ostream &                        out,
+        SelectStatementDataSetElement const & data_set_element)
+        -> std::ostream &;
+} // namespace statement
+} // namespace sqlxx::test
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition / Function definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
+namespace sqlxx::test
+{
+inline namespace statement
+{
     auto operator<<(
         std::ostream &                        out,
         SelectStatementDataSetElement const & data_set_element)

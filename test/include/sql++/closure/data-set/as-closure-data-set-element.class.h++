@@ -5,6 +5,12 @@
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
 #define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
 
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include <string>
 
@@ -47,6 +53,22 @@ inline namespace closure
      *
      * @return 出力ストリーム
      */
+    auto operator<<(
+        std::ostream & out, AsClosureDataSetElement const & data_set_element)
+        -> std::ostream &;
+} // namespace closure
+} // namespace sqlxx::test
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition / Function definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
+namespace sqlxx::test
+{
+inline namespace closure
+{
     auto operator<<(
         std::ostream & out, AsClosureDataSetElement const & data_set_element)
         -> std::ostream &

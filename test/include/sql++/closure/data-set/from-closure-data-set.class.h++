@@ -5,10 +5,13 @@
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX
 
-#include <vector>
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class definition / Class member declaration / Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/identifier/table-identifier.class.h++>
+#include <vector>
 
 #include "./from-closure-data-set-element.class.h++"
 
@@ -16,15 +19,68 @@ namespace sqlxx::test
 {
 inline namespace closure
 {
-    using sqlxx::FromClosure;
-    using sqlxx::TableIdentifier;
-
     /*!
      * @brief @c FromClosure クラスのテストケースで使用するデータセット
      */
     class FromClosureDataSet
     {
     public:
+        /*!
+        * @brief  データセットを返却する
+        *
+        * [ データパターン表 ] @n
+        * <pre>
+        * -----------------------
+        * |     |     table     |
+        * =======================
+        * |  _0 |       -       |
+        * -----------------------
+        *
+        * -----------------------
+        * |     |     table     |
+        * |     | name  |  as   |
+        * =======================
+        * |  _1 |   -   |   -   |
+        * |  _2 |   -   |   e   |
+        * |  _3 |   -   |   x   |
+        * |  _4 |   -   |   o   |
+        * -----------------------
+        * |  _5 |   e   |   -   |
+        * |  _6 |   e   |   e   |
+        * |  _7 |   e   |   x   |
+        * |  _8 |   e   |   o   |
+        * -----------------------
+        * |  _9 |   x   |   -   |
+        * | _10 |   x   |   e   |
+        * | _11 |   x   |   x   |
+        * | _12 |   x   |   o   |
+        * -----------------------
+        * | _13 |   o   |   -   |
+        * | _14 |   o   |   e   |
+        * | _15 |   o   |   x   |
+        * | _16 |   o   |   o   |
+        * -----------------------
+        * </pre>
+        *
+        * [[ 凡例 ]] @n
+        * @li o ... 指定(適格)
+        * @li e ... 指定(不適格(空文字列))
+        * @li x ... 指定(不適格(半角スペース))
+        * @li - ... 未指定
+        *
+        * [[ 構成 ]] @n
+        * @li        _0 : @link for_some_test_case_a() @endlink
+        * @li  _1 ~  _4 : @link for_some_test_case_b() @endlink
+        * @li  _5 ~  _8 : @link for_some_test_case_c() @endlink
+        * @li  _9 ~ _12 : @link for_some_test_case_d() @endlink
+        * @li _13 ~ _16 : @link for_some_test_case_e() @endlink
+        *
+        * @return データセット
+        *
+        * @see sqlxx::closure::FromClosure              テスト対象クラス
+        * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
+        * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+        */
         static auto for_some_test_case()
             -> std::vector<FromClosureDataSetElement>;
 
@@ -40,63 +96,25 @@ inline namespace closure
         static auto for_some_test_case_e()
             -> std::vector<FromClosureDataSetElement>;
     };
+} // namespace closure
+} // namespace sqlxx::test
 
-    /*!
-     * @brief  データセットを返却する
-     *
-     * [ データパターン表 ] @n
-     * <pre>
-     * -----------------------
-     * |     |     table     |
-     * =======================
-     * |  _0 |       -       |
-     * -----------------------
-     *
-     * -----------------------
-     * |     |     table     |
-     * |     | name  |  as   |
-     * =======================
-     * |  _1 |   -   |   -   |
-     * |  _2 |   -   |   e   |
-     * |  _3 |   -   |   x   |
-     * |  _4 |   -   |   o   |
-     * -----------------------
-     * |  _5 |   e   |   -   |
-     * |  _6 |   e   |   e   |
-     * |  _7 |   e   |   x   |
-     * |  _8 |   e   |   o   |
-     * -----------------------
-     * |  _9 |   x   |   -   |
-     * | _10 |   x   |   e   |
-     * | _11 |   x   |   x   |
-     * | _12 |   x   |   o   |
-     * -----------------------
-     * | _13 |   o   |   -   |
-     * | _14 |   o   |   e   |
-     * | _15 |   o   |   x   |
-     * | _16 |   o   |   o   |
-     * -----------------------
-     * </pre>
-     *
-     * [[ 凡例 ]] @n
-     * @li o ... 指定(適格)
-     * @li e ... 指定(不適格(空文字列))
-     * @li x ... 指定(不適格(半角スペース))
-     * @li - ... 未指定
-     *
-     * [[ 構成 ]] @n
-     * @li        _0 : @link for_some_test_case_a() @endlink
-     * @li  _1 ~  _4 : @link for_some_test_case_b() @endlink
-     * @li  _5 ~  _8 : @link for_some_test_case_c() @endlink
-     * @li  _9 ~ _12 : @link for_some_test_case_d() @endlink
-     * @li _13 ~ _16 : @link for_some_test_case_e() @endlink
-     *
-     * @return データセット
-     *
-     * @see sqlxx::closure::FromClosure              テスト対象クラス
-     * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
-     */
+////////////////////////////////////////////////////////////////////////////////
+//
+// Class member definition / Function definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include <sql++/closure/from-closure.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
+
+namespace sqlxx::test
+{
+inline namespace closure
+{
+    using sqlxx::FromClosure;
+    using sqlxx::TableIdentifier;
+
     auto FromClosureDataSet::for_some_test_case()
         -> std::vector<FromClosureDataSetElement>
     {
