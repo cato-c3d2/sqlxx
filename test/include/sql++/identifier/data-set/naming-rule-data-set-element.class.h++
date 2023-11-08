@@ -14,14 +14,10 @@
 #include <iostream>
 #include <string>
 
-#include <sql++/identifier/naming-rule.class.h++>
-
 namespace sqlxx::test
 {
 inline namespace identifier
 {
-    using sqlxx::identifier::NamingRule;
-
     /*!
      * @brief データセットの要素
      *
