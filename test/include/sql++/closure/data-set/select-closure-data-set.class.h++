@@ -13,8 +13,6 @@
 
 #include <vector>
 
-#include <sql++/closure/select-closure.class.h++>
-
 #include "./select-closure-data-set-element.class.h++"
 
 namespace sqlxx::test
