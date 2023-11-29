@@ -1,5 +1,5 @@
 /*!
- * @file test-module.c++
+ * @file sql++.test-module.c++
  */
 
 /*!
