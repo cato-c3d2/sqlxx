@@ -16,12 +16,12 @@ boost_test_options = -l boost_unit_test_framework \
 all : clean build run
 
 .PHONY : build
-build : ./build/test-module.exe
+build : ./build/sql++.test-module.exe
 
-build/test-module.exe : ./test-module.c++
+build/sql++.test-module.exe : ./sql++.test-module.c++
 	$(CXX) $< -o $@ $(build_options) $(boost_test_options)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
-    #      $(CXX) ./test-module.c++ -o ./build/test-module.exe $(build_options) $(boost_test_options)
+    #      $(CXX) ./sql++.test-module.c++ -o ./build/sql++.test-module.exe $(build_options) $(boost_test_options)
 
 .PHONY : clean
 clean :
@@ -45,7 +45,7 @@ clean :
 TEST_RUNTIME_OPTIONS =
 
 .PHONY : run
-run : ./build/test-module.exe
+run : ./build/sql++.test-module.exe
 	$< $(TEST_RUNTIME_OPTIONS)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
-    #      build/test-module.exe $(TEST_RUNTIME_OPTIONS)
+    #      build/sql++.test-module.exe $(TEST_RUNTIME_OPTIONS)
