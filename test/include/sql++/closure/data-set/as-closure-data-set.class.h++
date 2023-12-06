@@ -5,13 +5,9 @@
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <vector>
+
+#include <sql++/closure/as-closure.class.h++>
 
 #include "./as-closure-data-set-element.class.h++"
 
@@ -19,6 +15,12 @@ namespace sqlxx::test
 {
 inline namespace closure
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief @c AsClosure クラスのテストケースで使用するデータセット
      */
@@ -55,21 +57,13 @@ inline namespace closure
         static auto for_some_test_case()
             -> std::vector<AsClosureDataSetElement>;
     };
-} // namespace closure
-} // namespace sqlxx::test
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/closure/as-closure.class.h++>
-
-namespace sqlxx::test
-{
-inline namespace closure
-{
     using sqlxx::AsClosure;
 
     auto AsClosureDataSet::for_some_test_case()

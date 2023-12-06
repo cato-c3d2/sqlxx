@@ -5,12 +5,7 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__NAMING_RULE_DATA_SET_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
+#include <iterator>
 #include <vector>
 
 #include "./naming-rule-data-set-element.class.h++"
@@ -19,6 +14,12 @@ namespace sqlxx::test
 {
 inline namespace identifier
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief @c NamingRule クラスのテストケースで使用するデータセット
      */
@@ -53,21 +54,13 @@ inline namespace identifier
         static auto for_is_legal_02g() -> std::vector<NamingRuleDataSetElement>;
         static auto for_is_legal_02h() -> std::vector<NamingRuleDataSetElement>;
     };
-} // namespace identifier
-} // namespace sqlxx::test
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-#include <iterator>
-
-namespace sqlxx::test
-{
-inline namespace identifier
-{
     auto NamingRuleDataSet::for_is_legal()
         -> std::vector<NamingRuleDataSetElement>
     {

@@ -5,12 +5,7 @@
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
+#include <iterator>
 #include <vector>
 
 #include "./select-statement-data-set-element.class.h++"
@@ -19,6 +14,12 @@ namespace sqlxx::test
 {
 inline namespace statement
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief @c SelectStatement クラスのテストケースで使用するデータセット
      */
@@ -136,21 +137,13 @@ inline namespace statement
         static auto for_some_test_case_04()
             -> std::vector<SelectStatementDataSetElement>;
     };
-} // namespace statement
-} // namespace sqlxx::test
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-#include <iterator>
-
-namespace sqlxx::test
-{
-inline namespace statement
-{
     auto SelectStatementDataSet::for_some_test_case()
         -> std::vector<SelectStatementDataSetElement>
     {

@@ -5,13 +5,9 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__TABLE_IDENTIFIER_DATA_SET_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <vector>
+
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include "./table-identifier-data-set-element.class.h++"
 
@@ -19,6 +15,12 @@ namespace sqlxx::test
 {
 inline namespace identifier
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief @c TableIdentifier クラスのテストケースで使用するデータセット
      */
@@ -71,21 +73,13 @@ inline namespace identifier
         static auto for_some_test_case()
             -> std::vector<TableIdentifierDataSetElement>;
     };
-} // namespace identifier
-} // namespace sqlxx::test
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/identifier/table-identifier.class.h++>
-
-namespace sqlxx::test
-{
-inline namespace identifier
-{
     using sqlxx::TableIdentifier;
 
     auto TableIdentifierDataSet::for_some_test_case()
