@@ -5,13 +5,10 @@
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <vector>
+
+#include <sql++/closure/from-closure.class.h++>
+#include <sql++/identifier/table-identifier.class.h++>
 
 #include "./from-closure-data-set-element.class.h++"
 
@@ -19,6 +16,12 @@ namespace sqlxx::test
 {
 inline namespace closure
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief @c FromClosure クラスのテストケースで使用するデータセット
      */
@@ -96,22 +99,13 @@ inline namespace closure
         static auto for_some_test_case_e()
             -> std::vector<FromClosureDataSetElement>;
     };
-} // namespace closure
-} // namespace sqlxx::test
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/identifier/table-identifier.class.h++>
-
-namespace sqlxx::test
-{
-inline namespace closure
-{
     using sqlxx::FromClosure;
     using sqlxx::TableIdentifier;
 
