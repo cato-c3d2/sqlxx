@@ -5,12 +5,6 @@
 #ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_16_HXX
 #define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_16_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <vector>
 
 #include <sql++/closure/select-closure.class.h++>
@@ -22,6 +16,12 @@ namespace sqlxx::test
 {
 inline namespace closure
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     using sqlxx::ColumnIdentifier;
     using sqlxx::SelectClosure;
 

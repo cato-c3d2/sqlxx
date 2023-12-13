@@ -5,12 +5,6 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DEFINITION__NAMING_RULE_DATA_SET_CLASS_MEMBER_01_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__DATA_SET__DEFINITION__NAMING_RULE_DATA_SET_CLASS_MEMBER_01_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <vector>
 
 #include "../naming-rule-data-set-element.class.h++"
@@ -19,6 +13,12 @@ namespace sqlxx::test
 {
 inline namespace identifier
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief データセットを返却する
      *

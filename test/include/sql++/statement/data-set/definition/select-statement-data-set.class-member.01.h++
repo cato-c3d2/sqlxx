@@ -5,12 +5,6 @@
 #ifndef TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_01_HXX
 #define TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__DEFINITION__SELECT_STATEMENT_DATA_SET_CLASS_MEMBER_01_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <vector>
 
 #include <sql++/closure/from-closure.class.h++>
@@ -25,6 +19,12 @@ namespace sqlxx::test
 {
 inline namespace statement
 {
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     using sqlxx::ColumnIdentifier;
     using sqlxx::FromClosure;
     using sqlxx::SelectClosure;
