@@ -5,12 +5,6 @@
 #ifndef TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_TEST_CASE_HXX
 #define TEST__INCLUDE__SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_TEST_CASE_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Test case definition
-//
-////////////////////////////////////////////////////////////////////////////////
-
 #include <string>
 
 #include <boost/test/data/monomorphic.hpp>
@@ -20,6 +14,12 @@
 #include <sql++/identifier/column-identifier.class.h++>
 
 #include "./data-set/column-identifier-data-set.class.h++"
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Test case definition
+//
+////////////////////////////////////////////////////////////////////////////////
 
 BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
