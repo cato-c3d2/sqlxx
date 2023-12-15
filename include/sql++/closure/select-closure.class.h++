@@ -5,11 +5,11 @@
 #ifndef SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
 #define SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
 
-#include <sql++/identifier/column-identifier.class.h++>
-
 #include <initializer_list>
 #include <string>
 #include <vector>
+
+#include <sql++/identifier/column-identifier.class.h++>
 
 namespace sqlxx
 {
