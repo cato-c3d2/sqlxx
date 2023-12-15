@@ -5,10 +5,10 @@
 #ifndef SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_HXX
 #define SQLXX__IDENTIFIER__COLUMN_IDENTIFIER_CLASS_HXX
 
+#include <string>
+
 #include <sql++/closure/as-closure.class.h++>
 #include <sql++/identifier/naming-rule.class.h++>
-
-#include <string>
 
 namespace sqlxx
 {

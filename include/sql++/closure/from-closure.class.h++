@@ -5,9 +5,9 @@
 #ifndef SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
 #define SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
 
-#include <sql++/identifier/table-identifier.class.h++>
-
 #include <string>
+
+#include <sql++/identifier/table-identifier.class.h++>
 
 namespace sqlxx
 {

@@ -4,9 +4,9 @@
  * @brief サンプルプログラム
  */
 
-#include <sql++.h++>
-
 #include <iostream>
+
+#include <sql++.h++>
 
 /*!
  * @brief SELECT 文を不変オブジェクトとして構築する

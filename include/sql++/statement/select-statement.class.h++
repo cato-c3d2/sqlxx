@@ -5,11 +5,11 @@
 #ifndef SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX
 #define SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
-
 #include <initializer_list>
 #include <string>
+
+#include <sql++/closure/from-closure.class.h++>
+#include <sql++/closure/select-closure.class.h++>
 
 namespace sqlxx
 {
