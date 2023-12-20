@@ -5,20 +5,21 @@
 #ifndef SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX
 #define SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition / Class member declaration / Function declaration
-//
-////////////////////////////////////////////////////////////////////////////////
+#include <string>
 
 #include <sql++/closure/from-closure.class.h++>
 #include <sql++/closure/select-closure.class.h++>
 
-#include <initializer_list>
-#include <string>
-
-namespace sqlxx::statement
+namespace sqlxx
 {
+inline namespace statement
+{
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief "SELECT 文" の文法クラス
      */
@@ -66,11 +67,24 @@ namespace sqlxx::statement
         auto to_string() const -> std::string;
 
     private:
+        /*!
+         * @brief "SELECT 句"
+         */
         closure::SelectClosure _select_closure;
-        closure::FromClosure   _from_closure;
+
+        /*!
+         * @brief "FROM 句"
+         */
+        closure::FromClosure _from_closure;
     };
 
-    /**
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Free function declaration
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out              出力ストリーム
@@ -80,16 +94,13 @@ namespace sqlxx::statement
      */
     auto operator<<(std::ostream & out, SelectStatement const select_statement)
         -> std::ostream &;
-}
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition / Function definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-namespace sqlxx::statement
-{
     SelectStatement::SelectStatement() : _select_closure(), _from_closure()
     {}
 
@@ -137,7 +148,9 @@ namespace sqlxx::statement
     }
 
     ////////////////////////////////////////////////////////////////////////////
-    // Function definition
+    //
+    // Free function definition
+    //
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(std::ostream & out, SelectStatement const select_statement)
@@ -146,6 +159,7 @@ namespace sqlxx::statement
         out << select_statement.to_string();
         return out;
     }
-}
+} // namespace statement
+} // namespace sqlxx
 
 #endif // SQLXX__STATEMENT__SELECT_STATEMENT_CLASS_HXX

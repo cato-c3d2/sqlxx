@@ -16,18 +16,36 @@ boost_test_options = -l boost_unit_test_framework \
 all : clean build run
 
 .PHONY : build
-build : ./build/test-module.exe
+build : ./build/sql++.test-module.exe
 
-build/test-module.exe : ./test-module.c++
+build/sql++.test-module.exe : ./sql++.test-module.c++
 	$(CXX) $< -o $@ $(build_options) $(boost_test_options)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
-    #      $(CXX) ./test-module.c++ -o ./build/test-module.exe $(build_options) $(boost_test_options)
+    #      $(CXX) ./sql++.test-module.c++ -o ./build/sql++.test-module.exe $(build_options) $(boost_test_options)
 
 .PHONY : clean
 clean :
 	$(RM) ./build/*.exe
 
+# ------------------------------------------------------------------------------
+# Boost.Test の実行時オプション
+#
+# Boost.Test の実行時オプションを
+# make コマンドのコマンドライン引数として指定できる.
+#
+# e.g. 実行されるテストケースをフィルタリングする場合 :
+#
+# ```
+# $ make run TEST_RUNTIME_OPTIONS=--run_test=*/class__Column
+# ```
+#
+# refarence :
+# https://www.boost.org/doc/libs/1_71_0/libs/test/doc/html/boost_test/runtime_config/test_unit_filtering.html
+# ------------------------------------------------------------------------------
+TEST_RUNTIME_OPTIONS =
+
 .PHONY : run
-run : ./build/test-module.exe
-	$<
-    # NOTE 最初の依存ファイルであるテストモジュールを実行する
+run : ./build/sql++.test-module.exe
+	$< $(TEST_RUNTIME_OPTIONS)
+    # NOTE 自動変数が展開され, 下記のコマンドが実行される :
+    #      build/sql++.test-module.exe $(TEST_RUNTIME_OPTIONS)

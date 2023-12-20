@@ -4,9 +4,9 @@
  * @brief サンプルプログラム
  */
 
-#include <sql++.h++>
-
 #include <iostream>
+
+#include <sql++.h++>
 
 /*!
  * @brief SELECT 文を不変オブジェクトとして構築する
@@ -16,14 +16,12 @@
  */
 auto main() -> int
 {
-    using namespace sqlxx::identifier;
-    using namespace sqlxx::closure;
-    using namespace sqlxx::statement;
+    using namespace sqlxx;
 
     SelectStatement const select_statement {
-        SelectClosure {
-            { Column { "id", "p.id" }, Column { "name", "p.name" } } },
-        FromClosure { Table { "people", "p" } }
+        Select { { Column { "id", As { "p.id" } },
+                   Column { "name", As { "p.name" } } } },
+        From { Table { "people", As { "p" } } }
     };
 
     std::cout << select_statement << std::endl;

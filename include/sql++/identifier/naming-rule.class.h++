@@ -5,16 +5,19 @@
 #ifndef SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX
 #define SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition / Class member declaration / Function declaration
-//
-////////////////////////////////////////////////////////////////////////////////
-
+#include <regex>
 #include <string>
 
-namespace sqlxx::identifier
+namespace sqlxx
 {
+inline namespace identifier
+{
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief 識別子の命名規則に関するクラス
      */
@@ -64,18 +67,13 @@ namespace sqlxx::identifier
          */
         static auto pattern() -> std::string;
     };
-}
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition / Function definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-#include <regex>
-
-namespace sqlxx::identifier
-{
     auto NamingRule::is_legal(std::string identifier) -> bool
     {
         return std::regex_search(
@@ -100,6 +98,7 @@ namespace sqlxx::identifier
         static auto const value = R"([a-zA-Z_]\w*)";
         return value;
     }
-}
+} // namespace identifier
+} // namespace sqlxx
 
 #endif // SQLXX__IDENTIFIER__NAMING_RULE_CLASS_HXX
