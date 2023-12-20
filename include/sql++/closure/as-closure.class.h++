@@ -1,13 +1,13 @@
 /*!
- * @file from-closure.class.h++
+ * @file as-closure.class.h++
  */
 
-#ifndef SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
-#define SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
+#ifndef SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX
+#define SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX
 
 #include <string>
 
-#include <sql++/identifier/table-identifier.class.h++>
+#include <sql++/identifier/naming-rule.class.h++>
 
 namespace sqlxx
 {
@@ -20,31 +20,43 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief "FROM 句" の文法クラス
+     * @brief "AS 句" の文法クラス
      */
-    class FromClosure
+    class AsClosure
     {
     public:
         /*!
+         * @brief エイリアス名の型
+         */
+        using AliasNameType = std::string;
+
+        /*!
          * @brief デフォルトコンストラクタ
          */
-        FromClosure();
+        AsClosure();
 
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] table "テーブル指定" の文法オブジェクト
+         * @param[in] alias_name  エイリアス名
          */
-        FromClosure(identifier::TableIdentifier table);
+        AsClosure(AliasNameType alias_name);
 
         /*!
-         * @brief "テーブル指定" を設定する
+         * @brief エイリアス名を設定する
          *
-         * @param[in] table "テーブル指定" の文法オブジェクト
+         * @param[in] alias_name エイリアス名
          *
          * @return このオブジェクトの参照
          */
-        auto table(identifier::TableIdentifier table) -> FromClosure &;
+        auto alias_name(AliasNameType alias_name) -> AsClosure &;
+
+        /*!
+         * @brief エイリアス名を取得する
+         *
+         * @return エイリアス名
+         */
+        auto alias_name() const -> AliasNameType;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -63,9 +75,9 @@ inline namespace closure
 
     private:
         /*!
-         * @brief "テーブル指定"
+         * @brief "AS 句"
          */
-        identifier::TableIdentifier _table;
+        AliasNameType _alias_name;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -77,12 +89,12 @@ inline namespace closure
     /*!
      * @brief ストリーム出力演算
      *
-     * @param[in] out          出力ストリーム
-     * @param[in] from_closure "FROM 句" の文法オブジェクト
+     * @param[in] out        出力ストリーム
+     * @param[in] as_closure "AS 句" の文法オブジェクト
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, FromClosure const from_closure)
+    auto operator<<(std::ostream & out, AsClosure const as_closure)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -91,29 +103,40 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    FromClosure::FromClosure() : _table()
+    AsClosure::AsClosure() : _alias_name()
     {}
 
-    FromClosure::FromClosure(identifier::TableIdentifier table) : _table(table)
+    AsClosure::AsClosure(AliasNameType alias_name) : _alias_name(alias_name)
     {}
 
-    auto FromClosure::table(identifier::TableIdentifier table) -> FromClosure &
+    auto AsClosure::alias_name() const -> AliasNameType
     {
-        this->_table = table;
+        return this->_alias_name;
+    }
+
+    auto AsClosure::alias_name(AliasNameType alias_name) -> AsClosure &
+    {
+        this->_alias_name = alias_name;
         return *this;
     }
 
-    auto FromClosure::empty() const -> bool
+    auto AsClosure::empty() const -> bool
     {
-        return this->_table.empty();
+        bool is_legal;
+        if (this->_alias_name.find(".") == std::string::npos) {
+            is_legal = identifier::NamingRule::is_legal(this->_alias_name);
+        } else {
+            is_legal = identifier::NamingRule::is_legal(this->_alias_name, ".");
+        }
+        return ! is_legal;
     }
 
-    auto FromClosure::to_string() const -> std::string
+    auto AsClosure::to_string() const -> std::string
     {
-        if (this->_table.empty()) {
+        if (this->empty()) {
             return "";
         }
-        return "FROM " + this->_table.to_string();
+        return "AS " + this->_alias_name;
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -122,13 +145,13 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, FromClosure const from_closure)
+    auto operator<<(std::ostream & out, AsClosure const as_closure)
         -> std::ostream &
     {
-        out << from_closure.to_string();
+        out << as_closure.to_string();
         return out;
     }
 } // namespace closure
 } // namespace sqlxx
 
-#endif // SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
+#endif // SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX

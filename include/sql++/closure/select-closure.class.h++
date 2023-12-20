@@ -5,28 +5,32 @@
 #ifndef SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
 #define SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class definition / Class member declaration / Function declaration
-//
-////////////////////////////////////////////////////////////////////////////////
-
-#include <sql++/identifier/column.class.h++>
-
 #include <initializer_list>
 #include <string>
 #include <vector>
 
-namespace sqlxx::closure
+#include <sql++/identifier/column-identifier.class.h++>
+
+namespace sqlxx
 {
+inline namespace closure
+{
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
     /*!
      * @brief "SELECT 句" の文法クラス
      */
     class SelectClosure
     {
     public:
-        /*! @brief "カラム指定のリスト" の型 */
-        using ColumnListType = std::vector<identifier::Column>;
+        /*!
+         * @brief "カラム指定のリスト" の型
+         */
+        using ColumnListType = std::vector<identifier::ColumnIdentifier>;
 
         /*!
          * @brief デフォルトコンストラクタ
@@ -38,7 +42,8 @@ namespace sqlxx::closure
          *
          * @param[in] column_list "カラム指定" の文法オブジェクトの初期化リスト
          */
-        SelectClosure(std::initializer_list<identifier::Column> column_list);
+        SelectClosure(
+            std::initializer_list<identifier::ColumnIdentifier> column_list);
 
         /*!
          * @brief "カラム指定のリスト" を設定する
@@ -47,7 +52,8 @@ namespace sqlxx::closure
          *
          * @return このオブジェクトの参照
          */
-        auto column_list(std::initializer_list<identifier::Column> column_list)
+        auto column_list(
+            std::initializer_list<identifier::ColumnIdentifier> column_list)
             -> SelectClosure &;
 
         /*!
@@ -66,10 +72,19 @@ namespace sqlxx::closure
         auto to_string() const -> std::string;
 
     private:
+        /*!
+         * @brief "カラム指定のリスト"
+         */
         ColumnListType _column_list;
     };
 
-    /**
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Free function declaration
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
+    /*!
      * @brief ストリーム出力演算
      *
      * @param[in] out            出力ストリーム
@@ -79,26 +94,23 @@ namespace sqlxx::closure
      */
     auto operator<<(std::ostream & out, SelectClosure const select_closure)
         -> std::ostream &;
-}
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Class member definition / Function definition
-//
-////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class member definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
 
-namespace sqlxx::closure
-{
     SelectClosure::SelectClosure() : _column_list()
     {}
 
     SelectClosure::SelectClosure(
-        std::initializer_list<identifier::Column> column_list)
+        std::initializer_list<identifier::ColumnIdentifier> column_list)
         : _column_list(column_list)
     {}
 
     auto SelectClosure::column_list(
-        std::initializer_list<identifier::Column> column_list)
+        std::initializer_list<identifier::ColumnIdentifier> column_list)
         -> SelectClosure &
     {
         this->_column_list = column_list;
@@ -144,7 +156,9 @@ namespace sqlxx::closure
     }
 
     ////////////////////////////////////////////////////////////////////////////
-    // Function definition
+    //
+    // Free function definition
+    //
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(std::ostream & out, SelectClosure const select_closure)
@@ -153,6 +167,7 @@ namespace sqlxx::closure
         out << select_closure.to_string();
         return out;
     }
-}
+} // namespace closure
+} // namespace sqlxx
 
 #endif // SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
