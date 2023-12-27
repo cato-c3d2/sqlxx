@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include <sql++/closure/as-closure.class.h++>
+#include <sql++/clause/as-clause.class.h++>
 
 #include "./as-closure-data-set-element.class.h++"
 
@@ -22,7 +22,7 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief @c AsClosure クラスのテストケースで使用するデータセット
+     * @brief @c AsClause クラスのテストケースで使用するデータセット
      */
     class AsClosureDataSet
     {
@@ -50,9 +50,9 @@ inline namespace closure
         *
         * @return データセット
         *
-        * @see sqlxx::closure::AsClosure              テスト対象クラス
-        * @see sqlxx::closure::AsClosure::empty()     テスト対象メンバ関数
-        * @see sqlxx::closure::AsClosure::to_string() テスト対象メンバ関数
+        * @see sqlxx::clause::AsClause              テスト対象クラス
+        * @see sqlxx::clause::AsClause::empty()     テスト対象メンバ関数
+        * @see sqlxx::clause::AsClause::to_string() テスト対象メンバ関数
         */
         static auto for_some_test_case()
             -> std::vector<AsClosureDataSetElement>;
@@ -64,7 +64,7 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    using sqlxx::AsClosure;
+    using sqlxx::AsClause;
 
     auto AsClosureDataSet::for_some_test_case()
         -> std::vector<AsClosureDataSetElement>
@@ -75,7 +75,7 @@ inline namespace closure
             {
                 // [条件]
                 // + alias_name : 未指定
-                AsClosure {},
+                AsClause {},
                 // [期待結果] empty メンバ関数
                 true,
                 // [期待結果] to_string メンバ関数
@@ -85,7 +85,7 @@ inline namespace closure
             {
                 // [条件]
                 // + alias_name : 空文字列
-                AsClosure { "" },
+                AsClause { "" },
                 // [期待結果] empty メンバ関数
                 true,
                 // [期待結果] to_string メンバ関数
@@ -95,7 +95,7 @@ inline namespace closure
             {
                 // [条件]
                 // + alias_name : 不適格(半角スペース)
-                AsClosure { " " },
+                AsClause { " " },
                 // [期待結果] empty メンバ関数
                 true,
                 // [期待結果] to_string メンバ関数
@@ -105,7 +105,7 @@ inline namespace closure
             {
                 // [条件]
                 // + alias_name : 適格(カラム指定)
-                AsClosure { "p.id" },
+                AsClause { "p.id" },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
@@ -115,7 +115,7 @@ inline namespace closure
             {
                 // [条件]
                 // + alias_name : 適格(テーブル指定)
-                AsClosure { "p" },
+                AsClause { "p" },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数

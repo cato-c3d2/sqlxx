@@ -1,9 +1,9 @@
 /*!
- * @file as-closure.class.h++
+ * @file as-clause.class.h++
  */
 
-#ifndef SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX
-#define SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX
+#ifndef SQLXX__CLAUSE__AS_CLAUSE_CLASS_HXX
+#define SQLXX__CLAUSE__AS_CLAUSE_CLASS_HXX
 
 #include <string>
 
@@ -11,7 +11,7 @@
 
 namespace sqlxx
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -22,7 +22,7 @@ inline namespace closure
     /*!
      * @brief "AS 句" の文法クラス
      */
-    class AsClosure
+    class AsClause
     {
     public:
         /*!
@@ -33,14 +33,14 @@ inline namespace closure
         /*!
          * @brief デフォルトコンストラクタ
          */
-        AsClosure();
+        AsClause();
 
         /*!
          * @brief コンストラクタ
          *
          * @param[in] alias_name  エイリアス名
          */
-        AsClosure(AliasNameType alias_name);
+        AsClause(AliasNameType alias_name);
 
         /*!
          * @brief エイリアス名を設定する
@@ -49,7 +49,7 @@ inline namespace closure
          *
          * @return このオブジェクトの参照
          */
-        auto alias_name(AliasNameType alias_name) -> AsClosure &;
+        auto alias_name(AliasNameType alias_name) -> AsClause &;
 
         /*!
          * @brief エイリアス名を取得する
@@ -90,11 +90,11 @@ inline namespace closure
      * @brief ストリーム出力演算
      *
      * @param[in] out        出力ストリーム
-     * @param[in] as_closure "AS 句" の文法オブジェクト
+     * @param[in] as_clause  "AS 句" の文法オブジェクト
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, AsClosure const as_closure)
+    auto operator<<(std::ostream & out, AsClause const as_clause)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -103,24 +103,24 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    AsClosure::AsClosure() : _alias_name()
+    AsClause::AsClause() : _alias_name()
     {}
 
-    AsClosure::AsClosure(AliasNameType alias_name) : _alias_name(alias_name)
+    AsClause::AsClause(AliasNameType alias_name) : _alias_name(alias_name)
     {}
 
-    auto AsClosure::alias_name() const -> AliasNameType
+    auto AsClause::alias_name() const -> AliasNameType
     {
         return this->_alias_name;
     }
 
-    auto AsClosure::alias_name(AliasNameType alias_name) -> AsClosure &
+    auto AsClause::alias_name(AliasNameType alias_name) -> AsClause &
     {
         this->_alias_name = alias_name;
         return *this;
     }
 
-    auto AsClosure::empty() const -> bool
+    auto AsClause::empty() const -> bool
     {
         bool is_legal;
         if (this->_alias_name.find(".") == std::string::npos) {
@@ -131,7 +131,7 @@ inline namespace closure
         return ! is_legal;
     }
 
-    auto AsClosure::to_string() const -> std::string
+    auto AsClause::to_string() const -> std::string
     {
         if (this->empty()) {
             return "";
@@ -145,13 +145,13 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, AsClosure const as_closure)
+    auto operator<<(std::ostream & out, AsClause const as_clause)
         -> std::ostream &
     {
-        out << as_closure.to_string();
+        out << as_clause.to_string();
         return out;
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx
 
-#endif // SQLXX__CLOSURE__AS_CLOSURE_CLASS_HXX
+#endif // SQLXX__CLAUSE__AS_CLAUSE_CLASS_HXX

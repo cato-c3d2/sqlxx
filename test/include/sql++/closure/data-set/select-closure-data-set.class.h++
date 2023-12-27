@@ -21,7 +21,7 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief @c SelectClosure クラスのテストケースで使用するデータセット
+     * @brief @c SelectClause クラスのテストケースで使用するデータセット
      */
     class SelectClosureDataSet
     {
@@ -365,9 +365,9 @@ inline namespace closure
         *
         * @return データセット
         *
-        * @see sqlxx::closure::SelectClosure              テスト対象クラス
-        * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
-        * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
+        * @see sqlxx::clause::SelectClause              テスト対象クラス
+        * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
+        * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
         */
         static auto for_some_test_case()
             -> std::vector<SelectClosureDataSetElement>;

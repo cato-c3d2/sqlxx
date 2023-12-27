@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 
 namespace sqlxx::test
 {
@@ -20,7 +20,7 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    using sqlxx::SelectClosure;
+    using sqlxx::SelectClause;
 
     /*!
      * @brief データセットの要素
@@ -32,7 +32,7 @@ inline namespace closure
         /*!
          * @brief テスト対象オブジェクト
          */
-        SelectClosure select_closure;
+        SelectClause select_closure;
 
         /*!
          * @brief @c empty メンバ関数の期待結果

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 
-#include <sql++/closure/from-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
 
 namespace sqlxx::test
 {
@@ -20,7 +20,7 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    using sqlxx::FromClosure;
+    using sqlxx::FromClause;
 
     /*!
      * @brief データセットの要素
@@ -32,7 +32,7 @@ inline namespace closure
         /*!
          * @brief テスト対象オブジェクト
          */
-        FromClosure from_closure;
+        FromClause from_closure;
 
         /*!
          * @brief @c empty メンバ関数の期待結果

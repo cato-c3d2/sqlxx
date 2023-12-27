@@ -7,8 +7,8 @@
 
 #include <vector>
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -26,8 +26,8 @@ inline namespace statement
     ////////////////////////////////////////////////////////////////////////////
 
     using sqlxx::ColumnIdentifier;
-    using sqlxx::FromClosure;
-    using sqlxx::SelectClosure;
+    using sqlxx::FromClause;
+    using sqlxx::SelectClause;
     using sqlxx::SelectStatement;
     using sqlxx::TableIdentifier;
 
@@ -62,7 +62,7 @@ inline namespace statement
                 //     + columns  : 未指定
                 // + from_closure : 未指定
                 SelectStatement {
-                    SelectClosure {}
+                    SelectClause {}
                 },
                 // [期待結果] to_string メンバ関数
                 ""
@@ -73,7 +73,7 @@ inline namespace statement
                 // + select_closure : 未指定
                 // + from_closure   :
                 //     + table      : 未指定
-                SelectStatement {}.from(FromClosure {}),
+                SelectStatement {}.from(FromClause {}),
                 // [期待結果] to_string メンバ関数
                 ""
             },
@@ -85,8 +85,8 @@ inline namespace statement
                 // + from_closure :
                 //     + table   : 未指定
                 SelectStatement {
-                    SelectClosure {},
-                    FromClosure {}
+                    SelectClause {},
+                    FromClause {}
                 },
                 // [期待結果] to_string メンバ関数
                 ""
@@ -106,11 +106,11 @@ inline namespace statement
                 //         + name       : 不適格
                 //         + as_closure : 不適格
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { " " }.as({ "," }),
                         ColumnIdentifier { "." }.as({ ";" })
                     }},
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "\'" }.as({ "\\" })
                     }
                 },

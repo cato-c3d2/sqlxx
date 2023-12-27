@@ -10,8 +10,8 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -30,8 +30,8 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 
 using sqlxx::ColumnIdentifier;
-using sqlxx::FromClosure;
-using sqlxx::SelectClosure;
+using sqlxx::FromClause;
+using sqlxx::SelectClause;
 using sqlxx::SelectStatement;
 using sqlxx::TableIdentifier;
 using sqlxx::test::SelectStatementDataSet;
@@ -47,11 +47,11 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     // clang-format off
     SelectStatement const source      = {}; // コピー元のオブジェクト
     SelectStatement       destination = {   // コピー先のオブジェクト
-        SelectClosure {
+        SelectClause {
             ColumnIdentifier { "p" }.as({ "p.id" }),
             ColumnIdentifier { "name" }.as({ "p.name" })
         },
-        FromClosure { TableIdentifier { "people" }.as({ "p" }) }
+        FromClause { TableIdentifier { "people" }.as({ "p" }) }
     };
     // clang-format on
 

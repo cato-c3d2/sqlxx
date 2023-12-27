@@ -1,9 +1,9 @@
 /*!
- * @file select-closure.class.h++
+ * @file select-clause.class.h++
  */
 
-#ifndef SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
-#define SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
+#ifndef SQLXX__CLAUSE__SELECT_CLAUSE_CLASS_HXX
+#define SQLXX__CLAUSE__SELECT_CLAUSE_CLASS_HXX
 
 #include <initializer_list>
 #include <string>
@@ -13,7 +13,7 @@
 
 namespace sqlxx
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -24,7 +24,7 @@ inline namespace closure
     /*!
      * @brief "SELECT 句" の文法クラス
      */
-    class SelectClosure
+    class SelectClause
     {
     public:
         /*!
@@ -35,14 +35,14 @@ inline namespace closure
         /*!
          * @brief デフォルトコンストラクタ
          */
-        SelectClosure();
+        SelectClause();
 
         /*!
          * @brief コンストラクタ
          *
          * @param[in] column_list "カラム指定" の文法オブジェクトの初期化リスト
          */
-        SelectClosure(
+        SelectClause(
             std::initializer_list<identifier::ColumnIdentifier> column_list);
 
         /*!
@@ -54,7 +54,7 @@ inline namespace closure
          */
         auto column_list(
             std::initializer_list<identifier::ColumnIdentifier> column_list)
-            -> SelectClosure &;
+            -> SelectClause &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -88,11 +88,11 @@ inline namespace closure
      * @brief ストリーム出力演算
      *
      * @param[in] out            出力ストリーム
-     * @param[in] select_closure "SELECT 句" の文法オブジェクト
+     * @param[in] select_clause  "SELECT 句" の文法オブジェクト
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, SelectClosure const select_closure)
+    auto operator<<(std::ostream & out, SelectClause const select_clause)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -101,23 +101,23 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    SelectClosure::SelectClosure() : _column_list()
+    SelectClause::SelectClause() : _column_list()
     {}
 
-    SelectClosure::SelectClosure(
+    SelectClause::SelectClause(
         std::initializer_list<identifier::ColumnIdentifier> column_list)
         : _column_list(column_list)
     {}
 
-    auto SelectClosure::column_list(
+    auto SelectClause::column_list(
         std::initializer_list<identifier::ColumnIdentifier> column_list)
-        -> SelectClosure &
+        -> SelectClause &
     {
         this->_column_list = column_list;
         return *this;
     }
 
-    auto SelectClosure::empty() const -> bool
+    auto SelectClause::empty() const -> bool
     {
         // この SELECT 句が保持するカラムオブジェクトが 0 個の場合,
         // この SELECT 句 を空とみなす.
@@ -135,7 +135,7 @@ inline namespace closure
             });
     }
 
-    auto SelectClosure::to_string() const -> std::string
+    auto SelectClause::to_string() const -> std::string
     {
         if (this->_column_list.empty()) {
             return "";
@@ -161,13 +161,13 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, SelectClosure const select_closure)
+    auto operator<<(std::ostream & out, SelectClause const select_clause)
         -> std::ostream &
     {
-        out << select_closure.to_string();
+        out << select_clause.to_string();
         return out;
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx
 
-#endif // SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_HXX
+#endif // SQLXX__CLAUSE__SELECT_CLAUSE_CLASS_HXX

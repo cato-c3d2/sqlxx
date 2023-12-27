@@ -1,9 +1,9 @@
 /*!
- * @file from-closure.class.h++
+ * @file from-clause.class.h++
  */
 
-#ifndef SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
-#define SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
+#ifndef SQLXX__CLAUSE__FROM_CLAUSE_CLASS_HXX
+#define SQLXX__CLAUSE__FROM_CLAUSE_CLASS_HXX
 
 #include <string>
 
@@ -11,7 +11,7 @@
 
 namespace sqlxx
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -22,20 +22,20 @@ inline namespace closure
     /*!
      * @brief "FROM 句" の文法クラス
      */
-    class FromClosure
+    class FromClause
     {
     public:
         /*!
          * @brief デフォルトコンストラクタ
          */
-        FromClosure();
+        FromClause();
 
         /*!
          * @brief コンストラクタ
          *
          * @param[in] table "テーブル指定" の文法オブジェクト
          */
-        FromClosure(identifier::TableIdentifier table);
+        FromClause(identifier::TableIdentifier table);
 
         /*!
          * @brief "テーブル指定" を設定する
@@ -44,7 +44,7 @@ inline namespace closure
          *
          * @return このオブジェクトの参照
          */
-        auto table(identifier::TableIdentifier table) -> FromClosure &;
+        auto table(identifier::TableIdentifier table) -> FromClause &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -78,11 +78,11 @@ inline namespace closure
      * @brief ストリーム出力演算
      *
      * @param[in] out          出力ストリーム
-     * @param[in] from_closure "FROM 句" の文法オブジェクト
+     * @param[in] from_clause  "FROM 句" の文法オブジェクト
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, FromClosure const from_closure)
+    auto operator<<(std::ostream & out, FromClause const from_clause)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -91,24 +91,24 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    FromClosure::FromClosure() : _table()
+    FromClause::FromClause() : _table()
     {}
 
-    FromClosure::FromClosure(identifier::TableIdentifier table) : _table(table)
+    FromClause::FromClause(identifier::TableIdentifier table) : _table(table)
     {}
 
-    auto FromClosure::table(identifier::TableIdentifier table) -> FromClosure &
+    auto FromClause::table(identifier::TableIdentifier table) -> FromClause &
     {
         this->_table = table;
         return *this;
     }
 
-    auto FromClosure::empty() const -> bool
+    auto FromClause::empty() const -> bool
     {
         return this->_table.empty();
     }
 
-    auto FromClosure::to_string() const -> std::string
+    auto FromClause::to_string() const -> std::string
     {
         if (this->_table.empty()) {
             return "";
@@ -122,13 +122,13 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, FromClosure const from_closure)
+    auto operator<<(std::ostream & out, FromClause const from_clause)
         -> std::ostream &
     {
-        out << from_closure.to_string();
+        out << from_clause.to_string();
         return out;
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx
 
-#endif // SQLXX__CLOSURE__FROM_CLOSURE_CLASS_HXX
+#endif // SQLXX__CLAUSE__FROM_CLAUSE_CLASS_HXX

@@ -10,7 +10,7 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/closure/as-closure.class.h++>
+#include <sql++/clause/as-clause.class.h++>
 
 #include "./data-set/as-closure-data-set.class.h++"
 
@@ -24,20 +24,20 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 
 BOOST_AUTO_TEST_SUITE(class__AsClosure)
 
-using sqlxx::AsClosure;
+using sqlxx::AsClause;
 using sqlxx::test::AsClosureDataSet;
 
 /*!
  * @brief テストパターン :
- *        @c AsClosure オブジェクトがコピー代入可能であることを検証する
+ *        @c AsClause オブジェクトがコピー代入可能であることを検証する
  *
- * @see sqlxx::closure::AsClosure テスト対象クラス
+ * @see sqlxx::clause::AsClause テスト対象クラス
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
     // clang-format off
-    AsClosure const source      = {};         // コピー元のオブジェクト
-    AsClosure       destination = { "p.id" }; // コピー先のオブジェクト
+    AsClause const source      = {};         // コピー元のオブジェクト
+    AsClause       destination = { "p.id" }; // コピー先のオブジェクト
     // clang-format on
 
     // 二つのオブジェクトは等価ではないこと
@@ -55,10 +55,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
- *        様々な @c AsClosure オブジェクトに対して @c empty メンバ関数を呼び出す
+ *        様々な @c AsClause オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::closure::AsClosure              テスト対象クラス
- * @see sqlxx::closure::AsClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::clause::AsClause                テスト対象クラス
+ * @see sqlxx::clause::AsClause::empty()       テスト対象メンバ関数
  * @see AsClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
@@ -67,7 +67,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    AsClosure const as_closure = data_set_element.as_closure;
+    AsClause const as_closure = data_set_element.as_closure;
 
     // テスト対象メンバ関数の期待結果
     bool const expectation = data_set_element.expectation_of_empty;
@@ -78,10 +78,10 @@ BOOST_DATA_TEST_CASE(
 
 /*!
  * @brief テストパターン :
- *        様々な @c AsClosure オブジェクトに対して @c to_string メンバ関数を呼び出す
+ *        様々な @c AsClause オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::closure::AsClosure              テスト対象クラス
- * @see sqlxx::closure::AsClosure::to_string() テスト対象メンバ関数
+ * @see sqlxx::clause::AsClause                テスト対象クラス
+ * @see sqlxx::clause::AsClause::to_string()   テスト対象メンバ関数
  * @see AsClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
@@ -90,7 +90,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    AsClosure const as_closure = data_set_element.as_closure;
+    AsClause const as_closure = data_set_element.as_closure;
 
     // テスト対象メンバ関数の期待結果
     std::string const expectation = data_set_element.expectation_of_to_string;

@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
 #include "../select-closure-data-set-element.class.h++"
@@ -23,7 +23,7 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     using sqlxx::ColumnIdentifier;
-    using sqlxx::SelectClosure;
+    using sqlxx::SelectClause;
 
     /*!
      * @brief データセットを返却する
@@ -40,9 +40,9 @@ inline namespace closure
      *
      * @return データセット
      *
-     * @see sqlxx::closure::SelectClosure              テスト対象クラス
-     * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
+     * @see sqlxx::clause::SelectClause              テスト対象クラス
+     * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
+     * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
      */
     auto SelectClosureDataSet::for_some_test_case_10()
         -> std::vector<SelectClosureDataSetElement>
@@ -62,7 +62,7 @@ inline namespace closure
             ////////////////////////////////////////////////////////////////////
             // _161
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -76,7 +76,7 @@ inline namespace closure
             },
             // _162
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -90,7 +90,7 @@ inline namespace closure
             },
             // _163
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -104,7 +104,7 @@ inline namespace closure
             },
             // _164
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -124,7 +124,7 @@ inline namespace closure
             ////////////////////////////////////////////////////////////////////
             // _165
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -138,7 +138,7 @@ inline namespace closure
             },
             // _166
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -152,7 +152,7 @@ inline namespace closure
             },
             // _167
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -166,7 +166,7 @@ inline namespace closure
             },
             // _168
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -186,7 +186,7 @@ inline namespace closure
             ////////////////////////////////////////////////////////////////////
             // _169
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -200,7 +200,7 @@ inline namespace closure
             },
             // _170
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -214,7 +214,7 @@ inline namespace closure
             },
             // _171
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -228,7 +228,7 @@ inline namespace closure
             },
             // _172
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -248,7 +248,7 @@ inline namespace closure
             ////////////////////////////////////////////////////////////////////
             // _173
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -262,7 +262,7 @@ inline namespace closure
             },
             // _174
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -276,7 +276,7 @@ inline namespace closure
             },
             // _175
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :
@@ -290,7 +290,7 @@ inline namespace closure
             },
             // _176
             {
-                SelectClosure {
+                SelectClause {
                     ColumnIdentifier { " " }.as({ "" }),
                     // [条件(2)]
                     // + columns[1] :

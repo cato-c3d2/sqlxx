@@ -10,7 +10,7 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
 #include "./data-set/select-closure-data-set.class.h++"
@@ -26,20 +26,20 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
 BOOST_AUTO_TEST_SUITE(class__SelectClosure)
 
 using sqlxx::ColumnIdentifier;
-using sqlxx::SelectClosure;
+using sqlxx::SelectClause;
 using sqlxx::test::SelectClosureDataSet;
 
 /*!
  * @brief テストパターン :
- *        @c SelectClosure オブジェクトがコピー代入可能であることを検証する
+ *        @c SelectClause オブジェクトがコピー代入可能であることを検証する
  *
- * @see sqlxx::closure::SelectClosure テスト対象クラス
+ * @see sqlxx::clause::SelectClause テスト対象クラス
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
     // clang-format off
-    SelectClosure const source      = {}; // コピー元のオブジェクト
-    SelectClosure       destination = {   // コピー先のオブジェクト
+    SelectClause const source      = {}; // コピー元のオブジェクト
+    SelectClause       destination = {   // コピー先のオブジェクト
         ColumnIdentifier { "p" }.as({ "p.id" }),
         ColumnIdentifier { "name" }.as({ "p.name" })
     };
@@ -60,10 +60,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
- *        様々な @c SelectClosure オブジェクトに対して @c empty メンバ関数を呼び出す
+ *        様々な @c SelectClause オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::closure::SelectClosure              テスト対象クラス
- * @see sqlxx::closure::SelectClosure::empty()     テスト対象メンバ関数
+ * @see sqlxx::clause::SelectClause              テスト対象クラス
+ * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
  * @see SelectClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
@@ -72,7 +72,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    SelectClosure const select_closure = data_set_element.select_closure;
+    SelectClause const select_closure = data_set_element.select_closure;
 
     // テスト対象メンバ関数の期待結果
     bool const expectation = data_set_element.expectation_of_empty;
@@ -83,10 +83,10 @@ BOOST_DATA_TEST_CASE(
 
 /*!
  * @brief テストパターン :
- *        様々な @c SelectClosure オブジェクトに対して @c to_string メンバ関数を呼び出す
+ *        様々な @c SelectClause オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::closure::SelectClosure              テスト対象クラス
- * @see sqlxx::closure::SelectClosure::to_string() テスト対象メンバ関数
+ * @see sqlxx::clause::SelectClause              テスト対象クラス
+ * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
  * @see SelectClosureDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
@@ -95,7 +95,7 @@ BOOST_DATA_TEST_CASE(
     data_set_element)
 {
     // テスト対象オブジェクト
-    SelectClosure const select_closure = data_set_element.select_closure;
+    SelectClause const select_closure = data_set_element.select_closure;
 
     // テスト対象メンバ関数の期待結果
     std::string const expectation = data_set_element.expectation_of_to_string;

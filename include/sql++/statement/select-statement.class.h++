@@ -7,8 +7,8 @@
 
 #include <string>
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 
 namespace sqlxx
 {
@@ -34,30 +34,30 @@ inline namespace statement
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] select_closure "SELECT 句" の文法オブジェクト
-         * @param[in] from_closure   "FROM 句" の文法オブジェクト
+         * @param[in] select_clause "SELECT 句" の文法オブジェクト
+         * @param[in] from_clause   "FROM 句" の文法オブジェクト
          */
         SelectStatement(
-            closure::SelectClosure select_closure,
-            closure::FromClosure   from_closure = {});
+            clause::SelectClause select_clause,
+            clause::FromClause   from_clause = {});
 
         /*!
          * @brief "SELECT 句" を設定する
          *
-         * @param[in] select_closure "SELECT 句" の文法オブジェクト
+         * @param[in] select_clause "SELECT 句" の文法オブジェクト
          *
          * @return このオブジェクトの参照
          */
-        auto select(closure::SelectClosure select_closure) -> SelectStatement &;
+        auto select(clause::SelectClause select_clause) -> SelectStatement &;
 
         /*!
          * @brief "FROM 句" を設定する
          *
-         * @param[in] from_closure "FROM 句" の文法オブジェクト
+         * @param[in] from_clause "FROM 句" の文法オブジェクト
          *
          * @return このオブジェクトの参照
          */
-        auto from(closure::FromClosure from_closure) -> SelectStatement &;
+        auto from(clause::FromClause from_clause) -> SelectStatement &;
 
         /*!
          * @brief このオブジェクトの文字列表現を返却する
@@ -70,12 +70,12 @@ inline namespace statement
         /*!
          * @brief "SELECT 句"
          */
-        closure::SelectClosure _select_closure;
+        clause::SelectClause _select_clause;
 
         /*!
          * @brief "FROM 句"
          */
-        closure::FromClosure _from_closure;
+        clause::FromClause _from_clause;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -101,47 +101,46 @@ inline namespace statement
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    SelectStatement::SelectStatement() : _select_closure(), _from_closure()
+    SelectStatement::SelectStatement() : _select_clause(), _from_clause()
     {}
 
     SelectStatement::SelectStatement(
-        closure::SelectClosure select_closure,
-        closure::FromClosure   from_closure)
-        : _select_closure(select_closure), _from_closure(from_closure)
+        clause::SelectClause select_clause, clause::FromClause from_clause)
+        : _select_clause(select_clause), _from_clause(from_clause)
     {}
 
-    auto SelectStatement::select(closure::SelectClosure select_closure)
+    auto SelectStatement::select(clause::SelectClause select_clause)
         -> SelectStatement &
     {
-        this->_select_closure = select_closure;
+        this->_select_clause = select_clause;
         return *this;
     }
 
-    auto SelectStatement::from(closure::FromClosure from_closure)
+    auto SelectStatement::from(clause::FromClause from_clause)
         -> SelectStatement &
     {
-        this->_from_closure = from_closure;
+        this->_from_clause = from_clause;
         return *this;
     }
 
     auto SelectStatement::to_string() const -> std::string
     {
-        std::vector<std::string> closures;
+        std::vector<std::string> clauses;
 
-        if (this->_select_closure.empty()) {
+        if (this->_select_clause.empty()) {
             return "";
         }
-        closures.push_back(this->_select_closure.to_string());
+        clauses.push_back(this->_select_clause.to_string());
 
-        if (this->_from_closure.empty()) {
+        if (this->_from_clause.empty()) {
             return "";
         }
-        closures.push_back(this->_from_closure.to_string());
+        clauses.push_back(this->_from_clause.to_string());
 
         std::string text      = "";
         std::string delimiter = "";
-        for (auto && closure : closures) {
-            text += delimiter + closure;
+        for (auto && clause : clauses) {
+            text += delimiter + clause;
             delimiter = " ";
         }
         return text;

@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include <sql++/closure/from-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 
 #include "./from-closure-data-set-element.class.h++"
@@ -23,7 +23,7 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief @c FromClosure クラスのテストケースで使用するデータセット
+     * @brief @c FromClause クラスのテストケースで使用するデータセット
      */
     class FromClosureDataSet
     {
@@ -80,9 +80,9 @@ inline namespace closure
         *
         * @return データセット
         *
-        * @see sqlxx::closure::FromClosure              テスト対象クラス
-        * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-        * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+        * @see sqlxx::clause::FromClause              テスト対象クラス
+        * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
+        * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
         */
         static auto for_some_test_case()
             -> std::vector<FromClosureDataSetElement>;
@@ -106,7 +106,7 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    using sqlxx::FromClosure;
+    using sqlxx::FromClause;
     using sqlxx::TableIdentifier;
 
     auto FromClosureDataSet::for_some_test_case()
@@ -141,9 +141,9 @@ inline namespace closure
      *
      * @return データセット
      *
-     * @see sqlxx::closure::FromClosure              テスト対象クラス
-     * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause              テスト対象クラス
+     * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
     auto FromClosureDataSet::for_some_test_case_a()
         -> std::vector<FromClosureDataSetElement>
@@ -154,7 +154,7 @@ inline namespace closure
             {
                 // [条件]
                 // + table : 未指定
-                FromClosure {},
+                FromClause {},
                 // [期待結果] empty メンバ関数
                 true,
                 // [期待結果] to_string メンバ関数
@@ -175,9 +175,9 @@ inline namespace closure
      *
      * @return データセット
      *
-     * @see sqlxx::closure::FromClosure              テスト対象クラス
-     * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause              テスト対象クラス
+     * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
     auto FromClosureDataSet::for_some_test_case_b()
         -> std::vector<FromClosureDataSetElement>
@@ -191,7 +191,7 @@ inline namespace closure
         return {
             // _1
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
@@ -204,7 +204,7 @@ inline namespace closure
             },
             // _2
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
@@ -217,7 +217,7 @@ inline namespace closure
             },
             // _3
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
@@ -230,7 +230,7 @@ inline namespace closure
             },
             // _4
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
@@ -256,9 +256,9 @@ inline namespace closure
      *
      * @return データセット
      *
-     * @see sqlxx::closure::FromClosure              テスト対象クラス
-     * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause              テスト対象クラス
+     * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
     auto FromClosureDataSet::for_some_test_case_c()
         -> std::vector<FromClosureDataSetElement>
@@ -272,7 +272,7 @@ inline namespace closure
         return {
             // _5
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
@@ -285,7 +285,7 @@ inline namespace closure
             },
             // _6
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
@@ -298,7 +298,7 @@ inline namespace closure
             },
             // _7
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
@@ -311,7 +311,7 @@ inline namespace closure
             },
             // _8
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
@@ -337,9 +337,9 @@ inline namespace closure
      *
      * @return データセット
      *
-     * @see sqlxx::closure::FromClosure              テスト対象クラス
-     * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause              テスト対象クラス
+     * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
     auto FromClosureDataSet::for_some_test_case_d()
         -> std::vector<FromClosureDataSetElement>
@@ -353,7 +353,7 @@ inline namespace closure
         return {
             // _9
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
@@ -366,7 +366,7 @@ inline namespace closure
             },
             // _10
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
@@ -379,7 +379,7 @@ inline namespace closure
             },
             // _11
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
@@ -392,7 +392,7 @@ inline namespace closure
             },
             // _12
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格
@@ -418,9 +418,9 @@ inline namespace closure
      *
      * @return データセット
      *
-     * @see sqlxx::closure::FromClosure              テスト対象クラス
-     * @see sqlxx::closure::FromClosure::empty()     テスト対象メンバ関数
-     * @see sqlxx::closure::FromClosure::to_string() テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause              テスト対象クラス
+     * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
+     * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
     auto FromClosureDataSet::for_some_test_case_e()
         -> std::vector<FromClosureDataSetElement>
@@ -434,7 +434,7 @@ inline namespace closure
         return {
             // _13
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 未指定
@@ -447,7 +447,7 @@ inline namespace closure
             },
             // _14
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 空文字列
@@ -460,7 +460,7 @@ inline namespace closure
             },
             // _15
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 不適格(半角スペース)
@@ -473,7 +473,7 @@ inline namespace closure
             },
             // _16
             {
-                FromClosure {
+                FromClause {
                     // [条件(1)]
                     // + table :
                     //     + as_closure : 適格

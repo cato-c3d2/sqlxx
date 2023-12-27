@@ -7,8 +7,8 @@
 
 #include <vector>
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -26,8 +26,8 @@ inline namespace statement
     ////////////////////////////////////////////////////////////////////////////
 
     using sqlxx::ColumnIdentifier;
-    using sqlxx::FromClosure;
-    using sqlxx::SelectClosure;
+    using sqlxx::FromClause;
+    using sqlxx::SelectClause;
     using sqlxx::SelectStatement;
     using sqlxx::TableIdentifier;
 
@@ -79,7 +79,7 @@ inline namespace statement
             // _16
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
@@ -88,7 +88,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -98,7 +98,7 @@ inline namespace statement
             // _17
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
@@ -107,7 +107,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }
                     }
                 },
@@ -117,7 +117,7 @@ inline namespace statement
             // _18
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
@@ -126,7 +126,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -136,7 +136,7 @@ inline namespace statement
             // _19
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
@@ -145,7 +145,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}
                     }
                 },
@@ -163,7 +163,7 @@ inline namespace statement
             // _20
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }
                     }},
@@ -172,7 +172,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -182,7 +182,7 @@ inline namespace statement
             // _21
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }
                     }},
@@ -191,7 +191,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }
                     }
                 },
@@ -201,7 +201,7 @@ inline namespace statement
             // _22
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }
                     }},
@@ -210,7 +210,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -220,7 +220,7 @@ inline namespace statement
             // _23
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier { "name" }
                     }},
@@ -229,7 +229,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}
                     }
                 },
@@ -247,7 +247,7 @@ inline namespace statement
             // _24
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
@@ -256,7 +256,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -266,7 +266,7 @@ inline namespace statement
             // _25
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
@@ -275,7 +275,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }
                     }
                 },
@@ -285,7 +285,7 @@ inline namespace statement
             // _26
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
@@ -294,7 +294,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -304,7 +304,7 @@ inline namespace statement
             // _27
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
@@ -313,7 +313,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}
                     }
                 },
@@ -331,7 +331,7 @@ inline namespace statement
             // _28
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}
                     }},
@@ -340,7 +340,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -350,7 +350,7 @@ inline namespace statement
             // _29
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}
                     }},
@@ -359,7 +359,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "people" }
                     }
                 },
@@ -369,7 +369,7 @@ inline namespace statement
             // _30
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}
                     }},
@@ -378,7 +378,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -388,7 +388,7 @@ inline namespace statement
             // _31
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" },
                         ColumnIdentifier {}
                     }},
@@ -397,7 +397,7 @@ inline namespace statement
                     //     + table :
                     //         + name       : 未指定
                     //         + as_closure : 未指定
-                    FromClosure {
+                    FromClause {
                         TableIdentifier {}
                     }
                 },

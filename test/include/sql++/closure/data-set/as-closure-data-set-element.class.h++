@@ -8,13 +8,13 @@
 #include <iostream>
 #include <string>
 
-#include <sql++/closure/as-closure.class.h++>
+#include <sql++/clause/as-clause.class.h++>
 
 namespace sqlxx::test
 {
 inline namespace closure
 {
-    using sqlxx::AsClosure;
+    using sqlxx::AsClause;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -32,7 +32,7 @@ inline namespace closure
         /*!
          * @brief テスト対象オブジェクト
          */
-        AsClosure as_closure;
+        AsClause as_closure;
 
         /*!
          * @brief @c empty メンバ関数の期待結果
