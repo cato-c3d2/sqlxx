@@ -96,7 +96,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 ColumnIdentifier {},
                 // [期待結果] empty メンバ関数
                 true,
@@ -107,7 +107,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 ColumnIdentifier {}.as({ "" }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -118,7 +118,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 ColumnIdentifier {}.as({ " " }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -129,7 +129,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 ColumnIdentifier {}.as({ "p.id" }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -146,7 +146,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 ColumnIdentifier { "" },
                 // [期待結果] empty メンバ関数
                 true,
@@ -157,7 +157,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 ColumnIdentifier { "" }.as({ "" }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -168,7 +168,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 ColumnIdentifier { "" }.as({ " " }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -179,7 +179,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 ColumnIdentifier { "" }.as({ "p.id" }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -196,7 +196,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 ColumnIdentifier { " " },
                 // [期待結果] empty メンバ関数
                 true,
@@ -207,7 +207,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 ColumnIdentifier { " " }.as({ "" }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -218,7 +218,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 ColumnIdentifier { " " }.as({ " " }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -229,7 +229,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 ColumnIdentifier { " " }.as({ "p.id" }),
                 // [期待結果] empty メンバ関数
                 true,
@@ -246,7 +246,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 ColumnIdentifier { "id" },
                 // [期待結果] empty メンバ関数
                 false,
@@ -257,7 +257,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 ColumnIdentifier { "id" }.as({ "" }),
                 // [期待結果] empty メンバ関数
                 false,
@@ -268,7 +268,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 ColumnIdentifier { "id" }.as({ " " }),
                 // [期待結果] empty メンバ関数
                 false,
@@ -279,7 +279,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + column :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 ColumnIdentifier { "id" }.as({ "p.id" }),
                 // [期待結果] empty メンバ関数
                 false,

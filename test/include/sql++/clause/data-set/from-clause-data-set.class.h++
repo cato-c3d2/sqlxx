@@ -1,20 +1,20 @@
 /*!
- * @file from-closure-data-set.class.h++
+ * @file from-clause-data-set.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__FROM_CLAUSE_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__FROM_CLAUSE_DATA_SET_HXX
 
 #include <vector>
 
 #include <sql++/clause/from-clause.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 
-#include "./from-closure-data-set-element.class.h++"
+#include "./from-clause-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -25,7 +25,7 @@ inline namespace closure
     /*!
      * @brief @c FromClause クラスのテストケースで使用するデータセット
      */
-    class FromClosureDataSet
+    class FromClauseDataSet
     {
     public:
         /*!
@@ -85,19 +85,19 @@ inline namespace closure
         * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
         */
         static auto for_some_test_case()
-            -> std::vector<FromClosureDataSetElement>;
+            -> std::vector<FromClauseDataSetElement>;
 
     private:
         static auto for_some_test_case_a()
-            -> std::vector<FromClosureDataSetElement>;
+            -> std::vector<FromClauseDataSetElement>;
         static auto for_some_test_case_b()
-            -> std::vector<FromClosureDataSetElement>;
+            -> std::vector<FromClauseDataSetElement>;
         static auto for_some_test_case_c()
-            -> std::vector<FromClosureDataSetElement>;
+            -> std::vector<FromClauseDataSetElement>;
         static auto for_some_test_case_d()
-            -> std::vector<FromClosureDataSetElement>;
+            -> std::vector<FromClauseDataSetElement>;
         static auto for_some_test_case_e()
-            -> std::vector<FromClosureDataSetElement>;
+            -> std::vector<FromClauseDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -109,20 +109,20 @@ inline namespace closure
     using sqlxx::FromClause;
     using sqlxx::TableIdentifier;
 
-    auto FromClosureDataSet::for_some_test_case()
-        -> std::vector<FromClosureDataSetElement>
+    auto FromClauseDataSet::for_some_test_case()
+        -> std::vector<FromClauseDataSetElement>
     {
-        std::vector<std::vector<FromClosureDataSetElement>> data_set_parts = {
+        std::vector<std::vector<FromClauseDataSetElement>> data_set_parts = {
             // clang-format off
-            FromClosureDataSet::for_some_test_case_a(),
-            FromClosureDataSet::for_some_test_case_b(),
-            FromClosureDataSet::for_some_test_case_c(),
-            FromClosureDataSet::for_some_test_case_d(),
-            FromClosureDataSet::for_some_test_case_e()
+            FromClauseDataSet::for_some_test_case_a(),
+            FromClauseDataSet::for_some_test_case_b(),
+            FromClauseDataSet::for_some_test_case_c(),
+            FromClauseDataSet::for_some_test_case_d(),
+            FromClauseDataSet::for_some_test_case_e()
             // clang-format on
         };
 
-        auto data_set = std::vector<FromClosureDataSetElement>();
+        auto data_set = std::vector<FromClauseDataSetElement>();
         for (auto && data_set_part : data_set_parts) {
             data_set.insert(
                 std::end(data_set),
@@ -145,8 +145,8 @@ inline namespace closure
      * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_a()
-        -> std::vector<FromClosureDataSetElement>
+    auto FromClauseDataSet::for_some_test_case_a()
+        -> std::vector<FromClauseDataSetElement>
     {
         // clang-format off
         return {
@@ -170,8 +170,8 @@ inline namespace closure
      * データパターン :
      *
      * @c table : @n
-     * @li @c name       : 未指定
-     * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c name      : 未指定
+     * @li @c as_clause : 未指定, 空文字列, 不適格(半角スペース) or 適格
      *
      * @return データセット
      *
@@ -179,8 +179,8 @@ inline namespace closure
      * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_b()
-        -> std::vector<FromClosureDataSetElement>
+    auto FromClauseDataSet::for_some_test_case_b()
+        -> std::vector<FromClauseDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -194,7 +194,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     TableIdentifier {}
                 },
                 // [期待結果] empty メンバ関数
@@ -207,7 +207,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     TableIdentifier {}.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
@@ -220,7 +220,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     TableIdentifier {}.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
@@ -233,7 +233,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     TableIdentifier {}.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
@@ -251,8 +251,8 @@ inline namespace closure
      * データパターン :
      *
      * @c table : @n
-     * @li @c name       : 空文字列
-     * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c name      : 空文字列
+     * @li @c as_clause : 未指定, 空文字列, 不適格(半角スペース) or 適格
      *
      * @return データセット
      *
@@ -260,8 +260,8 @@ inline namespace closure
      * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_c()
-        -> std::vector<FromClosureDataSetElement>
+    auto FromClauseDataSet::for_some_test_case_c()
+        -> std::vector<FromClauseDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -275,7 +275,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     TableIdentifier { "" }
                 },
                 // [期待結果] empty メンバ関数
@@ -288,7 +288,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     TableIdentifier { "" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
@@ -301,7 +301,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     TableIdentifier { "" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
@@ -314,7 +314,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     TableIdentifier { "" }.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
@@ -332,8 +332,8 @@ inline namespace closure
      * データパターン :
      *
      * @c table : @n
-     * @li @c name       : 不適格(半角スペース)
-     * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c name      : 不適格(半角スペース)
+     * @li @c as_clause : 未指定, 空文字列, 不適格(半角スペース) or 適格
      *
      * @return データセット
      *
@@ -341,8 +341,8 @@ inline namespace closure
      * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_d()
-        -> std::vector<FromClosureDataSetElement>
+    auto FromClauseDataSet::for_some_test_case_d()
+        -> std::vector<FromClauseDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -356,7 +356,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     TableIdentifier { " " }
                 },
                 // [期待結果] empty メンバ関数
@@ -369,7 +369,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     TableIdentifier { " " }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
@@ -382,7 +382,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     TableIdentifier { " " }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
@@ -395,7 +395,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     TableIdentifier { " " }.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
@@ -413,8 +413,8 @@ inline namespace closure
      * データパターン :
      *
      * @c table : @n
-     * @li @c name       : 適格
-     * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c name      : 適格
+     * @li @c as_clause : 未指定, 空文字列, 不適格(半角スペース) or 適格
      *
      * @return データセット
      *
@@ -422,8 +422,8 @@ inline namespace closure
      * @see sqlxx::clause::FromClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::FromClause::to_string() テスト対象メンバ関数
      */
-    auto FromClosureDataSet::for_some_test_case_e()
-        -> std::vector<FromClosureDataSetElement>
+    auto FromClauseDataSet::for_some_test_case_e()
+        -> std::vector<FromClauseDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
@@ -437,7 +437,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     TableIdentifier { "people" }
                 },
                 // [期待結果] empty メンバ関数
@@ -450,7 +450,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     TableIdentifier { "people" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
@@ -463,7 +463,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     TableIdentifier { "people" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
@@ -476,7 +476,7 @@ inline namespace closure
                 FromClause {
                     // [条件(1)]
                     // + table :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     TableIdentifier { "people" }.as({ "p" })
                 },
                 // [期待結果] empty メンバ関数
@@ -487,7 +487,7 @@ inline namespace closure
         };
         // clang-format on
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__FROM_CLAUSE_DATA_SET_HXX */

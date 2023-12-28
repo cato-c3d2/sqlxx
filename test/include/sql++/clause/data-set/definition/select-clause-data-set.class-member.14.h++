@@ -1,20 +1,20 @@
 /*!
- * @file select-closure-data-set.class-member.00.h++
+ * @file select-clause-data-set.class-member.14.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_00_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_00_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__DEFINITION__SELECT_CLAUSE_DATA_SET_CLASS_MEMBER_14_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__DEFINITION__SELECT_CLAUSE_DATA_SET_CLASS_MEMBER_14_HXX
 
 #include <vector>
 
 #include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
-#include "../select-closure-data-set-element.class.h++"
+#include "../select-clause-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -28,8 +28,15 @@ inline namespace closure
     /*!
      * @brief データセットを返却する
      *
-     * データパターン : @n
-     * @li @c columns : 未指定
+     * データパターン :
+     *
+     * @c columns[0] : @n
+     * @li @c name      : 適格
+     * @li @c as_clause : 空文字列
+     *
+     * @c columns[1] : @n
+     * @li @c name      : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c as_clause : 未指定, 空文字列, 不適格(半角スペース) or 適格
      *
      * @return データセット
      *
@@ -37,281 +44,268 @@ inline namespace closure
      * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
      */
-    auto SelectClosureDataSet::for_some_test_case_00_a()
-        -> std::vector<SelectClosureDataSetElement>
-    {
-        // clang-format off
-        return {
-            // _0
-            {
-                // [条件]
-                // + columns : 未指定
-                SelectClause {},
-                // [期待結果] empty メンバ関数
-                true,
-                // [期待結果] to_string メンバ関数
-                ""
-            }
-        };
-        // clang-format on
-    }
-
-    /*!
-     * @brief データセットを返却する
-     *
-     * データパターン : @n
-     * @li @c columns[1] : 未指定
-     *
-     * @return データセット
-     *
-     * @see sqlxx::clause::SelectClause              テスト対象クラス
-     * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
-     * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
-     */
-    auto SelectClosureDataSet::for_some_test_case_00_b()
-        -> std::vector<SelectClosureDataSetElement>
+    auto SelectClauseDataSet::for_some_test_case_14()
+        -> std::vector<SelectClauseDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
-        // + columns[1] : 未指定
+        // + columns[0] :
+        //     + name      : 適格
+        //     + as_clause : 空文字列
         ////////////////////////////////////////////////////////////////////////
         // clang-format off
         return {
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + columns[0] :
+            // + columns[1] :
             //     + name : 未指定
             ////////////////////////////////////////////////////////////////////
-            // _1
+            // _225
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 未指定
+                    // + columns[1] :
+                    //     + as_clause : 未指定
                     ColumnIdentifier {}
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _2
+            // _226
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 空文字列
+                    // + columns[1] :
+                    //     + as_clause : 空文字列
                     ColumnIdentifier {}.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _3
+            // _227
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 不適格(半角スペース)
+                    // + columns[1] :
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier {}.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _4
+            // _228
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 適格
-                    ColumnIdentifier {}.as({ "p.id" })
+                    // + columns[1] :
+                    //     + as_clause : 適格
+                    ColumnIdentifier {}.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + columns[0] :
+            // + columns[1] :
             //     + name : 空文字列
             ////////////////////////////////////////////////////////////////////
-            // _5
+            // _229
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 未指定
+                    // + columns[1] :
+                    //     + as_clause : 未指定
                     ColumnIdentifier { "" }
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _6
+            // _230
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 空文字列
+                    // + columns[1] :
+                    //     + as_clause : 空文字列
                     ColumnIdentifier { "" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _7
+            // _231
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 不適格(半角スペース)
+                    // + columns[1] :
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier { "" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _8
+            // _232
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 適格
-                    ColumnIdentifier { "" }.as({ "p.id" })
+                    // + columns[1] :
+                    //     + as_clause : 適格
+                    ColumnIdentifier { "" }.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + columns[0] :
+            // + columns[1] :
             //     + name : 不適格(半角スペース)
             ////////////////////////////////////////////////////////////////////
-            // _9
+            // _233
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 未指定
+                    // + columns[1] :
+                    //     + as_clause : 未指定
                     ColumnIdentifier { " " }
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _10
+            // _234
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 空文字列
+                    // + columns[1] :
+                    //     + as_clause : 空文字列
                     ColumnIdentifier { " " }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _11
+            // _235
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 不適格(半角スペース)
+                    // + columns[1] :
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier { " " }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
-            // _12
+            // _236
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 適格
-                    ColumnIdentifier { " " }.as({ "p.id" })
+                    // + columns[1] :
+                    //     + as_clause : 適格
+                    ColumnIdentifier { " " }.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
-                true,
+                false,
                 // [期待結果] to_string メンバ関数
-                ""
+                "SELECT id"
             },
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + columns[0] :
+            // + columns[1] :
             //     + name : 適格
             ////////////////////////////////////////////////////////////////////
-            // _13
+            // _237
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 未指定
-                    ColumnIdentifier { "id" }
+                    // + columns[1] :
+                    //     + as_clause : 未指定
+                    ColumnIdentifier { "name" }
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                "SELECT id, name"
             },
-            // _14
+            // _238
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 空文字列
-                    ColumnIdentifier { "id" }.as({ "" })
+                    // + columns[1] :
+                    //     + as_clause : 空文字列
+                    ColumnIdentifier { "name" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                "SELECT id, name"
             },
-            // _15
+            // _239
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 不適格(半角スペース)
-                    ColumnIdentifier { "id" }.as({ " " })
+                    // + columns[1] :
+                    //     + as_clause : 不適格(半角スペース)
+                    ColumnIdentifier { "name" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                "SELECT id, name"
             },
-            // _16
+            // _240
             {
                 SelectClause {
+                    ColumnIdentifier { "id" }.as({ "" }),
                     // [条件(2)]
-                    // + columns[0] :
-                    //     + as_closure : 適格
-                    ColumnIdentifier { "id" }.as({ "p.id" })
+                    // + columns[1] :
+                    //     + as_clause : 適格
+                    ColumnIdentifier { "name" }.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id AS p.id"
+                "SELECT id, name AS p.name"
             }
         };
         // clang-format on
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_00_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__DEFINITION__SELECT_CLAUSE_DATA_SET_CLASS_MEMBER_14_HXX */

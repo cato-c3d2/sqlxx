@@ -1,38 +1,38 @@
 /*!
- * @file as-closure-data-set-element.class.h++
+ * @file select-clause-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__SELECT_CLAUSE_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__SELECT_CLAUSE_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
-#include <sql++/clause/as-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
-    using sqlxx::AsClause;
-
     ////////////////////////////////////////////////////////////////////////////
     //
     // Class definition
     //
     ////////////////////////////////////////////////////////////////////////////
 
+    using sqlxx::SelectClause;
+
     /*!
      * @brief データセットの要素
      *
      * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
      */
-    struct AsClosureDataSetElement
+    struct SelectClauseDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
          */
-        AsClause as_closure;
+        SelectClause select_clause;
 
         /*!
          * @brief @c empty メンバ関数の期待結果
@@ -60,7 +60,7 @@ inline namespace closure
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream & out, AsClosureDataSetElement const & data_set_element)
+        std::ostream & out, SelectClauseDataSetElement const & data_set_element)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -76,16 +76,16 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(
-        std::ostream & out, AsClosureDataSetElement const & data_set_element)
+        std::ostream & out, SelectClauseDataSetElement const & data_set_element)
         -> std::ostream &
     {
-        return out << "{ as_closure : \"" << data_set_element.as_closure
+        return out << "{ select_clause : \"" << data_set_element.select_clause
                    << "\", expectation_of_empty : \""
                    << data_set_element.expectation_of_empty
                    << "\", expectation_of_to_string : \""
                    << data_set_element.expectation_of_to_string << "\" }";
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__SELECT_CLAUSE_DATA_SET_ELEMENT_CLASS_HXX */

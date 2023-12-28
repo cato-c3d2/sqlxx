@@ -1,19 +1,19 @@
 /*!
- * @file as-closure-data-set.class.h++
+ * @file as-clause-data-set.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__AS_CLAUSE_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__AS_CLAUSE_DATA_SET_HXX
 
 #include <vector>
 
 #include <sql++/clause/as-clause.class.h++>
 
-#include "./as-closure-data-set-element.class.h++"
+#include "./as-clause-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -24,7 +24,7 @@ inline namespace closure
     /*!
      * @brief @c AsClause クラスのテストケースで使用するデータセット
      */
-    class AsClosureDataSet
+    class AsClauseDataSet
     {
     public:
         /*!
@@ -54,8 +54,7 @@ inline namespace closure
         * @see sqlxx::clause::AsClause::empty()     テスト対象メンバ関数
         * @see sqlxx::clause::AsClause::to_string() テスト対象メンバ関数
         */
-        static auto for_some_test_case()
-            -> std::vector<AsClosureDataSetElement>;
+        static auto for_some_test_case() -> std::vector<AsClauseDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -66,8 +65,8 @@ inline namespace closure
 
     using sqlxx::AsClause;
 
-    auto AsClosureDataSet::for_some_test_case()
-        -> std::vector<AsClosureDataSetElement>
+    auto AsClauseDataSet::for_some_test_case()
+        -> std::vector<AsClauseDataSetElement>
     {
         // clang-format off
         return {
@@ -124,7 +123,7 @@ inline namespace closure
         };
         // clang-format on
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__AS_CLOSURE_DATA_SET_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__AS_CLAUSE_DATA_SET_HXX */

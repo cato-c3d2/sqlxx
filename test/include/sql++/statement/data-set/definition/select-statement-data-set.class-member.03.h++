@@ -36,21 +36,21 @@ inline namespace statement
      *
      * データパターン :
      *
-     * @c select_closure :
+     * @c select_clause :
      *
      * @c columns[0] : @n
-     * @li @c name       : 未指定
-     * @li @c as_closure : 未指定
+     * @li @c name      : 未指定
+     * @li @c as_clause : 未指定
      *
      * @c columns[1] : @n
-     * @li @c name       : 指定 or 未指定
-     * @li @c as_closure : 指定 or 未指定
+     * @li @c name      : 指定 or 未指定
+     * @li @c as_clause : 指定 or 未指定
      *
-     * @c from_closure :
+     * @c from_clause :
      *
      * @c table : @n
-     * @li @c name       : 指定 or 未指定
-     * @li @c as_closure : 指定 or 未指定
+     * @li @c name      : 指定 or 未指定
+     * @li @c as_clause : 指定 or 未指定
      *
      * @return データセット
      *
@@ -62,19 +62,19 @@ inline namespace statement
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
-        // + select_closure :
+        // + select_clause :
         //     + columns[0] :
-        //         + name       : 未指定
-        //         + as_closure : 未指定
+        //         + name      : 未指定
+        //         + as_clause : 未指定
         ////////////////////////////////////////////////////////////////////////
         // clang-format off
         return {
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 指定
-            //         + as_closure : 指定
+            //         + name      : 指定
+            //         + as_clause : 指定
             ////////////////////////////////////////////////////////////////////
             // _48
             {
@@ -84,10 +84,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
+                    //         + name      : 指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
@@ -103,10 +103,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier { "people" }
                     }
@@ -122,10 +122,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
@@ -141,10 +141,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier {}
                     }
@@ -155,10 +155,10 @@ inline namespace statement
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 指定
-            //         + as_closure : 未指定
+            //         + name      : 指定
+            //         + as_clause : 未指定
             ////////////////////////////////////////////////////////////////////
             // _52
             {
@@ -168,10 +168,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
+                    //         + name      : 指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
@@ -187,10 +187,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier { "people" }
                     }
@@ -206,10 +206,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
@@ -225,10 +225,10 @@ inline namespace statement
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier {}
                     }
@@ -239,10 +239,10 @@ inline namespace statement
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 未指定
-            //         + as_closure : 指定
+            //         + name      : 未指定
+            //         + as_clause : 指定
             ////////////////////////////////////////////////////////////////////
             // _56
             {
@@ -252,10 +252,10 @@ inline namespace statement
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
+                    //         + name      : 指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
@@ -271,10 +271,10 @@ inline namespace statement
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier { "people" }
                     }
@@ -290,10 +290,10 @@ inline namespace statement
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
@@ -309,10 +309,10 @@ inline namespace statement
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier {}
                     }
@@ -323,10 +323,10 @@ inline namespace statement
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 未指定
-            //         + as_closure : 未指定
+            //         + name      : 未指定
+            //         + as_clause : 未指定
             ////////////////////////////////////////////////////////////////////
             // _60
             {
@@ -336,10 +336,10 @@ inline namespace statement
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
+                    //         + name      : 指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier { "people" }.as({ "p" })
                     }
@@ -355,10 +355,10 @@ inline namespace statement
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier { "people" }
                     }
@@ -374,10 +374,10 @@ inline namespace statement
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
                     FromClause {
                         TableIdentifier {}.as({ "p" })
                     }
@@ -393,10 +393,10 @@ inline namespace statement
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
                     FromClause {
                         TableIdentifier {}
                     }

@@ -49,8 +49,8 @@ inline namespace statement
             // _64
             {
                 // [条件]
-                // + select_closure : 未指定
-                // + from_closure   : 未指定
+                // + select_clause : 未指定
+                // + from_clause   : 未指定
                 SelectStatement {},
                 // [期待結果] to_string メンバ関数
                 ""
@@ -58,9 +58,9 @@ inline namespace statement
             // _65
             {
                 // [条件]
-                // + select_closure :
-                //     + columns  : 未指定
-                // + from_closure : 未指定
+                // + select_clause :
+                //     + columns : 未指定
+                // + from_clause : 未指定
                 SelectStatement {
                     SelectClause {}
                 },
@@ -70,9 +70,9 @@ inline namespace statement
             // _66
             {
                 // [条件]
-                // + select_closure : 未指定
-                // + from_closure   :
-                //     + table      : 未指定
+                // + select_clause : 未指定
+                // + from_clause   :
+                //     + table     : 未指定
                 SelectStatement {}.from(FromClause {}),
                 // [期待結果] to_string メンバ関数
                 ""
@@ -80,9 +80,9 @@ inline namespace statement
             // _67
             {
                 // [条件]
-                // + select_closure :
+                // + select_clause :
                 //     + columns : 未指定
-                // + from_closure :
+                // + from_clause :
                 //     + table   : 未指定
                 SelectStatement {
                     SelectClause {},
@@ -94,17 +94,17 @@ inline namespace statement
             // _68
             {
                 // [条件]
-                // + select_closure :
+                // + select_clause :
                 //     + columns[0] :
-                //         + name       : 不適格
-                //         + as_closure : 不適格
+                //         + name      : 不適格
+                //         + as_clause : 不適格
                 //     + columns[1] :
-                //         + name       : 不適格
-                //         + as_closure : 不適格
-                // + from_closure :
+                //         + name      : 不適格
+                //         + as_clause : 不適格
+                // + from_clause :
                 //     + table :
-                //         + name       : 不適格
-                //         + as_closure : 不適格
+                //         + name      : 不適格
+                //         + as_clause : 不適格
                 SelectStatement {
                     SelectClause {{
                         ColumnIdentifier { " " }.as({ "," }),

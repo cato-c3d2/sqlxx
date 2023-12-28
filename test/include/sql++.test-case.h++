@@ -21,11 +21,11 @@ inline namespace identifier
 {}
 
 /*!
- * @namespace sqlxx::test::closure
+ * @namespace sqlxx::test::clause
  *
- * @brief SQL の句 ( closure ) のユニットテストに関するインライン名前空間
+ * @brief SQL の句 ( clause ) のユニットテストに関するインライン名前空間
  */
-inline namespace closure
+inline namespace clause
 {}
 
 /*!
@@ -41,9 +41,9 @@ inline namespace statement
 #include "./sql++/identifier/column-identifier.class.test-case.h++"
 #include "./sql++/identifier/table-identifier.class.test-case.h++"
 #include "./sql++/identifier/naming-rule.class.test-case.h++"
-#include "./sql++/closure/as-closure.class.test-case.h++"
-#include "./sql++/closure/select-closure.class.test-case.h++"
-#include "./sql++/closure/from-closure.class.test-case.h++"
+#include "./sql++/clause/as-clause.class.test-case.h++"
+#include "./sql++/clause/select-clause.class.test-case.h++"
+#include "./sql++/clause/from-clause.class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 

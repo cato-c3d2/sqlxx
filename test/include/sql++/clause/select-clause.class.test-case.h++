@@ -1,9 +1,9 @@
 /*!
- * @file select-closure.class.test-case.h++
+ * @file select-clause.class.test-case.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__SELECT_CLAUSE_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__SELECT_CLAUSE_CLASS_TEST_CASE_HXX
 
 #include <string>
 
@@ -13,7 +13,7 @@
 #include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
-#include "./data-set/select-closure-data-set.class.h++"
+#include "./data-set/select-clause-data-set.class.h++"
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -21,13 +21,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-BOOST_AUTO_TEST_SUITE(namespace__sqlxx__closure)
+BOOST_AUTO_TEST_SUITE(namespace__sqlxx__clause)
 
-BOOST_AUTO_TEST_SUITE(class__SelectClosure)
+BOOST_AUTO_TEST_SUITE(class__SelectClause)
 
 using sqlxx::ColumnIdentifier;
 using sqlxx::SelectClause;
-using sqlxx::test::SelectClosureDataSet;
+using sqlxx::test::SelectClauseDataSet;
 
 /*!
  * @brief テストパターン :
@@ -62,50 +62,50 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
  * @brief テストパターン :
  *        様々な @c SelectClause オブジェクトに対して @c empty メンバ関数を呼び出す
  *
- * @see sqlxx::clause::SelectClause              テスト対象クラス
- * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
- * @see SelectClosureDataSet::for_some_test_case() データセット
+ * @see sqlxx::clause::SelectClause               テスト対象クラス
+ * @see sqlxx::clause::SelectClause::empty()      テスト対象メンバ関数
+ * @see SelectClauseDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
     empty,
-    boost::unit_test::data::make(SelectClosureDataSet::for_some_test_case()),
+    boost::unit_test::data::make(SelectClauseDataSet::for_some_test_case()),
     data_set_element)
 {
     // テスト対象オブジェクト
-    SelectClause const select_closure = data_set_element.select_closure;
+    SelectClause const select_clause = data_set_element.select_clause;
 
     // テスト対象メンバ関数の期待結果
     bool const expectation = data_set_element.expectation_of_empty;
 
     // テスト対象メンバ関数の実行結果と期待結果が一致すること
-    BOOST_CHECK_EQUAL(select_closure.empty(), expectation);
+    BOOST_CHECK_EQUAL(select_clause.empty(), expectation);
 }
 
 /*!
  * @brief テストパターン :
  *        様々な @c SelectClause オブジェクトに対して @c to_string メンバ関数を呼び出す
  *
- * @see sqlxx::clause::SelectClause              テスト対象クラス
- * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
- * @see SelectClosureDataSet::for_some_test_case() データセット
+ * @see sqlxx::clause::SelectClause               テスト対象クラス
+ * @see sqlxx::clause::SelectClause::to_string()  テスト対象メンバ関数
+ * @see SelectClauseDataSet::for_some_test_case() データセット
  */
 BOOST_DATA_TEST_CASE(
     to_string,
-    boost::unit_test::data::make(SelectClosureDataSet::for_some_test_case()),
+    boost::unit_test::data::make(SelectClauseDataSet::for_some_test_case()),
     data_set_element)
 {
     // テスト対象オブジェクト
-    SelectClause const select_closure = data_set_element.select_closure;
+    SelectClause const select_clause = data_set_element.select_clause;
 
     // テスト対象メンバ関数の期待結果
     std::string const expectation = data_set_element.expectation_of_to_string;
 
     // テスト対象メンバ関数の実行結果と期待結果が一致すること
-    BOOST_CHECK_EQUAL(select_closure.to_string(), expectation);
+    BOOST_CHECK_EQUAL(select_clause.to_string(), expectation);
 }
 
-BOOST_AUTO_TEST_SUITE_END(/* class__SelectClosure */)
+BOOST_AUTO_TEST_SUITE_END(/* class__SelectClause */)
 
-BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__closure */)
+BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__clause */)
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__SELECT_CLOSURE_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__SELECT_CLAUSE_CLASS_TEST_CASE_HXX */

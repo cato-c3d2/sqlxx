@@ -1,20 +1,20 @@
 /*!
- * @file select-closure-data-set.class-member.13.h++
+ * @file select-clause-data-set.class-member.03.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_13_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_13_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__DEFINITION__SELECT_CLAUSE_DATA_SET_CLASS_MEMBER_03_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__DEFINITION__SELECT_CLAUSE_DATA_SET_CLASS_MEMBER_03_HXX
 
 #include <vector>
 
 #include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
-#include "../select-closure-data-set-element.class.h++"
+#include "../select-clause-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -31,12 +31,12 @@ inline namespace closure
      * データパターン :
      *
      * @c columns[0] : @n
-     * @li @c name       : 適格
-     * @li @c as_closure : 未指定
+     * @li @c name      : 未指定
+     * @li @c as_clause : 不適格(半角スペース)
      *
      * @c columns[1] : @n
-     * @li @c name       : 未指定, 空文字列, 不適格(半角スペース) or 適格
-     * @li @c as_closure : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c name      : 未指定, 空文字列, 不適格(半角スペース) or 適格
+     * @li @c as_clause : 未指定, 空文字列, 不適格(半角スペース) or 適格
      *
      * @return データセット
      *
@@ -44,14 +44,14 @@ inline namespace closure
      * @see sqlxx::clause::SelectClause::empty()     テスト対象メンバ関数
      * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
      */
-    auto SelectClosureDataSet::for_some_test_case_13()
-        -> std::vector<SelectClosureDataSetElement>
+    auto SelectClauseDataSet::for_some_test_case_03()
+        -> std::vector<SelectClauseDataSetElement>
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
         // + columns[0] :
-        //     + name       : 適格
-        //     + as_closure : 未指定
+        //     + name      : 未指定
+        //     + as_clause : 不適格(半角スペース)
         ////////////////////////////////////////////////////////////////////////
         // clang-format off
         return {
@@ -60,61 +60,61 @@ inline namespace closure
             // + columns[1] :
             //     + name : 未指定
             ////////////////////////////////////////////////////////////////////
-            // _209
+            // _49
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     ColumnIdentifier {}
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _210
+            // _50
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     ColumnIdentifier {}.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _211
+            // _51
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier {}.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _212
+            // _52
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     ColumnIdentifier {}.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
 
             ////////////////////////////////////////////////////////////////////
@@ -122,61 +122,61 @@ inline namespace closure
             // + columns[1] :
             //     + name : 空文字列
             ////////////////////////////////////////////////////////////////////
-            // _213
+            // _53
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     ColumnIdentifier { "" }
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _214
+            // _54
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     ColumnIdentifier { "" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _215
+            // _55
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier { "" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _216
+            // _56
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     ColumnIdentifier { "" }.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
 
             ////////////////////////////////////////////////////////////////////
@@ -184,61 +184,61 @@ inline namespace closure
             // + columns[1] :
             //     + name : 不適格(半角スペース)
             ////////////////////////////////////////////////////////////////////
-            // _217
+            // _57
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     ColumnIdentifier { " " }
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _218
+            // _58
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     ColumnIdentifier { " " }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _219
+            // _59
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier { " " }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
-            // _220
+            // _60
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     ColumnIdentifier { " " }.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
-                false,
+                true,
                 // [期待結果] to_string メンバ関数
-                "SELECT id"
+                ""
             },
 
             ////////////////////////////////////////////////////////////////////
@@ -246,66 +246,66 @@ inline namespace closure
             // + columns[1] :
             //     + name : 適格
             ////////////////////////////////////////////////////////////////////
-            // _221
+            // _61
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 未指定
+                    //     + as_clause : 未指定
                     ColumnIdentifier { "name" }
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id, name"
+                "SELECT name"
             },
-            // _222
+            // _62
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 空文字列
+                    //     + as_clause : 空文字列
                     ColumnIdentifier { "name" }.as({ "" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id, name"
+                "SELECT name"
             },
-            // _223
+            // _63
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 不適格(半角スペース)
+                    //     + as_clause : 不適格(半角スペース)
                     ColumnIdentifier { "name" }.as({ " " })
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id, name"
+                "SELECT name"
             },
-            // _224
+            // _64
             {
                 SelectClause {
-                    ColumnIdentifier { "id" },
+                    ColumnIdentifier {}.as({ " " }),
                     // [条件(2)]
                     // + columns[1] :
-                    //     + as_closure : 適格
+                    //     + as_clause : 適格
                     ColumnIdentifier { "name" }.as({ "p.name" })
                 },
                 // [期待結果] empty メンバ関数
                 false,
                 // [期待結果] to_string メンバ関数
-                "SELECT id, name AS p.name"
+                "SELECT name AS p.name"
             }
         };
         // clang-format on
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__DEFINITION__SELECT_CLOSURE_DATA_SET_CLASS_MEMBER_13_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__DEFINITION__SELECT_CLAUSE_DATA_SET_CLASS_MEMBER_03_HXX */

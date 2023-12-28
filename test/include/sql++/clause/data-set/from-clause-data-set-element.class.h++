@@ -1,9 +1,9 @@
 /*!
- * @file from-closure-data-set-element.class.h++
+ * @file from-clause-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__FROM_CLAUSE_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__FROM_CLAUSE_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
@@ -12,7 +12,7 @@
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -27,12 +27,12 @@ inline namespace closure
      *
      * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する.
      */
-    struct FromClosureDataSetElement
+    struct FromClauseDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
          */
-        FromClause from_closure;
+        FromClause from_clause;
 
         /*!
          * @brief @c empty メンバ関数の期待結果
@@ -60,7 +60,7 @@ inline namespace closure
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream & out, FromClosureDataSetElement const & data_set_element)
+        std::ostream & out, FromClauseDataSetElement const & data_set_element)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -76,16 +76,16 @@ inline namespace closure
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(
-        std::ostream & out, FromClosureDataSetElement const & data_set_element)
+        std::ostream & out, FromClauseDataSetElement const & data_set_element)
         -> std::ostream &
     {
-        return out << "{ from_closure : \"" << data_set_element.from_closure
+        return out << "{ from_clause : \"" << data_set_element.from_clause
                    << "\", expectation_of_empty : \""
                    << data_set_element.expectation_of_empty
                    << "\", expectation_of_to_string : \""
                    << data_set_element.expectation_of_to_string << "\" }";
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__FROM_CLOSURE_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__FROM_CLAUSE_DATA_SET_ELEMENT_CLASS_HXX */

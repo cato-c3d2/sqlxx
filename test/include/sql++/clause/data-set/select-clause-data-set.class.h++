@@ -1,18 +1,18 @@
 /*!
- * @file select-closure-data-set.class.h++
+ * @file select-clause-data-set.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_HXX
-#define TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_HXX
+#ifndef TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__SELECT_CLAUSE_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__SELECT_CLAUSE_DATA_SET_HXX
 
 #include <iterator>
 #include <vector>
 
-#include "./select-closure-data-set-element.class.h++"
+#include "./select-clause-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
-inline namespace closure
+inline namespace clause
 {
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -23,7 +23,7 @@ inline namespace closure
     /*!
      * @brief @c SelectClause クラスのテストケースで使用するデータセット
      */
-    class SelectClosureDataSet
+    class SelectClauseDataSet
     {
     public:
         /*!
@@ -344,24 +344,24 @@ inline namespace closure
         * @li - ... 未指定
         *
         * [[ 構成 ]] @n
-        * @li          _0 : @link for_some_test_case_00_a() @endlink @link select-closure-data-set.class-member.00.h++ @endlink
-        * @li   _1 ~  _16 : @link for_some_test_case_00_b() @endlink @link select-closure-data-set.class-member.00.h++ @endlink
-        * @li  _16 ~  _32 : @link for_some_test_case_01()   @endlink @link select-closure-data-set.class-member.01.h++ @endlink
-        * @li  _33 ~  _48 : @link for_some_test_case_02()   @endlink @link select-closure-data-set.class-member.02.h++ @endlink
-        * @li  _49 ~  _64 : @link for_some_test_case_03()   @endlink @link select-closure-data-set.class-member.03.h++ @endlink
-        * @li  _65 ~  _80 : @link for_some_test_case_04()   @endlink @link select-closure-data-set.class-member.04.h++ @endlink
-        * @li  _81 ~  _96 : @link for_some_test_case_05()   @endlink @link select-closure-data-set.class-member.05.h++ @endlink
-        * @li  _97 ~ _112 : @link for_some_test_case_06()   @endlink @link select-closure-data-set.class-member.06.h++ @endlink
-        * @li _113 ~ _128 : @link for_some_test_case_07()   @endlink @link select-closure-data-set.class-member.07.h++ @endlink
-        * @li _129 ~ _144 : @link for_some_test_case_08()   @endlink @link select-closure-data-set.class-member.08.h++ @endlink
-        * @li _145 ~ _160 : @link for_some_test_case_09()   @endlink @link select-closure-data-set.class-member.09.h++ @endlink
-        * @li _161 ~ _176 : @link for_some_test_case_10()   @endlink @link select-closure-data-set.class-member.10.h++ @endlink
-        * @li _177 ~ _192 : @link for_some_test_case_11()   @endlink @link select-closure-data-set.class-member.11.h++ @endlink
-        * @li _193 ~ _208 : @link for_some_test_case_12()   @endlink @link select-closure-data-set.class-member.12.h++ @endlink
-        * @li _209 ~ _224 : @link for_some_test_case_13()   @endlink @link select-closure-data-set.class-member.13.h++ @endlink
-        * @li _225 ~ _240 : @link for_some_test_case_14()   @endlink @link select-closure-data-set.class-member.14.h++ @endlink
-        * @li _241 ~ _256 : @link for_some_test_case_15()   @endlink @link select-closure-data-set.class-member.15.h++ @endlink
-        * @li _257 ~ _272 : @link for_some_test_case_16()   @endlink @link select-closure-data-set.class-member.16.h++ @endlink
+        * @li          _0 : @link for_some_test_case_00_a() @endlink @link select-clause-data-set.class-member.00.h++ @endlink
+        * @li   _1 ~  _16 : @link for_some_test_case_00_b() @endlink @link select-clause-data-set.class-member.00.h++ @endlink
+        * @li  _16 ~  _32 : @link for_some_test_case_01()   @endlink @link select-clause-data-set.class-member.01.h++ @endlink
+        * @li  _33 ~  _48 : @link for_some_test_case_02()   @endlink @link select-clause-data-set.class-member.02.h++ @endlink
+        * @li  _49 ~  _64 : @link for_some_test_case_03()   @endlink @link select-clause-data-set.class-member.03.h++ @endlink
+        * @li  _65 ~  _80 : @link for_some_test_case_04()   @endlink @link select-clause-data-set.class-member.04.h++ @endlink
+        * @li  _81 ~  _96 : @link for_some_test_case_05()   @endlink @link select-clause-data-set.class-member.05.h++ @endlink
+        * @li  _97 ~ _112 : @link for_some_test_case_06()   @endlink @link select-clause-data-set.class-member.06.h++ @endlink
+        * @li _113 ~ _128 : @link for_some_test_case_07()   @endlink @link select-clause-data-set.class-member.07.h++ @endlink
+        * @li _129 ~ _144 : @link for_some_test_case_08()   @endlink @link select-clause-data-set.class-member.08.h++ @endlink
+        * @li _145 ~ _160 : @link for_some_test_case_09()   @endlink @link select-clause-data-set.class-member.09.h++ @endlink
+        * @li _161 ~ _176 : @link for_some_test_case_10()   @endlink @link select-clause-data-set.class-member.10.h++ @endlink
+        * @li _177 ~ _192 : @link for_some_test_case_11()   @endlink @link select-clause-data-set.class-member.11.h++ @endlink
+        * @li _193 ~ _208 : @link for_some_test_case_12()   @endlink @link select-clause-data-set.class-member.12.h++ @endlink
+        * @li _209 ~ _224 : @link for_some_test_case_13()   @endlink @link select-clause-data-set.class-member.13.h++ @endlink
+        * @li _225 ~ _240 : @link for_some_test_case_14()   @endlink @link select-clause-data-set.class-member.14.h++ @endlink
+        * @li _241 ~ _256 : @link for_some_test_case_15()   @endlink @link select-clause-data-set.class-member.15.h++ @endlink
+        * @li _257 ~ _272 : @link for_some_test_case_16()   @endlink @link select-clause-data-set.class-member.16.h++ @endlink
         *
         * @return データセット
         *
@@ -370,45 +370,45 @@ inline namespace closure
         * @see sqlxx::clause::SelectClause::to_string() テスト対象メンバ関数
         */
         static auto for_some_test_case()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
 
     private:
         static auto for_some_test_case_00_a()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_00_b()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_01()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_02()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_03()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_04()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_05()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_06()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_07()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_08()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_09()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_10()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_11()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_12()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_13()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_14()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_15()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
         static auto for_some_test_case_16()
-            -> std::vector<SelectClosureDataSetElement>;
+            -> std::vector<SelectClauseDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -417,33 +417,33 @@ inline namespace closure
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto SelectClosureDataSet::for_some_test_case()
-        -> std::vector<SelectClosureDataSetElement>
+    auto SelectClauseDataSet::for_some_test_case()
+        -> std::vector<SelectClauseDataSetElement>
     {
-        std::vector<std::vector<SelectClosureDataSetElement>> data_set_parts = {
+        std::vector<std::vector<SelectClauseDataSetElement>> data_set_parts = {
             // clang-format off
-            SelectClosureDataSet::for_some_test_case_00_a(),
-            SelectClosureDataSet::for_some_test_case_00_b(),
-            SelectClosureDataSet::for_some_test_case_01(),
-            SelectClosureDataSet::for_some_test_case_02(),
-            SelectClosureDataSet::for_some_test_case_03(),
-            SelectClosureDataSet::for_some_test_case_04(),
-            SelectClosureDataSet::for_some_test_case_05(),
-            SelectClosureDataSet::for_some_test_case_06(),
-            SelectClosureDataSet::for_some_test_case_07(),
-            SelectClosureDataSet::for_some_test_case_08(),
-            SelectClosureDataSet::for_some_test_case_09(),
-            SelectClosureDataSet::for_some_test_case_10(),
-            SelectClosureDataSet::for_some_test_case_11(),
-            SelectClosureDataSet::for_some_test_case_12(),
-            SelectClosureDataSet::for_some_test_case_13(),
-            SelectClosureDataSet::for_some_test_case_14(),
-            SelectClosureDataSet::for_some_test_case_15(),
-            SelectClosureDataSet::for_some_test_case_16()
+            SelectClauseDataSet::for_some_test_case_00_a(),
+            SelectClauseDataSet::for_some_test_case_00_b(),
+            SelectClauseDataSet::for_some_test_case_01(),
+            SelectClauseDataSet::for_some_test_case_02(),
+            SelectClauseDataSet::for_some_test_case_03(),
+            SelectClauseDataSet::for_some_test_case_04(),
+            SelectClauseDataSet::for_some_test_case_05(),
+            SelectClauseDataSet::for_some_test_case_06(),
+            SelectClauseDataSet::for_some_test_case_07(),
+            SelectClauseDataSet::for_some_test_case_08(),
+            SelectClauseDataSet::for_some_test_case_09(),
+            SelectClauseDataSet::for_some_test_case_10(),
+            SelectClauseDataSet::for_some_test_case_11(),
+            SelectClauseDataSet::for_some_test_case_12(),
+            SelectClauseDataSet::for_some_test_case_13(),
+            SelectClauseDataSet::for_some_test_case_14(),
+            SelectClauseDataSet::for_some_test_case_15(),
+            SelectClauseDataSet::for_some_test_case_16()
             // clang-format on
         };
 
-        auto data_set = std::vector<SelectClosureDataSetElement>();
+        auto data_set = std::vector<SelectClauseDataSetElement>();
         for (auto && data_set_part : data_set_parts) {
             data_set.insert(
                 std::end(data_set),
@@ -452,25 +452,25 @@ inline namespace closure
         }
         return data_set;
     }
-} // namespace closure
+} // namespace clause
 } // namespace sqlxx::test
 
-#include "./definition/select-closure-data-set.class-member.00.h++"
-#include "./definition/select-closure-data-set.class-member.01.h++"
-#include "./definition/select-closure-data-set.class-member.02.h++"
-#include "./definition/select-closure-data-set.class-member.03.h++"
-#include "./definition/select-closure-data-set.class-member.04.h++"
-#include "./definition/select-closure-data-set.class-member.05.h++"
-#include "./definition/select-closure-data-set.class-member.06.h++"
-#include "./definition/select-closure-data-set.class-member.07.h++"
-#include "./definition/select-closure-data-set.class-member.08.h++"
-#include "./definition/select-closure-data-set.class-member.09.h++"
-#include "./definition/select-closure-data-set.class-member.10.h++"
-#include "./definition/select-closure-data-set.class-member.11.h++"
-#include "./definition/select-closure-data-set.class-member.12.h++"
-#include "./definition/select-closure-data-set.class-member.13.h++"
-#include "./definition/select-closure-data-set.class-member.14.h++"
-#include "./definition/select-closure-data-set.class-member.15.h++"
-#include "./definition/select-closure-data-set.class-member.16.h++"
+#include "./definition/select-clause-data-set.class-member.00.h++"
+#include "./definition/select-clause-data-set.class-member.01.h++"
+#include "./definition/select-clause-data-set.class-member.02.h++"
+#include "./definition/select-clause-data-set.class-member.03.h++"
+#include "./definition/select-clause-data-set.class-member.04.h++"
+#include "./definition/select-clause-data-set.class-member.05.h++"
+#include "./definition/select-clause-data-set.class-member.06.h++"
+#include "./definition/select-clause-data-set.class-member.07.h++"
+#include "./definition/select-clause-data-set.class-member.08.h++"
+#include "./definition/select-clause-data-set.class-member.09.h++"
+#include "./definition/select-clause-data-set.class-member.10.h++"
+#include "./definition/select-clause-data-set.class-member.11.h++"
+#include "./definition/select-clause-data-set.class-member.12.h++"
+#include "./definition/select-clause-data-set.class-member.13.h++"
+#include "./definition/select-clause-data-set.class-member.14.h++"
+#include "./definition/select-clause-data-set.class-member.15.h++"
+#include "./definition/select-clause-data-set.class-member.16.h++"
 
-#endif /* TEST__INCLUDE__SQLXX__CLOSURE__DATA_SET__SELECT_CLOSURE_DATA_SET_HXX */
+#endif /* TEST__INCLUDE__SQLXX__CLAUSE__DATA_SET__SELECT_CLAUSE_DATA_SET_HXX */
