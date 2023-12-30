@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include <sql++/closure/as-closure.class.h++>
+#include <sql++/clause/as-clause.class.h++>
 #include <sql++/identifier/naming-rule.class.h++>
 
 namespace sqlxx
@@ -36,7 +36,7 @@ inline namespace identifier
          *
          * @deprecated
          */
-        using AliasNameType [[deprecated]] = closure::AsClosure::AliasNameType;
+        using AliasNameType [[deprecated]] = clause::AsClause::AliasNameType;
 
         /*!
          * @brief デフォルトコンストラクタ
@@ -47,9 +47,9 @@ inline namespace identifier
          * @brief コンストラクタ
          *
          * @param[in] name       カラム名
-         * @param[in] as_closure "AS 句" の文法オブジェクト
+         * @param[in] as_clause  "AS 句" の文法オブジェクト
          */
-        ColumnIdentifier(NameType name, closure::AsClosure as_closure = {});
+        ColumnIdentifier(NameType name, clause::AsClause as_clause = {});
 
         /*!
          * @brief コンストラクタ
@@ -58,11 +58,11 @@ inline namespace identifier
          * @param[in] alias_name エイリアス名
          *
          * @deprecated @link
-         *             ColumnIdentifier::ColumnIdentifier(NameType name, closure::AsClosure as_closure = {})
+         *             ColumnIdentifier::ColumnIdentifier(NameType name, clause::AsClause as_clause = {})
          *             @endlink を使用してください
          */
         // clang-format off
-        [[deprecated("please use 'ColumnIdentifier::ColumnIdentifier(NameType, AsClosure)'")]]
+        [[deprecated("please use 'ColumnIdentifier::ColumnIdentifier(NameType, AsClause)'")]]
         // clang-format on
         ColumnIdentifier(NameType name, AliasNameType alias_name);
 
@@ -93,11 +93,11 @@ inline namespace identifier
         /*!
          * @brief "AS 句" を設定する
          *
-         * @param[in] as_closure "AS 句" の文法オブジェクト
+         * @param[in] as_clause "AS 句" の文法オブジェクト
          *
          * @return このオブジェクトの参照
          */
-        auto as(closure::AsClosure as_closure) -> ColumnIdentifier &;
+        auto as(clause::AsClause as_clause) -> ColumnIdentifier &;
 
         /*!
          * @brief エイリアス名を設定する
@@ -106,10 +106,10 @@ inline namespace identifier
          *
          * @return このオブジェクトの参照
          *
-         * @deprecated @link ColumnIdentifier::as(closure::AsClosure as_closure) @endlink を使用してください
+         * @deprecated @link ColumnIdentifier::as(clause::AsClause as_clause) @endlink を使用してください
          */
         // clang-format off
-        [[deprecated("please use 'ColumnIdentifier::as(closure::AsClosure)'")]]
+        [[deprecated("please use 'ColumnIdentifier::as(clause::AsClause)'")]]
         // clang-format on
         auto
         alias_name(AliasNameType alias_name) -> ColumnIdentifier &;
@@ -138,7 +138,7 @@ inline namespace identifier
         /*!
          * @brief "AS 句"
          */
-        closure::AsClosure _as_closure;
+        clause::AsClause _as_clause;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -165,16 +165,16 @@ inline namespace identifier
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    ColumnIdentifier::ColumnIdentifier() : _name(), _as_closure()
+    ColumnIdentifier::ColumnIdentifier() : _name(), _as_clause()
     {}
 
     ColumnIdentifier::ColumnIdentifier(
-        NameType name, closure::AsClosure as_closure)
-        : _name(name), _as_closure(as_closure)
+        NameType name, clause::AsClause as_clause)
+        : _name(name), _as_clause(as_clause)
     {}
 
     ColumnIdentifier::ColumnIdentifier(NameType name, AliasNameType alias_name)
-        : _name(name), _as_closure(closure::AsClosure { alias_name })
+        : _name(name), _as_clause(clause::AsClause { alias_name })
     {}
 
     auto ColumnIdentifier::name(NameType name) -> ColumnIdentifier &
@@ -189,17 +189,16 @@ inline namespace identifier
         return *this;
     }
 
-    auto ColumnIdentifier::as(closure::AsClosure as_closure)
-        -> ColumnIdentifier &
+    auto ColumnIdentifier::as(clause::AsClause as_clause) -> ColumnIdentifier &
     {
-        this->_as_closure = as_closure;
+        this->_as_clause = as_clause;
         return *this;
     }
 
     auto ColumnIdentifier::alias_name(AliasNameType alias_name)
         -> ColumnIdentifier &
     {
-        this->_as_closure.alias_name(alias_name);
+        this->_as_clause.alias_name(alias_name);
         return *this;
     }
 
@@ -215,8 +214,8 @@ inline namespace identifier
         }
 
         std::string text = this->_name;
-        if (NamingRule::is_legal(this->_as_closure.alias_name(), ".")) {
-            text += " " + this->_as_closure.to_string();
+        if (NamingRule::is_legal(this->_as_clause.alias_name(), ".")) {
+            text += " " + this->_as_clause.to_string();
         }
         return text;
     }

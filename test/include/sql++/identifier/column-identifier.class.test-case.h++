@@ -10,7 +10,7 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/closure/as-closure.class.h++>
+#include <sql++/clause/as-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 
 #include "./data-set/column-identifier-data-set.class.h++"
@@ -25,7 +25,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__identifier)
 
 BOOST_AUTO_TEST_SUITE(class__Column)
 
-using sqlxx::AsClosure;
+using sqlxx::AsClause;
 using sqlxx::ColumnIdentifier;
 using sqlxx::test::ColumnIdentifierDataSet;
 
@@ -38,8 +38,8 @@ using sqlxx::test::ColumnIdentifierDataSet;
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
     // clang-format off
-    ColumnIdentifier const source      = {};                             // コピー元のオブジェクト
-    ColumnIdentifier       destination = { "id", AsClosure { "p.id" } }; // コピー先のオブジェクト
+    ColumnIdentifier const source      = {};                            // コピー元のオブジェクト
+    ColumnIdentifier       destination = { "id", AsClause { "p.id" } }; // コピー先のオブジェクト
     // clang-format on
 
     // 二つのオブジェクトは等価ではないこと

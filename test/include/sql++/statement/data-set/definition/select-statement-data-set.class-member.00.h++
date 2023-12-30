@@ -7,8 +7,8 @@
 
 #include <vector>
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -26,8 +26,8 @@ inline namespace statement
     ////////////////////////////////////////////////////////////////////////////
 
     using sqlxx::ColumnIdentifier;
-    using sqlxx::FromClosure;
-    using sqlxx::SelectClosure;
+    using sqlxx::FromClause;
+    using sqlxx::SelectClause;
     using sqlxx::SelectStatement;
     using sqlxx::TableIdentifier;
 
@@ -36,21 +36,21 @@ inline namespace statement
      *
      * データパターン :
      *
-     * @c select_closure :
+     * @c select_clause :
      *
      * @c columns[0] : @n
-     * @li @c name       : 指定
-     * @li @c as_closure : 指定
+     * @li @c name      : 指定
+     * @li @c as_clause : 指定
      *
      * @c columns[1] : @n
-     * @li @c name       : 指定 or 未指定
-     * @li @c as_closure : 指定 or 未指定
+     * @li @c name      : 指定 or 未指定
+     * @li @c as_clause : 指定 or 未指定
      *
-     * @c from_closure :
+     * @c from_clause :
      *
      * @c table : @n
-     * @li @c name       : 指定 or 未指定
-     * @li @c as_closure : 指定 or 未指定
+     * @li @c name      : 指定 or 未指定
+     * @li @c as_clause : 指定 or 未指定
      *
      * @return データセット
      *
@@ -62,33 +62,33 @@ inline namespace statement
     {
         ////////////////////////////////////////////////////////////////////////
         // [条件(0)]
-        // + select_closure :
+        // + select_clause :
         //     + columns[0] :
-        //         + name       : 指定
-        //         + as_closure : 指定
+        //         + name      : 指定
+        //         + as_clause : 指定
         ////////////////////////////////////////////////////////////////////////
         // clang-format off
         return {
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 指定
-            //         + as_closure : 指定
+            //         + name      : 指定
+            //         + as_clause : 指定
             ////////////////////////////////////////////////////////////////////
             // _0
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -98,16 +98,16 @@ inline namespace statement
             // _1
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier { "people" }
                     }
                 },
@@ -117,16 +117,16 @@ inline namespace statement
             // _2
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -136,16 +136,16 @@ inline namespace statement
             // _3
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier {}
                     }
                 },
@@ -155,24 +155,24 @@ inline namespace statement
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 指定
-            //         + as_closure : 未指定
+            //         + name      : 指定
+            //         + as_clause : 未指定
             ////////////////////////////////////////////////////////////////////
             // _4
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -182,16 +182,16 @@ inline namespace statement
             // _5
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier { "people" }
                     }
                 },
@@ -201,16 +201,16 @@ inline namespace statement
             // _6
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -220,16 +220,16 @@ inline namespace statement
             // _7
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier { "name" }
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier {}
                     }
                 },
@@ -239,24 +239,24 @@ inline namespace statement
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 未指定
-            //         + as_closure : 指定
+            //         + name      : 未指定
+            //         + as_clause : 指定
             ////////////////////////////////////////////////////////////////////
             // _8
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -266,16 +266,16 @@ inline namespace statement
             // _9
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier { "people" }
                     }
                 },
@@ -285,16 +285,16 @@ inline namespace statement
             // _10
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -304,16 +304,16 @@ inline namespace statement
             // _11
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}.as({ "p.name" })
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier {}
                     }
                 },
@@ -323,24 +323,24 @@ inline namespace statement
 
             ////////////////////////////////////////////////////////////////////
             // [条件(1)]
-            // + select_closure :
+            // + select_clause :
             //     + columns[1] :
-            //         + name       : 未指定
-            //         + as_closure : 未指定
+            //         + name      : 未指定
+            //         + as_clause : 未指定
             ////////////////////////////////////////////////////////////////////
             // _12
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier { "people" }.as({ "p" })
                     }
                 },
@@ -350,16 +350,16 @@ inline namespace statement
             // _13
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier { "people" }
                     }
                 },
@@ -369,16 +369,16 @@ inline namespace statement
             // _14
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 指定
+                    FromClause{
                         TableIdentifier {}.as({ "p" })
                     }
                 },
@@ -388,16 +388,16 @@ inline namespace statement
             // _15
             {
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { "id" }.as({ "p.id" }),
                         ColumnIdentifier {}
                     }},
                     // [条件(2)]
-                    // + from_closure :
+                    // + from_clause :
                     //     + table :
-                    //         + name       : 未指定
-                    //         + as_closure : 未指定
-                    FromClosure {
+                    //         + name      : 未指定
+                    //         + as_clause : 未指定
+                    FromClause{
                         TableIdentifier {}
                     }
                 },
