@@ -96,7 +96,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 TableIdentifier {},
                 // [期待結果] empty()
                 true,
@@ -107,7 +107,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 TableIdentifier {}.as({ "" }),
                 // [期待結果] empty()
                 true,
@@ -118,7 +118,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 TableIdentifier {}.as({ " " }),
                 // [期待結果] empty()
                 true,
@@ -129,7 +129,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 TableIdentifier {}.as({ "p" }),
                 // [期待結果] empty()
                 true,
@@ -146,7 +146,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 TableIdentifier { "" },
                 // [期待結果] empty()
                 true,
@@ -157,7 +157,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 TableIdentifier { "" }.as({ "" }),
                 // [期待結果] empty()
                 true,
@@ -168,7 +168,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 TableIdentifier { "" }.as({ " " }),
                 // [期待結果] empty()
                 true,
@@ -179,7 +179,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 TableIdentifier { "" }.as({ "p" }),
                 // [期待結果] empty()
                 true,
@@ -196,7 +196,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 TableIdentifier { " " },
                 // [期待結果] empty()
                 true,
@@ -207,7 +207,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 TableIdentifier { " " }.as({ "" }),
                 // [期待結果] empty()
                 true,
@@ -218,7 +218,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 TableIdentifier { " " }.as({ " " }),
                 // [期待結果] empty()
                 true,
@@ -229,7 +229,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 TableIdentifier { " " }.as({ "p" }),
                 // [期待結果] empty()
                 true,
@@ -246,7 +246,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 未指定
+                //     + as_clause : 未指定
                 TableIdentifier { "people" },
                 // [期待結果] empty()
                 false,
@@ -257,7 +257,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 空文字列
+                //     + as_clause : 空文字列
                 TableIdentifier { "people" }.as({ "" }),
                 // [期待結果] empty()
                 false,
@@ -268,7 +268,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 不適格(半角スペース)
+                //     + as_clause : 不適格(半角スペース)
                 TableIdentifier { "people" }.as({ " " }),
                 // [期待結果] empty()
                 false,
@@ -279,7 +279,7 @@ inline namespace identifier
             {
                 // [条件(1)]
                 // + table :
-                //     + as_closure : 適格
+                //     + as_clause : 適格
                 TableIdentifier { "people" }.as({ "p" }),
                 // [期待結果] empty()
                 false,

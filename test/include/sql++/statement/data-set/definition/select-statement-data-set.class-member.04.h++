@@ -7,8 +7,8 @@
 
 #include <vector>
 
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -26,8 +26,8 @@ inline namespace statement
     ////////////////////////////////////////////////////////////////////////////
 
     using sqlxx::ColumnIdentifier;
-    using sqlxx::FromClosure;
-    using sqlxx::SelectClosure;
+    using sqlxx::FromClause;
+    using sqlxx::SelectClause;
     using sqlxx::SelectStatement;
     using sqlxx::TableIdentifier;
 
@@ -49,8 +49,8 @@ inline namespace statement
             // _64
             {
                 // [条件]
-                // + select_closure : 未指定
-                // + from_closure   : 未指定
+                // + select_clause : 未指定
+                // + from_clause   : 未指定
                 SelectStatement {},
                 // [期待結果] to_string メンバ関数
                 ""
@@ -58,11 +58,11 @@ inline namespace statement
             // _65
             {
                 // [条件]
-                // + select_closure :
-                //     + columns  : 未指定
-                // + from_closure : 未指定
+                // + select_clause :
+                //     + columns : 未指定
+                // + from_clause : 未指定
                 SelectStatement {
-                    SelectClosure {}
+                    SelectClause {}
                 },
                 // [期待結果] to_string メンバ関数
                 ""
@@ -70,23 +70,23 @@ inline namespace statement
             // _66
             {
                 // [条件]
-                // + select_closure : 未指定
-                // + from_closure   :
-                //     + table      : 未指定
-                SelectStatement {}.from(FromClosure {}),
+                // + select_clause : 未指定
+                // + from_clause   :
+                //     + table     : 未指定
+                SelectStatement {}.from(FromClause {}),
                 // [期待結果] to_string メンバ関数
                 ""
             },
             // _67
             {
                 // [条件]
-                // + select_closure :
+                // + select_clause :
                 //     + columns : 未指定
-                // + from_closure :
+                // + from_clause :
                 //     + table   : 未指定
                 SelectStatement {
-                    SelectClosure {},
-                    FromClosure {}
+                    SelectClause {},
+                    FromClause {}
                 },
                 // [期待結果] to_string メンバ関数
                 ""
@@ -94,23 +94,23 @@ inline namespace statement
             // _68
             {
                 // [条件]
-                // + select_closure :
+                // + select_clause :
                 //     + columns[0] :
-                //         + name       : 不適格
-                //         + as_closure : 不適格
+                //         + name      : 不適格
+                //         + as_clause : 不適格
                 //     + columns[1] :
-                //         + name       : 不適格
-                //         + as_closure : 不適格
-                // + from_closure :
+                //         + name      : 不適格
+                //         + as_clause : 不適格
+                // + from_clause :
                 //     + table :
-                //         + name       : 不適格
-                //         + as_closure : 不適格
+                //         + name      : 不適格
+                //         + as_clause : 不適格
                 SelectStatement {
-                    SelectClosure {{
+                    SelectClause {{
                         ColumnIdentifier { " " }.as({ "," }),
                         ColumnIdentifier { "." }.as({ ";" })
                     }},
-                    FromClosure {
+                    FromClause {
                         TableIdentifier { "\'" }.as({ "\\" })
                     }
                 },

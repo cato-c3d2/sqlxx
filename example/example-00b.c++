@@ -20,16 +20,16 @@ auto main() -> int
 
     SelectStatement select_statement;
 
-    SelectClosure select_closure;
-    FromClosure   from_closure;
+    SelectClause select_closure;
+    FromClause   from_closure;
 
     Column people_id_column;
     Column people_name_column;
     Table  people_table;
 
-    AsClosure people_id_alias;
-    AsClosure people_name_alias;
-    AsClosure people_alias;
+    AsClause people_id_alias;
+    AsClause people_name_alias;
+    AsClause people_alias;
 
     people_id_alias.alias_name("p.id");
     people_name_alias.alias_name("p.name");

@@ -32,7 +32,7 @@ inline namespace statement
         * [ データパターン表 ] @n
         * <pre>
         * -------------------------------------------------------
-        * |     |        select_closure         | from_closure  |
+        * |     |        select_clause          | from_clause   |
         * |     |   column[0]   |   column[1]   |     table     |
         * |     | name  |  as   | name  |  as   | name  |  as   |
         * =======================================================

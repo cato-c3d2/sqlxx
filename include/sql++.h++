@@ -7,9 +7,9 @@
 #ifndef SQLXX__SQLXX_HXX
 #define SQLXX__SQLXX_HXX
 
-#include <sql++/closure/as-closure.class.h++>
-#include <sql++/closure/from-closure.class.h++>
-#include <sql++/closure/select-closure.class.h++>
+#include <sql++/clause/as-clause.class.h++>
+#include <sql++/clause/from-clause.class.h++>
+#include <sql++/clause/select-clause.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -49,27 +49,27 @@ inline namespace identifier
 } // namespace identifier
 
 /*!
- * @namespace sqlxx::closure
+ * @namespace sqlxx::clause
  *
- * @brief SQL の句 ( closure ) に関するインライン名前空間
+ * @brief SQL の句 ( clause ) に関するインライン名前空間
  */
-inline namespace closure
+inline namespace clause
 {
     /*!
-     * @brief @c AsClosure のエイリアス
+     * @brief @c AsClause のエイリアス
      */
-    using As = AsClosure;
+    using As = AsClause;
 
     /*!
-     * @brief @c SelectClosure のエイリアス
+     * @brief @c SelectClause のエイリアス
      */
-    using Select = SelectClosure;
+    using Select = SelectClause;
 
     /*!
-     * @brief @c FromClosure のエイリアス
+     * @brief @c FromClause のエイリアス
      */
-    using From = FromClosure;
-} // namespace closure
+    using From = FromClause;
+} // namespace clause
 
 /*!
  * @namespace sqlxx::statement
