@@ -21,7 +21,8 @@ auto main() -> int
     SelectStatement const select_statement {
         Select { { Column { "id", As { "p.id" } },
                    Column { "name", As { "p.name" } } } },
-        From { Table { "people", As { "p" } } }
+        From { Table { "people", As { "p" } } },
+        Where { Identifier { "p.id" }.equal_to(1234) }
     };
 
     std::cout << select_statement << std::endl;

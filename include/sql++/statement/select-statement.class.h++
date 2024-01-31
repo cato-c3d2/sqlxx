@@ -9,6 +9,7 @@
 
 #include <sql++/clause/from-clause.class.h++>
 #include <sql++/clause/select-clause.class.h++>
+#include <sql++/clause/where-clause.class.h++>
 
 namespace sqlxx
 {
@@ -36,10 +37,12 @@ inline namespace statement
          *
          * @param[in] select_clause "SELECT 句" の文法オブジェクト
          * @param[in] from_clause   "FROM 句" の文法オブジェクト
+         * @param[in] where_clause  "WHERE 句" の文法オブジェクト
          */
         SelectStatement(
             clause::SelectClause select_clause,
-            clause::FromClause   from_clause = {});
+            clause::FromClause   from_clause  = {},
+            clause::WhereClause  where_clause = {});
 
         /*!
          * @brief "SELECT 句" を設定する
@@ -60,6 +63,15 @@ inline namespace statement
         auto from(clause::FromClause from_clause) -> SelectStatement &;
 
         /*!
+         * @brief "WHERE 句" を設定する
+         *
+         * @param[in] where_clause "WHERE 句" の文法オブジェクト
+         *
+         * @return このオブジェクトの参照
+         */
+        auto where(clause::WhereClause where_clause) -> SelectStatement &;
+
+        /*!
          * @brief このオブジェクトの文字列表現を返却する
          *
          * @return このオブジェクトの文字列表現
@@ -76,6 +88,11 @@ inline namespace statement
          * @brief "FROM 句"
          */
         clause::FromClause _from_clause;
+
+        /*!
+         * @brief "WHERE 句"
+         */
+        clause::WhereClause _where_clause;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -101,12 +118,17 @@ inline namespace statement
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    SelectStatement::SelectStatement() : _select_clause(), _from_clause()
+    SelectStatement::SelectStatement()
+        : _select_clause(), _from_clause(), _where_clause()
     {}
 
     SelectStatement::SelectStatement(
-        clause::SelectClause select_clause, clause::FromClause from_clause)
-        : _select_clause(select_clause), _from_clause(from_clause)
+        clause::SelectClause select_clause,
+        clause::FromClause   from_clause,
+        clause::WhereClause  where_clause)
+        : _select_clause(select_clause)
+        , _from_clause(from_clause)
+        , _where_clause(where_clause)
     {}
 
     auto SelectStatement::select(clause::SelectClause select_clause)
@@ -123,6 +145,13 @@ inline namespace statement
         return *this;
     }
 
+    auto SelectStatement::where(clause::WhereClause where_clause)
+        -> SelectStatement &
+    {
+        this->_where_clause = where_clause;
+        return *this;
+    }
+
     auto SelectStatement::to_string() const -> std::string
     {
         std::vector<std::string> clauses;
@@ -136,6 +165,10 @@ inline namespace statement
             return "";
         }
         clauses.push_back(this->_from_clause.to_string());
+
+        if (! this->_where_clause.empty()) {
+            clauses.push_back(this->_where_clause.to_string());
+        }
 
         std::string text      = "";
         std::string delimiter = "";

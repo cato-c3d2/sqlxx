@@ -10,6 +10,11 @@
 #include <sql++/clause/as-clause.class.h++>
 #include <sql++/clause/from-clause.class.h++>
 #include <sql++/clause/select-clause.class.h++>
+#include <sql++/clause/where-clause.class.h++>
+#include <sql++/expression/condition-expression.class.h++>
+#include <sql++/expression/identifier-expression.class.h++>
+#include <sql++/expression/integer-literal-expression.class.h++>
+#include <sql++/expression/string-literal-expression.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -69,7 +74,35 @@ inline namespace clause
      * @brief @c FromClause のエイリアス
      */
     using From = FromClause;
+
+    /*!
+     * @brief @c WhereClause のエイリアス
+     */
+    using Where = WhereClause;
 } // namespace clause
+
+/*!
+ * @namespace sqlxx::expression
+ *
+ * @brief SQL の式 ( expression ) に関するインライン名前空間
+ */
+inline namespace expression
+{
+    /*!
+     * @brief @c IdentifierExpression のエイリアス
+     */
+    using Identifier = IdentifierExpression;
+
+    /*!
+     * @brief @c IntegerLiteralExpression のエイリアス
+     */
+    using IntegerLiteral = IntegerLiteralExpression;
+
+    /*!
+     * @brief @c StringLiteralExpression のエイリアス
+     */
+    using StringLiteral = StringLiteralExpression;
+} // namespace expression
 
 /*!
  * @namespace sqlxx::statement

@@ -1,1 +1,1 @@
-SELECT id AS p.id, name AS p.name FROM people AS p
+SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name <> p.nick_name
