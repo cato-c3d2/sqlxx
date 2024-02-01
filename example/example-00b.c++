@@ -5,6 +5,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 #include <sql++.h++>
 
@@ -16,6 +17,7 @@
  */
 auto main() -> int
 {
+    using namespace std::literals::string_literals;
     using namespace sqlxx;
 
     SelectStatement select_statement;
@@ -49,6 +51,9 @@ auto main() -> int
 
     condition_expression =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
+
+    condition_expression = condition_expression.logical_and(
+        people_name_identifier.not_equal_to("John Doe"s));
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);

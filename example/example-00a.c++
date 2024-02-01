@@ -5,6 +5,7 @@
  */
 
 #include <iostream>
+#include <string>
 
 #include <sql++.h++>
 
@@ -16,13 +17,19 @@
  */
 auto main() -> int
 {
+    using namespace std::literals::string_literals;
     using namespace sqlxx;
 
     SelectStatement const select_statement {
         Select { { Column { "id", As { "p.id" } },
                    Column { "name", As { "p.name" } } } },
         From { Table { "people", As { "p" } } },
-        Where { Identifier { "p.id" }.equal_to(1234) }
+        Where {
+            // clang-format off
+            Identifier { "p.id" }.equal_to(1234)
+            .logical_or(Identifier { "p.name" }.equal_to("John Doe"s))
+            // clang-format on
+        }
     };
 
     std::cout << select_statement << std::endl;

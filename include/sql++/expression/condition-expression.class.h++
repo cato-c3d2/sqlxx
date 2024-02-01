@@ -66,6 +66,38 @@ inline namespace expression
             -> ConditionExpression &;
 
         /*!
+         * @brief 論理積演算式を生成する
+         *
+         * このオブジェクトを左辺の式、
+         * @c operand を右辺の式とした、論理積演算式を生成する。 @n
+         *
+         * このメンバ関数の名称は、標準ライブラリ関数
+         * @c std::logical_and （ @c \<functional\> ）を参考に命名した。 @n
+         *
+         * @param[in] operand 右辺の条件式
+         *
+         * @return 論理積演算式
+         */
+        auto logical_and(ConditionExpression const & operand) const
+            -> ConditionExpression const;
+
+        /*!
+         * @brief 論理和演算式を生成する
+         *
+         * このオブジェクトを左辺の式、
+         * @c operand を右辺の式とした、論理和演算式を生成する。 @n
+         *
+         * このメンバ関数の名称は、標準ライブラリ関数
+         * @c std::logical_or （ @c \<functional\> ）を参考に命名した。 @n
+         *
+         * @param[in] operand 右辺値の条件式
+         *
+         * @return 論理和演算式
+         */
+        auto logical_or(ConditionExpression const & operand) const
+            -> ConditionExpression const;
+
+        /*!
          * @brief このオブジェクトが空か判定する
          *
          * @return このオブジェクトが空の場合は @c true を,
@@ -183,6 +215,20 @@ inline namespace expression
     {
         this->assignment(origin);
         return *this;
+    }
+
+    auto
+    ConditionExpression::logical_and(ConditionExpression const & operand) const
+        -> ConditionExpression const
+    {
+        return ConditionExpression { "AND", this->clone(), operand.clone() };
+    }
+
+    auto
+    ConditionExpression::logical_or(ConditionExpression const & operand) const
+        -> ConditionExpression const
+    {
+        return ConditionExpression { "OR", this->clone(), operand.clone() };
     }
 
     auto ConditionExpression::empty() const -> bool
