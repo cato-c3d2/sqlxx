@@ -1,1 +1,1 @@
-SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.id = 1234 OR p.name = 'John Doe'
+SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.id = 1234 OR (p.name = 'John Doe' OR p.name = 'Jane Doe')

@@ -35,6 +35,7 @@ auto main() -> int
     AsClause people_as_clause;
 
     ConditionExpression condition_expression;
+    GroupedExpression   grouped_expression;
     Identifier          people_name_identifier;
     Identifier          people_nick_name_identifier;
 
@@ -52,8 +53,11 @@ auto main() -> int
     condition_expression =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
 
-    condition_expression = condition_expression.logical_and(
-        people_name_identifier.not_equal_to("John Doe"s));
+    grouped_expression =
+        people_name_identifier.not_equal_to("John Doe"s)
+            .logical_or(people_name_identifier.not_equal_to("Jane Doe"s));
+
+    condition_expression = condition_expression.logical_and(grouped_expression);
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);
