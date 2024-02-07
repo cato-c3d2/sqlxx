@@ -78,7 +78,7 @@ inline namespace expression
          *
          * @return 論理積演算式
          */
-        auto logical_and(ConditionExpression const & operand) const
+        auto logical_and(Expression const & operand) const
             -> ConditionExpression const;
 
         /*!
@@ -94,7 +94,7 @@ inline namespace expression
          *
          * @return 論理和演算式
          */
-        auto logical_or(ConditionExpression const & operand) const
+        auto logical_or(Expression const & operand) const
             -> ConditionExpression const;
 
         /*!
@@ -217,15 +217,13 @@ inline namespace expression
         return *this;
     }
 
-    auto
-    ConditionExpression::logical_and(ConditionExpression const & operand) const
+    auto ConditionExpression::logical_and(Expression const & operand) const
         -> ConditionExpression const
     {
         return ConditionExpression { "AND", this->clone(), operand.clone() };
     }
 
-    auto
-    ConditionExpression::logical_or(ConditionExpression const & operand) const
+    auto ConditionExpression::logical_or(Expression const & operand) const
         -> ConditionExpression const
     {
         return ConditionExpression { "OR", this->clone(), operand.clone() };

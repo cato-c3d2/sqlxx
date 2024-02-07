@@ -27,7 +27,10 @@ auto main() -> int
         Where {
             // clang-format off
             Identifier { "p.id" }.equal_to(1234)
-            .logical_or(Identifier { "p.name" }.equal_to("John Doe"s))
+            .logical_or(parentheses(
+                Identifier { "p.name" }.equal_to("John Doe"s)
+                .logical_or(Identifier { "p.name" }.equal_to("Jane Doe"s))
+            ))
             // clang-format on
         }
     };
