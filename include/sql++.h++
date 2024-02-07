@@ -12,6 +12,7 @@
 #include <sql++/clause/select-clause.class.h++>
 #include <sql++/clause/where-clause.class.h++>
 #include <sql++/expression/condition-expression.class.h++>
+#include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/integer-literal-expression.class.h++>
 #include <sql++/expression/string-literal-expression.class.h++>
