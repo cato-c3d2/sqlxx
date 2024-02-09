@@ -15,6 +15,7 @@
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/integer-literal-expression.class.h++>
+#include <sql++/expression/null-literal-expression.class.h++>
 #include <sql++/expression/string-literal-expression.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
@@ -103,6 +104,16 @@ inline namespace expression
      * @brief @c StringLiteralExpression のエイリアス
      */
     using StringLiteral = StringLiteralExpression;
+
+    /*!
+     * @brief @c NullLiteralExpression のエイリアス
+     */
+    using NullLiteral = NullLiteralExpression;
+
+    /*!
+     * @brief NULL リテラルのオブジェクト
+     */
+    static NullLiteral null {};
 } // namespace expression
 
 /*!

@@ -38,6 +38,7 @@ auto main() -> int
     GroupedExpression   grouped_expression;
     Identifier          people_name_identifier;
     Identifier          people_nick_name_identifier;
+    Identifier          people_birth_day_identifier;
 
     people_id_as_clause.alias_name("p.id");
     people_name_as_clause.alias_name("p.name");
@@ -49,6 +50,7 @@ auto main() -> int
 
     people_name_identifier.name("p.name");
     people_nick_name_identifier.name("p.nick_name");
+    people_birth_day_identifier.name("p.birth_day");
 
     condition_expression =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
@@ -58,6 +60,11 @@ auto main() -> int
             .logical_or(people_name_identifier.not_equal_to("Jane Doe"s));
 
     condition_expression = condition_expression.logical_and(grouped_expression);
+
+    // TODO 暫定的に `p.birth_day <> NULL` としているが、
+    //      将来的に `p.birth_day IS NOT NULL` とする予定。
+    condition_expression = condition_expression.logical_and(
+        people_birth_day_identifier.not_equal_to(null));
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);
