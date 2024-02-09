@@ -1,1 +1,1 @@
-SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name <> p.nick_name AND (p.name <> 'John Doe' OR p.name <> 'Jane Doe')
+SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name <> p.nick_name AND (p.name <> 'John Doe' OR p.name <> 'Jane Doe') AND p.birth_day <> NULL

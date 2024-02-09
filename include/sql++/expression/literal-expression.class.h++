@@ -167,6 +167,21 @@ inline namespace expression
         return "'"s + this->_inner_value + "'"s;
     }
 
+    /*!
+     * @brief このオブジェクトの文字列表現を返却する
+     *
+     * 【メンバ関数の特殊化について】 @n
+     * このリテラルの内部値の型が @c std::nullptr_t の場合、
+     * NULL を示す文字列を返却する。 @n
+     *
+     * @return このオブジェクトの文字列表現
+     */
+    template<>
+    auto LiteralExpression<std::nullptr_t>::to_string() const -> std::string
+    {
+        return "NULL";
+    }
+
     template<typename Type>
     auto LiteralExpression<Type>::evaluate() const -> std::string
     {
