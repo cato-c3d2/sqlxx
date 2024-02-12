@@ -61,10 +61,10 @@ auto main() -> int
 
     condition_expression = condition_expression.logical_and(grouped_expression);
 
-    // TODO 暫定的に `p.birth_day <> NULL` としているが、
+    // TODO 暫定的に `p.birth_day IS NULL` としているが、
     //      将来的に `p.birth_day IS NOT NULL` とする予定。
-    condition_expression = condition_expression.logical_and(
-        people_birth_day_identifier.not_equal_to(null));
+    condition_expression =
+        condition_expression.logical_and(people_birth_day_identifier.is(null));
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);

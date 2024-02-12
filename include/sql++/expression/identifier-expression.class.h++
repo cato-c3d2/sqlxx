@@ -108,6 +108,19 @@ inline namespace expression
         auto not_equal_to(Type operand) const -> ConditionExpression const;
 
         /*!
+         * @brief IS 演算式を生成する
+         *
+         * このオブジェクトを左辺の式、
+         * @c operand を右辺の式とした、 IS 演算式を生成する。
+         *
+         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
+         *
+         * @return IS 演算式
+         */
+        template<typename Type>
+        auto is(Type operand) const -> ConditionExpression const;
+
+        /*!
          * @brief このオブジェクトの文字列表現を返却する
          *
          * @return このオブジェクトの文字列表現
@@ -209,6 +222,15 @@ inline namespace expression
         -> ConditionExpression const
     {
         return ConditionExpression { "<>",
+                                     this->clone(),
+                                     make_expression(operand) };
+    }
+
+    template<typename Type>
+    auto IdentifierExpression::is(Type operand) const
+        -> ConditionExpression const
+    {
+        return ConditionExpression { "IS",
                                      this->clone(),
                                      make_expression(operand) };
     }
