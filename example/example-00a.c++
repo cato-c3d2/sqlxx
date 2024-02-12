@@ -31,9 +31,9 @@ auto main() -> int
                 Identifier { "p.name" }.equal_to("John Doe"s)
                 .logical_or(Identifier { "p.name" }.equal_to("Jane Doe"s))
             ))
-            // TODO 暫定的に `p.birth_day <> NULL` としているが、
+            // TODO 暫定的に `p.birth_day IS NULL` としているが、
             //      将来的に `p.birth_day IS NOT NULL` とする予定。
-            .logical_and(Identifier { "p.birth_day" }.not_equal_to(null))
+            .logical_and(Identifier { "p.birth_day" }.is(null))
             // clang-format on
         }
     };
