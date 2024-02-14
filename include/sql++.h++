@@ -15,6 +15,7 @@
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/integer-literal-expression.class.h++>
+#include <sql++/expression/logical-not-expression.class.h++>
 #include <sql++/expression/null-literal-expression.class.h++>
 #include <sql++/expression/string-literal-expression.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
