@@ -61,8 +61,12 @@ auto main() -> int
 
     condition_expression = condition_expression.logical_and(grouped_expression);
 
-    condition_expression = condition_expression.logical_and(
-        people_birth_day_identifier.is(logical_not(null)));
+    grouped_expression =
+        people_birth_day_identifier.is(logical_not(null))
+            .logical_and(people_birth_day_identifier.greater("1901-01-01"s))
+            .logical_and(people_birth_day_identifier.less("2000-12-31"s));
+
+    condition_expression = condition_expression.logical_or(grouped_expression);
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);
