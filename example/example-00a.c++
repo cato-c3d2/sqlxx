@@ -31,7 +31,11 @@ auto main() -> int
                 Identifier { "p.name" }.equal_to("John Doe"s)
                 .logical_or(Identifier { "p.name" }.equal_to("Jane Doe"s))
             ))
-            .logical_and(Identifier { "p.birth_day" }.is(logical_not(null)))
+            .logical_or(parentheses(
+                Identifier { "p.birth_day" }.is(logical_not(null))
+                .logical_and(Identifier { "p.birth_day" }.greater_equal("1901-01-01"s))
+                .logical_and(Identifier { "p.birth_day" }.less_equal("2000-12-31"s))
+            ))
             // clang-format on
         }
     };
