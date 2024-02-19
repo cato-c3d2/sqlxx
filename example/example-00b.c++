@@ -39,6 +39,7 @@ auto main() -> int
     Identifier          people_name_identifier;
     Identifier          people_nick_name_identifier;
     Identifier          people_birth_day_identifier;
+    Identifier          people_has_deleted_identifier;
 
     people_id_as_clause.alias_name("p.id");
     people_name_as_clause.alias_name("p.name");
@@ -51,6 +52,7 @@ auto main() -> int
     people_name_identifier.name("p.name");
     people_nick_name_identifier.name("p.nick_name");
     people_birth_day_identifier.name("p.birth_day");
+    people_has_deleted_identifier.name("p.has_deleted");
 
     condition_expression =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
@@ -67,6 +69,9 @@ auto main() -> int
             .logical_and(people_birth_day_identifier.less("2000-12-31"s));
 
     condition_expression = condition_expression.logical_or(grouped_expression);
+
+    condition_expression = condition_expression.logical_and(
+        people_has_deleted_identifier.equal_to(false));
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);

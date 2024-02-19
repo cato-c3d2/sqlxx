@@ -154,6 +154,21 @@ inline namespace expression
      * @brief このオブジェクトの文字列表現を返却する
      *
      * 【メンバ関数の特殊化について】 @n
+     * このリテラルの内部値の型が @c bool の場合、
+     * 論理値を示す文字列を返却する。 @n
+     *
+     * @return このオブジェクトの文字列表現
+     */
+    template<>
+    auto LiteralExpression<bool>::to_string() const -> std::string
+    {
+        return this->_inner_value ? "true" : "false";
+    }
+
+    /*!
+     * @brief このオブジェクトの文字列表現を返却する
+     *
+     * 【メンバ関数の特殊化について】 @n
      * このリテラルの内部値の型が @c std::string の場合、
      * 内部値の両端をシングルクォーテーションで囲んだ文字列を返却する。 @n
      *

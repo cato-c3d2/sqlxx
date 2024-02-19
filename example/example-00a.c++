@@ -36,6 +36,7 @@ auto main() -> int
                 .logical_and(Identifier { "p.birth_day" }.greater_equal("1901-01-01"s))
                 .logical_and(Identifier { "p.birth_day" }.less_equal("2000-12-31"s))
             ))
+            .logical_and(Identifier { "p.has_deleted" }.not_equal_to(true))
             // clang-format on
         }
     };
