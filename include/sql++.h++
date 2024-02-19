@@ -11,6 +11,7 @@
 #include <sql++/clause/from-clause.class.h++>
 #include <sql++/clause/select-clause.class.h++>
 #include <sql++/clause/where-clause.class.h++>
+#include <sql++/expression/boolean-literal-expression.class.h++>
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
@@ -95,6 +96,11 @@ inline namespace expression
      * @brief @c IdentifierExpression のエイリアス
      */
     using Identifier = IdentifierExpression;
+
+    /*!
+     * @brief @c BooleanLiteralExpression のエイリアス
+     */
+    using BooleanLiteral = BooleanLiteralExpression;
 
     /*!
      * @brief @c IntegerLiteralExpression のエイリアス
