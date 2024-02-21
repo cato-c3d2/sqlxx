@@ -18,6 +18,7 @@
 #include <sql++/expression/integer-literal-expression.class.h++>
 #include <sql++/expression/logical-not-expression.class.h++>
 #include <sql++/expression/null-literal-expression.class.h++>
+#include <sql++/expression/real-number-literal-expression.class.h++>
 #include <sql++/expression/string-literal-expression.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
@@ -106,6 +107,11 @@ inline namespace expression
      * @brief @c IntegerLiteralExpression のエイリアス
      */
     using IntegerLiteral = IntegerLiteralExpression;
+
+    /*!
+     * @brief @c RealNumberLiteralExpression のエイリアス
+     */
+    using RealNumberLiteral = RealNumberLiteralExpression;
 
     /*!
      * @brief @c StringLiteralExpression のエイリアス
