@@ -1,0 +1,27 @@
+/*!
+ * @file real-number-literal-expression.class.h++
+ */
+
+#ifndef SQLXX__EXPRESSION__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
+#define SQLXX__EXPRESSION__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
+
+#include <sql++/expression/literal-expression.class.h++>
+
+namespace sqlxx
+{
+inline namespace expression
+{
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Class definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
+    /*!
+     * @brief 実数リテラルを表現するクラス（エイリアス）
+     */
+    using RealNumberLiteralExpression = LiteralExpression<float>;
+} // namespace expression
+} // namespace sqlxx
+
+#endif // SQLXX__EXPRESSION__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX

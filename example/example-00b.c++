@@ -39,6 +39,8 @@ auto main() -> int
     Identifier          people_name_identifier;
     Identifier          people_nick_name_identifier;
     Identifier          people_birth_day_identifier;
+    Identifier          people_longitude_identifier;
+    Identifier          people_latitude_identifier;
     Identifier          people_has_deleted_identifier;
 
     people_id_as_clause.alias_name("p.id");
@@ -52,6 +54,8 @@ auto main() -> int
     people_name_identifier.name("p.name");
     people_nick_name_identifier.name("p.nick_name");
     people_birth_day_identifier.name("p.birth_day");
+    people_longitude_identifier.name("p.longitude");
+    people_latitude_identifier.name("p.latitude");
     people_has_deleted_identifier.name("p.has_deleted");
 
     condition_expression =
@@ -67,6 +71,14 @@ auto main() -> int
         people_birth_day_identifier.is(logical_not(null))
             .logical_and(people_birth_day_identifier.greater("1901-01-01"s))
             .logical_and(people_birth_day_identifier.less("2000-12-31"s));
+
+    condition_expression = condition_expression.logical_or(grouped_expression);
+
+    grouped_expression =
+        people_longitude_identifier.greater_equal(122.5557)
+            .logical_and(people_longitude_identifier.less_equal(153.5912))
+            .logical_and(people_latitude_identifier.greater_equal(20.2531))
+            .logical_and(people_latitude_identifier.less_equal(45.3326));
 
     condition_expression = condition_expression.logical_or(grouped_expression);
 
