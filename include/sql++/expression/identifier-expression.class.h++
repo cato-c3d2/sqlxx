@@ -6,11 +6,10 @@
 #define SQLXX__EXPRESSION__IDENTIFIER_EXPRESSION_CLASS_HXX
 
 #include <string>
-#include <type_traits>
 
+#include <sql++/expression/comparison-operable.class.h++>
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/expression.class.h++>
-#include <sql++/expression/literal-expression.class.h++>
 
 namespace sqlxx
 {
@@ -27,7 +26,9 @@ inline namespace expression
      *
      * 本コードベースでは式中の識別子を「識別子式」と呼称する。 @n
      */
-    class IdentifierExpression : public virtual Expression
+    class IdentifierExpression :
+        public virtual Expression,
+        public virtual ComparisonOperable
     {
     public:
         /*!
@@ -76,115 +77,6 @@ inline namespace expression
         auto name(NameType name) -> IdentifierExpression &;
 
         /*!
-         * @brief 等値比較演算式を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、等値比較演算式を生成する。 @n
-         *
-         * このメンバ関数の名称は、標準ライブラリ関数
-         * @c std::equal_to （ @c \<functional\> ）を参考に命名した。 @n
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 等値比較演算式
-         */
-        template<typename Type>
-        auto equal_to(Type operand) const -> ConditionExpression const;
-
-        /*!
-         * @brief 非等値比較演算式を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、非等値比較演算式を生成する。 @n
-         *
-         * このメンバ関数の名称は、標準ライブラリ関数
-         * @c std::not_equal_to （ @c \<functional\> ）を参考に命名した。 @n
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 非等値比較演算式
-         */
-        template<typename Type>
-        auto not_equal_to(Type operand) const -> ConditionExpression const;
-
-        /*!
-         * @brief 比較演算式（小なり）を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、比較演算式（小なり）を生成する。
-         *
-         * このメンバ関数の名称は、標準ライブラリ関数
-         * @c std::less_equal （ @c \<functional\> ）を参考に命名した。
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 比較演算式（小なり）
-         */
-        template<typename Type>
-        auto less(Type operand) const -> ConditionExpression const;
-
-        /*!
-         * @brief 比較演算式（以下）を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、比較演算式（以下）を生成する。
-         *
-         * このメンバ関数の名称は、標準ライブラリ関数
-         * @c std::less_equal （ @c \<functional\> ）を参考に命名した。
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 比較演算式（以下）
-         */
-        template<typename Type>
-        auto less_equal(Type operand) const -> ConditionExpression const;
-
-        /*!
-         * @brief 比較演算式（大なり）を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、比較演算式（大なり）を生成する。
-         *
-         * このメンバ関数の名称は、標準ライブラリ関数
-         * @c std::less_equal （ @c \<functional\> ）を参考に命名した。
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 比較演算式（大なり）
-         */
-        template<typename Type>
-        auto greater(Type operand) const -> ConditionExpression const;
-
-        /*!
-         * @brief 比較演算式（以上）を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、比較演算式（以上）を生成する。
-         *
-         * このメンバ関数の名称は、標準ライブラリ関数
-         * @c std::less_equal （ @c \<functional\> ）を参考に命名した。
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 比較演算式（以上）
-         */
-        template<typename Type>
-        auto greater_equal(Type operand) const -> ConditionExpression const;
-
-        /*!
-         * @brief IS 演算式を生成する
-         *
-         * このオブジェクトを左辺の式、
-         * @c operand を右辺の式とした、 IS 演算式を生成する。
-         *
-         * @param[in] operand 右辺の式のオブジェクトまたはリテラルの内部値
-         *
-         * @return IS 演算式
-         */
-        template<typename Type>
-        auto is(Type operand) const -> ConditionExpression const;
-
-        /*!
          * @brief このオブジェクトの文字列表現を返却する
          *
          * @return このオブジェクトの文字列表現
@@ -204,22 +96,6 @@ inline namespace expression
          * @return 複製したオブジェクトのポインタ
          */
         virtual auto clone() const -> IdentifierExpression const * override;
-
-    private:
-        /*!
-         * @brief 式のオブジェクトを生成する
-         *
-         * @param[in] expression_or_literal_inner_value 式のオブジェクトまたはリテラルの内部値
-         *
-         * @return 式のオブジェクト
-         *         @c expression_or_literal_inner_value が式のオブジェクトの場合は、
-         *         @c expression_or_literal_inner_value を元に生成した式のオブジェクトを返却する。 @n
-         *         @c expression_or_literal_inner_value がリテラルの内部値の場合は、
-         *         @c expression_or_literal_inner_value を元に生成したリテラル式のオブジェクトを返却する。 @n
-         */
-        template<typename Type>
-        static auto make_expression(Type expression_or_literal_inner_value)
-            -> Expression const *;
 
     private:
         /*!
@@ -272,69 +148,6 @@ inline namespace expression
         return *this;
     }
 
-    template<typename Type>
-    auto IdentifierExpression::equal_to(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression { "=",
-                                     this->clone(),
-                                     make_expression(operand) };
-    }
-
-    template<typename Type>
-    auto IdentifierExpression::not_equal_to(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression { "<>",
-                                     this->clone(),
-                                     make_expression(operand) };
-    }
-
-    template<typename Type>
-    auto IdentifierExpression::is(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression { "IS",
-                                     this->clone(),
-                                     make_expression(operand) };
-    }
-
-    template<typename Type>
-    auto IdentifierExpression::less(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression { "<",
-                                     this->clone(),
-                                     make_expression(operand) };
-    }
-
-    template<typename Type>
-    auto IdentifierExpression::less_equal(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression {
-            "<=", this->clone(), make_expression(operand)
-        };
-    }
-
-    template<typename Type>
-    auto IdentifierExpression::greater(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression { ">",
-                                     this->clone(),
-                                     make_expression(operand) };
-    }
-
-    template<typename Type>
-    auto IdentifierExpression::greater_equal(Type operand) const
-        -> ConditionExpression const
-    {
-        return ConditionExpression {
-            ">=", this->clone(), make_expression(operand)
-        };
-    }
-
     auto IdentifierExpression::to_string() const -> std::string
     {
         return this->_name;
@@ -348,37 +161,6 @@ inline namespace expression
     auto IdentifierExpression::clone() const -> IdentifierExpression const *
     {
         return new IdentifierExpression(*this);
-    }
-
-    inline namespace
-    {
-        template<typename Type, bool IS_BASE_OF_EXPRESSION = true>
-        struct GetExpressionTypeImplementation
-        {
-            using ExpressionType = Type;
-        };
-
-        template<typename Type>
-        struct GetExpressionTypeImplementation<Type, false>
-        {
-            using ExpressionType = LiteralExpression<Type>;
-        };
-
-        template<typename Type>
-        struct GetExpressionType :
-            public GetExpressionTypeImplementation<
-                Type,
-                std::is_base_of<Expression, Type>::value>
-        {};
-    } // namespace
-
-    template<typename Type>
-    auto IdentifierExpression::make_expression(
-        Type expression_or_literal_inner_value) -> Expression const *
-    {
-        return new typename GetExpressionType<Type>::ExpressionType {
-            expression_or_literal_inner_value
-        };
     }
 
     ////////////////////////////////////////////////////////////////////////////
