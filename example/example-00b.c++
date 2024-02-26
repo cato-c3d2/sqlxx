@@ -42,6 +42,7 @@ auto main() -> int
     Identifier          people_longitude_identifier;
     Identifier          people_latitude_identifier;
     Identifier          people_has_deleted_identifier;
+    BooleanLiteral      people_has_deleted_literal_boolean_literal;
 
     people_id_as_clause.alias_name("p.id");
     people_name_as_clause.alias_name("p.name");
@@ -57,6 +58,8 @@ auto main() -> int
     people_longitude_identifier.name("p.longitude");
     people_latitude_identifier.name("p.latitude");
     people_has_deleted_identifier.name("p.has_deleted");
+
+    people_has_deleted_literal_boolean_literal.inner_value(false);
 
     condition_expression =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
@@ -83,7 +86,8 @@ auto main() -> int
     condition_expression = condition_expression.logical_or(grouped_expression);
 
     condition_expression = condition_expression.logical_and(
-        people_has_deleted_identifier.equal_to(false));
+        people_has_deleted_literal_boolean_literal.equal_to(
+            people_has_deleted_identifier));
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);
