@@ -26,7 +26,7 @@ auto main() -> int
         From { Table { "people", As { "p" } } },
         Where {
             // clang-format off
-            Identifier { "p.id" }.equal_to(1234)
+            IntegerLiteral { 1234 }.equal_to(Identifier { "p.id" })
             .logical_or(parentheses(
                 Identifier { "p.name" }.equal_to("John Doe"s)
                 .logical_or(Identifier { "p.name" }.equal_to("Jane Doe"s))

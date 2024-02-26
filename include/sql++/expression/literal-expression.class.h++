@@ -7,6 +7,7 @@
 
 #include <string>
 
+#include <sql++/expression/comparison-operable.class.h++>
 #include <sql++/expression/expression.class.h++>
 
 namespace sqlxx
@@ -25,7 +26,9 @@ inline namespace expression
      * 本コードベースでは式中のリテラルを「リテラル式」と呼称する。 @n
      */
     template<typename Type>
-    class LiteralExpression : public virtual Expression
+    class LiteralExpression :
+        public virtual Expression,
+        public virtual ComparisonOperable
     {
     public:
         /*!
