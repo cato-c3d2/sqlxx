@@ -6,64 +6,10 @@
 #define SQLXX__EXPRESSION__COMPARISON_OPERABLE_CLASS_HXX
 
 #include <string>
-#include <type_traits>
-
-// TODO make_expression 関数の宣言と定義は、後程個別のファイルに移行する予定
-namespace sqlxx
-{
-inline namespace expression
-{
-    class Expression;
-
-    template<typename Type>
-    class LiteralExpression;
-
-    inline namespace
-    {
-        template<typename Type, bool IS_BASE_OF_EXPRESSION = true>
-        struct GetExpressionTypeImplementation
-        {
-            using ExpressionType = Type;
-        };
-
-        template<typename Type>
-        struct GetExpressionTypeImplementation<Type, false>
-        {
-            using ExpressionType = LiteralExpression<Type>;
-        };
-
-        template<typename Type>
-        struct GetExpressionType :
-            public GetExpressionTypeImplementation<
-                Type,
-                std::is_base_of<Expression, Type>::value>
-        {};
-    } // namespace
-
-    /*!
-     * @brief 式のオブジェクトを生成する
-     *
-     * @param[in] expression_or_literal_inner_value 式のオブジェクトまたはリテラルの内部値
-     *
-     * @return 式のオブジェクト
-     *         @c expression_or_literal_inner_value が式のオブジェクトの場合は、
-     *         @c expression_or_literal_inner_value を元に生成した式のオブジェクトを返却する。 @n
-     *         @c expression_or_literal_inner_value がリテラルの内部値の場合は、
-     *         @c expression_or_literal_inner_value を元に生成したリテラル式のオブジェクトを返却する。 @n
-     */
-    template<typename Type>
-    auto make_expression(Type expression_or_literal_inner_value)
-        -> Expression const *
-    {
-        return new typename GetExpressionType<Type>::ExpressionType {
-            expression_or_literal_inner_value
-        };
-    }
-} // namespace expression
-} // namespace sqlxx
 
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/make-expression.function.h++>
 
 namespace sqlxx
 {
