@@ -26,6 +26,42 @@ inline namespace expression
      */
     class ComparisonOperable : public virtual Expression
     {
+    private:
+        /**
+         * @brief 等値比較演算子の記号
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_EQUAL_TO = "=";
+
+        /**
+         * @brief 非等値比較演算子の記号
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_NOT_EQUAL_TO = "<>";
+
+        /**
+         * @brief 比較演算子（小なり）の記号
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_LESS = "<";
+
+        /**
+         * @brief 比較演算子（以下）の記号
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_LESS_EQUAL = "<=";
+
+        /**
+         * @brief 比較演算子（大なり）の記号
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_GREATER = ">";
+
+        /**
+         * @brief 比較演算子（以上）の記号
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_GREATER_EQUAL = ">=";
+
+        /**
+         * @brief IS 演算子の記号（文字列表現）
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_IS = "IS";
+
     public:
         /*!
          * @brief 等値比較演算式を生成する
@@ -147,27 +183,33 @@ inline namespace expression
     auto ComparisonOperable::equal_to(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression { "=",
-                                     this->clone(),
-                                     make_expression(operand) };
+        return ConditionExpression {
+            ComparisonOperable::OPERATOR_SYMBOL_OF_EQUAL_TO,
+            this->clone(),
+            make_expression(operand)
+        };
     }
 
     template<typename Type>
     auto ComparisonOperable::not_equal_to(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression { "<>",
-                                     this->clone(),
-                                     make_expression(operand) };
+        return ConditionExpression {
+            ComparisonOperable::OPERATOR_SYMBOL_OF_NOT_EQUAL_TO,
+            this->clone(),
+            make_expression(operand)
+        };
     }
 
     template<typename Type>
     auto ComparisonOperable::less(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression { "<",
-                                     this->clone(),
-                                     make_expression(operand) };
+        return ConditionExpression {
+            ComparisonOperable::OPERATOR_SYMBOL_OF_LESS,
+            this->clone(),
+            make_expression(operand)
+        };
     }
 
     template<typename Type>
@@ -175,7 +217,9 @@ inline namespace expression
         -> ConditionExpression const
     {
         return ConditionExpression {
-            "<=", this->clone(), make_expression(operand)
+            ComparisonOperable::OPERATOR_SYMBOL_OF_LESS_EQUAL,
+            this->clone(),
+            make_expression(operand)
         };
     }
 
@@ -183,9 +227,11 @@ inline namespace expression
     auto ComparisonOperable::greater(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression { ">",
-                                     this->clone(),
-                                     make_expression(operand) };
+        return ConditionExpression {
+            ComparisonOperable::OPERATOR_SYMBOL_OF_GREATER,
+            this->clone(),
+            make_expression(operand)
+        };
     }
 
     template<typename Type>
@@ -193,14 +239,16 @@ inline namespace expression
         -> ConditionExpression const
     {
         return ConditionExpression {
-            ">=", this->clone(), make_expression(operand)
+            ComparisonOperable::OPERATOR_SYMBOL_OF_GREATER_EQUAL,
+            this->clone(),
+            make_expression(operand)
         };
     }
 
     template<typename Type>
     auto ComparisonOperable::is(Type operand) const -> ConditionExpression const
     {
-        return ConditionExpression { "IS",
+        return ConditionExpression { ComparisonOperable::OPERATOR_SYMBOL_OF_IS,
                                      this->clone(),
                                      make_expression(operand) };
     }
