@@ -29,6 +29,17 @@ inline namespace expression
     class LogicalOperatable : public virtual Expression
     {
     public:
+        /**
+         * @brief 論理積演算子のキーワード
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_LOGICAL_AND = "AND";
+
+        /**
+         * @brief 論理和演算子のキーワード
+         */
+        static constexpr auto OPERATOR_SYMBOL_OF_LOGICAL_OR = "OR";
+
+    public:
         /*!
          * @brief 論理積演算式を生成する
          *
@@ -72,16 +83,24 @@ inline namespace expression
     auto LogicalOperatable<ConditionExpressionType>::logical_and(
         Expression const & operand) const -> ConditionExpressionType const
     {
-        return ConditionExpressionType { "AND",
-                                         this->clone(),
-                                         operand.clone() };
+        return ConditionExpressionType {
+            LogicalOperatable<
+                ConditionExpressionType>::OPERATOR_SYMBOL_OF_LOGICAL_AND,
+            this->clone(),
+            operand.clone()
+        };
     }
 
     template<typename ConditionExpressionType>
     auto LogicalOperatable<ConditionExpressionType>::logical_or(
         Expression const & operand) const -> ConditionExpressionType const
     {
-        return ConditionExpressionType { "OR", this->clone(), operand.clone() };
+        return ConditionExpressionType {
+            LogicalOperatable<
+                ConditionExpressionType>::OPERATOR_SYMBOL_OF_LOGICAL_OR,
+            this->clone(),
+            operand.clone()
+        };
     }
 } // namespace expression
 } // namespace sqlxx

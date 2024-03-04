@@ -26,6 +26,12 @@ inline namespace expression
     class LogicalNotExpression : public virtual Expression
     {
     public:
+        /**
+         * @brief 論理否定演算子のキーワード
+         */
+        static constexpr auto OPERATOR_SYMBOL = "NOT";
+
+    public:
         /*!
          * @brief デフォルトコンストラクタ
          */
@@ -193,7 +199,7 @@ inline namespace expression
 
         std::string const operand_as_string = this->_operand->evaluate();
 
-        return "NOT "s + operand_as_string;
+        return LogicalNotExpression::OPERATOR_SYMBOL + " "s + operand_as_string;
     }
 
     auto LogicalNotExpression::clone() const -> LogicalNotExpression const *
