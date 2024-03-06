@@ -28,8 +28,8 @@ auto main() -> int
             // clang-format off
             IntegerLiteral { 1234 }.equal_to(Identifier { "p.id" })
             .logical_or(parentheses(
-                Identifier { "p.name" }.equal_to("John Doe"s)
-                .logical_or(Identifier { "p.name" }.equal_to("Jane Doe"s))
+                Identifier { "p.name" }.equal_to("John Doe")
+                .logical_or(Identifier { "p.name" }.equal_to("Jane Doe"))
             ))
             .logical_or(parentheses(
                 Identifier { "p.birth_day" }.is(logical_not(null))

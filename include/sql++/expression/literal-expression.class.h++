@@ -189,6 +189,23 @@ inline namespace expression
      * @brief このオブジェクトの文字列表現を返却する
      *
      * 【メンバ関数の特殊化について】 @n
+     * このリテラルの内部値の型が <tt>char const *</tt> の場合、
+     * 内部値の両端をシングルクォーテーションで囲んだ文字列を返却する。 @n
+     *
+     * @return このオブジェクトの文字列表現
+     */
+    template<>
+    auto LiteralExpression<char const *>::to_string() const -> std::string
+    {
+        using namespace std::literals::string_literals;
+
+        return "'"s + this->_inner_value + "'"s;
+    }
+
+    /*!
+     * @brief このオブジェクトの文字列表現を返却する
+     *
+     * 【メンバ関数の特殊化について】 @n
      * このリテラルの内部値の型が @c std::nullptr_t の場合、
      * NULL を示す文字列を返却する。 @n
      *

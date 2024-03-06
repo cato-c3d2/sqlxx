@@ -65,8 +65,8 @@ auto main() -> int
         people_name_identifier.not_equal_to(people_nick_name_identifier);
 
     grouped_expression =
-        people_name_identifier.not_equal_to("John Doe"s)
-            .logical_or(people_name_identifier.not_equal_to("Jane Doe"s));
+        people_name_identifier.not_equal_to("John Doe")
+            .logical_or(people_name_identifier.not_equal_to("Jane Doe"));
 
     condition_expression = condition_expression.logical_and(grouped_expression);
 
