@@ -7,7 +7,7 @@
 
 #include <cstddef>
 
-#include <sql++/expression/literal-expression.class.h++>
+#include <sql++/expression/basic-literal-expression.class.h++>
 
 namespace sqlxx
 {
@@ -22,7 +22,7 @@ inline namespace expression
     /*!
      * @brief NULL リテラルを表現するクラス（エイリアス）
      */
-    using NullLiteralExpression = LiteralExpression<std::nullptr_t>;
+    using NullLiteralExpression = BasicLiteralExpression<std::nullptr_t>;
 } // namespace expression
 } // namespace sqlxx
 

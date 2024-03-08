@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include <sql++/expression/literal-expression.class.h++>
+#include <sql++/expression/basic-literal-expression.class.h++>
 
 namespace sqlxx
 {
@@ -22,7 +22,7 @@ inline namespace expression
     /*!
      * @brief 文字列リテラルを表現するクラス（エイリアス）
      */
-    using StringLiteralExpression = LiteralExpression<std::string>;
+    using StringLiteralExpression = BasicLiteralExpression<std::string>;
 } // namespace expression
 } // namespace sqlxx
 
