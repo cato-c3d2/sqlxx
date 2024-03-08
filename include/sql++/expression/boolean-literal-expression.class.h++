@@ -5,7 +5,7 @@
 #ifndef SQLXX__EXPRESSION__BOOLEAN_LITERAL_EXPRESSION_CLASS_HXX
 #define SQLXX__EXPRESSION__BOOLEAN_LITERAL_EXPRESSION_CLASS_HXX
 
-#include <sql++/expression/literal-expression.class.h++>
+#include <sql++/expression/basic-literal-expression.class.h++>
 
 namespace sqlxx
 {
@@ -20,7 +20,7 @@ inline namespace expression
     /*!
      * @brief 論理値のリテラルを表現するクラス（エイリアス）
      */
-    using BooleanLiteralExpression = LiteralExpression<bool>;
+    using BooleanLiteralExpression = BasicLiteralExpression<bool>;
 } // namespace expression
 } // namespace sqlxx
 
