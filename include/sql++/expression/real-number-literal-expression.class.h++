@@ -5,7 +5,7 @@
 #ifndef SQLXX__EXPRESSION__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
 #define SQLXX__EXPRESSION__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
 
-#include <sql++/expression/literal-expression.class.h++>
+#include <sql++/expression/basic-literal-expression.class.h++>
 
 namespace sqlxx
 {
@@ -20,7 +20,7 @@ inline namespace expression
     /*!
      * @brief 実数リテラルを表現するクラス（エイリアス）
      */
-    using RealNumberLiteralExpression = LiteralExpression<float>;
+    using RealNumberLiteralExpression = BasicLiteralExpression<float>;
 } // namespace expression
 } // namespace sqlxx
 
