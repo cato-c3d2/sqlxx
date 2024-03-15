@@ -2,10 +2,10 @@
  * @file integer-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__INTEGER_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__INTEGER_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__INTEGER_LITERAL_EXPRESSION_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__INTEGER_LITERAL_EXPRESSION_CLASS_HXX
 
-#include <sql++/expression/basic-literal-expression.class.h++>
+#include <sql++/expression/literal/basic-literal-expression.class.h++>
 
 namespace sqlxx
 {
@@ -24,4 +24,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__INTEGER_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__INTEGER_LITERAL_EXPRESSION_CLASS_HXX

@@ -2,8 +2,8 @@
  * @file comparison-operable.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__COMPARISON_OPERABLE_CLASS_HXX
-#define SQLXX__EXPRESSION__COMPARISON_OPERABLE_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__COMPARISON_OPERABLE_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__COMPARISON_OPERABLE_CLASS_HXX
 
 #include <string>
 
@@ -255,4 +255,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__COMPARISON_OPERABLE_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__COMPARISON_OPERABLE_CLASS_HXX

@@ -2,8 +2,8 @@
  * @file logical-not-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
 
 #include <stdexcept>
 #include <string>
@@ -235,4 +235,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_EXPRESSION_CLASS_HXX

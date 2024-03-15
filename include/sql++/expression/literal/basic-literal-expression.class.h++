@@ -2,13 +2,13 @@
  * @file basic-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__BASIC_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__BASIC_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_EXPRESSION_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_EXPRESSION_CLASS_HXX
 
 #include <string>
 
-#include <sql++/expression/comparison-operable.class.h++>
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/comparison-operable.class.h++>
 
 namespace sqlxx
 {
@@ -252,4 +252,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__BASIC_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_EXPRESSION_CLASS_HXX

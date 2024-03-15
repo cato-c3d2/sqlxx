@@ -7,9 +7,9 @@
 
 #include <string>
 
-#include <sql++/expression/comparison-operable.class.h++>
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/comparison-operable.class.h++>
 
 namespace sqlxx
 {

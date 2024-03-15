@@ -9,7 +9,7 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
-#include <sql++/expression/logical-operatable.class.h++>
+#include <sql++/expression/operation/logical-operatable.class.h++>
 
 namespace sqlxx
 {
