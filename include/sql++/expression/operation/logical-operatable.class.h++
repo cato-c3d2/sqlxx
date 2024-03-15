@@ -2,8 +2,8 @@
  * @file logical-operatable.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LOGICAL_OPERATABLE_CLASS_HXX
-#define SQLXX__EXPRESSION__LOGICAL_OPERATABLE_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
 
 #include <string>
 
@@ -105,4 +105,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LOGICAL_OPERATABLE_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
