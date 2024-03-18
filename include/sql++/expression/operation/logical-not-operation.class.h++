@@ -1,9 +1,9 @@
 /*!
- * @file logical-not-expression.class.h++
+ * @file logical-not-operation.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_OPERATION_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_OPERATION_CLASS_HXX
 
 #include <stdexcept>
 #include <string>
@@ -23,7 +23,7 @@ inline namespace expression
     /*!
      * @brief 論理否定演算式を表現するクラス
      */
-    class LogicalNotExpression : public virtual Expression
+    class LogicalNotOperation : public virtual Expression
     {
     public:
         /**
@@ -35,26 +35,26 @@ inline namespace expression
         /*!
          * @brief デフォルトコンストラクタ
          */
-        LogicalNotExpression();
+        LogicalNotOperation();
 
         /*!
          * @brief コンストラクタ
          *
          * @param[in] operand 内部の式
          */
-        LogicalNotExpression(Expression const & operand);
+        LogicalNotOperation(Expression const & operand);
 
         /*!
          * @brief デストラクタ
          */
-        virtual ~LogicalNotExpression() override;
+        virtual ~LogicalNotOperation() override;
 
         /*!
          * @brief コピーコンストラクタ
          *
          * @param[in] origin コピー元のオブジェクト
          */
-        LogicalNotExpression(LogicalNotExpression const & origin);
+        LogicalNotOperation(LogicalNotOperation const & origin);
 
         /*!
          * @brief コピー代入演算子
@@ -63,8 +63,8 @@ inline namespace expression
          *
          * @return このオブジェクトの参照
          */
-        auto operator=(LogicalNotExpression const & origin)
-            -> LogicalNotExpression &;
+        auto operator=(LogicalNotOperation const & origin)
+            -> LogicalNotOperation &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -93,7 +93,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> LogicalNotExpression const * override;
+        virtual auto clone() const -> LogicalNotOperation const * override;
 
     private:
         /*!
@@ -106,7 +106,7 @@ inline namespace expression
          *
          * @param[in] origin コピー元のオブジェクト
          */
-        auto assignment(LogicalNotExpression const & origin) -> void;
+        auto assignment(LogicalNotOperation const & origin) -> void;
 
     private:
         /*!
@@ -129,7 +129,7 @@ inline namespace expression
      *
      * @return 論理否定演算式
      */
-    auto logical_not(Expression const & operand) -> LogicalNotExpression;
+    auto logical_not(Expression const & operand) -> LogicalNotOperation;
 
     /*!
      * @brief ストリーム出力演算
@@ -140,7 +140,7 @@ inline namespace expression
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream & out, LogicalNotExpression const logical_not_expression)
+        std::ostream & out, LogicalNotOperation const logical_not_expression)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -149,39 +149,38 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    LogicalNotExpression::LogicalNotExpression() : _operand(nullptr)
+    LogicalNotOperation::LogicalNotOperation() : _operand(nullptr)
     {}
 
-    LogicalNotExpression::LogicalNotExpression(Expression const & operand)
+    LogicalNotOperation::LogicalNotOperation(Expression const & operand)
         : _operand(operand.clone())
     {}
 
-    LogicalNotExpression::~LogicalNotExpression()
+    LogicalNotOperation::~LogicalNotOperation()
     {
         if (this->_operand != nullptr) {
             delete this->_operand;
         }
     }
 
-    LogicalNotExpression::LogicalNotExpression(
-        LogicalNotExpression const & origin)
+    LogicalNotOperation::LogicalNotOperation(LogicalNotOperation const & origin)
     {
         this->assignment(origin);
     }
 
-    auto LogicalNotExpression::operator=(LogicalNotExpression const & origin)
-        -> LogicalNotExpression &
+    auto LogicalNotOperation::operator=(LogicalNotOperation const & origin)
+        -> LogicalNotOperation &
     {
         this->assignment(origin);
         return *this;
     }
 
-    auto LogicalNotExpression::empty() const -> bool
+    auto LogicalNotOperation::empty() const -> bool
     {
         return this->_operand == nullptr;
     }
 
-    auto LogicalNotExpression::to_string() const -> std::string
+    auto LogicalNotOperation::to_string() const -> std::string
     {
         if (this->empty()) {
             return {};
@@ -189,7 +188,7 @@ inline namespace expression
         return this->evaluate();
     }
 
-    auto LogicalNotExpression::evaluate() const -> std::string
+    auto LogicalNotOperation::evaluate() const -> std::string
     {
         using namespace std::literals::string_literals;
 
@@ -199,15 +198,15 @@ inline namespace expression
 
         std::string const operand_as_string = this->_operand->evaluate();
 
-        return LogicalNotExpression::OPERATOR_SYMBOL + " "s + operand_as_string;
+        return LogicalNotOperation::OPERATOR_SYMBOL + " "s + operand_as_string;
     }
 
-    auto LogicalNotExpression::clone() const -> LogicalNotExpression const *
+    auto LogicalNotOperation::clone() const -> LogicalNotOperation const *
     {
-        return new LogicalNotExpression(*this);
+        return new LogicalNotOperation(*this);
     }
 
-    auto LogicalNotExpression::assignment(LogicalNotExpression const & origin)
+    auto LogicalNotOperation::assignment(LogicalNotOperation const & origin)
         -> void
     {
         this->_operand =
@@ -220,13 +219,13 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto logical_not(Expression const & operand) -> LogicalNotExpression
+    auto logical_not(Expression const & operand) -> LogicalNotOperation
     {
-        return LogicalNotExpression { operand };
+        return LogicalNotOperation { operand };
     }
 
     auto operator<<(
-        std::ostream & out, LogicalNotExpression const logical_not_expression)
+        std::ostream & out, LogicalNotOperation const logical_not_expression)
         -> std::ostream &
     {
         out << logical_not_expression.to_string();
@@ -235,4 +234,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_NOT_OPERATION_CLASS_HXX

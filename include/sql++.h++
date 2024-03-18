@@ -19,7 +19,7 @@
 #include <sql++/expression/literal/null-literal-expression.class.h++>
 #include <sql++/expression/literal/real-number-literal-expression.class.h++>
 #include <sql++/expression/literal/string-literal-expression.class.h++>
-#include <sql++/expression/operation/logical-not-expression.class.h++>
+#include <sql++/expression/operation/logical-not-operation.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
