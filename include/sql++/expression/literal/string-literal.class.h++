@@ -1,5 +1,5 @@
 /*!
- * @file string-literal-expression.class.h++
+ * @file string-literal.class.h++
  */
 
 #ifndef SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_CLASS_HXX
@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include <sql++/expression/literal/basic-literal-expression.class.h++>
+#include <sql++/expression/literal/basic-literal.class.h++>
 
 namespace sqlxx
 {

@@ -1,11 +1,11 @@
 /*!
- * @file real-number-literal-expression.class.h++
+ * @file real-number-literal.class.h++
  */
 
 #ifndef SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_CLASS_HXX
 #define SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_CLASS_HXX
 
-#include <sql++/expression/literal/basic-literal-expression.class.h++>
+#include <sql++/expression/literal/basic-literal.class.h++>
 
 namespace sqlxx
 {

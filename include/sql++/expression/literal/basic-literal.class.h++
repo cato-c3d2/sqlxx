@@ -1,5 +1,5 @@
 /*!
- * @file basic-literal-expression.class.h++
+ * @file basic-literal.class.h++
  */
 
 #ifndef SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_CLASS_HXX

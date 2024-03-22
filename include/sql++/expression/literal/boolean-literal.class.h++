@@ -1,11 +1,11 @@
 /*!
- * @file boolean-literal-expression.class.h++
+ * @file boolean-literal.class.h++
  */
 
 #ifndef SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_CLASS_HXX
 #define SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_CLASS_HXX
 
-#include <sql++/expression/literal/basic-literal-expression.class.h++>
+#include <sql++/expression/literal/basic-literal.class.h++>
 
 namespace sqlxx
 {
