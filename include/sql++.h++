@@ -14,11 +14,11 @@
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
-#include <sql++/expression/literal/boolean-literal-expression.class.h++>
-#include <sql++/expression/literal/integer-literal-expression.class.h++>
-#include <sql++/expression/literal/null-literal-expression.class.h++>
-#include <sql++/expression/literal/real-number-literal-expression.class.h++>
-#include <sql++/expression/literal/string-literal-expression.class.h++>
+#include <sql++/expression/literal/boolean-literal.class.h++>
+#include <sql++/expression/literal/integer-literal.class.h++>
+#include <sql++/expression/literal/null-literal.class.h++>
+#include <sql++/expression/literal/real-number-literal.class.h++>
+#include <sql++/expression/literal/string-literal.class.h++>
 #include <sql++/expression/operation/logical-not-operation.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
