@@ -2,8 +2,8 @@
  * @file null-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LITERAL__NULL_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__LITERAL__NULL_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__NULL_LITERAL_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__NULL_LITERAL_CLASS_HXX
 
 #include <cstddef>
 
@@ -22,8 +22,8 @@ inline namespace expression
     /*!
      * @brief NULL リテラルを表現するクラス（エイリアス）
      */
-    using NullLiteralExpression = BasicLiteralExpression<std::nullptr_t>;
+    using NullLiteral = BasicLiteral<std::nullptr_t>;
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LITERAL__NULL_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__NULL_LITERAL_CLASS_HXX

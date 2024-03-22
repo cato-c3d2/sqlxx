@@ -2,8 +2,8 @@
  * @file basic-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_CLASS_HXX
 
 #include <string>
 
@@ -26,7 +26,7 @@ inline namespace expression
      * 本コードベースでは式中のリテラルを「リテラル式」と呼称する。 @n
      */
     template<typename Type>
-    class BasicLiteralExpression :
+    class BasicLiteral :
         public virtual Expression,
         public virtual ComparisonOperable
     {
@@ -40,19 +40,19 @@ inline namespace expression
         /*!
          * @brief デフォルトコンストラクタ
          */
-        BasicLiteralExpression();
+        BasicLiteral();
 
         /*!
          * @brief コンストラクタ
          *
          * @param[in] inner_value リテラルの内部値
          */
-        BasicLiteralExpression(Type inner_value);
+        BasicLiteral(Type inner_value);
 
         /*!
          * @brief デストラクタ
          */
-        virtual ~BasicLiteralExpression() override = default;
+        virtual ~BasicLiteral() override = default;
 
         /*!
          * @brief リテラルの内部値を取得する
@@ -68,8 +68,7 @@ inline namespace expression
          *
          * @return このオブジェクトの参照
          */
-        auto inner_value(InnerValueType inner_value)
-            -> BasicLiteralExpression<Type> &;
+        auto inner_value(InnerValueType inner_value) -> BasicLiteral<Type> &;
 
         /*!
          * @brief このオブジェクトの文字列表現を返却する
@@ -90,8 +89,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const
-            -> BasicLiteralExpression<Type> const * override;
+        virtual auto clone() const -> BasicLiteral<Type> const * override;
 
     private:
         /*!
@@ -116,8 +114,7 @@ inline namespace expression
      */
     template<typename Type>
     auto operator<<(
-        std::ostream &                     out,
-        BasicLiteralExpression<Type> const basic_literal_expression)
+        std::ostream & out, BasicLiteral<Type> const basic_literal_expression)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -127,31 +124,30 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     template<typename Type>
-    BasicLiteralExpression<Type>::BasicLiteralExpression()
-        : BasicLiteralExpression(Type {})
+    BasicLiteral<Type>::BasicLiteral() : BasicLiteral(Type {})
     {}
 
     template<typename Type>
-    BasicLiteralExpression<Type>::BasicLiteralExpression(Type inner_value)
+    BasicLiteral<Type>::BasicLiteral(Type inner_value)
         : _inner_value(inner_value)
     {}
 
     template<typename Type>
-    auto BasicLiteralExpression<Type>::inner_value() const -> InnerValueType
+    auto BasicLiteral<Type>::inner_value() const -> InnerValueType
     {
         return this->_inner_value;
     }
 
     template<typename Type>
-    auto BasicLiteralExpression<Type>::inner_value(InnerValueType inner_value)
-        -> BasicLiteralExpression<Type> &
+    auto BasicLiteral<Type>::inner_value(InnerValueType inner_value)
+        -> BasicLiteral<Type> &
     {
         this->_inner_value = inner_value;
         return *this;
     }
 
     template<typename Type>
-    auto BasicLiteralExpression<Type>::to_string() const -> std::string
+    auto BasicLiteral<Type>::to_string() const -> std::string
     {
         return std::to_string(this->_inner_value);
     }
@@ -166,7 +162,7 @@ inline namespace expression
      * @return このオブジェクトの文字列表現
      */
     template<>
-    auto BasicLiteralExpression<bool>::to_string() const -> std::string
+    auto BasicLiteral<bool>::to_string() const -> std::string
     {
         return this->_inner_value ? "true" : "false";
     }
@@ -181,7 +177,7 @@ inline namespace expression
      * @return このオブジェクトの文字列表現
      */
     template<>
-    auto BasicLiteralExpression<std::string>::to_string() const -> std::string
+    auto BasicLiteral<std::string>::to_string() const -> std::string
     {
         using namespace std::literals::string_literals;
 
@@ -198,7 +194,7 @@ inline namespace expression
      * @return このオブジェクトの文字列表現
      */
     template<>
-    auto BasicLiteralExpression<char const *>::to_string() const -> std::string
+    auto BasicLiteral<char const *>::to_string() const -> std::string
     {
         using namespace std::literals::string_literals;
 
@@ -215,23 +211,21 @@ inline namespace expression
      * @return このオブジェクトの文字列表現
      */
     template<>
-    auto BasicLiteralExpression<std::nullptr_t>::to_string() const
-        -> std::string
+    auto BasicLiteral<std::nullptr_t>::to_string() const -> std::string
     {
         return "NULL";
     }
 
     template<typename Type>
-    auto BasicLiteralExpression<Type>::evaluate() const -> std::string
+    auto BasicLiteral<Type>::evaluate() const -> std::string
     {
         return this->to_string();
     }
 
     template<typename Type>
-    auto BasicLiteralExpression<Type>::clone() const
-        -> BasicLiteralExpression<Type> const *
+    auto BasicLiteral<Type>::clone() const -> BasicLiteral<Type> const *
     {
-        return new BasicLiteralExpression(*this);
+        return new BasicLiteral(*this);
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -242,8 +236,7 @@ inline namespace expression
 
     template<typename Type>
     auto operator<<(
-        std::ostream &                     out,
-        BasicLiteralExpression<Type> const basic_literal_expression)
+        std::ostream & out, BasicLiteral<Type> const basic_literal_expression)
         -> std::ostream &
     {
         out << basic_literal_expression.to_string();
@@ -252,4 +245,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__BASIC_LITERAL_CLASS_HXX

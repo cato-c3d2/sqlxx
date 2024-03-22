@@ -2,8 +2,8 @@
  * @file string-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_CLASS_HXX
 
 #include <string>
 
@@ -22,8 +22,8 @@ inline namespace expression
     /*!
      * @brief 文字列リテラルを表現するクラス（エイリアス）
      */
-    using StringLiteralExpression = BasicLiteralExpression<std::string>;
+    using StringLiteral = BasicLiteral<std::string>;
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__STRING_LITERAL_CLASS_HXX

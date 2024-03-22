@@ -20,7 +20,7 @@ inline namespace expression
     class Expression;
 
     template<typename Type>
-    class BasicLiteralExpression;
+    class BasicLiteral;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -60,7 +60,7 @@ inline namespace expression
         template<typename Type>
         struct GetExpressionTypeImplementation<Type, false>
         {
-            using ExpressionType = BasicLiteralExpression<Type>;
+            using ExpressionType = BasicLiteral<Type>;
         };
 
         template<typename Type>
