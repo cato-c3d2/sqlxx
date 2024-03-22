@@ -2,8 +2,8 @@
  * @file boolean-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_CLASS_HXX
 
 #include <sql++/expression/literal/basic-literal-expression.class.h++>
 
@@ -20,8 +20,8 @@ inline namespace expression
     /*!
      * @brief 論理値のリテラルを表現するクラス（エイリアス）
      */
-    using BooleanLiteralExpression = BasicLiteralExpression<bool>;
+    using BooleanLiteral = BasicLiteral<bool>;
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__BOOLEAN_LITERAL_CLASS_HXX

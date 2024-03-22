@@ -99,31 +99,6 @@ inline namespace expression
     using Identifier = IdentifierExpression;
 
     /*!
-     * @brief @c BooleanLiteralExpression のエイリアス
-     */
-    using BooleanLiteral = BooleanLiteralExpression;
-
-    /*!
-     * @brief @c IntegerLiteralExpression のエイリアス
-     */
-    using IntegerLiteral = IntegerLiteralExpression;
-
-    /*!
-     * @brief @c RealNumberLiteralExpression のエイリアス
-     */
-    using RealNumberLiteral = RealNumberLiteralExpression;
-
-    /*!
-     * @brief @c StringLiteralExpression のエイリアス
-     */
-    using StringLiteral = StringLiteralExpression;
-
-    /*!
-     * @brief @c NullLiteralExpression のエイリアス
-     */
-    using NullLiteral = NullLiteralExpression;
-
-    /*!
      * @brief NULL リテラルのオブジェクト
      */
     static NullLiteral null {};

@@ -2,8 +2,8 @@
  * @file real-number-literal-expression.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
-#define SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_CLASS_HXX
+#define SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_CLASS_HXX
 
 #include <sql++/expression/literal/basic-literal-expression.class.h++>
 
@@ -20,8 +20,8 @@ inline namespace expression
     /*!
      * @brief 実数リテラルを表現するクラス（エイリアス）
      */
-    using RealNumberLiteralExpression = BasicLiteralExpression<float>;
+    using RealNumberLiteral = BasicLiteral<float>;
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_EXPRESSION_CLASS_HXX
+#endif // SQLXX__EXPRESSION__LITERAL__REAL_NUMBER_LITERAL_CLASS_HXX
