@@ -10,6 +10,7 @@
 
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/operation/logical-operatable.class.h++>
+#include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 namespace sqlxx
 {
@@ -42,7 +43,7 @@ inline namespace expression
          * @param[in] right_expression 右辺の式
          */
         ConditionExpression(
-            std::string        operater,
+            OperationKind      operater,
             Expression const * left_expression,
             Expression const * right_expression);
 
@@ -114,7 +115,7 @@ inline namespace expression
         /*!
          * @brief 演算子
          */
-        std::string _operater;
+        OperationKind _operater;
 
         /*!
          * @brief 左辺の式
@@ -154,11 +155,11 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     ConditionExpression::ConditionExpression()
-        : ConditionExpression("", nullptr, nullptr)
+        : ConditionExpression(OperationKind::None, nullptr, nullptr)
     {}
 
     ConditionExpression::ConditionExpression(
-        std::string        operater,
+        OperationKind      operater,
         Expression const * left_expression,
         Expression const * right_expression)
         : _operater(operater)
@@ -190,7 +191,8 @@ inline namespace expression
 
     auto ConditionExpression::empty() const -> bool
     {
-        return this->_operater.empty() || this->_left_expression == nullptr
+        return this->_operater == OperationKind::None
+               || this->_left_expression == nullptr
                || this->_right_expression == nullptr;
     }
 
@@ -204,7 +206,7 @@ inline namespace expression
 
     auto ConditionExpression::evaluate() const -> std::string
     {
-        if (this->_operater.empty()) {
+        if (this->_operater == OperationKind::None) {
             throw std::runtime_error("'_operater' is empty!");
         }
         if (this->_left_expression == nullptr) {
@@ -214,7 +216,8 @@ inline namespace expression
             throw std::runtime_error("'_right_expression' is null-pointer!");
         }
 
-        return this->_left_expression->evaluate() + " " + this->_operater + " "
+        return this->_left_expression->evaluate() + " "
+               + sqlxx::expression::to_string(this->_operater) + " "
                + this->_right_expression->evaluate();
     }
 
