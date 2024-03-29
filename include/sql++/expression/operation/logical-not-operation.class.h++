@@ -9,6 +9,7 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 namespace sqlxx
 {
@@ -25,12 +26,6 @@ inline namespace expression
      */
     class LogicalNotOperation : public virtual Expression
     {
-    public:
-        /**
-         * @brief 論理否定演算子のキーワード
-         */
-        static constexpr auto OPERATOR_SYMBOL = "NOT";
-
     public:
         /*!
          * @brief デフォルトコンストラクタ
@@ -198,7 +193,8 @@ inline namespace expression
 
         std::string const operand_as_string = this->_operand->evaluate();
 
-        return LogicalNotOperation::OPERATOR_SYMBOL + " "s + operand_as_string;
+        return sqlxx::expression::to_string(OperationKind::LogicalNot) + " "s
+               + operand_as_string;
     }
 
     auto LogicalNotOperation::clone() const -> LogicalNotOperation const *

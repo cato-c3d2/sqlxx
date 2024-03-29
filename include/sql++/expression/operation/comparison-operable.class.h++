@@ -10,6 +10,7 @@
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/make-expression.function.h++>
+#include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 namespace sqlxx
 {
@@ -26,42 +27,6 @@ inline namespace expression
      */
     class ComparisonOperable : public virtual Expression
     {
-    public:
-        /**
-         * @brief 等値比較演算子の記号
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_EQUAL_TO = "=";
-
-        /**
-         * @brief 非等値比較演算子の記号
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_NOT_EQUAL_TO = "<>";
-
-        /**
-         * @brief 比較演算子（小なり）の記号
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_LESS = "<";
-
-        /**
-         * @brief 比較演算子（以下）の記号
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_LESS_EQUAL = "<=";
-
-        /**
-         * @brief 比較演算子（大なり）の記号
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_GREATER = ">";
-
-        /**
-         * @brief 比較演算子（以上）の記号
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_GREATER_EQUAL = ">=";
-
-        /**
-         * @brief IS 演算子のキーワード
-         */
-        static constexpr auto OPERATOR_SYMBOL_OF_IS = "IS";
-
     public:
         /*!
          * @brief 等値比較演算式を生成する
@@ -183,72 +148,60 @@ inline namespace expression
     auto ComparisonOperable::equal_to(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression {
-            ComparisonOperable::OPERATOR_SYMBOL_OF_EQUAL_TO,
-            this->clone(),
-            make_expression(operand)
-        };
+        return ConditionExpression { OperationKind::EqualTo,
+                                     this->clone(),
+                                     make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::not_equal_to(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression {
-            ComparisonOperable::OPERATOR_SYMBOL_OF_NOT_EQUAL_TO,
-            this->clone(),
-            make_expression(operand)
-        };
+        return ConditionExpression { OperationKind::NotEqualTo,
+                                     this->clone(),
+                                     make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::less(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression {
-            ComparisonOperable::OPERATOR_SYMBOL_OF_LESS,
-            this->clone(),
-            make_expression(operand)
-        };
+        return ConditionExpression { OperationKind::Less,
+                                     this->clone(),
+                                     make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::less_equal(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression {
-            ComparisonOperable::OPERATOR_SYMBOL_OF_LESS_EQUAL,
-            this->clone(),
-            make_expression(operand)
-        };
+        return ConditionExpression { OperationKind::LessEqual,
+                                     this->clone(),
+                                     make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::greater(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression {
-            ComparisonOperable::OPERATOR_SYMBOL_OF_GREATER,
-            this->clone(),
-            make_expression(operand)
-        };
+        return ConditionExpression { OperationKind::Greater,
+                                     this->clone(),
+                                     make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::greater_equal(Type operand) const
         -> ConditionExpression const
     {
-        return ConditionExpression {
-            ComparisonOperable::OPERATOR_SYMBOL_OF_GREATER_EQUAL,
-            this->clone(),
-            make_expression(operand)
-        };
+        return ConditionExpression { OperationKind::GreaterEqual,
+                                     this->clone(),
+                                     make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::is(Type operand) const -> ConditionExpression const
     {
-        return ConditionExpression { ComparisonOperable::OPERATOR_SYMBOL_OF_IS,
+        return ConditionExpression { OperationKind::Is,
                                      this->clone(),
                                      make_expression(operand) };
     }
