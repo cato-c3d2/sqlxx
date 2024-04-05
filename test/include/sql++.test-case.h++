@@ -44,6 +44,7 @@ inline namespace statement
 #include "./sql++/clause/as-clause.class.test-case.h++"
 #include "./sql++/clause/select-clause.class.test-case.h++"
 #include "./sql++/clause/from-clause.class.test-case.h++"
+#include "./sql++/clause/where-clause.class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 
