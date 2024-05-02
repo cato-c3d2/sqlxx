@@ -48,6 +48,7 @@ inline namespace statement
 #include "./sql++/expression/condition-expression.class.test-case.h++"
 #include "./sql++/expression/grouped-expression.class.test-case.h++"
 #include "./sql++/expression/identifier-expression.class.test-case.h++"
+#include "./sql++/expression/literal/null-literal.class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 
