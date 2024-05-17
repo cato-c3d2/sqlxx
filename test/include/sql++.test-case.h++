@@ -50,6 +50,7 @@ inline namespace statement
 #include "./sql++/expression/identifier-expression.class.test-case.h++"
 #include "./sql++/expression/literal/null-literal.class.test-case.h++"
 #include "./sql++/expression/literal/boolean-literal.class.test-case.h++"
+#include "./sql++/expression/literal/integer-literal.class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 
