@@ -52,6 +52,7 @@ inline namespace statement
 #include "./sql++/expression/literal/boolean-literal.class.test-case.h++"
 #include "./sql++/expression/literal/integer-literal.class.test-case.h++"
 #include "./sql++/expression/literal/real-number-literal.class.test-case.h++"
+#include "./sql++/expression/literal/string-literal.class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 
