@@ -54,6 +54,7 @@ inline namespace statement
 #include "./sql++/expression/literal/real-number-literal.class.test-case.h++"
 #include "./sql++/expression/literal/string-literal.class.test-case.h++"
 #include "./sql++/expression/operation/logical-not-operation.class.test-case.h++"
+#include "./sql++/expression/operation/comparison-operable.class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 
