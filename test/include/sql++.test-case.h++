@@ -47,6 +47,7 @@ inline namespace statement
 #include "./sql++/clause/where-clause.class.test-case.h++"
 #include "./sql++/expression/condition-expression.class.test-case.h++"
 #include "./sql++/expression/grouped-expression.class.test-case.h++"
+#include "./sql++/expression/identifier-expression.class.test-case.h++"
 #include "./sql++/expression/literal/null-literal.class.test-case.h++"
 #include "./sql++/expression/literal/boolean-literal.class.test-case.h++"
 #include "./sql++/expression/literal/integer-literal.class.test-case.h++"
