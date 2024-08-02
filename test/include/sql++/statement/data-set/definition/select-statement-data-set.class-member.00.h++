@@ -52,6 +52,8 @@ inline namespace statement
      * @li @c name      : 指定 or 未指定
      * @li @c as_clause : 指定 or 未指定
      *
+     * @c where_clause : 未指定
+     *
      * @return データセット
      *
      * @see sqlxx::statement::SelectStatement              テスト対象クラス

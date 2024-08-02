@@ -30,10 +30,14 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__statement)
 BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 
 using sqlxx::ColumnIdentifier;
+using sqlxx::ConditionExpression;
 using sqlxx::FromClause;
+using sqlxx::IdentifierExpression;
+using sqlxx::IntegerLiteral;
 using sqlxx::SelectClause;
 using sqlxx::SelectStatement;
 using sqlxx::TableIdentifier;
+using sqlxx::WhereClause;
 using sqlxx::test::SelectStatementDataSet;
 
 /*!
@@ -51,7 +55,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
             ColumnIdentifier { "p" }.as({ "p.id" }),
             ColumnIdentifier { "name" }.as({ "p.name" })
         },
-        FromClause { TableIdentifier { "people" }.as({ "p" }) }
+        FromClause { TableIdentifier { "people" }.as({ "p" }) },
+        WhereClause {
+            IdentifierExpression { "p.id" }.equal_to(IntegerLiteral { 1234 })
+        }
     };
     // clang-format on
 
