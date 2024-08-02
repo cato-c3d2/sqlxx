@@ -29,6 +29,9 @@ inline namespace statement
         /*!
         * @brief  データセットを返却する
         *
+        * @b データパターン(1) @n
+        * @li @c select_clause 及び @c from_clause の検証 : @n
+        *
         * [ データパターン表 ] @n
         * <pre>
         * -------------------------------------------------------
@@ -117,6 +120,9 @@ inline namespace statement
         * @li _48 ~ _63 : @link select-statement-data-set.class-member.03.h++ @endlink
         * @li _64 ~ _68 : @link select-statement-data-set.class-member.04.h++ @endlink ... 上記データパターン以外のパターン
         *
+        * @b データパターン(2) @n
+        * @li @c select_clause , @c from_clause 及び @c where_clause の検証 : @n
+        *
         * @return データセット
         *
         * @see sqlxx::statement::SelectStatement              テスト対象クラス
@@ -125,7 +131,8 @@ inline namespace statement
         static auto for_some_test_case()
             -> std::vector<SelectStatementDataSetElement>;
 
-    private:
+    protected:
+        // TODO [要フォーマット修正] 後から実装した≪WHERE句≫のテストケースと以前から実装されていたテストケースの整合性を取ること。
         static auto for_some_test_case_00()
             -> std::vector<SelectStatementDataSetElement>;
         static auto for_some_test_case_01()
@@ -135,6 +142,63 @@ inline namespace statement
         static auto for_some_test_case_03()
             -> std::vector<SelectStatementDataSetElement>;
         static auto for_some_test_case_04()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : 任意の引数によって構築した≪WHERE句≫を指定する */
+        static auto with_where_clause_of_built_by_any_construction()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪比較演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_comparison_operation()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪論理演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_logical_operation()
+            -> std::vector<SelectStatementDataSetElement>;
+
+    private:
+        /*! @brief データパターン : デフォルトコンストラクタにより構築した≪WHERE句≫を指定する */
+        static auto with_where_clause_of_built_by_default_construction()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : 非デフォルトコンストラクタにより構築した≪WHERE句≫を指定する */
+        static auto with_where_clause_of_built_by_undefault_construction()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪等値比較演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_equal_to()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪非等値比較演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_not_equal_to()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪比較演算（小なり）≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_less()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪比較演算（以下）≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_less_equal()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪比較演算（大なり）≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_greater()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪比較演算（以上）≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_greater_equal()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪IS演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_is()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪論理積演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_logical_and()
+            -> std::vector<SelectStatementDataSetElement>;
+
+        /*! @brief データパターン : ≪論理和演算≫と共に≪WHERE句≫を指定する */
+        static auto with_where_clause_and_logical_or()
             -> std::vector<SelectStatementDataSetElement>;
     };
 
@@ -154,7 +218,10 @@ inline namespace statement
                 SelectStatementDataSet::for_some_test_case_01(),
                 SelectStatementDataSet::for_some_test_case_02(),
                 SelectStatementDataSet::for_some_test_case_03(),
-                SelectStatementDataSet::for_some_test_case_04()
+                SelectStatementDataSet::for_some_test_case_04(),
+                SelectStatementDataSet::with_where_clause_of_built_by_any_construction(),
+                SelectStatementDataSet::with_where_clause_and_comparison_operation(),
+                SelectStatementDataSet::with_where_clause_and_logical_operation(),
                 // clang-format on
             };
 
@@ -175,5 +242,8 @@ inline namespace statement
 #include "./definition/select-statement-data-set.class-member.02.h++"
 #include "./definition/select-statement-data-set.class-member.03.h++"
 #include "./definition/select-statement-data-set.class-member.04.h++"
+#include "./definition/select-statement-data-set.class-member.05-with-where-clause.00.h++"
+#include "./definition/select-statement-data-set.class-member.05-with-where-clause.01.h++"
+#include "./definition/select-statement-data-set.class-member.05-with-where-clause.02.h++"
 
 #endif /* TEST__INCLUDE__SQLXX__STATEMENT__DATA_SET__SELECT_STATEMENT_DATA_SET_HXX */

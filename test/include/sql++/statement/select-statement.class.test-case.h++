@@ -12,6 +12,9 @@
 
 #include <sql++/clause/from-clause.class.h++>
 #include <sql++/clause/select-clause.class.h++>
+#include <sql++/clause/where-clause.class.h++>
+#include <sql++/expression/identifier-expression.class.h++>
+#include <sql++/expression/literal/integer-literal.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
@@ -31,9 +34,12 @@ BOOST_AUTO_TEST_SUITE(class__SelectStatement)
 
 using sqlxx::ColumnIdentifier;
 using sqlxx::FromClause;
+using sqlxx::IdentifierExpression;
+using sqlxx::IntegerLiteral;
 using sqlxx::SelectClause;
 using sqlxx::SelectStatement;
 using sqlxx::TableIdentifier;
+using sqlxx::WhereClause;
 using sqlxx::test::SelectStatementDataSet;
 
 /*!
@@ -51,7 +57,10 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
             ColumnIdentifier { "p" }.as({ "p.id" }),
             ColumnIdentifier { "name" }.as({ "p.name" })
         },
-        FromClause { TableIdentifier { "people" }.as({ "p" }) }
+        FromClause { TableIdentifier { "people" }.as({ "p" }) },
+        WhereClause {
+            IdentifierExpression { "p.id" }.equal_to(IntegerLiteral { 1234 })
+        }
     };
     // clang-format on
 
