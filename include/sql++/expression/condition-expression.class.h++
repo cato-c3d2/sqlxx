@@ -96,7 +96,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> ConditionExpression const * override;
+        virtual auto clone() const -> ConditionExpression * override;
 
     private:
         /*!
@@ -221,7 +221,7 @@ inline namespace expression
                + this->_right_expression->evaluate();
     }
 
-    auto ConditionExpression::clone() const -> ConditionExpression const *
+    auto ConditionExpression::clone() const -> ConditionExpression *
     {
         return new ConditionExpression(*this);
     }

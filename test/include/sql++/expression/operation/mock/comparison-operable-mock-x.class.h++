@@ -44,7 +44,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> ComparisonOperableMockX const * override;
+        virtual auto clone() const -> ComparisonOperableMockX * override;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -75,8 +75,7 @@ inline namespace expression
         return "'X'";
     }
 
-    auto ComparisonOperableMockX::clone() const
-        -> ComparisonOperableMockX const *
+    auto ComparisonOperableMockX::clone() const -> ComparisonOperableMockX *
     {
         return new ComparisonOperableMockX { *this };
     }

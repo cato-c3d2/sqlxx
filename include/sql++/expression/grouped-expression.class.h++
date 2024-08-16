@@ -86,7 +86,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> GroupedExpression const * override;
+        virtual auto clone() const -> GroupedExpression * override;
 
     private:
         /*!
@@ -195,7 +195,7 @@ inline namespace expression
         return "("s + inner_expression_as_string + ")"s;
     }
 
-    auto GroupedExpression::clone() const -> GroupedExpression const *
+    auto GroupedExpression::clone() const -> GroupedExpression *
     {
         return new GroupedExpression(*this);
     }
