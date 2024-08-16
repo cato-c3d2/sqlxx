@@ -40,7 +40,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> Expression const * = 0;
+        virtual auto clone() const -> Expression * = 0;
     };
 
     ////////////////////////////////////////////////////////////////////////////

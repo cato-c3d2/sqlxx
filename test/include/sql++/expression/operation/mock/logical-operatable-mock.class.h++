@@ -77,7 +77,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> LogicalOperatableMock const * override;
+        virtual auto clone() const -> LogicalOperatableMock * override;
 
     private:
         /*!
@@ -123,7 +123,7 @@ inline namespace expression
         return "L "s + operater + " R"s;
     }
 
-    auto LogicalOperatableMock::clone() const -> LogicalOperatableMock const *
+    auto LogicalOperatableMock::clone() const -> LogicalOperatableMock *
     {
         return new LogicalOperatableMock { *this };
     }

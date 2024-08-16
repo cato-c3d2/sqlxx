@@ -89,7 +89,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> BasicLiteral<Type> const * override;
+        virtual auto clone() const -> BasicLiteral<Type> * override;
 
     private:
         /*!
@@ -223,7 +223,7 @@ inline namespace expression
     }
 
     template<typename Type>
-    auto BasicLiteral<Type>::clone() const -> BasicLiteral<Type> const *
+    auto BasicLiteral<Type>::clone() const -> BasicLiteral<Type> *
     {
         return new BasicLiteral(*this);
     }

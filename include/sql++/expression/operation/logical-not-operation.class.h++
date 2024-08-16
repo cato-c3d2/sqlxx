@@ -88,7 +88,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> LogicalNotOperation const * override;
+        virtual auto clone() const -> LogicalNotOperation * override;
 
     private:
         /*!
@@ -197,7 +197,7 @@ inline namespace expression
                + operand_as_string;
     }
 
-    auto LogicalNotOperation::clone() const -> LogicalNotOperation const *
+    auto LogicalNotOperation::clone() const -> LogicalNotOperation *
     {
         return new LogicalNotOperation(*this);
     }

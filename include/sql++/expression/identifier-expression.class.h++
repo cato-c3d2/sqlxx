@@ -94,7 +94,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> IdentifierExpression const * override;
+        virtual auto clone() const -> IdentifierExpression * override;
 
     private:
         /*!
@@ -157,7 +157,7 @@ inline namespace expression
         return this->to_string();
     }
 
-    auto IdentifierExpression::clone() const -> IdentifierExpression const *
+    auto IdentifierExpression::clone() const -> IdentifierExpression *
     {
         return new IdentifierExpression(*this);
     }

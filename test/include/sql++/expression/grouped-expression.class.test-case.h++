@@ -98,10 +98,7 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
     };
 
     // 複製先のオブジェクト
-    // FIXME [要不具合修正] コンパイルエラーが発生する。
-    //       非 const オブジェクトへの複製と代入ができるように修正すること。
-    // Expression * destination = nullptr;
-    Expression const * destination = nullptr;
+    Expression * destination = nullptr;
 
     // 複製元のオブジェクトを複製し、複製先のオブジェクトへ代入する
     destination = source->clone();
