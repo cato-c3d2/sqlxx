@@ -97,11 +97,6 @@ inline namespace expression
      * @brief @c IdentifierExpression のエイリアス
      */
     using Identifier = IdentifierExpression;
-
-    /*!
-     * @brief NULL リテラルのオブジェクト
-     */
-    static NullLiteral null {};
 } // namespace expression
 
 /*!

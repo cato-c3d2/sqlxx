@@ -958,12 +958,7 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       sqlxx::null の定義場所を sql++.h++ から null-literal.class.h++ に変更すること。
-                //
-                // IdentifierExpression { "p.nickname" }.is(sqlxx::null),
-                IdentifierExpression { "p.nickname" }.is(NullLiteral { }),
+                IdentifierExpression { "p.nickname" }.is(sqlxx::null),
 
                 // 期待結果 - empty メンバ関数
                 false,
@@ -989,12 +984,7 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       sqlxx::null の定義場所を sql++.h++ から null-literal.class.h++ に変更すること。
-                //
-                // sqlxx::null.is(IdentifierExpression { "p.nickname" }),
-                NullLiteral { }.is(IdentifierExpression { "p.nickname" }),
+                sqlxx::null.is(IdentifierExpression { "p.nickname" }),
 
                 // 期待結果 - empty メンバ関数
                 false,
@@ -1020,12 +1010,7 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       sqlxx::null の定義場所を sql++.h++ から null-literal.class.h++ に変更すること。
-                //
-                // sqlxx::null.is(sqlxx::null),
-                NullLiteral { }.is(NullLiteral { }),
+                sqlxx::null.is(sqlxx::null),
 
                 // 期待結果 - empty メンバ関数
                 false,
