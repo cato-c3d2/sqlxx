@@ -23,6 +23,17 @@ inline namespace expression
      * @brief NULL リテラルを表現するクラス（エイリアス）
      */
     using NullLiteral = BasicLiteral<std::nullptr_t>;
+
+    ////////////////////////////////////////////////////////////////////////////
+    //
+    // Object definition
+    //
+    ////////////////////////////////////////////////////////////////////////////
+
+    /*!
+     * @brief NULL リテラルのオブジェクト
+     */
+    static NullLiteral null {};
 } // namespace expression
 } // namespace sqlxx
 
