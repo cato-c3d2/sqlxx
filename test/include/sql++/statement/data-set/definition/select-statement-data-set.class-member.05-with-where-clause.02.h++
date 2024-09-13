@@ -648,8 +648,6 @@ inline namespace statement
                 //     FromClause {
                 //         TableIdentifier { "people" }.as({ "p" }),
                 //     },
-                //     // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //     //       GroupedExpression クラスに logical_and メンバ関数及び logical_or メンバ関数を実装すること。
                 //     WhereClause {
                 //         sqlxx::parentheses(
                 //             IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
@@ -735,8 +733,6 @@ inline namespace statement
                 //     FromClause {
                 //         TableIdentifier { "people" }.as({ "p" }),
                 //     },
-                //     // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //     //       GroupedExpression クラスに logical_and メンバ関数及び logical_or メンバ関数を実装すること。
                 //     WhereClause {
                 //         sqlxx::parentheses(
                 //             IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)

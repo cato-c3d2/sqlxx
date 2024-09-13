@@ -9,6 +9,7 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/logical-operatable.class.h++>
 
 namespace sqlxx
 {
@@ -23,7 +24,9 @@ inline namespace expression
     /*!
      * @brief グループ化された式を表現するクラス
      */
-    class GroupedExpression : public virtual Expression
+    class GroupedExpression :
+        public virtual Expression,
+        public virtual LogicalOperatable<ConditionExpression>
     {
     public:
         /*!
