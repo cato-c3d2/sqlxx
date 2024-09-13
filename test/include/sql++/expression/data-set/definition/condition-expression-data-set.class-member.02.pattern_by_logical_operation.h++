@@ -228,44 +228,15 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       GroupedExpression クラスに logical_and メンバ関数及び logical_or メンバ関数を実装すること。
-                //
-                // sqlxx::parentheses(
-                //     IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
-                //     .logical_and(
-                //         IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
-                //     )
-                // )
-                // .logical_and(
-                //     IdentifierExpression { "p.name" }.equal_to("John Doe"s)
-                // ),
-                //
-                // NOTE [要修正] DSL 記法ではコンパイルエラーが発生するため、暫定的に非 DSL 記法でテスト対象オブジェクトを構築している。
-                ConditionExpression {
-                    OperationKind::LogicalAnd,
-                    new GroupedExpression {
-                        ConditionExpression {
-                            OperationKind::LogicalAnd,
-                            new ConditionExpression {
-                                OperationKind::GreaterEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "1901-01-01" },
-                            },
-                            new ConditionExpression {
-                                OperationKind::LessEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "2000-12-31" },
-                            },
-                        },
-                    },
-                    new ConditionExpression {
-                        OperationKind::EqualTo,
-                        new IdentifierExpression { "p.name" },
-                        new StringLiteral { "John Doe" },
-                    },
-                },
+                sqlxx::parentheses(
+                    IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
+                    .logical_and(
+                        IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
+                    )
+                )
+                .logical_and(
+                    IdentifierExpression { "p.name" }.equal_to("John Doe"s)
+                ),
 
                 // 期待結果 - empty メンバ関数
                 false,
@@ -320,59 +291,20 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       GroupedExpression クラスに logical_and メンバ関数及び logical_or メンバ関数を実装すること。
-                //
-                // sqlxx::parentheses(
-                //     IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
-                //     .logical_and(
-                //         IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
-                //     )
-                // )
-                // .logical_and(
-                //     sqlxx::parentheses(
-                //         IdentifierExpression { "p.name" }.equal_to("John Doe"s)
-                //         .logical_or(
-                //             IdentifierExpression { "p.name" }.equal_to("Jane Doe"s)
-                //         )
-                //     )
-                // ),
-                //
-                // NOTE [要修正] DSL 記法ではコンパイルエラーが発生するため、暫定的に非 DSL 記法でテスト対象オブジェクトを構築している。
-                ConditionExpression {
-                    OperationKind::LogicalAnd,
-                    new GroupedExpression {
-                        ConditionExpression {
-                            OperationKind::LogicalAnd,
-                            new ConditionExpression {
-                                OperationKind::GreaterEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "1901-01-01" },
-                            },
-                            new ConditionExpression {
-                                OperationKind::LessEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "2000-12-31" },
-                            },
-                        },
-                    },
-                    new GroupedExpression {
-                        ConditionExpression {
-                            OperationKind::LogicalOr,
-                            new ConditionExpression {
-                                OperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
-                            },
-                            new ConditionExpression {
-                                OperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "Jane Doe" },
-                            },
-                        },
-                    },
-                },
+                sqlxx::parentheses(
+                    IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
+                    .logical_and(
+                        IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
+                    )
+                )
+                .logical_and(
+                    sqlxx::parentheses(
+                        IdentifierExpression { "p.name" }.equal_to("John Doe"s)
+                        .logical_or(
+                            IdentifierExpression { "p.name" }.equal_to("Jane Doe"s)
+                        )
+                    )
+                ),
 
                 // 期待結果 - empty メンバ関数
                 false,
@@ -528,44 +460,15 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       GroupedExpression クラスに logical_and メンバ関数及び logical_or メンバ関数を実装すること。
-                //
-                // sqlxx::parentheses(
-                //     IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
-                //     .logical_and(
-                //         IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
-                //     )
-                // )
-                // .logical_or(
-                //     IdentifierExpression { "p.name" }.equal_to("John Doe"s)
-                // ),
-                //
-                // NOTE [要修正] DSL 記法ではコンパイルエラーが発生するため、暫定的に非 DSL 記法でテスト対象オブジェクトを構築している。
-                ConditionExpression {
-                    OperationKind::LogicalOr,
-                    new GroupedExpression {
-                        ConditionExpression {
-                            OperationKind::LogicalAnd,
-                            new ConditionExpression {
-                                OperationKind::GreaterEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "1901-01-01" },
-                            },
-                            new ConditionExpression {
-                                OperationKind::LessEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "2000-12-31" },
-                            },
-                        },
-                    },
-                    new ConditionExpression {
-                        OperationKind::EqualTo,
-                        new IdentifierExpression { "p.name" },
-                        new StringLiteral { "John Doe" },
-                    },
-                },
+                sqlxx::parentheses(
+                    IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
+                    .logical_and(
+                        IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
+                    )
+                )
+                .logical_or(
+                    IdentifierExpression { "p.name" }.equal_to("John Doe"s)
+                ),
 
                 // 期待結果 - empty メンバ関数
                 false,
@@ -620,59 +523,20 @@ inline namespace expression
                 },
 
                 // テスト対象オブジェクト - DSL記法
-                //
-                // FIXME [要不具合修正] コンパイルエラーが発生する。
-                //       GroupedExpression クラスに logical_and メンバ関数及び logical_or メンバ関数を実装すること。
-                //
-                // sqlxx::parentheses(
-                //     IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
-                //     .logical_and(
-                //         IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
-                //     )
-                // )
-                // .logical_or(
-                //     sqlxx::parentheses(
-                //         IdentifierExpression { "p.name" }.equal_to("John Doe"s)
-                //         .logical_or(
-                //             IdentifierExpression { "p.name" }.equal_to("Jane Doe"s)
-                //         )
-                //     )
-                // ),
-                //
-                // NOTE [要修正] DSL 記法ではコンパイルエラーが発生するため、暫定的に非 DSL 記法でテスト対象オブジェクトを構築している。
-                ConditionExpression {
-                    OperationKind::LogicalOr,
-                    new GroupedExpression {
-                        ConditionExpression {
-                            OperationKind::LogicalAnd,
-                            new ConditionExpression {
-                                OperationKind::GreaterEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "1901-01-01" },
-                            },
-                            new ConditionExpression {
-                                OperationKind::LessEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "2000-12-31" },
-                            },
-                        },
-                    },
-                    new GroupedExpression {
-                        ConditionExpression {
-                            OperationKind::LogicalOr,
-                            new ConditionExpression {
-                                OperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
-                            },
-                            new ConditionExpression {
-                                OperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "Jane Doe" },
-                            },
-                        },
-                    },
-                },
+                sqlxx::parentheses(
+                    IdentifierExpression { "p.birth_day" }.greater_equal("1901-01-01"s)
+                    .logical_and(
+                        IdentifierExpression { "p.birth_day" }.less_equal("2000-12-31"s)
+                    )
+                )
+                .logical_or(
+                    sqlxx::parentheses(
+                        IdentifierExpression { "p.name" }.equal_to("John Doe"s)
+                        .logical_or(
+                            IdentifierExpression { "p.name" }.equal_to("Jane Doe"s)
+                        )
+                    )
+                ),
 
                 // 期待結果 - empty メンバ関数
                 false,
