@@ -172,7 +172,19 @@ inline namespace expression
 
     auto LogicalNotOperation::empty() const -> bool
     {
-        return this->_operand == nullptr;
+        if (this->_operand == nullptr) {
+            return true;
+        }
+        try {
+            // TODO [要検討] このオブジェクトが空であるか否かの判定について、
+            //      ≪内部の式≫の evaluate メンバ関数の戻り値で判定せず、
+            //      直接、≪内部の式≫が空であるか否かを判定すべき。
+            //      従って、 Expression::empty メンバ関数等を実装すべき。
+            return this->_operand->evaluate().empty();
+        } catch (std::runtime_error &) {
+            // NOTE SQLの文法エラーが発生した場合、このオブジェクトが空であるとみなす
+            return true;
+        }
     }
 
     auto LogicalNotOperation::to_string() const -> std::string
