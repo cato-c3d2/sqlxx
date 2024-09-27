@@ -707,10 +707,8 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                // FIXME [要不具合修正] テスト実行時に例外が発生する。
                 LogicalNotOperation {
-                    // NOTE [要修正] テスト実行時に例外が発生するため、暫定的にコンストラクタの引数をコメントアウトしている。
-                    // ConditionExpression {},
+                    ConditionExpression {},
                 },
 
                 // 期待結果 - empty メンバ関数
@@ -803,10 +801,8 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                // FIXME [要不具合修正] テスト実行時に例外が発生する。
                 LogicalNotOperation {
-                    // NOTE [要修正] テスト実行時に例外が発生するため、暫定的にコンストラクタの引数をコメントアウトしている。
-                    // GroupedExpression {},
+                    GroupedExpression {},
                 },
 
                 // 期待結果 - empty メンバ関数
