@@ -5,7 +5,6 @@
 #ifndef SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
 #define SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
 
-#include <stdexcept>
 #include <string>
 
 namespace sqlxx
@@ -192,9 +191,7 @@ inline namespace expression
             return OperatorSymbol::IS;
         case OperationKind::None:
         default:
-            throw std::logic_error(
-                "'operation_type' is unknown value! operation_type : "
-                + std::to_string(static_cast<int>(operation_type)));
+            return "";
         }
     }
 } // namespace expression
