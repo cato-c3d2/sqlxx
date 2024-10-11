@@ -20,6 +20,8 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
+    // TODO [要不具合修正] LogicalNotOperation クラスを ConditionExpression の派生クラスに変更すること。
+
     /*!
      * @brief 論理否定演算式を表現するクラス
      */
