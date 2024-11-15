@@ -104,9 +104,7 @@ inline namespace expression
                 false,
 
                 // 期待結果 - to_string メンバ関数
-                // FIXME [要不具合修正] 実行結果と期待結果が一致しない。
-                // "FALSE",
-                "false",
+                "FALSE",
             },
 
             // _1
@@ -123,9 +121,7 @@ inline namespace expression
                 false,
 
                 // 期待結果 - to_string メンバ関数
-                // FIXME [要不具合修正] 実行結果と期待結果が一致しない。
-                // "FALSE",
-                "false",
+                "FALSE",
             },
 
             // _2
@@ -142,9 +138,7 @@ inline namespace expression
                 true,
 
                 // 期待結果 - to_string メンバ関数
-                // FIXME [要不具合修正] 実行結果と期待結果が一致しない。
-                // "TRUE",
-                "true",
+                "TRUE",
             },
         };
         // clang-format on

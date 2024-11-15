@@ -164,7 +164,7 @@ inline namespace expression
     template<>
     auto BasicLiteral<bool>::to_string() const -> std::string
     {
-        return this->_inner_value ? "true" : "false";
+        return this->_inner_value ? "TRUE" : "FALSE";
     }
 
     /*!
