@@ -38,6 +38,17 @@ inline namespace expression
 
     public:
         /*!
+         * @brief 論理値の文字列表現 - 真
+         */
+        static constexpr auto TRUE_VALUE_AS_STRING = "TRUE";
+
+        /*!
+         * @brief 論理値の文字列表現 - 偽
+         */
+        static constexpr auto FALSE_VALUE_AS_STRING = "FALSE";
+
+    public:
+        /*!
          * @brief デフォルトコンストラクタ
          */
         BasicLiteral();
@@ -164,7 +175,8 @@ inline namespace expression
     template<>
     auto BasicLiteral<bool>::to_string() const -> std::string
     {
-        return this->_inner_value ? "TRUE" : "FALSE";
+        return this->_inner_value ? BasicLiteral<bool>::TRUE_VALUE_AS_STRING
+                                  : BasicLiteral<bool>::FALSE_VALUE_AS_STRING;
     }
 
     /*!
