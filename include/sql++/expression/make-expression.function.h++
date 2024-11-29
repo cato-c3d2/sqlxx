@@ -41,7 +41,7 @@ inline namespace expression
      */
     template<typename Type>
     auto make_expression(Type expression_or_literal_inner_value)
-        -> Expression const *;
+        -> Expression *;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -72,8 +72,7 @@ inline namespace expression
     } // namespace
 
     template<typename Type>
-    auto make_expression(Type expression_or_literal_inner_value)
-        -> Expression const *
+    auto make_expression(Type expression_or_literal_inner_value) -> Expression *
     {
         return new typename GetExpressionType<Type>::ExpressionType {
             expression_or_literal_inner_value

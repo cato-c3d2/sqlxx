@@ -42,7 +42,7 @@ inline namespace expression
          * @return 等値比較演算式
          */
         template<typename Type>
-        auto equal_to(Type operand) const -> ConditionExpression const;
+        auto equal_to(Type operand) const -> ConditionExpression;
 
         /*!
          * @brief 非等値比較演算式を生成する
@@ -58,7 +58,7 @@ inline namespace expression
          * @return 非等値比較演算式
          */
         template<typename Type>
-        auto not_equal_to(Type operand) const -> ConditionExpression const;
+        auto not_equal_to(Type operand) const -> ConditionExpression;
 
         /*!
          * @brief 比較演算式（小なり）を生成する
@@ -74,7 +74,7 @@ inline namespace expression
          * @return 比較演算式（小なり）
          */
         template<typename Type>
-        auto less(Type operand) const -> ConditionExpression const;
+        auto less(Type operand) const -> ConditionExpression;
 
         /*!
          * @brief 比較演算式（以下）を生成する
@@ -90,7 +90,7 @@ inline namespace expression
          * @return 比較演算式（以下）
          */
         template<typename Type>
-        auto less_equal(Type operand) const -> ConditionExpression const;
+        auto less_equal(Type operand) const -> ConditionExpression;
 
         /*!
          * @brief 比較演算式（大なり）を生成する
@@ -106,7 +106,7 @@ inline namespace expression
          * @return 比較演算式（大なり）
          */
         template<typename Type>
-        auto greater(Type operand) const -> ConditionExpression const;
+        auto greater(Type operand) const -> ConditionExpression;
 
         /*!
          * @brief 比較演算式（以上）を生成する
@@ -122,7 +122,7 @@ inline namespace expression
          * @return 比較演算式（以上）
          */
         template<typename Type>
-        auto greater_equal(Type operand) const -> ConditionExpression const;
+        auto greater_equal(Type operand) const -> ConditionExpression;
 
         /*!
          * @brief IS 演算式を生成する
@@ -135,7 +135,7 @@ inline namespace expression
          * @return IS 演算式
          */
         template<typename Type>
-        auto is(Type operand) const -> ConditionExpression const;
+        auto is(Type operand) const -> ConditionExpression;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -145,8 +145,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     template<typename Type>
-    auto ComparisonOperable::equal_to(Type operand) const
-        -> ConditionExpression const
+    auto ComparisonOperable::equal_to(Type operand) const -> ConditionExpression
     {
         return ConditionExpression { OperationKind::EqualTo,
                                      this->clone(),
@@ -155,7 +154,7 @@ inline namespace expression
 
     template<typename Type>
     auto ComparisonOperable::not_equal_to(Type operand) const
-        -> ConditionExpression const
+        -> ConditionExpression
     {
         return ConditionExpression { OperationKind::NotEqualTo,
                                      this->clone(),
@@ -163,8 +162,7 @@ inline namespace expression
     }
 
     template<typename Type>
-    auto ComparisonOperable::less(Type operand) const
-        -> ConditionExpression const
+    auto ComparisonOperable::less(Type operand) const -> ConditionExpression
     {
         return ConditionExpression { OperationKind::Less,
                                      this->clone(),
@@ -173,7 +171,7 @@ inline namespace expression
 
     template<typename Type>
     auto ComparisonOperable::less_equal(Type operand) const
-        -> ConditionExpression const
+        -> ConditionExpression
     {
         return ConditionExpression { OperationKind::LessEqual,
                                      this->clone(),
@@ -181,8 +179,7 @@ inline namespace expression
     }
 
     template<typename Type>
-    auto ComparisonOperable::greater(Type operand) const
-        -> ConditionExpression const
+    auto ComparisonOperable::greater(Type operand) const -> ConditionExpression
     {
         return ConditionExpression { OperationKind::Greater,
                                      this->clone(),
@@ -191,7 +188,7 @@ inline namespace expression
 
     template<typename Type>
     auto ComparisonOperable::greater_equal(Type operand) const
-        -> ConditionExpression const
+        -> ConditionExpression
     {
         return ConditionExpression { OperationKind::GreaterEqual,
                                      this->clone(),
@@ -199,7 +196,7 @@ inline namespace expression
     }
 
     template<typename Type>
-    auto ComparisonOperable::is(Type operand) const -> ConditionExpression const
+    auto ComparisonOperable::is(Type operand) const -> ConditionExpression
     {
         return ConditionExpression { OperationKind::Is,
                                      this->clone(),

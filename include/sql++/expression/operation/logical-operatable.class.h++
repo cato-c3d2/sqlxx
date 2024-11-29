@@ -44,7 +44,7 @@ inline namespace expression
          * @return 論理積演算式
          */
         auto logical_and(Expression const & operand) const
-            -> ConditionExpressionType const;
+            -> ConditionExpressionType;
 
         /*!
          * @brief 論理和演算式を生成する
@@ -60,7 +60,7 @@ inline namespace expression
          * @return 論理和演算式
          */
         auto logical_or(Expression const & operand) const
-            -> ConditionExpressionType const;
+            -> ConditionExpressionType;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -71,7 +71,7 @@ inline namespace expression
 
     template<typename ConditionExpressionType>
     auto LogicalOperatable<ConditionExpressionType>::logical_and(
-        Expression const & operand) const -> ConditionExpressionType const
+        Expression const & operand) const -> ConditionExpressionType
     {
         return ConditionExpressionType { OperationKind::LogicalAnd,
                                          this->clone(),
@@ -80,7 +80,7 @@ inline namespace expression
 
     template<typename ConditionExpressionType>
     auto LogicalOperatable<ConditionExpressionType>::logical_or(
-        Expression const & operand) const -> ConditionExpressionType const
+        Expression const & operand) const -> ConditionExpressionType
     {
         return ConditionExpressionType { OperationKind::LogicalOr,
                                          this->clone(),
