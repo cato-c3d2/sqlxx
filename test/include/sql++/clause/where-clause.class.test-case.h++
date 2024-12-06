@@ -11,8 +11,8 @@
 #include <boost/test/data/test_case.hpp>
 
 #include <sql++/clause/where-clause.class.h++>
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 
 #include "./data-set/where-clause-data-set.class.h++"
 
@@ -26,7 +26,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__clause)
 
 BOOST_AUTO_TEST_SUITE(class__WhereClause)
 
-using sqlxx::ConditionExpression;
+using sqlxx::BinaryOperation;
 using sqlxx::IdentifierExpression;
 using sqlxx::WhereClause;
 using sqlxx::test::WhereClauseDataSet;
@@ -42,7 +42,8 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
     // clang-format off
     WhereClause const source      = {}; // コピー元のオブジェクト
     WhereClause       destination = {   // コピー先のオブジェクト
-        ConditionExpression { IdentifierExpression { "p.id" }.equal_to(1234) }
+        // TODO FIXME : BinaryOperation のコピーコンストラクタの呼び出しは不要
+        BinaryOperation { IdentifierExpression { "p.id" }.equal_to(1234) }
     };
     // clang-format on
 

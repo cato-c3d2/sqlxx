@@ -2,16 +2,18 @@
  * @file condition-expression-data-set.class-member.01.pattern_by_comparison_operation.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : condition-expression*.h++ => binary-operation*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_01_PATTERN_BY_COMPARISON_OPERATION_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_01_PATTERN_BY_COMPARISON_OPERATION_HXX
 
 #include <iterator>
 #include <vector>
 
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/literal/null-literal.class.h++>
 #include <sql++/expression/literal/string-literal.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 #include "../condition-expression-data-set-element.class.h++"
@@ -30,7 +32,7 @@ inline namespace expression
      * [ データパターン表 ] @n
      * <pre>
      * ----------------------------------------
-     * |     | ConditionExpression            |
+     * |     | BinaryOperation                |
      * |     |--------------------------------|
      * |     | operater | left     | right    |
      * |=====|==========|==========|==========|
@@ -112,25 +114,25 @@ inline namespace expression
      * @li _29 ~ _32 : @link pattern_by_greater_equal() @endlink
      * @li _33 ~ _36 : @link pattern_by_is()            @endlink
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_comparison_operation()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_comparison_operation()
+        -> std::vector<BinaryOperationDataSetElement>
     {
-        std::vector<std::vector<ConditionExpressionDataSetElement>>
+        std::vector<std::vector<BinaryOperationDataSetElement>>
             data_set_parts = {
                 // clang-format off
-                ConditionExpressionDataSet::pattern_by_equal_to(),
-                ConditionExpressionDataSet::pattern_by_not_equal_to(),
-                ConditionExpressionDataSet::pattern_by_less(),
-                ConditionExpressionDataSet::pattern_by_less_equal(),
-                ConditionExpressionDataSet::pattern_by_greater(),
-                ConditionExpressionDataSet::pattern_by_greater_equal(),
-                ConditionExpressionDataSet::pattern_by_is(),
+                BinaryOperationDataSet::pattern_by_equal_to(),
+                BinaryOperationDataSet::pattern_by_not_equal_to(),
+                BinaryOperationDataSet::pattern_by_less(),
+                BinaryOperationDataSet::pattern_by_less_equal(),
+                BinaryOperationDataSet::pattern_by_greater(),
+                BinaryOperationDataSet::pattern_by_greater_equal(),
+                BinaryOperationDataSet::pattern_by_is(),
                 // clang-format on
             };
 
-        auto data_set = std::vector<ConditionExpressionDataSetElement>();
+        auto data_set = std::vector<BinaryOperationDataSetElement>();
         for (auto && data_set_part : data_set_parts) {
             data_set.insert(
                 std::end(data_set),
@@ -142,17 +144,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪等値比較演算≫ ( @c equal_to )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_equal_to()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_equal_to()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -161,14 +163,14 @@ inline namespace expression
             // _9
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new IdentifierExpression { "p.name" },
                     new IdentifierExpression { "p.nickname" },
@@ -188,14 +190,14 @@ inline namespace expression
             // _10
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new IdentifierExpression { "p.name" },
                     new StringLiteral { "John Doe" },
@@ -214,14 +216,14 @@ inline namespace expression
             // _11
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new StringLiteral { "John Doe" },
                     new IdentifierExpression { "p.name" },
@@ -240,14 +242,14 @@ inline namespace expression
             // _12
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new StringLiteral { "john doe" },
                     new StringLiteral { "JOHN DOE" },
@@ -268,17 +270,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪非等値比較演算≫ ( @c not_equal_to )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_not_equal_to()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_not_equal_to()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -287,14 +289,14 @@ inline namespace expression
             // _13
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪非等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new IdentifierExpression { "p.name" },
                     new IdentifierExpression { "p.nickname" },
@@ -314,14 +316,14 @@ inline namespace expression
             // _14
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪非等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new IdentifierExpression { "p.name" },
                     new StringLiteral { "John Doe" },
@@ -340,14 +342,14 @@ inline namespace expression
             // _15
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪非等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new StringLiteral { "John Doe" },
                     new IdentifierExpression { "p.name" },
@@ -366,14 +368,14 @@ inline namespace expression
             // _16
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪非等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new StringLiteral { "john doe" },
                     new StringLiteral { "JOHN DOE" },
@@ -394,17 +396,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（小なり）≫ ( @c less )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_less()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_less()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -413,14 +415,14 @@ inline namespace expression
             // _17
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（小なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new IdentifierExpression { "p.created_at" },
                     new IdentifierExpression { "p.updated_at" },
@@ -440,14 +442,14 @@ inline namespace expression
             // _18
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（小なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new IdentifierExpression { "p.created_at" },
                     new StringLiteral { "2001-01-01" },
@@ -466,14 +468,14 @@ inline namespace expression
             // _19
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（小なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new StringLiteral { "2001-01-01" },
                     new IdentifierExpression { "p.created_at" },
@@ -492,14 +494,14 @@ inline namespace expression
             // _20
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（小なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new StringLiteral { "2000-12-31" },
                     new StringLiteral { "2001-01-01" },
@@ -520,17 +522,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（以下）≫ ( @c less_equal )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_less_equal()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_less_equal()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -539,14 +541,14 @@ inline namespace expression
             // _21
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以下）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new IdentifierExpression { "p.created_at" },
                     new IdentifierExpression { "p.updated_at" },
@@ -566,14 +568,14 @@ inline namespace expression
             // _22
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以下）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new IdentifierExpression { "p.created_at" },
                     new StringLiteral { "2001-01-01" },
@@ -592,14 +594,14 @@ inline namespace expression
             // _23
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以下）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new StringLiteral { "2001-01-01" },
                     new IdentifierExpression { "p.created_at" },
@@ -618,14 +620,14 @@ inline namespace expression
             // _24
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以下）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new StringLiteral { "2000-12-31" },
                     new StringLiteral { "2001-01-01" },
@@ -646,17 +648,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（大なり）≫ ( @c greater )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_greater()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_greater()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -665,14 +667,14 @@ inline namespace expression
             // _25
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（大なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new IdentifierExpression { "p.created_at" },
                     new IdentifierExpression { "p.updated_at" },
@@ -692,14 +694,14 @@ inline namespace expression
             // _26
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（大なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new IdentifierExpression { "p.created_at" },
                     new StringLiteral { "2001-01-01" },
@@ -718,14 +720,14 @@ inline namespace expression
             // _27
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（大なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new StringLiteral { "2001-01-01" },
                     new IdentifierExpression { "p.created_at" },
@@ -744,14 +746,14 @@ inline namespace expression
             // _28
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（大なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new StringLiteral { "2001-01-01" },
                     new StringLiteral { "2000-12-31" },
@@ -772,17 +774,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（以上）≫ ( @c greater_equal )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_greater_equal()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_greater_equal()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -791,14 +793,14 @@ inline namespace expression
             // _29
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以上）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new IdentifierExpression { "p.created_at" },
                     new IdentifierExpression { "p.updated_at" },
@@ -818,14 +820,14 @@ inline namespace expression
             // _30
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以上）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new IdentifierExpression { "p.created_at" },
                     new StringLiteral { "2001-01-01" },
@@ -844,14 +846,14 @@ inline namespace expression
             // _31
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以上）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new StringLiteral { "2001-01-01" },
                     new IdentifierExpression { "p.created_at" },
@@ -871,14 +873,14 @@ inline namespace expression
             // _32
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪比較演算（以上）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new StringLiteral { "2001-01-01" },
                     new StringLiteral { "2000-12-31" },
@@ -899,17 +901,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪IS演算≫ ( @c is )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_is()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_is()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -918,14 +920,14 @@ inline namespace expression
             // _33
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪IS演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new IdentifierExpression { "p.nickname" },
                     new IdentifierExpression { "p.nickname" },
@@ -944,14 +946,14 @@ inline namespace expression
             // _34
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪IS演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new IdentifierExpression { "p.nickname" },
                     new NullLiteral { },
@@ -970,14 +972,14 @@ inline namespace expression
             // _35
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪IS演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new NullLiteral { },
                     new IdentifierExpression { "p.nickname" },
@@ -996,14 +998,14 @@ inline namespace expression
             // _36
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪IS演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new NullLiteral { },
                     new NullLiteral { },

@@ -7,7 +7,7 @@
 
 #include <vector>
 
-#include <sql++/expression/condition-expression.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/comparison-operable.class.h++>
 
 #include "../mock/comparison-operable-mock-x.class.h++"
@@ -95,49 +95,49 @@ inline namespace expression
                 new ComparisonOperableMockX {},
 
                 // 期待結果 - equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - is メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockX {},
@@ -158,49 +158,49 @@ inline namespace expression
                 new ComparisonOperableMockY {},
 
                 // 期待結果 - equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - is メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new ComparisonOperableMockX {},
                     new ComparisonOperableMockY {},
@@ -221,49 +221,49 @@ inline namespace expression
                 new ComparisonOperableMockX {},
 
                 // 期待結果 - equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - is メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockX {},
@@ -284,49 +284,49 @@ inline namespace expression
                 new ComparisonOperableMockY {},
 
                 // 期待結果 - equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::NotEqualTo,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Less,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LessEqual,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Greater,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::GreaterEqual,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - is メンバ関数
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::Is,
                     new ComparisonOperableMockY {},
                     new ComparisonOperableMockY {},

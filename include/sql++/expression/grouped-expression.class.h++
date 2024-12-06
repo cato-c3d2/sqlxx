@@ -9,6 +9,7 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/logical-operatable.class.h++>
 
 namespace sqlxx
@@ -26,7 +27,7 @@ inline namespace expression
      */
     class GroupedExpression :
         public virtual Expression,
-        public virtual LogicalOperatable<ConditionExpression>
+        public virtual LogicalOperatable<BinaryOperation>
     {
     public:
         /*!

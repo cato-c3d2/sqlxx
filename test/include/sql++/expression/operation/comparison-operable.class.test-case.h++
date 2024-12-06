@@ -8,7 +8,7 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/expression/condition-expression.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/comparison-operable.class.h++>
 
 #include "./data-set/comparison-operable-data-set.class.h++"
@@ -25,8 +25,8 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__expression)
 
 BOOST_AUTO_TEST_SUITE(class__ComparisonOperable)
 
+using sqlxx::BinaryOperation;
 using sqlxx::ComparisonOperable;
-using sqlxx::ConditionExpression;
 using sqlxx::test::ComparisonOperableDataSet;
 using sqlxx::test::ComparisonOperableMockX;
 using sqlxx::test::ComparisonOperableMockY;
@@ -55,12 +55,12 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation =
+    BinaryOperation const expectation =
         data_set_element.expectation_of_equal_to;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {
@@ -102,12 +102,12 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation =
+    BinaryOperation const expectation =
         data_set_element.expectation_of_not_equal_to;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {
@@ -149,12 +149,11 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation =
-        data_set_element.expectation_of_less;
+    BinaryOperation const expectation = data_set_element.expectation_of_less;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {
@@ -196,12 +195,12 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation =
+    BinaryOperation const expectation =
         data_set_element.expectation_of_less_equal;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {
@@ -243,12 +242,11 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation =
-        data_set_element.expectation_of_greater;
+    BinaryOperation const expectation = data_set_element.expectation_of_greater;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {
@@ -290,12 +288,12 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation =
+    BinaryOperation const expectation =
         data_set_element.expectation_of_greater_equal;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {
@@ -337,11 +335,11 @@ BOOST_DATA_TEST_CASE(
     ComparisonOperable const * argument = data_set_element.argument;
 
     // テスト対象メンバ関数の期待結果
-    ConditionExpression const expectation = data_set_element.expectation_of_is;
+    BinaryOperation const expectation = data_set_element.expectation_of_is;
 
     // テスト対象メンバ関数の引数となるオブジェクトの型を X または Y に変換し、
     // テスト対象メンバ関数を実行する
-    ConditionExpression actual;
+    BinaryOperation actual;
     if (ComparisonOperableMockX const * x =
             dynamic_cast<ComparisonOperableMockX const *>(argument);
         x != nullptr) {

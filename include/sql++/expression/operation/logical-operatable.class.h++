@@ -24,9 +24,9 @@ inline namespace expression
      * @brief 式オブジェクトの論理演算子の機能を提供するクラス
      *
      * NOTE 相互参照によるコンパイルエラーを避けるために、
-     *      @c ConditionExpression を型パラメータとして受け取るように実装している。 @n
+     *      @c BinaryOperation を型パラメータとして受け取るように実装している。 @n
      */
-    template<typename ConditionExpressionType>
+    template<typename BinaryOperationType>
     class LogicalOperatable : public virtual Expression
     {
     public:
@@ -44,7 +44,7 @@ inline namespace expression
          * @return 論理積演算式
          */
         auto logical_and(Expression const & operand) const
-            -> ConditionExpressionType;
+            -> BinaryOperationType;
 
         /*!
          * @brief 論理和演算式を生成する
@@ -60,7 +60,7 @@ inline namespace expression
          * @return 論理和演算式
          */
         auto logical_or(Expression const & operand) const
-            -> ConditionExpressionType;
+            -> BinaryOperationType;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -69,22 +69,22 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    template<typename ConditionExpressionType>
-    auto LogicalOperatable<ConditionExpressionType>::logical_and(
-        Expression const & operand) const -> ConditionExpressionType
+    template<typename BinaryOperationType>
+    auto LogicalOperatable<BinaryOperationType>::logical_and(
+        Expression const & operand) const -> BinaryOperationType
     {
-        return ConditionExpressionType { OperationKind::LogicalAnd,
-                                         this->clone(),
-                                         operand.clone() };
+        return BinaryOperationType { OperationKind::LogicalAnd,
+                                     this->clone(),
+                                     operand.clone() };
     }
 
-    template<typename ConditionExpressionType>
-    auto LogicalOperatable<ConditionExpressionType>::logical_or(
-        Expression const & operand) const -> ConditionExpressionType
+    template<typename BinaryOperationType>
+    auto LogicalOperatable<BinaryOperationType>::logical_or(
+        Expression const & operand) const -> BinaryOperationType
     {
-        return ConditionExpressionType { OperationKind::LogicalOr,
-                                         this->clone(),
-                                         operand.clone() };
+        return BinaryOperationType { OperationKind::LogicalOr,
+                                     this->clone(),
+                                     operand.clone() };
     }
 } // namespace expression
 } // namespace sqlxx

@@ -8,7 +8,6 @@
 #include <limits>
 #include <vector>
 
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/literal/boolean-literal.class.h++>
@@ -16,6 +15,7 @@
 #include <sql++/expression/literal/null-literal.class.h++>
 #include <sql++/expression/literal/real-number-literal.class.h++>
 #include <sql++/expression/literal/string-literal.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/logical-not-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
@@ -682,7 +682,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : 条件式 ( @c ConditionExpression )
+     * @li @c expression : ≪条件式≫(≪二項演算式≫( @c BinaryOperation ))
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -702,7 +702,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト
                 LogicalNotOperation {
-                    ConditionExpression {},
+                    BinaryOperation {},
                 },
 
                 // 期待結果 - empty メンバ関数
@@ -723,7 +723,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト
                 LogicalNotOperation {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.id" },
                         new IntegerLiteral { 1234 },
@@ -748,14 +748,14 @@ inline namespace expression
             {
                 // テスト対象オブジェクト
                 LogicalNotOperation {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::LogicalAnd,
-                        new ConditionExpression {
+                        new BinaryOperation {
                             OperationKind::EqualTo,
                             new IdentifierExpression { "p.name" },
                             new StringLiteral { "John Doe" },
                         },
-                        new ConditionExpression {
+                        new BinaryOperation {
                             OperationKind::LessEqual,
                             new IdentifierExpression { "p.birth_day" },
                             new StringLiteral { "2000-12-31" },
@@ -818,7 +818,7 @@ inline namespace expression
                 // テスト対象オブジェクト
                 LogicalNotOperation {
                     GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::EqualTo,
                             new IdentifierExpression { "p.id" },
                             new IntegerLiteral { 1234 },
@@ -845,14 +845,14 @@ inline namespace expression
                 // テスト対象オブジェクト
                 LogicalNotOperation {
                     GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::EqualTo,
                                 new IdentifierExpression { "p.name" },
                                 new StringLiteral { "John Doe" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },

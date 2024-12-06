@@ -2,16 +2,18 @@
  * @file condition-expression-data-set.class-member.02.pattern_by_logical_operation.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : condition-expression*.h++ => binary-operation*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_02_PATTERN_BY_LOGICAL_OPERATION_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_02_PATTERN_BY_LOGICAL_OPERATION_HXX
 
 #include <iterator>
 #include <vector>
 
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/literal/string-literal.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 #include "../condition-expression-data-set-element.class.h++"
@@ -30,7 +32,7 @@ inline namespace expression
      * [ データパターン表 ] @n
      * <pre>
      * ----------------------------------------
-     * |     | ConditionExpression            |
+     * |     | BinaryOperation                |
      * |     |--------------------------------|
      * |     | operater | left     | right    |
      * |=====|==========|==========|==========|
@@ -62,20 +64,20 @@ inline namespace expression
      * @li _37 ~ _40 : @link pattern_by_logical_and() @endlink
      * @li _41 ~ _44 : @link pattern_by_logical_or()  @endlink
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_logical_operation()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_logical_operation()
+        -> std::vector<BinaryOperationDataSetElement>
     {
-        std::vector<std::vector<ConditionExpressionDataSetElement>>
+        std::vector<std::vector<BinaryOperationDataSetElement>>
             data_set_parts = {
                 // clang-format off
-                ConditionExpressionDataSet::pattern_by_logical_and(),
-                ConditionExpressionDataSet::pattern_by_logical_or(),
+                BinaryOperationDataSet::pattern_by_logical_and(),
+                BinaryOperationDataSet::pattern_by_logical_or(),
                 // clang-format on
             };
 
-        auto data_set = std::vector<ConditionExpressionDataSetElement>();
+        auto data_set = std::vector<BinaryOperationDataSetElement>();
         for (auto && data_set_part : data_set_parts) {
             data_set.insert(
                 std::end(data_set),
@@ -87,17 +89,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪論理積演算≫ ( @c logical_and )
      * @li @c left     : ≪条件式≫ ( @c ConditionExpression ) or
      *                   ≪グループ化された式≫ ( @c GroupedExpression )
      * @li @c right    : ≪条件式≫ ( @c ConditionExpression ) or
      *                   ≪グループ化された式≫ ( @c GroupedExpression )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_logical_and()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_logical_and()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -106,21 +108,21 @@ inline namespace expression
             // _37
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理積演算≫
             //     + left     : ≪条件式≫
             //     + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalAnd,
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::GreaterEqual,
                         new IdentifierExpression { "p.birth_day" },
                         new StringLiteral { "1901-01-01" },
                     },
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::LessEqual,
                         new IdentifierExpression { "p.birth_day" },
                         new StringLiteral { "2000-12-31" },
@@ -143,29 +145,29 @@ inline namespace expression
             // _38
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理積演算≫
             //     + left     : ≪条件式≫
             //     + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalAnd,
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
                     },
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
@@ -196,31 +198,31 @@ inline namespace expression
             // _39
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理積演算≫
             //     + left     : ≪グループ化された式≫
             //     + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalAnd,
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
                             },
                         },
                     },
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
@@ -249,24 +251,24 @@ inline namespace expression
             // _40
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理積演算≫
             //     + left     : ≪グループ化された式≫
             //     + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalAnd,
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
@@ -274,14 +276,14 @@ inline namespace expression
                         },
                     },
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalOr,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::EqualTo,
                                 new IdentifierExpression { "p.name" },
                                 new StringLiteral { "John Doe" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::EqualTo,
                                 new IdentifierExpression { "p.name" },
                                 new StringLiteral { "Jane Doe" },
@@ -319,17 +321,17 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪論理和演算≫ ( @c logical_or )
      * @li @c left     : ≪条件式≫ ( @c ConditionExpression ) or
      *                   ≪グループ化された式≫ ( @c GroupedExpression )
      * @li @c right    : ≪条件式≫ ( @c ConditionExpression ) or
      *                   ≪グループ化された式≫ ( @c GroupedExpression )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_logical_or()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_logical_or()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         using namespace std::literals::string_literals;
 
@@ -338,21 +340,21 @@ inline namespace expression
             // _41
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理和演算≫
             //     + left     : ≪条件式≫
             //     + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalOr,
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
                     },
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "Jane Doe" },
@@ -375,29 +377,29 @@ inline namespace expression
             // _42
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理和演算≫
             //     + left     : ≪条件式≫
             //     + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalOr,
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
                     },
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
@@ -428,31 +430,31 @@ inline namespace expression
             // _43
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理和演算≫
             //     + left     : ≪グループ化された式≫
             //     + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalOr,
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
                             },
                         },
                     },
-                    new ConditionExpression {
+                    new BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
@@ -481,24 +483,24 @@ inline namespace expression
             // _44
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : ≪論理和演算≫
             //     + left     : ≪グループ化された式≫
             //     + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::LogicalOr,
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalAnd,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
@@ -506,14 +508,14 @@ inline namespace expression
                         },
                     },
                     new GroupedExpression {
-                        ConditionExpression {
+                        BinaryOperation {
                             OperationKind::LogicalOr,
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::EqualTo,
                                 new IdentifierExpression { "p.name" },
                                 new StringLiteral { "John Doe" },
                             },
-                            new ConditionExpression {
+                            new BinaryOperation {
                                 OperationKind::EqualTo,
                                 new IdentifierExpression { "p.name" },
                                 new StringLiteral { "Jane Doe" },

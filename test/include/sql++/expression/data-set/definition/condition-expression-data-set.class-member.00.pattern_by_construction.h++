@@ -2,6 +2,8 @@
  * @file condition-expression-data-set.class-member.00.pattern_by_construction.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : condition-expression*.h++ => binary-operation*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX
 
@@ -9,9 +11,9 @@
 #include <optional>
 #include <vector>
 
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/literal/integer-literal.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 #include "../condition-expression-data-set-element.class.h++"
@@ -30,7 +32,7 @@ inline namespace expression
      * [ データパターン表 ] @n
      * <pre>
      * ----------------------------------------
-     * |     | ConditionExpression            |
+     * |     | BinaryOperation                |
      * |     |--------------------------------|
      * |     | operater | left     | right    |
      * |=====|==========|==========|==========|
@@ -65,20 +67,20 @@ inline namespace expression
      * @li      _0 : @link pattern_by_default_construction()   @endlink
      * @li _1 ~ _8 : @link pattern_by_undefault_construction() @endlink
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_construction()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_construction()
+        -> std::vector<BinaryOperationDataSetElement>
     {
-        std::vector<std::vector<ConditionExpressionDataSetElement>>
+        std::vector<std::vector<BinaryOperationDataSetElement>>
             data_set_parts = {
                 // clang-format off
-                ConditionExpressionDataSet::pattern_by_default_construction(),
-                ConditionExpressionDataSet::pattern_by_undefault_construction(),
+                BinaryOperationDataSet::pattern_by_default_construction(),
+                BinaryOperationDataSet::pattern_by_undefault_construction(),
                 // clang-format on
             };
 
-        auto data_set = std::vector<ConditionExpressionDataSetElement>();
+        auto data_set = std::vector<BinaryOperationDataSetElement>();
         for (auto && data_set_part : data_set_parts) {
             data_set.insert(
                 std::end(data_set),
@@ -90,23 +92,23 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression : デフォルトコンストラクタにより構築したオブジェクト
+     * @c BinaryOperation : デフォルトコンストラクタにより構築したオブジェクト
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_default_construction()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_default_construction()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         // clang-format off
         return {
             // _0
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression : デフォルトコンストラクタにより構築したオブジェクト
+            // + BinaryOperation : デフォルトコンストラクタにより構築したオブジェクト
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {},
+                BinaryOperation {},
 
                 // テスト対象オブジェクト - DSL記法
                 std::nullopt,
@@ -123,29 +125,29 @@ inline namespace expression
 
     /*!
      * [ データパターン ] @n
-     * @c ConditionExpression @n
+     * @c BinaryOperation @n
      * @li @c operater : 有効値 or 無効値 ( @c OperationKind::None )
      * @li @c left     : 有効値 or 無効値 ( @c nullptr )
      * @li @c right    : 有効値 or 無効値 ( @c nullptr )
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
-    auto ConditionExpressionDataSet::pattern_by_undefault_construction()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::pattern_by_undefault_construction()
+        -> std::vector<BinaryOperationDataSetElement>
     {
         // clang-format off
         return {
             // _1
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 有効値
             //     + left     : 有効値
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new IdentifierExpression { "p.id" },
                     new IntegerLiteral { 1234 },
@@ -164,14 +166,14 @@ inline namespace expression
             // _2
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 有効値
             //     + left     : 有効値
             //     + right    : 無効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     new IdentifierExpression { "p.id" },
                     nullptr,
@@ -190,14 +192,14 @@ inline namespace expression
             // _3
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 有効値
             //     + left     : 無効値
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     nullptr,
                     new IntegerLiteral { 1234 },
@@ -216,14 +218,14 @@ inline namespace expression
             // _4
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 有効値
             //     + left     : 無効値
             //     + right    : 無効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::EqualTo,
                     nullptr,
                     nullptr,
@@ -242,14 +244,14 @@ inline namespace expression
             // _5
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 無効値
             //     + left     : 有効値
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::None,
                     new IdentifierExpression { "p.id" },
                     new IntegerLiteral { 1234 },
@@ -268,14 +270,14 @@ inline namespace expression
             // _6
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 無効値
             //     + left     : 有効値
             //     + right    : 無効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::None,
                     new IdentifierExpression { "p.id" },
                     nullptr,
@@ -294,14 +296,14 @@ inline namespace expression
             // _7
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 無効値
             //     + left     : 無効値
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::None,
                     nullptr,
                     new IntegerLiteral { 1234 },
@@ -320,14 +322,14 @@ inline namespace expression
             // _8
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + ConditionExpression
+            // + BinaryOperation
             //     + operater : 無効値
             //     + left     : 無効値
             //     + right    : 無効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
-                ConditionExpression {
+                BinaryOperation {
                     OperationKind::None,
                     nullptr,
                     nullptr,

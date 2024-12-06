@@ -7,9 +7,9 @@
 
 #include <string>
 
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/make-expression.function.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 namespace sqlxx
@@ -42,7 +42,7 @@ inline namespace expression
          * @return 等値比較演算式
          */
         template<typename Type>
-        auto equal_to(Type operand) const -> ConditionExpression;
+        auto equal_to(Type operand) const -> BinaryOperation;
 
         /*!
          * @brief 非等値比較演算式を生成する
@@ -58,7 +58,7 @@ inline namespace expression
          * @return 非等値比較演算式
          */
         template<typename Type>
-        auto not_equal_to(Type operand) const -> ConditionExpression;
+        auto not_equal_to(Type operand) const -> BinaryOperation;
 
         /*!
          * @brief 比較演算式（小なり）を生成する
@@ -74,7 +74,7 @@ inline namespace expression
          * @return 比較演算式（小なり）
          */
         template<typename Type>
-        auto less(Type operand) const -> ConditionExpression;
+        auto less(Type operand) const -> BinaryOperation;
 
         /*!
          * @brief 比較演算式（以下）を生成する
@@ -90,7 +90,7 @@ inline namespace expression
          * @return 比較演算式（以下）
          */
         template<typename Type>
-        auto less_equal(Type operand) const -> ConditionExpression;
+        auto less_equal(Type operand) const -> BinaryOperation;
 
         /*!
          * @brief 比較演算式（大なり）を生成する
@@ -106,7 +106,7 @@ inline namespace expression
          * @return 比較演算式（大なり）
          */
         template<typename Type>
-        auto greater(Type operand) const -> ConditionExpression;
+        auto greater(Type operand) const -> BinaryOperation;
 
         /*!
          * @brief 比較演算式（以上）を生成する
@@ -122,7 +122,7 @@ inline namespace expression
          * @return 比較演算式（以上）
          */
         template<typename Type>
-        auto greater_equal(Type operand) const -> ConditionExpression;
+        auto greater_equal(Type operand) const -> BinaryOperation;
 
         /*!
          * @brief IS 演算式を生成する
@@ -135,7 +135,7 @@ inline namespace expression
          * @return IS 演算式
          */
         template<typename Type>
-        auto is(Type operand) const -> ConditionExpression;
+        auto is(Type operand) const -> BinaryOperation;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -145,62 +145,60 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     template<typename Type>
-    auto ComparisonOperable::equal_to(Type operand) const -> ConditionExpression
+    auto ComparisonOperable::equal_to(Type operand) const -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::EqualTo,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::EqualTo,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 
     template<typename Type>
-    auto ComparisonOperable::not_equal_to(Type operand) const
-        -> ConditionExpression
+    auto ComparisonOperable::not_equal_to(Type operand) const -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::NotEqualTo,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::NotEqualTo,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 
     template<typename Type>
-    auto ComparisonOperable::less(Type operand) const -> ConditionExpression
+    auto ComparisonOperable::less(Type operand) const -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::Less,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::Less,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 
     template<typename Type>
-    auto ComparisonOperable::less_equal(Type operand) const
-        -> ConditionExpression
+    auto ComparisonOperable::less_equal(Type operand) const -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::LessEqual,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::LessEqual,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 
     template<typename Type>
-    auto ComparisonOperable::greater(Type operand) const -> ConditionExpression
+    auto ComparisonOperable::greater(Type operand) const -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::Greater,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::Greater,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::greater_equal(Type operand) const
-        -> ConditionExpression
+        -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::GreaterEqual,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::GreaterEqual,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 
     template<typename Type>
-    auto ComparisonOperable::is(Type operand) const -> ConditionExpression
+    auto ComparisonOperable::is(Type operand) const -> BinaryOperation
     {
-        return ConditionExpression { OperationKind::Is,
-                                     this->clone(),
-                                     make_expression(operand) };
+        return BinaryOperation { OperationKind::Is,
+                                 this->clone(),
+                                 make_expression(operand) };
     }
 } // namespace expression
 } // namespace sqlxx

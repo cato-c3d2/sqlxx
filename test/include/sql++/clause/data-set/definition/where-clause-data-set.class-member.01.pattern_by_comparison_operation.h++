@@ -9,10 +9,10 @@
 #include <vector>
 
 #include <sql++/clause/where-clause.class.h++>
-#include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/literal/null-literal.class.h++>
 #include <sql++/expression/literal/string-literal.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 #include "../where-clause-data-set-element.class.h++"
@@ -34,6 +34,8 @@ inline namespace clause
      * |     | WhereClause                    |
      * |     |--------------------------------|
      * |     | condition_expression           |
+     * |     |--------------------------------|
+     * |     | BinaryOperation                |
      * |     |--------------------------------|
      * |     | operater | left     | right    |
      * |=====|==========|==========|==========|
@@ -145,9 +147,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪等値比較演算≫ ( @c equal_to )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -167,7 +169,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪等値比較演算≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -175,7 +177,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new IdentifierExpression { "p.nickname" },
@@ -199,7 +201,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪等値比較演算≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -207,7 +209,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::EqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
@@ -230,7 +232,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪等値比較演算≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -238,7 +240,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::EqualTo,
                         new StringLiteral { "John Doe" },
                         new IdentifierExpression { "p.name" },
@@ -261,7 +263,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪等値比較演算≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -269,7 +271,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::EqualTo,
                         new StringLiteral { "john doe" },
                         new StringLiteral { "JOHN DOE" },
@@ -294,9 +296,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪非等値比較演算≫ ( @c not_equal_to )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -316,7 +318,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪非等値比較演算≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -324,7 +326,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::NotEqualTo,
                         new IdentifierExpression { "p.name" },
                         new IdentifierExpression { "p.nickname" },
@@ -348,7 +350,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪非等値比較演算≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -356,7 +358,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::NotEqualTo,
                         new IdentifierExpression { "p.name" },
                         new StringLiteral { "John Doe" },
@@ -379,7 +381,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪非等値比較演算≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -387,7 +389,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::NotEqualTo,
                         new StringLiteral { "John Doe" },
                         new IdentifierExpression { "p.name" },
@@ -410,7 +412,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪非等値比較演算≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -418,7 +420,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::NotEqualTo,
                         new StringLiteral { "john doe" },
                         new StringLiteral { "JOHN DOE" },
@@ -443,9 +445,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（小なり）≫ ( @c less )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -465,7 +467,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（小なり）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -473,7 +475,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Less,
                         new IdentifierExpression { "p.created_at" },
                         new IdentifierExpression { "p.updated_at" },
@@ -497,7 +499,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（小なり）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -505,7 +507,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Less,
                         new IdentifierExpression { "p.created_at" },
                         new StringLiteral { "2001-01-01" },
@@ -528,7 +530,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（小なり）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -536,7 +538,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Less,
                         new StringLiteral { "2001-01-01" },
                         new IdentifierExpression { "p.created_at" },
@@ -559,7 +561,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（小なり）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -567,7 +569,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Less,
                         new StringLiteral { "2000-12-31" },
                         new StringLiteral { "2001-01-01" },
@@ -592,9 +594,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（以下）≫ ( @c less_equal )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -614,7 +616,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以下）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -622,7 +624,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::LessEqual,
                         new IdentifierExpression { "p.created_at" },
                         new IdentifierExpression { "p.updated_at" },
@@ -646,7 +648,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以下）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -654,7 +656,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::LessEqual,
                         new IdentifierExpression { "p.created_at" },
                         new StringLiteral { "2001-01-01" },
@@ -677,7 +679,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以下）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -685,7 +687,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::LessEqual,
                         new StringLiteral { "2001-01-01" },
                         new IdentifierExpression { "p.created_at" },
@@ -709,7 +711,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以下）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -717,7 +719,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::LessEqual,
                         new StringLiteral { "2000-12-31" },
                         new StringLiteral { "2001-01-01" },
@@ -742,9 +744,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（大なり）≫ ( @c greater )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -764,7 +766,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（大なり）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -772,7 +774,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Greater,
                         new IdentifierExpression { "p.created_at" },
                         new IdentifierExpression { "p.updated_at" },
@@ -796,7 +798,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（大なり）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -804,7 +806,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Greater,
                         new IdentifierExpression { "p.created_at" },
                         new StringLiteral { "2001-01-01" },
@@ -827,7 +829,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（大なり）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -835,7 +837,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Greater,
                         new StringLiteral { "2001-01-01" },
                         new IdentifierExpression { "p.created_at" },
@@ -858,7 +860,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（大なり）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -866,7 +868,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Greater,
                         new StringLiteral { "2001-01-01" },
                         new StringLiteral { "2000-12-31" },
@@ -891,9 +893,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪比較演算（以上）≫ ( @c greater_equal )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -913,7 +915,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以上）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -921,7 +923,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::GreaterEqual,
                         new IdentifierExpression { "p.created_at" },
                         new IdentifierExpression { "p.updated_at" },
@@ -945,7 +947,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以上）≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -953,7 +955,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::GreaterEqual,
                         new IdentifierExpression { "p.created_at" },
                         new StringLiteral { "2001-01-01" },
@@ -976,7 +978,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以上）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -984,7 +986,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::GreaterEqual,
                         new StringLiteral { "2001-01-01" },
                         new IdentifierExpression { "p.created_at" },
@@ -1008,7 +1010,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪比較演算（以上）≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -1016,7 +1018,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::GreaterEqual,
                         new StringLiteral { "2001-01-01" },
                         new StringLiteral { "2000-12-31" },
@@ -1041,9 +1043,9 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : 下記参照
+     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
-     * @c condition_expression @n
+     * @c BinaryOperation @n
      * @li @c operater : ≪IS演算≫ ( @c is )
      * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
      *                   ≪リテラル式≫ ( @c BasicLiteral )
@@ -1063,7 +1065,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪IS演算≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪識別子式≫
@@ -1071,7 +1073,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Is,
                         new IdentifierExpression { "p.nickname" },
                         new IdentifierExpression { "p.nickname" },
@@ -1094,7 +1096,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪IS演算≫
             //         + left     : ≪識別子式≫
             //         + right    : ≪リテラル式≫
@@ -1102,7 +1104,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Is,
                         new IdentifierExpression { "p.nickname" },
                         new NullLiteral { },
@@ -1125,7 +1127,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪IS演算≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪識別子式≫
@@ -1133,7 +1135,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Is,
                         new NullLiteral { },
                         new IdentifierExpression { "p.nickname" },
@@ -1156,7 +1158,7 @@ inline namespace clause
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
-            //     + condition_expression
+            //     + BinaryOperation
             //         + operater : ≪IS演算≫
             //         + left     : ≪リテラル式≫
             //         + right    : ≪リテラル式≫
@@ -1164,7 +1166,7 @@ inline namespace clause
             {
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
-                    ConditionExpression {
+                    BinaryOperation {
                         OperationKind::Is,
                         new NullLiteral { },
                         new NullLiteral { },

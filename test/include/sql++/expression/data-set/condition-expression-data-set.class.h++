@@ -2,6 +2,8 @@
  * @file condition-expression-data-set.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : condition-expression*.h++ => binary-operation*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_HXX
 
@@ -21,75 +23,75 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief ≪条件式≫のテストケースで使用するデータセットを生成するクラス
+     * @brief ≪二項演算式≫のテストケースで使用するデータセットを生成するクラス
      *
-     * @see sqlxx::expression::ConditionExpression              テスト対象クラス
-     * @see sqlxx::test::expression::ConditionExpressionDataSet データセット要素
+     * @see sqlxx::expression::BinaryOperation              テスト対象クラス
+     * @see sqlxx::test::expression::BinaryOperationDataSet データセット要素
      */
-    class ConditionExpressionDataSet
+    class BinaryOperationDataSet
     {
     public:
-        /*! @brief ≪条件式≫のテストケースで使用するデータセットを生成する */
+        /*! @brief ≪二項演算式≫のテストケースで使用するデータセットを生成する */
         static auto for_some_test_case()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
     protected:
         /*! @brief データパターン : 任意の引数によりオブジェクトを構築する */
         static auto pattern_by_construction()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪比較演算≫を指定する */
         static auto pattern_by_comparison_operation()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪論理演算≫を指定する */
         static auto pattern_by_logical_operation()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
     private:
         /*! @brief データパターン : デフォルトコンストラクタによりオブジェクトを構築する */
         static auto pattern_by_default_construction()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : 非デフォルトコンストラクタによりオブジェクトを構築する */
         static auto pattern_by_undefault_construction()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪等値比較演算≫を指定する */
         static auto pattern_by_equal_to()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪非等値比較演算≫を指定する */
         static auto pattern_by_not_equal_to()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪比較演算（小なり）≫を指定する */
         static auto pattern_by_less()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪比較演算（以下）≫を指定する */
         static auto pattern_by_less_equal()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪比較演算（大なり）≫を指定する */
         static auto pattern_by_greater()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪比較演算（以上）≫を指定する */
         static auto pattern_by_greater_equal()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪IS演算≫を指定する */
         static auto pattern_by_is()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪論理積演算≫を指定する */
         static auto pattern_by_logical_and()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
 
         /*! @brief データパターン : ≪論理和演算≫を指定する */
         static auto pattern_by_logical_or()
-            -> std::vector<ConditionExpressionDataSetElement>;
+            -> std::vector<BinaryOperationDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -104,24 +106,24 @@ inline namespace expression
      * @li @link pattern_by_comparison_operation() @endlink ... ≪比較演算≫を指定する
      * @li @link pattern_by_logical_operation()    @endlink ... ≪論理演算≫を指定する
      *
-     * @return ≪条件式≫のテストケースで使用するデータセット
+     * @return ≪二項演算式≫のテストケースで使用するデータセット
      *
-     * @see sqlxx::expression::ConditionExpression::empty()     テスト対象メンバ関数
-     * @see sqlxx::expression::ConditionExpression::to_string() テスト対象メンバ関数
+     * @see sqlxx::expression::BinaryOperation::empty()     テスト対象メンバ関数
+     * @see sqlxx::expression::BinaryOperation::to_string() テスト対象メンバ関数
      */
-    auto ConditionExpressionDataSet::for_some_test_case()
-        -> std::vector<ConditionExpressionDataSetElement>
+    auto BinaryOperationDataSet::for_some_test_case()
+        -> std::vector<BinaryOperationDataSetElement>
     {
-        std::vector<std::vector<ConditionExpressionDataSetElement>>
+        std::vector<std::vector<BinaryOperationDataSetElement>>
             data_set_parts = {
                 // clang-format off
-                ConditionExpressionDataSet::pattern_by_construction(),
-                ConditionExpressionDataSet::pattern_by_comparison_operation(),
-                ConditionExpressionDataSet::pattern_by_logical_operation(),
+                BinaryOperationDataSet::pattern_by_construction(),
+                BinaryOperationDataSet::pattern_by_comparison_operation(),
+                BinaryOperationDataSet::pattern_by_logical_operation(),
                 // clang-format on
             };
 
-        auto data_set = std::vector<ConditionExpressionDataSetElement>();
+        auto data_set = std::vector<BinaryOperationDataSetElement>();
         for (auto && data_set_part : data_set_parts) {
             data_set.insert(
                 std::end(data_set),

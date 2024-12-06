@@ -34,15 +34,15 @@ auto main() -> int
     AsClause people_name_as_clause;
     AsClause people_as_clause;
 
-    ConditionExpression condition_expression;
-    GroupedExpression   grouped_expression;
-    Identifier          people_name_identifier;
-    Identifier          people_nick_name_identifier;
-    Identifier          people_birth_day_identifier;
-    Identifier          people_longitude_identifier;
-    Identifier          people_latitude_identifier;
-    Identifier          people_has_deleted_identifier;
-    BooleanLiteral      people_has_deleted_literal_boolean_literal;
+    BinaryOperation   binary_operation;
+    GroupedExpression grouped_expression;
+    Identifier        people_name_identifier;
+    Identifier        people_nick_name_identifier;
+    Identifier        people_birth_day_identifier;
+    Identifier        people_longitude_identifier;
+    Identifier        people_latitude_identifier;
+    Identifier        people_has_deleted_identifier;
+    BooleanLiteral    people_has_deleted_literal_boolean_literal;
 
     people_id_as_clause.alias_name("p.id");
     people_name_as_clause.alias_name("p.name");
@@ -61,21 +61,21 @@ auto main() -> int
 
     people_has_deleted_literal_boolean_literal.inner_value(false);
 
-    condition_expression =
+    binary_operation =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
 
     grouped_expression =
         people_name_identifier.not_equal_to("John Doe")
             .logical_or(people_name_identifier.not_equal_to("Jane Doe"));
 
-    condition_expression = condition_expression.logical_and(grouped_expression);
+    binary_operation = binary_operation.logical_and(grouped_expression);
 
     grouped_expression =
         people_birth_day_identifier.is(logical_not(null))
             .logical_and(people_birth_day_identifier.greater("1901-01-01"s))
             .logical_and(people_birth_day_identifier.less("2000-12-31"s));
 
-    condition_expression = condition_expression.logical_or(grouped_expression);
+    binary_operation = binary_operation.logical_or(grouped_expression);
 
     grouped_expression =
         people_longitude_identifier.greater_equal(122.5557)
@@ -83,15 +83,15 @@ auto main() -> int
             .logical_and(people_latitude_identifier.greater_equal(20.2531))
             .logical_and(people_latitude_identifier.less_equal(45.3326));
 
-    condition_expression = condition_expression.logical_or(grouped_expression);
+    binary_operation = binary_operation.logical_or(grouped_expression);
 
-    condition_expression = condition_expression.logical_and(
+    binary_operation = binary_operation.logical_and(
         people_has_deleted_literal_boolean_literal.equal_to(
             people_has_deleted_identifier));
 
     select_closure.column_list({ people_id_column, people_name_column });
     from_closure.table(people_table);
-    where_closure.condition_expression(condition_expression);
+    where_closure.condition_expression(binary_operation);
 
     select_statement.select(select_closure)
         .from(from_closure)

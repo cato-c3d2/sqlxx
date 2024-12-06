@@ -5,6 +5,7 @@
 #ifndef SQLXX__CLAUSE__WHERE_CLAUSE_CLASS_HXX
 #define SQLXX__CLAUSE__WHERE_CLAUSE_CLASS_HXX
 
+#include <stdexcept>
 #include <string>
 
 #include <sql++/expression/condition-expression.class.h++>
@@ -35,14 +36,35 @@ inline namespace clause
          *
          * @param[in] condition_expression "条件式" の文法オブジェクト
          */
-        WhereClause(ConditionExpression condition_expression);
+        WhereClause(ConditionExpression const & condition_expression);
+
+        /*!
+         * @brief デストラクタ
+         */
+        virtual ~WhereClause();
+
+        /*!
+         * @brief コピーコンストラクタ
+         *
+         * @param[in] origin コピー元のオブジェクト
+         */
+        WhereClause(WhereClause const & origin);
+
+        /*!
+         * @brief コピー代入演算子
+         *
+         * @param[in] origin コピー元のオブジェクト
+         *
+         * @return このオブジェクトの参照
+         */
+        auto operator=(WhereClause const & origin) -> WhereClause &;
 
         /*!
          * @brief "条件式" を取得する
          *
-         * @return "条件式" の文法オブジェクト
+         * @return 複製した "条件式" の文法オブジェクトのポインタ
          */
-        auto condition_expression() const -> ConditionExpression;
+        auto condition_expression() const -> ConditionExpression *;
 
         /*!
          * @brief "条件式" を設定する
@@ -51,7 +73,8 @@ inline namespace clause
          *
          * @return このオブジェクトの参照
          */
-        auto condition_expression(ConditionExpression condition_expression)
+        auto
+        condition_expression(ConditionExpression const & condition_expression)
             -> WhereClause &;
 
         /*!
@@ -71,9 +94,23 @@ inline namespace clause
 
     private:
         /*!
+         * @brief このオブジェクトにコピー元のオブジェクトを割り当てる
+         *
+         * このオブジェクトの各データメンバに、
+         * @c origin の各データメンバを代入する。 @n
+         *
+         * NOTE コピーコンストラクタとコピー代入演算子の実装を共通化するために実装した。
+         *
+         * @param[in] origin コピー元のオブジェクト
+         */
+        auto assignment(WhereClause const & origin) -> void;
+
+    private:
+        /*!
          * @brief "条件式"
          */
-        ConditionExpression _condition_expression;
+        // TODO 暫定的に生のポインタを使用しているが、将来的にスマートポインタに変更する予定。
+        ConditionExpression const * _condition_expression;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -99,37 +136,79 @@ inline namespace clause
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    WhereClause::WhereClause() : _condition_expression()
+    WhereClause::WhereClause() : _condition_expression(nullptr)
     {}
 
-    WhereClause::WhereClause(ConditionExpression condition_expression)
-        : _condition_expression(condition_expression)
+    WhereClause::WhereClause(ConditionExpression const & condition_expression)
+        : _condition_expression(condition_expression.clone())
     {}
 
-    auto WhereClause::condition_expression() const -> ConditionExpression
+    WhereClause::~WhereClause()
     {
-        return this->_condition_expression;
+        if (this->_condition_expression != nullptr) {
+            delete this->_condition_expression;
+        }
     }
 
-    auto
-    WhereClause::condition_expression(ConditionExpression condition_expression)
-        -> WhereClause &
+    WhereClause::WhereClause(WhereClause const & origin)
     {
-        this->_condition_expression = condition_expression;
+        this->assignment(origin);
+    }
+
+    auto WhereClause::operator=(WhereClause const & origin) -> WhereClause &
+    {
+        this->assignment(origin);
+        return *this;
+    }
+
+    auto WhereClause::condition_expression() const -> ConditionExpression *
+    {
+        return this->_condition_expression->clone();
+    }
+
+    auto WhereClause::condition_expression(
+        ConditionExpression const & condition_expression) -> WhereClause &
+    {
+        this->_condition_expression = condition_expression.clone();
         return *this;
     }
 
     auto WhereClause::empty() const -> bool
     {
-        return this->_condition_expression.empty();
+        if (this->_condition_expression == nullptr) {
+            return true;
+        }
+        std::string condition_expression_as_string;
+        try {
+            condition_expression_as_string =
+                this->_condition_expression->evaluate();
+        } catch (std::runtime_error & e) {
+            return true;
+        }
+        return condition_expression_as_string.empty();
     }
 
     auto WhereClause::to_string() const -> std::string
     {
-        if (this->_condition_expression.empty()) {
+        if (this->_condition_expression == nullptr) {
             return "";
         }
-        return "WHERE " + this->_condition_expression.to_string();
+        std::string condition_expression_as_string;
+        try {
+            condition_expression_as_string =
+                this->_condition_expression->evaluate();
+        } catch (std::runtime_error & e) {
+            return "";
+        }
+        return "WHERE " + condition_expression_as_string;
+    }
+
+    auto WhereClause::assignment(WhereClause const & origin) -> void
+    {
+        this->_condition_expression =
+            (origin._condition_expression != nullptr)
+                ? origin._condition_expression->clone()
+                : nullptr;
     }
 
     ////////////////////////////////////////////////////////////////////////////
