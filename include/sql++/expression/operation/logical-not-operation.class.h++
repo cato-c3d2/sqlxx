@@ -10,6 +10,7 @@
 
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/unary-operation.class.h++>
 
 namespace sqlxx
 {
@@ -24,7 +25,7 @@ inline namespace expression
     /*!
      * @brief 論理否定演算式を表現するクラス
      */
-    class LogicalNotOperation : public virtual Expression
+    class LogicalNotOperation : public virtual UnaryOperation
     {
     public:
         /*!
@@ -38,28 +39,6 @@ inline namespace expression
          * @param[in] operand 内部の式
          */
         LogicalNotOperation(Expression const & operand);
-
-        /*!
-         * @brief デストラクタ
-         */
-        virtual ~LogicalNotOperation() override;
-
-        /*!
-         * @brief コピーコンストラクタ
-         *
-         * @param[in] origin コピー元のオブジェクト
-         */
-        LogicalNotOperation(LogicalNotOperation const & origin);
-
-        /*!
-         * @brief コピー代入演算子
-         *
-         * @param[in] origin コピー元のオブジェクト
-         *
-         * @return このオブジェクトの参照
-         */
-        auto operator=(LogicalNotOperation const & origin)
-            -> LogicalNotOperation &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -77,38 +56,11 @@ inline namespace expression
         auto to_string() const -> std::string;
 
         /*!
-         * @brief この式の文字列表現を返却する
-         *
-         * @return この式の文字列表現
-         */
-        virtual auto evaluate() const -> std::string override;
-
-        /*!
          * @brief このオブジェクトを複製する
          *
          * @return 複製したオブジェクトのポインタ
          */
         virtual auto clone() const -> LogicalNotOperation * override;
-
-    private:
-        /*!
-         * @brief このオブジェクトにコピー元のオブジェクトを割り当てる
-         *
-         * このオブジェクトの各データメンバに、
-         * @c origin の各データメンバを代入する。 @n
-         *
-         * NOTE コピーコンストラクタとコピー代入演算子の実装を共通化するために実装した。
-         *
-         * @param[in] origin コピー元のオブジェクト
-         */
-        auto assignment(LogicalNotOperation const & origin) -> void;
-
-    private:
-        /*!
-         * @brief 内部の式
-         */
-        // TODO 暫定的に生のポインタを使用しているが、将来的にスマートポインタに変更する予定。
-        Expression const * _operand;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -144,35 +96,18 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    LogicalNotOperation::LogicalNotOperation() : _operand(nullptr)
+    LogicalNotOperation::LogicalNotOperation()
+        : UnaryOperation(OperationKind::LogicalNot, nullptr)
     {}
 
     LogicalNotOperation::LogicalNotOperation(Expression const & operand)
-        : _operand(operand.clone())
+        : UnaryOperation(OperationKind::LogicalNot, operand.clone())
     {}
-
-    LogicalNotOperation::~LogicalNotOperation()
-    {
-        if (this->_operand != nullptr) {
-            delete this->_operand;
-        }
-    }
-
-    LogicalNotOperation::LogicalNotOperation(LogicalNotOperation const & origin)
-    {
-        this->assignment(origin);
-    }
-
-    auto LogicalNotOperation::operator=(LogicalNotOperation const & origin)
-        -> LogicalNotOperation &
-    {
-        this->assignment(origin);
-        return *this;
-    }
 
     auto LogicalNotOperation::empty() const -> bool
     {
-        if (this->_operand == nullptr) {
+        auto operand = this->operand();
+        if (operand == nullptr) {
             return true;
         }
         try {
@@ -180,7 +115,7 @@ inline namespace expression
             //      ≪内部の式≫の evaluate メンバ関数の戻り値で判定せず、
             //      直接、≪内部の式≫が空であるか否かを判定すべき。
             //      従って、 Expression::empty メンバ関数等を実装すべき。
-            return this->_operand->evaluate().empty();
+            return operand->evaluate().empty();
         } catch (std::runtime_error &) {
             // NOTE SQLの文法エラーが発生した場合、このオブジェクトが空であるとみなす
             return true;
@@ -195,30 +130,9 @@ inline namespace expression
         return this->evaluate();
     }
 
-    auto LogicalNotOperation::evaluate() const -> std::string
-    {
-        using namespace std::literals::string_literals;
-
-        if (this->_operand == nullptr) {
-            throw std::runtime_error("'_operand' is null-pointer!");
-        }
-
-        std::string const operand_as_string = this->_operand->evaluate();
-
-        return sqlxx::expression::to_string(OperationKind::LogicalNot) + " "s
-               + operand_as_string;
-    }
-
     auto LogicalNotOperation::clone() const -> LogicalNotOperation *
     {
         return new LogicalNotOperation(*this);
-    }
-
-    auto LogicalNotOperation::assignment(LogicalNotOperation const & origin)
-        -> void
-    {
-        this->_operand =
-            (origin._operand != nullptr) ? origin._operand->clone() : nullptr;
     }
 
     ////////////////////////////////////////////////////////////////////////////

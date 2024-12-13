@@ -21,6 +21,7 @@
 #include <sql++/expression/literal/string-literal.class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/logical-not-operation.class.h++>
+#include <sql++/expression/operation/unary-operation.class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>
