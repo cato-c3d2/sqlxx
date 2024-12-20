@@ -33,7 +33,7 @@ inline namespace expression
          * @brief デフォルトコンストラクタ
          */
         LogicalOperatableMock()
-            : LogicalOperatableMock(OperationKind::None, nullptr, nullptr)
+            : LogicalOperatableMock(BinaryOperationKind::None, nullptr, nullptr)
         {}
 
         /*!
@@ -44,9 +44,9 @@ inline namespace expression
          * @param[in] right_expression 右辺の式（使用しない）
          */
         LogicalOperatableMock(
-            OperationKind      operater,
-            Expression const * left_expression,
-            Expression const * right_expression)
+            BinaryOperationKind operater,
+            Expression const *  left_expression,
+            Expression const *  right_expression)
             : _operater(operater)
         {}
 
@@ -83,7 +83,7 @@ inline namespace expression
         /*!
          * @brief 演算子
          */
-        OperationKind _operater;
+        BinaryOperationKind _operater;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -114,7 +114,7 @@ inline namespace expression
         using namespace std::literals::string_literals;
 
         std::string operater;
-        if (this->_operater != OperationKind::None) {
+        if (this->_operater != BinaryOperationKind::None) {
             operater = sqlxx::expression::to_string(this->_operater);
         } else {
             operater = "(operater-none)";

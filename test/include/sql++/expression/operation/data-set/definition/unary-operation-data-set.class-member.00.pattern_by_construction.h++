@@ -49,7 +49,7 @@ inline namespace expression
      * @li - ... 未指定
      * @li o ... 有効値
      * @li x ... 無効値 (
-     *           @c operater : @c OperationKind::None /
+     *           @c operater : @c BinaryOperationKind::None /
      *           @c operand : @c nullptr )
      *
      * [ 構成 ] @n
@@ -115,7 +115,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c UnaryOperation @n
-     * @li @c operater : 有効値 or 無効値 ( @c OperationKind::None )
+     * @li @c operater : 有効値 or 無効値 ( @c BinaryOperationKind::None )
      * @li @c operand  : 有効値 or 無効値 ( @c nullptr )
      *
      * @return ≪二項演算式≫のテストケースで使用するデータセット
@@ -135,7 +135,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    OperationKind::LogicalNot,
+                    BinaryOperationKind::LogicalNot,
                     new NullLiteral {},
                 },
 
@@ -159,7 +159,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    OperationKind::LogicalNot,
+                    BinaryOperationKind::LogicalNot,
                     nullptr,
                 },
 
@@ -183,7 +183,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    OperationKind::None,
+                    BinaryOperationKind::None,
                     new NullLiteral {},
                 },
 
@@ -207,7 +207,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    OperationKind::None,
+                    BinaryOperationKind::None,
                     nullptr,
                 },
 

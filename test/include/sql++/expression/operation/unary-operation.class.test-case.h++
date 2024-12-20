@@ -27,9 +27,9 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__expression)
 
 BOOST_AUTO_TEST_SUITE(class__UnaryOperation)
 
+using sqlxx::BinaryOperationKind;
 using sqlxx::Expression;
 using sqlxx::NullLiteral;
-using sqlxx::OperationKind;
 using sqlxx::UnaryOperation;
 using sqlxx::test::UnaryOperationDataSet;
 
@@ -72,7 +72,7 @@ BOOST_AUTO_TEST_CASE(clone_of_constant)
 {
     // 複製元のオブジェクト
     Expression const * source = new UnaryOperation {
-        OperationKind::LogicalNot,
+        BinaryOperationKind::LogicalNot,
         new NullLiteral {},
     };
 
@@ -97,7 +97,7 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
 {
     // 複製元のオブジェクト
     Expression const * source = new UnaryOperation {
-        OperationKind::LogicalNot,
+        BinaryOperationKind::LogicalNot,
         new NullLiteral {},
     };
 

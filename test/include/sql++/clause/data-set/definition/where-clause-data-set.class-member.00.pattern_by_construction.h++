@@ -71,7 +71,7 @@ inline namespace clause
      * @li - ... 未指定
      * @li o ... 有効値
      * @li x ... 無効値 (
-     *           @c operater : @c OperationKind::None /
+     *           @c operater : @c BinaryOperationKind::None /
      *           @c left & @c right : @c nullptr )
      *
      * [ 構成 ] @n
@@ -142,7 +142,7 @@ inline namespace clause
      * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
      *
      * @c BinaryOperation @n
-     * @li @c operater : 有効値 or 無効値( @c OperationKind::None )
+     * @li @c operater : 有効値 or 無効値( @c BinaryOperationKind::None )
      * @li @c left     : 有効値 or 無効値( @c nullptr )
      * @li @c right    : 有効値 or 無効値( @c nullptr )
      *
@@ -191,7 +191,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::EqualTo,
+                        BinaryOperationKind::EqualTo,
                         new IdentifierExpression { "p.id" },
                         new IntegerLiteral { 1234 },
                     },
@@ -220,7 +220,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::EqualTo,
+                        BinaryOperationKind::EqualTo,
                         new IdentifierExpression { "p.id" },
                         nullptr,
                     },
@@ -249,7 +249,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::EqualTo,
+                        BinaryOperationKind::EqualTo,
                         nullptr,
                         new IntegerLiteral { 1234 },
                     },
@@ -278,7 +278,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::EqualTo,
+                        BinaryOperationKind::EqualTo,
                         nullptr,
                         nullptr,
                     },
@@ -307,7 +307,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::None,
+                        BinaryOperationKind::None,
                         new IdentifierExpression { "p.id" },
                         new IntegerLiteral { 1234 },
                     },
@@ -336,7 +336,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::None,
+                        BinaryOperationKind::None,
                         new IdentifierExpression { "p.id" },
                         nullptr,
                     },
@@ -365,7 +365,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::None,
+                        BinaryOperationKind::None,
                         nullptr,
                         new IntegerLiteral { 1234 },
                     },
@@ -394,7 +394,7 @@ inline namespace clause
                 // テスト対象オブジェクト - 非DSL記法
                 WhereClause {
                     BinaryOperation {
-                        OperationKind::None,
+                        BinaryOperationKind::None,
                         nullptr,
                         nullptr,
                     },

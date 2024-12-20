@@ -97,9 +97,9 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    OperationKind::LogicalNot,
+                    BinaryOperationKind::LogicalNot,
                     new BinaryOperation {
-                        OperationKind::GreaterEqual,
+                        BinaryOperationKind::GreaterEqual,
                         new IdentifierExpression { "p.birth_day" },
                         new StringLiteral { "1901-01-01" },
                     },
@@ -127,17 +127,17 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    OperationKind::LogicalNot,
+                    BinaryOperationKind::LogicalNot,
                     new GroupedExpression {
                         BinaryOperation {
-                            OperationKind::LogicalAnd,
+                            BinaryOperationKind::LogicalAnd,
                             new BinaryOperation {
-                                OperationKind::GreaterEqual,
+                                BinaryOperationKind::GreaterEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "1901-01-01" },
                             },
                             new BinaryOperation {
-                                OperationKind::LessEqual,
+                                BinaryOperationKind::LessEqual,
                                 new IdentifierExpression { "p.birth_day" },
                                 new StringLiteral { "2000-12-31" },
                             },

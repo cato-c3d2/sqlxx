@@ -73,7 +73,7 @@ inline namespace expression
     auto LogicalOperatable<BinaryOperationType>::logical_and(
         Expression const & operand) const -> BinaryOperationType
     {
-        return BinaryOperationType { OperationKind::LogicalAnd,
+        return BinaryOperationType { BinaryOperationKind::LogicalAnd,
                                      this->clone(),
                                      operand.clone() };
     }
@@ -82,7 +82,7 @@ inline namespace expression
     auto LogicalOperatable<BinaryOperationType>::logical_or(
         Expression const & operand) const -> BinaryOperationType
     {
-        return BinaryOperationType { OperationKind::LogicalOr,
+        return BinaryOperationType { BinaryOperationKind::LogicalOr,
                                      this->clone(),
                                      operand.clone() };
     }

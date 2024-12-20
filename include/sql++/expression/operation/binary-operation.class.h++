@@ -44,9 +44,9 @@ inline namespace expression
          * @param[in] right_expression 右辺の≪式≫
          */
         BinaryOperation(
-            OperationKind      operater,
-            Expression const * left_expression,
-            Expression const * right_expression);
+            BinaryOperationKind operater,
+            Expression const *  left_expression,
+            Expression const *  right_expression);
 
         /*!
          * @brief デストラクタ
@@ -115,7 +115,7 @@ inline namespace expression
         /*!
          * @brief ≪二項演算種別≫
          */
-        OperationKind _operater;
+        BinaryOperationKind _operater;
 
         /*!
          * @brief 左辺の≪式≫
@@ -154,13 +154,13 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     BinaryOperation::BinaryOperation()
-        : BinaryOperation(OperationKind::None, nullptr, nullptr)
+        : BinaryOperation(BinaryOperationKind::None, nullptr, nullptr)
     {}
 
     BinaryOperation::BinaryOperation(
-        OperationKind      operater,
-        Expression const * left_expression,
-        Expression const * right_expression)
+        BinaryOperationKind operater,
+        Expression const *  left_expression,
+        Expression const *  right_expression)
         : _operater(operater)
         , _left_expression(left_expression)
         , _right_expression(right_expression)
@@ -190,7 +190,7 @@ inline namespace expression
 
     auto BinaryOperation::empty() const -> bool
     {
-        return this->_operater == OperationKind::None
+        return this->_operater == BinaryOperationKind::None
                || this->_left_expression == nullptr
                || this->_right_expression == nullptr;
     }
@@ -205,7 +205,7 @@ inline namespace expression
 
     auto BinaryOperation::evaluate() const -> std::string
     {
-        if (this->_operater == OperationKind::None) {
+        if (this->_operater == BinaryOperationKind::None) {
             throw std::runtime_error("'_operater' is empty!");
         }
         if (this->_left_expression == nullptr) {

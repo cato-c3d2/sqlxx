@@ -212,7 +212,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::EqualTo,
+                            BinaryOperationKind::EqualTo,
                             new IdentifierExpression { "p.name" },
                             new IdentifierExpression { "p.nickname" },
                         },
@@ -260,7 +260,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::EqualTo,
+                            BinaryOperationKind::EqualTo,
                             new IdentifierExpression { "p.name" },
                             new StringLiteral { "John Doe" },
                         },
@@ -307,7 +307,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::EqualTo,
+                            BinaryOperationKind::EqualTo,
                             new StringLiteral { "John Doe" },
                             new IdentifierExpression { "p.name" },
                         },
@@ -354,7 +354,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::EqualTo,
+                            BinaryOperationKind::EqualTo,
                             new StringLiteral { "john doe" },
                             new StringLiteral { "JOHN DOE" },
                         },
@@ -425,7 +425,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::NotEqualTo,
+                            BinaryOperationKind::NotEqualTo,
                             new IdentifierExpression { "p.name" },
                             new IdentifierExpression { "p.nickname" },
                         },
@@ -473,7 +473,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::NotEqualTo,
+                            BinaryOperationKind::NotEqualTo,
                             new IdentifierExpression { "p.name" },
                             new StringLiteral { "John Doe" },
                         },
@@ -520,7 +520,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::NotEqualTo,
+                            BinaryOperationKind::NotEqualTo,
                             new StringLiteral { "John Doe" },
                             new IdentifierExpression { "p.name" },
                         },
@@ -568,7 +568,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::NotEqualTo,
+                            BinaryOperationKind::NotEqualTo,
                             new StringLiteral { "john doe" },
                             new StringLiteral { "JOHN DOE" },
                         },
@@ -639,7 +639,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Less,
+                            BinaryOperationKind::Less,
                             new IdentifierExpression { "p.created_at" },
                             new IdentifierExpression { "p.updated_at" },
                         },
@@ -688,7 +688,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Less,
+                            BinaryOperationKind::Less,
                             new IdentifierExpression { "p.created_at" },
                             new StringLiteral { "2001-01-01" },
                         },
@@ -736,7 +736,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Less,
+                            BinaryOperationKind::Less,
                             new StringLiteral { "2001-01-01" },
                             new IdentifierExpression { "p.created_at" },
                         },
@@ -785,7 +785,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Less,
+                            BinaryOperationKind::Less,
                             new StringLiteral { "2000-12-31" },
                             new StringLiteral { "2001-01-01" },
                         },
@@ -857,7 +857,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::LessEqual,
+                            BinaryOperationKind::LessEqual,
                             new IdentifierExpression { "p.created_at" },
                             new IdentifierExpression { "p.updated_at" },
                         },
@@ -906,7 +906,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::LessEqual,
+                            BinaryOperationKind::LessEqual,
                             new IdentifierExpression { "p.created_at" },
                             new StringLiteral { "2001-01-01" },
                         },
@@ -954,7 +954,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::LessEqual,
+                            BinaryOperationKind::LessEqual,
                             new StringLiteral { "2001-01-01" },
                             new IdentifierExpression { "p.created_at" },
                         },
@@ -1003,7 +1003,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::LessEqual,
+                            BinaryOperationKind::LessEqual,
                             new StringLiteral { "2000-12-31" },
                             new StringLiteral { "2001-01-01" },
                         },
@@ -1075,7 +1075,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Greater,
+                            BinaryOperationKind::Greater,
                             new IdentifierExpression { "p.created_at" },
                             new IdentifierExpression { "p.updated_at" },
                         },
@@ -1124,7 +1124,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Greater,
+                            BinaryOperationKind::Greater,
                             new IdentifierExpression { "p.created_at" },
                             new StringLiteral { "2001-01-01" },
                         },
@@ -1172,7 +1172,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Greater,
+                            BinaryOperationKind::Greater,
                             new StringLiteral { "2001-01-01" },
                             new IdentifierExpression { "p.created_at" },
                         },
@@ -1221,7 +1221,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Greater,
+                            BinaryOperationKind::Greater,
                             new StringLiteral { "2001-01-01" },
                             new StringLiteral { "2000-12-31" },
                         },
@@ -1293,7 +1293,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::GreaterEqual,
+                            BinaryOperationKind::GreaterEqual,
                             new IdentifierExpression { "p.created_at" },
                             new IdentifierExpression { "p.updated_at" },
                         },
@@ -1342,7 +1342,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::GreaterEqual,
+                            BinaryOperationKind::GreaterEqual,
                             new IdentifierExpression { "p.created_at" },
                             new StringLiteral { "2001-01-01" },
                         },
@@ -1390,7 +1390,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::GreaterEqual,
+                            BinaryOperationKind::GreaterEqual,
                             new StringLiteral { "2001-01-01" },
                             new IdentifierExpression { "p.created_at" },
                         },
@@ -1439,7 +1439,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::GreaterEqual,
+                            BinaryOperationKind::GreaterEqual,
                             new StringLiteral { "2001-01-01" },
                             new StringLiteral { "2000-12-31" },
                         },
@@ -1511,7 +1511,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Is,
+                            BinaryOperationKind::Is,
                             new IdentifierExpression { "p.nickname" },
                             new IdentifierExpression { "p.nickname" },
                         },
@@ -1559,7 +1559,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Is,
+                            BinaryOperationKind::Is,
                             new IdentifierExpression { "p.nickname" },
                             new NullLiteral { },
                         },
@@ -1606,7 +1606,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Is,
+                            BinaryOperationKind::Is,
                             new NullLiteral { },
                             new IdentifierExpression { "p.nickname" },
                         },
@@ -1653,7 +1653,7 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            OperationKind::Is,
+                            BinaryOperationKind::Is,
                             new NullLiteral { },
                             new NullLiteral { },
                         },

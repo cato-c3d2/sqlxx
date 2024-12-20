@@ -2,6 +2,8 @@
  * @file operation-kind-data-set-element.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : operation-kind*.h++ => binary-operation-kind*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_ELEMENT_CLASS_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_ELEMENT_CLASS_HXX
 
@@ -21,19 +23,19 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief ≪演算種別≫のテストケースで使用するデータセット要素
+     * @brief ≪二項演算種別≫のテストケースで使用するデータセット要素
      *
      * テスト対象のオブジェクトとテスト対象の関数の期待結果を保持する。
      *
-     * @see sqlxx::expression::OperationKind              テスト対象オブジェクトの型
-     * @see sqlxx::test::expression::OperationKindDataSet データセット
+     * @see sqlxx::expression::BinaryOperationKind              テスト対象オブジェクトの型
+     * @see sqlxx::test::expression::BinaryOperationKindDataSet データセット
      */
-    struct OperationKindDataSetElement
+    struct BinaryOperationKindDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
          */
-        OperationKind operation_kind;
+        BinaryOperationKind binary_operation_kind;
 
         /*!
          * @brief 期待結果 - @c to_string 関数
@@ -58,8 +60,9 @@ inline namespace expression
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream &                      out,
-        OperationKindDataSetElement const & data_set_element) -> std::ostream &;
+        std::ostream &                            out,
+        BinaryOperationKindDataSetElement const & data_set_element)
+        -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -74,14 +77,15 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(
-        std::ostream &                      out,
-        OperationKindDataSetElement const & data_set_element) -> std::ostream &
+        std::ostream &                            out,
+        BinaryOperationKindDataSetElement const & data_set_element)
+        -> std::ostream &
     {
         // clang-format off
-        return out << "{ operation_kind : \""
+        return out << "{ binary_operation_kind : \""
                    // TODO [要修正] enum-class のストリーム出力演算子を定義すること。
-                   // << data_set_element.operation_kind
-                   << to_string(data_set_element.operation_kind)
+                   // << data_set_element.binary_operation_kind
+                   << to_string(data_set_element.binary_operation_kind)
                    << "\", expectation_of_to_string : \""
                    << data_set_element.expectation_of_to_string
                    << "\" }";

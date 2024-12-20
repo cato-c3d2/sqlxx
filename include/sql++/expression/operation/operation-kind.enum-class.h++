@@ -2,6 +2,8 @@
  * @file operation-kind.enum-class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : operation-kind*.h++ => binary-operation-kind*.h++
+
 #ifndef SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
 #define SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
 
@@ -18,9 +20,9 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /**
-     * @brief 演算子の種類
+     * @brief 二項演算子の種類
      */
-    enum class OperationKind
+    enum class BinaryOperationKind
     {
         /**
          * @brief 未定
@@ -59,6 +61,7 @@ inline namespace expression
          */
         GreaterEqual,
 
+        // FIXME 【要修正】単項演算子の種類を定義する列挙型に移行する予定
         /**
          * @brief 論理否定演算子
          */
@@ -87,13 +90,13 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /**
-     * @brief 演算子の文字列表現を返却する
+     * @brief 二項演算子の文字列表現を返却する
      *
-     * @param[in] operation_type 文字列に変換する演算子
+     * @param[in] operation_type 文字列に変換する二項演算子
      *
      * @return @c operation_type の文字列表現
      */
-    auto to_string(OperationKind operation_type) -> std::string;
+    auto to_string(BinaryOperationKind operation_type) -> std::string;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -104,14 +107,14 @@ inline namespace expression
     inline namespace
     {
         /*!
-         * @brief 各種演算子の文字列表現を定義するクラス
+         * @brief 各種二項演算子の文字列表現を定義するクラス
          *
-         * 各種演算子の文字列表現は
-         * @c sqlxx::expression::to_string(OperationKind)
+         * 各種二項演算子の文字列表現は
+         * @c sqlxx::expression::to_string(BinaryOperationKind)
          * を使用して取得する想定のため、このクラスは外部に公開しない。 @n
          * （そのために無名名前空間内に定義している。） @n
          */
-        class OperatorSymbol
+        class BinaryOperatorSymbol
         {
         public:
             /**
@@ -144,6 +147,7 @@ inline namespace expression
              */
             static constexpr auto GREATER_EQUAL = ">=";
 
+            // FIXME 【要修正】単項演算子の種類を定義する列挙型に移行する予定
             /**
              * @brief 論理否定演算子のキーワード
              */
@@ -166,30 +170,30 @@ inline namespace expression
         };
     } // namespace
 
-    auto to_string(OperationKind operation_type) -> std::string
+    auto to_string(BinaryOperationKind operation_type) -> std::string
     {
         switch (operation_type) {
-        case OperationKind::EqualTo:
-            return OperatorSymbol::EQUAL_TO;
-        case OperationKind::NotEqualTo:
-            return OperatorSymbol::NOT_EQUAL_TO;
-        case OperationKind::Less:
-            return OperatorSymbol::LESS;
-        case OperationKind::LessEqual:
-            return OperatorSymbol::LESS_EQUAL;
-        case OperationKind::Greater:
-            return OperatorSymbol::GREATER;
-        case OperationKind::GreaterEqual:
-            return OperatorSymbol::GREATER_EQUAL;
-        case OperationKind::LogicalNot:
-            return OperatorSymbol::LOGICAL_NOT;
-        case OperationKind::LogicalAnd:
-            return OperatorSymbol::LOGICAL_AND;
-        case OperationKind::LogicalOr:
-            return OperatorSymbol::LOGICAL_OR;
-        case OperationKind::Is:
-            return OperatorSymbol::IS;
-        case OperationKind::None:
+        case BinaryOperationKind::EqualTo:
+            return BinaryOperatorSymbol::EQUAL_TO;
+        case BinaryOperationKind::NotEqualTo:
+            return BinaryOperatorSymbol::NOT_EQUAL_TO;
+        case BinaryOperationKind::Less:
+            return BinaryOperatorSymbol::LESS;
+        case BinaryOperationKind::LessEqual:
+            return BinaryOperatorSymbol::LESS_EQUAL;
+        case BinaryOperationKind::Greater:
+            return BinaryOperatorSymbol::GREATER;
+        case BinaryOperationKind::GreaterEqual:
+            return BinaryOperatorSymbol::GREATER_EQUAL;
+        case BinaryOperationKind::LogicalNot:
+            return BinaryOperatorSymbol::LOGICAL_NOT;
+        case BinaryOperationKind::LogicalAnd:
+            return BinaryOperatorSymbol::LOGICAL_AND;
+        case BinaryOperationKind::LogicalOr:
+            return BinaryOperatorSymbol::LOGICAL_OR;
+        case BinaryOperationKind::Is:
+            return BinaryOperatorSymbol::IS;
+        case BinaryOperationKind::None:
         default:
             return "";
         }

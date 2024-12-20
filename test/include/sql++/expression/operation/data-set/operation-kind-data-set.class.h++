@@ -2,6 +2,8 @@
  * @file operation-kind-data-set.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : operation-kind*.h++ => binary-operation-kind*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_HXX
 
@@ -22,17 +24,17 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief ≪演算種別≫のテストケースで使用するデータセットを生成するクラス
+     * @brief ≪二項演算種別≫のテストケースで使用するデータセットを生成するクラス
      *
-     * @see sqlxx::expression::OperationKind              テスト対象オブジェクトの型
-     * @see sqlxx::test::expression::OperationKindDataSet データセット要素
+     * @see sqlxx::expression::BinaryOperationKind              テスト対象オブジェクトの型
+     * @see sqlxx::test::expression::BinaryOperationKindDataSet データセット要素
      */
-    class OperationKindDataSet
+    class BinaryOperationKindDataSet
     {
     public:
-        /*! @brief ≪演算種別≫のテストケースで使用するデータセットを生成する */
+        /*! @brief ≪二項演算種別≫のテストケースで使用するデータセットを生成する */
         static auto for_some_test_case()
-            -> std::vector<OperationKindDataSetElement>;
+            -> std::vector<BinaryOperationKindDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -44,53 +46,53 @@ inline namespace expression
     /*!
      * [ データパターン表 ] @n
      * <pre>
-     * -----------------------
-     * |     | OperationKind |
-     * |=====|===============|
-     * |  _0 | None          |
-     * |-----|---------------|
-     * |  _1 | EqualTo       |
-     * |-----|---------------|
-     * |  _2 | NotEqualTo    |
-     * |-----|---------------|
-     * |  _3 | Less          |
-     * |-----|---------------|
-     * |  _4 | LessEqual     |
-     * |-----|---------------|
-     * |  _5 | Greater       |
-     * |-----|---------------|
-     * |  _6 | GreaterEqual  |
-     * |-----|---------------|
-     * |  _7 | LogicalNot    |
-     * |-----|---------------|
-     * |  _8 | LogicalAnd    |
-     * |-----|---------------|
-     * |  _9 | LogicalOr     |
-     * |-----|---------------|
-     * | _10 | Is            |
-     * -----------------------
+     * -----------------------------
+     * |     | BinaryOperationKind |
+     * |=====|=====================|
+     * |  _0 | None                |
+     * |-----|---------------------|
+     * |  _1 | EqualTo             |
+     * |-----|---------------------|
+     * |  _2 | NotEqualTo          |
+     * |-----|---------------------|
+     * |  _3 | Less                |
+     * |-----|---------------------|
+     * |  _4 | LessEqual           |
+     * |-----|---------------------|
+     * |  _5 | Greater             |
+     * |-----|---------------------|
+     * |  _6 | GreaterEqual        |
+     * |-----|---------------------|
+     * |  _7 | LogicalNot          |
+     * |-----|---------------------|
+     * |  _8 | LogicalAnd          |
+     * |-----|---------------------|
+     * |  _9 | LogicalOr           |
+     * |-----|---------------------|
+     * | _10 | Is                  |
+     * -----------------------------
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li OperationKind ... テスト対象関数の引数となるオブジェクト
+     * @li BinaryOperationKind ... テスト対象関数の引数となるオブジェクト
      *
-     * @return ≪演算種別≫のテストケースで使用するデータセット
+     * @return ≪二項演算種別≫のテストケースで使用するデータセット
      *
      * @see sqlxx::expression::to_string() テスト対象関数
      */
-    auto OperationKindDataSet::for_some_test_case()
-        -> std::vector<OperationKindDataSetElement>
+    auto BinaryOperationKindDataSet::for_some_test_case()
+        -> std::vector<BinaryOperationKindDataSetElement>
     {
         // clang-format off
         return {
             // _0
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪演算未定≫
+            // + BinaryOperationKind : ≪演算未定≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::None,
+                BinaryOperationKind::None,
 
                 // 期待結果 - to_string 関数
                 "",
@@ -99,11 +101,11 @@ inline namespace expression
             // _1
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪等値比較演算≫
+            // + BinaryOperationKind : ≪等値比較演算≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::EqualTo,
+                BinaryOperationKind::EqualTo,
 
                 // 期待結果 - to_string 関数
                 "=",
@@ -112,11 +114,11 @@ inline namespace expression
             // _2
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪非等値比較演算≫
+            // + BinaryOperationKind : ≪非等値比較演算≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::NotEqualTo,
+                BinaryOperationKind::NotEqualTo,
 
                 // 期待結果 - to_string 関数
                 "<>",
@@ -125,11 +127,11 @@ inline namespace expression
             // _3
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪比較演算（小なり）≫
+            // + BinaryOperationKind : ≪比較演算（小なり）≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::Less,
+                BinaryOperationKind::Less,
 
                 // 期待結果 - to_string 関数
                 "<",
@@ -138,11 +140,11 @@ inline namespace expression
             // _4
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪比較演算（以下）≫
+            // + BinaryOperationKind : ≪比較演算（以下）≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::LessEqual,
+                BinaryOperationKind::LessEqual,
 
                 // 期待結果 - to_string 関数
                 "<=",
@@ -151,11 +153,11 @@ inline namespace expression
             // _5
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪比較演算（大なり）≫
+            // + BinaryOperationKind : ≪比較演算（大なり）≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::Greater,
+                BinaryOperationKind::Greater,
 
                 // 期待結果 - to_string 関数
                 ">",
@@ -164,11 +166,11 @@ inline namespace expression
             // _6
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪比較演算（以上）≫
+            // + BinaryOperationKind : ≪比較演算（以上）≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::GreaterEqual,
+                BinaryOperationKind::GreaterEqual,
 
                 // 期待結果 - to_string 関数
                 ">=",
@@ -177,11 +179,11 @@ inline namespace expression
             // _7
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪論理否定演算≫
+            // + BinaryOperationKind : ≪論理否定演算≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::LogicalNot,
+                BinaryOperationKind::LogicalNot,
 
                 // 期待結果 - to_string 関数
                 "NOT",
@@ -190,11 +192,11 @@ inline namespace expression
             // _8
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪論理積演算≫
+            // + BinaryOperationKind : ≪論理積演算≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::LogicalAnd,
+                BinaryOperationKind::LogicalAnd,
 
                 // 期待結果 - to_string 関数
                 "AND",
@@ -203,11 +205,11 @@ inline namespace expression
             // _9
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪論理和演算≫
+            // + BinaryOperationKind : ≪論理和演算≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::LogicalOr,
+                BinaryOperationKind::LogicalOr,
 
                 // 期待結果 - to_string 関数
                 "OR",
@@ -216,11 +218,11 @@ inline namespace expression
             // _10
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
-            // + OperationKind : ≪IS演算≫
+            // + BinaryOperationKind : ≪IS演算≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                OperationKind::Is,
+                BinaryOperationKind::Is,
 
                 // 期待結果 - to_string 関数
                 "IS",
