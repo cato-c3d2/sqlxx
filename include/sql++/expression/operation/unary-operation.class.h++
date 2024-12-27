@@ -9,7 +9,7 @@
 
 #include <sql++/expression/condition-expression.class.h++>
 #include <sql++/expression/expression.class.h++>
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/unary-operation-kind.enum-class.h++>
 
 namespace sqlxx
 {
@@ -35,11 +35,10 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] operater ≪二項演算種別≫
+         * @param[in] operater ≪単項演算種別≫
          * @param[in] operand  演算される≪式≫
          */
-        UnaryOperation(
-            BinaryOperationKind operater, Expression const * operand);
+        UnaryOperation(UnaryOperationKind operater, Expression const * operand);
 
         /*!
          * @brief デストラクタ
@@ -113,10 +112,9 @@ inline namespace expression
 
     private:
         /*!
-         * @brief ≪二項演算種別≫
+         * @brief ≪単項演算種別≫
          */
-        // FIXME 【要修正】≪単項演算種別≫に変更する予定
-        BinaryOperationKind _operater;
+        UnaryOperationKind _operater;
 
         /*!
          * @brief 演算される≪式≫
@@ -149,11 +147,11 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     UnaryOperation::UnaryOperation()
-        : UnaryOperation(BinaryOperationKind::None, nullptr)
+        : UnaryOperation(UnaryOperationKind::None, nullptr)
     {}
 
     UnaryOperation::UnaryOperation(
-        BinaryOperationKind operater, Expression const * operand)
+        UnaryOperationKind operater, Expression const * operand)
         : _operater(operater), _operand(operand)
     {}
 
@@ -183,7 +181,7 @@ inline namespace expression
 
     auto UnaryOperation::empty() const -> bool
     {
-        return this->_operater == BinaryOperationKind::None
+        return this->_operater == UnaryOperationKind::None
                || this->_operand == nullptr;
     }
 
@@ -197,7 +195,7 @@ inline namespace expression
 
     auto UnaryOperation::evaluate() const -> std::string
     {
-        if (this->_operater == BinaryOperationKind::None) {
+        if (this->_operater == UnaryOperationKind::None) {
             throw std::runtime_error("'_operater' is empty!");
         }
         if (this->_operand == nullptr) {

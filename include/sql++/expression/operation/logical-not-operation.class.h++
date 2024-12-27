@@ -9,7 +9,7 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/unary-operation-kind.enum-class.h++>
 #include <sql++/expression/operation/unary-operation.class.h++>
 
 namespace sqlxx
@@ -97,11 +97,11 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     LogicalNotOperation::LogicalNotOperation()
-        : UnaryOperation(BinaryOperationKind::LogicalNot, nullptr)
+        : UnaryOperation(UnaryOperationKind::LogicalNot, nullptr)
     {}
 
     LogicalNotOperation::LogicalNotOperation(Expression const & operand)
-        : UnaryOperation(BinaryOperationKind::LogicalNot, operand.clone())
+        : UnaryOperation(UnaryOperationKind::LogicalNot, operand.clone())
     {}
 
     auto LogicalNotOperation::empty() const -> bool

@@ -13,6 +13,7 @@
 #include <sql++/expression/literal/string-literal.class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/unary-operation-kind.enum-class.h++>
 #include <sql++/expression/operation/unary-operation.class.h++>
 
 #include "../unary-operation-data-set-element.class.h++"
@@ -97,7 +98,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    BinaryOperationKind::LogicalNot,
+                    UnaryOperationKind::LogicalNot,
                     new BinaryOperation {
                         BinaryOperationKind::GreaterEqual,
                         new IdentifierExpression { "p.birth_day" },
@@ -127,7 +128,7 @@ inline namespace expression
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
-                    BinaryOperationKind::LogicalNot,
+                    UnaryOperationKind::LogicalNot,
                     new GroupedExpression {
                         BinaryOperation {
                             BinaryOperationKind::LogicalAnd,

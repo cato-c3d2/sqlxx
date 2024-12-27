@@ -61,12 +61,6 @@ inline namespace expression
          */
         GreaterEqual,
 
-        // FIXME 【要修正】単項演算子の種類を定義する列挙型に移行する予定
-        /**
-         * @brief 論理否定演算子
-         */
-        LogicalNot,
-
         /**
          * @brief 論理積演算子
          */
@@ -147,12 +141,6 @@ inline namespace expression
              */
             static constexpr auto GREATER_EQUAL = ">=";
 
-            // FIXME 【要修正】単項演算子の種類を定義する列挙型に移行する予定
-            /**
-             * @brief 論理否定演算子のキーワード
-             */
-            static constexpr auto LOGICAL_NOT = "NOT";
-
             /**
              * @brief 論理積演算子のキーワード
              */
@@ -185,8 +173,6 @@ inline namespace expression
             return BinaryOperatorSymbol::GREATER;
         case BinaryOperationKind::GreaterEqual:
             return BinaryOperatorSymbol::GREATER_EQUAL;
-        case BinaryOperationKind::LogicalNot:
-            return BinaryOperatorSymbol::LOGICAL_NOT;
         case BinaryOperationKind::LogicalAnd:
             return BinaryOperatorSymbol::LOGICAL_AND;
         case BinaryOperationKind::LogicalOr:

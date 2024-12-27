@@ -12,7 +12,7 @@
 
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/literal/null-literal.class.h++>
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/unary-operation-kind.enum-class.h++>
 #include <sql++/expression/operation/unary-operation.class.h++>
 
 #include "./data-set/unary-operation-data-set.class.h++"
@@ -27,10 +27,10 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__expression)
 
 BOOST_AUTO_TEST_SUITE(class__UnaryOperation)
 
-using sqlxx::BinaryOperationKind;
 using sqlxx::Expression;
 using sqlxx::NullLiteral;
 using sqlxx::UnaryOperation;
+using sqlxx::UnaryOperationKind;
 using sqlxx::test::UnaryOperationDataSet;
 
 /*!
@@ -72,7 +72,7 @@ BOOST_AUTO_TEST_CASE(clone_of_constant)
 {
     // 複製元のオブジェクト
     Expression const * source = new UnaryOperation {
-        BinaryOperationKind::LogicalNot,
+        UnaryOperationKind::LogicalNot,
         new NullLiteral {},
     };
 
@@ -97,7 +97,7 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
 {
     // 複製元のオブジェクト
     Expression const * source = new UnaryOperation {
-        BinaryOperationKind::LogicalNot,
+        UnaryOperationKind::LogicalNot,
         new NullLiteral {},
     };
 
