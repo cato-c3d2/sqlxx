@@ -1,11 +1,9 @@
 /*!
- * @file condition-expression-data-set.class-member.00.pattern_by_construction.h++
+ * @file binary-operation-data-set.class-member.00.pattern_by_construction.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : condition-expression*.h++ => binary-operation*.h++
-
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__OPERATION__DATA_SET__BINARY_OPERATION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__OPERATION__DATA_SET__BINARY_OPERATION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX
 
 #include <iterator>
 #include <optional>
@@ -16,7 +14,7 @@
 #include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/operation-kind.enum-class.h++>
 
-#include "../condition-expression-data-set-element.class.h++"
+#include "../binary-operation-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
@@ -350,4 +348,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__CONDITION_EXPRESSION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__OPERATION__DATA_SET__BINARY_OPERATION_DATA_SET_CLASS_MEMBER_00_PATTERN_BY_CONSTRUCTION_HXX */

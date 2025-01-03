@@ -1,11 +1,9 @@
 /*!
- * @file condition-expression.class.test-case.h++
+ * @file binary-operation.class.test-case.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : condition-expression*.h++ => binary-operation*.h++
-
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__CONDITION_EXPRESSION_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__CONDITION_EXPRESSION_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__OPERATION__BINARY_OPERATION_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__OPERATION__BINARY_OPERATION_CLASS_TEST_CASE_HXX
 
 #include <string>
 
@@ -16,7 +14,7 @@
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
 
-#include "./data-set/condition-expression-data-set.class.h++"
+#include "./data-set/binary-operation-data-set.class.h++"
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -232,4 +230,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__BinaryOperation */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__expression */)
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__CONDITION_EXPRESSION_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__OPERATION__BINARY_OPERATION_CLASS_TEST_CASE_HXX */
