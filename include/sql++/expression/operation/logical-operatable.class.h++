@@ -8,7 +8,7 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/binary-operation-kind.enum-class.h++>
 
 namespace sqlxx
 {

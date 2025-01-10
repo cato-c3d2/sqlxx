@@ -1,11 +1,9 @@
 /*!
- * @file operation-kind.enum-class.h++
+ * @file binary-operation-kind.enum-class.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : operation-kind*.h++ => binary-operation-kind*.h++
-
-#ifndef SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
-#define SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__BINARY_OPERATION_KIND_ENUM_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__BINARY_OPERATION_KIND_ENUM_CLASS_HXX
 
 #include <string>
 
@@ -187,4 +185,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__OPERATION__OPERATION_KIND_ENUM_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__BINARY_OPERATION_KIND_ENUM_CLASS_HXX

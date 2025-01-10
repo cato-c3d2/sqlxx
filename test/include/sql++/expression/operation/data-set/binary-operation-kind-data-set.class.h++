@@ -1,17 +1,15 @@
 /*!
- * @file operation-kind-data-set.class.h++
+ * @file binary-operation-kind-data-set.class.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : operation-kind*.h++ => binary-operation-kind*.h++
-
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__BINARY_OPERATION_KIND_DATA_SET_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__BINARY_OPERATION_KIND_DATA_SET_HXX
 
 #include <vector>
 
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
+#include <sql++/expression/operation/binary-operation-kind.enum-class.h++>
 
-#include "./operation-kind-data-set-element.class.h++"
+#include "./binary-operation-kind-data-set-element.class.h++"
 
 namespace sqlxx::test
 {
@@ -218,4 +216,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__OPERATION_KIND_DATA_SET_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__BINARY_OPERATION_KIND_DATA_SET_HXX */

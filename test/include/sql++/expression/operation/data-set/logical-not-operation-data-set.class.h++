@@ -15,9 +15,9 @@
 #include <sql++/expression/literal/null-literal.class.h++>
 #include <sql++/expression/literal/real-number-literal.class.h++>
 #include <sql++/expression/literal/string-literal.class.h++>
+#include <sql++/expression/operation/binary-operation-kind.enum-class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
 #include <sql++/expression/operation/logical-not-operation.class.h++>
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
 
 #include "./logical-not-operation-data-set-element.class.h++"
 

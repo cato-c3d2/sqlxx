@@ -13,8 +13,8 @@
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
 #include <sql++/expression/literal/string-literal.class.h++>
+#include <sql++/expression/operation/binary-operation-kind.enum-class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
-#include <sql++/expression/operation/operation-kind.enum-class.h++>
 #include <sql++/identifier/column-identifier.class.h++>
 #include <sql++/identifier/table-identifier.class.h++>
 #include <sql++/statement/select-statement.class.h++>

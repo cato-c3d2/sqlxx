@@ -58,7 +58,7 @@ inline namespace statement
 #include "./sql++/expression/operation/unary-operation.class.test-case.h++"
 #include "./sql++/expression/operation/binary-operation.class.test-case.h++"
 #include "./sql++/expression/operation/unary-operation-kind.enum-class.test-case.h++"
-#include "./sql++/expression/operation/operation-kind.enum-class.test-case.h++"
+#include "./sql++/expression/operation/binary-operation-kind.enum-class.test-case.h++"
 #include "./sql++/statement/select-statement.class.test-case.h++"
 // clang-format on
 
