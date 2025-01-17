@@ -73,7 +73,7 @@ BOOST_AUTO_TEST_CASE(clone_of_constant)
     // 複製元のオブジェクト
     Expression const * source = new UnaryOperation {
         UnaryOperationKind::LogicalNot,
-        new NullLiteral {},
+        NullLiteral {},
     };
 
     // 複製元のオブジェクトを複製し、複製先のオブジェクトへ代入する
@@ -98,7 +98,7 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
     // 複製元のオブジェクト
     Expression const * source = new UnaryOperation {
         UnaryOperationKind::LogicalNot,
-        new NullLiteral {},
+        NullLiteral {},
     };
 
     // 複製先のオブジェクト

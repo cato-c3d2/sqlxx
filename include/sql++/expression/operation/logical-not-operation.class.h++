@@ -97,11 +97,11 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     LogicalNotOperation::LogicalNotOperation()
-        : UnaryOperation(UnaryOperationKind::LogicalNot, nullptr)
+        : UnaryOperation(UnaryOperationKind::LogicalNot)
     {}
 
     LogicalNotOperation::LogicalNotOperation(Expression const & operand)
-        : UnaryOperation(UnaryOperationKind::LogicalNot, operand.clone())
+        : UnaryOperation(UnaryOperationKind::LogicalNot, operand)
     {}
 
     auto LogicalNotOperation::empty() const -> bool

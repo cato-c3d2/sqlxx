@@ -38,7 +38,16 @@ inline namespace expression
          * @param[in] operater ≪単項演算種別≫
          * @param[in] operand  演算される≪式≫
          */
-        UnaryOperation(UnaryOperationKind operater, Expression const * operand);
+        UnaryOperation(UnaryOperationKind operater, Expression const & operand);
+
+        /*!
+         * @brief コンストラクタ
+         *
+         * ≪単項演算種別≫のみを設定し、演算される≪式≫を後から設定する場合に使用する。
+         *
+         * @param[in] operater ≪単項演算種別≫
+         */
+        UnaryOperation(UnaryOperationKind operater);
 
         /*!
          * @brief デストラクタ
@@ -146,13 +155,16 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    UnaryOperation::UnaryOperation()
-        : UnaryOperation(UnaryOperationKind::None, nullptr)
+    UnaryOperation::UnaryOperation() : UnaryOperation(UnaryOperationKind::None)
     {}
 
     UnaryOperation::UnaryOperation(
-        UnaryOperationKind operater, Expression const * operand)
-        : _operater(operater), _operand(operand)
+        UnaryOperationKind operater, Expression const & operand)
+        : _operater(operater), _operand(operand.clone())
+    {}
+
+    UnaryOperation::UnaryOperation(UnaryOperationKind operater)
+        : _operater(operater), _operand(nullptr)
     {}
 
     UnaryOperation::~UnaryOperation()

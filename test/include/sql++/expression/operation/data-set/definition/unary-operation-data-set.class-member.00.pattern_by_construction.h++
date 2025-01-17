@@ -37,11 +37,11 @@ inline namespace expression
      * |----|----------|----------|
      * | _1 | o        | o        |
      * |----|          |----------|
-     * | _2 |          | x        |
+     * | _2 |          | -        |
      * |----|----------|----------|
      * | _3 | x        | o        |
      * |----|          |----------|
-     * | _4 |          | x        |
+     * | _4 |          | -        |
      * ----------------------------
      * </pre>
      *
@@ -49,8 +49,7 @@ inline namespace expression
      * @li - ... 未指定
      * @li o ... 有効値
      * @li x ... 無効値 (
-     *           @c operater : @c UnaryOperationKind::None /
-     *           @c operand : @c nullptr )
+     *           @c operater : @c UnaryOperationKind::None )
      *
      * [ 構成 ] @n
      * @li      _0 : @link pattern_by_default_construction()   @endlink
@@ -136,7 +135,7 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
                     UnaryOperationKind::LogicalNot,
-                    new NullLiteral {},
+                    NullLiteral {},
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -154,13 +153,12 @@ inline namespace expression
             // [ データパターン ]
             // + UnaryOperation
             //     + operater : 有効値
-            //     + operand  : 無効値
+            //     + operand  : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
                     UnaryOperationKind::LogicalNot,
-                    nullptr,
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -184,7 +182,7 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
                     UnaryOperationKind::None,
-                    new NullLiteral {},
+                    NullLiteral {},
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -202,13 +200,12 @@ inline namespace expression
             // [ データパターン ]
             // + UnaryOperation
             //     + operater : 無効値
-            //     + operand  : 無効値
+            //     + operand  : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 UnaryOperation {
                     UnaryOperationKind::None,
-                    nullptr,
                 },
 
                 // テスト対象オブジェクト - DSL記法
