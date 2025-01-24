@@ -148,40 +148,40 @@ inline namespace expression
     auto ComparisonOperable::equal_to(Type operand) const -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::EqualTo,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::not_equal_to(Type operand) const -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::NotEqualTo,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::less(Type operand) const -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::Less,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::less_equal(Type operand) const -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::LessEqual,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::greater(Type operand) const -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::Greater,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 
     template<typename Type>
@@ -189,16 +189,16 @@ inline namespace expression
         -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::GreaterEqual,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 
     template<typename Type>
     auto ComparisonOperable::is(Type operand) const -> BinaryOperation
     {
         return BinaryOperation { BinaryOperationKind::Is,
-                                 this->clone(),
-                                 make_expression(operand) };
+                                 *this,
+                                 *make_expression(operand) };
     }
 } // namespace expression
 } // namespace sqlxx

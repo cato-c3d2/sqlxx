@@ -32,8 +32,7 @@ inline namespace expression
         /*!
          * @brief デフォルトコンストラクタ
          */
-        LogicalOperatableMock()
-            : LogicalOperatableMock(BinaryOperationKind::None, nullptr, nullptr)
+        LogicalOperatableMock() : _operater(BinaryOperationKind::None)
         {}
 
         /*!
@@ -45,8 +44,8 @@ inline namespace expression
          */
         LogicalOperatableMock(
             BinaryOperationKind operater,
-            Expression const *  left_expression,
-            Expression const *  right_expression)
+            Expression const &  left_expression,
+            Expression const &  right_expression)
             : _operater(operater)
         {}
 

@@ -83,15 +83,15 @@ inline namespace expression
                 // 期待結果 - logical_and メンバ関数
                 LogicalOperatableMock {
                     BinaryOperationKind::LogicalAnd,
-                    new LogicalOperatableMock {},
-                    new LogicalOperatableMock {},
+                    LogicalOperatableMock {},
+                    LogicalOperatableMock {},
                 },
 
                 // 期待結果 - logical_or メンバ関数
                 LogicalOperatableMock {
                     BinaryOperationKind::LogicalOr,
-                    new LogicalOperatableMock {},
-                    new LogicalOperatableMock {},
+                    LogicalOperatableMock {},
+                    LogicalOperatableMock {},
                 },
             },
         };

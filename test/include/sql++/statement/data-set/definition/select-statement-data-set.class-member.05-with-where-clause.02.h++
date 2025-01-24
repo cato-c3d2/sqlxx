@@ -159,15 +159,15 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalAnd,
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::GreaterEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "1901-01-01" },
+                                IdentifierExpression { "p.birth_day" },
+                                StringLiteral { "1901-01-01" },
                             },
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::LessEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "2000-12-31" },
+                                IdentifierExpression { "p.birth_day" },
+                                StringLiteral { "2000-12-31" },
                             },
                         },
                     },
@@ -218,23 +218,23 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalAnd,
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "John Doe" },
                             },
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalAnd,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::GreaterEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "1901-01-01" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "1901-01-01" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::LessEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "2000-12-31" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "2000-12-31" },
                                     },
                                 },
                             },
@@ -293,25 +293,25 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalAnd,
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalAnd,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::GreaterEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "1901-01-01" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "1901-01-01" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::LessEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "2000-12-31" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "2000-12-31" },
                                     },
                                 },
                             },
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "John Doe" },
                             },
                         },
                     },
@@ -368,33 +368,33 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalAnd,
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalAnd,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::GreaterEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "1901-01-01" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "1901-01-01" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::LessEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "2000-12-31" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "2000-12-31" },
                                     },
                                 },
                             },
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalOr,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::EqualTo,
-                                        new IdentifierExpression { "p.name" },
-                                        new StringLiteral { "John Doe" },
+                                        IdentifierExpression { "p.name" },
+                                        StringLiteral { "John Doe" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::EqualTo,
-                                        new IdentifierExpression { "p.name" },
-                                        new StringLiteral { "Jane Doe" },
+                                        IdentifierExpression { "p.name" },
+                                        StringLiteral { "Jane Doe" },
                                     },
                                 },
                             },
@@ -482,15 +482,15 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalOr,
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "John Doe" },
                             },
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "Jane Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "Jane Doe" },
                             },
                         },
                     },
@@ -541,23 +541,23 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalOr,
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "John Doe" },
                             },
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalAnd,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::GreaterEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "1901-01-01" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "1901-01-01" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::LessEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "2000-12-31" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "2000-12-31" },
                                     },
                                 },
                             },
@@ -616,25 +616,25 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalOr,
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalAnd,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::GreaterEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "1901-01-01" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "1901-01-01" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::LessEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "2000-12-31" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "2000-12-31" },
                                     },
                                 },
                             },
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "John Doe" },
                             },
                         },
                     },
@@ -691,33 +691,33 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::LogicalOr,
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalAnd,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::GreaterEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "1901-01-01" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "1901-01-01" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::LessEqual,
-                                        new IdentifierExpression { "p.birth_day" },
-                                        new StringLiteral { "2000-12-31" },
+                                        IdentifierExpression { "p.birth_day" },
+                                        StringLiteral { "2000-12-31" },
                                     },
                                 },
                             },
-                            new GroupedExpression {
+                            GroupedExpression {
                                 BinaryOperation {
                                     BinaryOperationKind::LogicalOr,
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::EqualTo,
-                                        new IdentifierExpression { "p.name" },
-                                        new StringLiteral { "John Doe" },
+                                        IdentifierExpression { "p.name" },
+                                        StringLiteral { "John Doe" },
                                     },
-                                    new BinaryOperation {
+                                    BinaryOperation {
                                         BinaryOperationKind::EqualTo,
-                                        new IdentifierExpression { "p.name" },
-                                        new StringLiteral { "Jane Doe" },
+                                        IdentifierExpression { "p.name" },
+                                        StringLiteral { "Jane Doe" },
                                     },
                                 },
                             },

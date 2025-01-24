@@ -38,19 +38,19 @@ inline namespace expression
      * |-----|----------|----------|----------|
      * |  _1 | o        | o        | o        |
      * |-----|          |          |----------|
-     * |  _2 |          |          | x        |
+     * |  _2 |          |          | -        |
      * |-----|          |----------|----------|
-     * |  _3 |          | x        | o        |
+     * |  _3 |          | -        | o        |
      * |-----|          |          |----------|
-     * |  _4 |          |          | x        |
+     * |  _4 |          |          | -        |
      * |-----|----------|----------|----------|
      * |  _5 | x        | o        | o        |
      * |-----|          |          |----------|
-     * |  _6 |          |          | x        |
+     * |  _6 |          |          | -        |
      * |-----|          |----------|----------|
-     * |  _7 |          | x        | o        |
+     * |  _7 |          | -        | o        |
      * |-----|          |          |----------|
-     * |  _8 |          |          | x        |
+     * |  _8 |          |          | -        |
      * ----------------------------------------
      * </pre>
      *
@@ -58,8 +58,7 @@ inline namespace expression
      * @li - ... 未指定
      * @li o ... 有効値
      * @li x ... 無効値 (
-     *           @c operater : @c BinaryOperationKind::None /
-     *           @c left & @c right : @c nullptr )
+     *           @c operater : @c BinaryOperationKind::None )
      *
      * [ 構成 ] @n
      * @li      _0 : @link pattern_by_default_construction()   @endlink
@@ -147,8 +146,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new IdentifierExpression { "p.id" },
-                    new IntegerLiteral { 1234 },
+                    IdentifierExpression { "p.id" },
+                    IntegerLiteral { 1234 },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -167,14 +166,13 @@ inline namespace expression
             // + BinaryOperation
             //     + operater : 有効値
             //     + left     : 有効値
-            //     + right    : 無効値
+            //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new IdentifierExpression { "p.id" },
-                    nullptr,
+                    IdentifierExpression { "p.id" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -188,19 +186,20 @@ inline namespace expression
             },
 
             // _3
+            // FIXME 削除予定
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
             //     + operater : 有効値
-            //     + left     : 無効値
+            //     + left     : 未指定
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
-                    BinaryOperationKind::EqualTo,
-                    nullptr,
-                    new IntegerLiteral { 1234 },
+                    // BinaryOperationKind::EqualTo,
+                    // nullptr,
+                    // IntegerLiteral { 1234 },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -218,15 +217,13 @@ inline namespace expression
             // [ データパターン ]
             // + BinaryOperation
             //     + operater : 有効値
-            //     + left     : 無効値
-            //     + right    : 無効値
+            //     + left     : 未指定
+            //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    nullptr,
-                    nullptr,
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -251,8 +248,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::None,
-                    new IdentifierExpression { "p.id" },
-                    new IntegerLiteral { 1234 },
+                    IdentifierExpression { "p.id" },
+                    IntegerLiteral { 1234 },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -271,14 +268,13 @@ inline namespace expression
             // + BinaryOperation
             //     + operater : 無効値
             //     + left     : 有効値
-            //     + right    : 無効値
+            //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::None,
-                    new IdentifierExpression { "p.id" },
-                    nullptr,
+                    IdentifierExpression { "p.id" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -292,19 +288,20 @@ inline namespace expression
             },
 
             // _7
+            // FIXME 削除予定
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
             //     + operater : 無効値
-            //     + left     : 無効値
+            //     + left     : 未指定
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
-                    BinaryOperationKind::None,
-                    nullptr,
-                    new IntegerLiteral { 1234 },
+                    // BinaryOperationKind::None,
+                    // nullptr,
+                    // IntegerLiteral { 1234 },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -322,15 +319,13 @@ inline namespace expression
             // [ データパターン ]
             // + BinaryOperation
             //     + operater : 無効値
-            //     + left     : 無効値
-            //     + right    : 無効値
+            //     + left     : 未指定
+            //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::None,
-                    nullptr,
-                    nullptr,
                 },
 
                 // テスト対象オブジェクト - DSL記法

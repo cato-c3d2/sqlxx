@@ -45,8 +45,28 @@ inline namespace expression
          */
         BinaryOperation(
             BinaryOperationKind operater,
-            Expression const *  left_expression,
-            Expression const *  right_expression);
+            Expression const &  left_expression,
+            Expression const &  right_expression);
+
+        /*!
+         * @brief コンストラクタ
+         *
+         * ≪二項演算種別≫のみを設定し、左辺の≪式≫及び右辺の≪式≫を後から設定する場合に使用する。
+         *
+         * @param[in] operater ≪二項演算種別≫
+         */
+        BinaryOperation(BinaryOperationKind operater);
+
+        /*!
+         * @brief コンストラクタ
+         *
+         * ≪二項演算種別≫と左辺の≪式≫を設定し、右辺の≪式≫を後から設定する場合に使用する。
+         *
+         * @param[in] operater        ≪二項演算種別≫
+         * @param[in] left_expression 左辺の≪式≫
+         */
+        BinaryOperation(
+            BinaryOperationKind operater, Expression const & left_expression);
 
         /*!
          * @brief デストラクタ
@@ -154,16 +174,29 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     BinaryOperation::BinaryOperation()
-        : BinaryOperation(BinaryOperationKind::None, nullptr, nullptr)
+        : BinaryOperation(BinaryOperationKind::None)
     {}
 
     BinaryOperation::BinaryOperation(
         BinaryOperationKind operater,
-        Expression const *  left_expression,
-        Expression const *  right_expression)
+        Expression const &  left_expression,
+        Expression const &  right_expression)
         : _operater(operater)
-        , _left_expression(left_expression)
-        , _right_expression(right_expression)
+        , _left_expression(left_expression.clone())
+        , _right_expression(right_expression.clone())
+    {}
+
+    BinaryOperation::BinaryOperation(BinaryOperationKind operater)
+        : _operater(operater)
+        , _left_expression(nullptr)
+        , _right_expression(nullptr)
+    {}
+
+    BinaryOperation::BinaryOperation(
+        BinaryOperationKind operater, Expression const & left_expression)
+        : _operater(operater)
+        , _left_expression(left_expression.clone())
+        , _right_expression(nullptr)
     {}
 
     BinaryOperation::~BinaryOperation()

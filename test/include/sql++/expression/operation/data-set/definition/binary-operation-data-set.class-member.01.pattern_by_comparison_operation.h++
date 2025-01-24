@@ -170,8 +170,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new IdentifierExpression { "p.name" },
-                    new IdentifierExpression { "p.nickname" },
+                    IdentifierExpression { "p.name" },
+                    IdentifierExpression { "p.nickname" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -197,8 +197,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new IdentifierExpression { "p.name" },
-                    new StringLiteral { "John Doe" },
+                    IdentifierExpression { "p.name" },
+                    StringLiteral { "John Doe" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -223,8 +223,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new StringLiteral { "John Doe" },
-                    new IdentifierExpression { "p.name" },
+                    StringLiteral { "John Doe" },
+                    IdentifierExpression { "p.name" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -249,8 +249,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new StringLiteral { "john doe" },
-                    new StringLiteral { "JOHN DOE" },
+                    StringLiteral { "john doe" },
+                    StringLiteral { "JOHN DOE" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -296,8 +296,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new IdentifierExpression { "p.name" },
-                    new IdentifierExpression { "p.nickname" },
+                    IdentifierExpression { "p.name" },
+                    IdentifierExpression { "p.nickname" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -323,8 +323,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new IdentifierExpression { "p.name" },
-                    new StringLiteral { "John Doe" },
+                    IdentifierExpression { "p.name" },
+                    StringLiteral { "John Doe" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -349,8 +349,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new StringLiteral { "John Doe" },
-                    new IdentifierExpression { "p.name" },
+                    StringLiteral { "John Doe" },
+                    IdentifierExpression { "p.name" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -375,8 +375,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new StringLiteral { "john doe" },
-                    new StringLiteral { "JOHN DOE" },
+                    StringLiteral { "john doe" },
+                    StringLiteral { "JOHN DOE" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -422,8 +422,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new IdentifierExpression { "p.created_at" },
-                    new IdentifierExpression { "p.updated_at" },
+                    IdentifierExpression { "p.created_at" },
+                    IdentifierExpression { "p.updated_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -449,8 +449,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new IdentifierExpression { "p.created_at" },
-                    new StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -475,8 +475,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new StringLiteral { "2001-01-01" },
-                    new IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -501,8 +501,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new StringLiteral { "2000-12-31" },
-                    new StringLiteral { "2001-01-01" },
+                    StringLiteral { "2000-12-31" },
+                    StringLiteral { "2001-01-01" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -548,8 +548,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new IdentifierExpression { "p.created_at" },
-                    new IdentifierExpression { "p.updated_at" },
+                    IdentifierExpression { "p.created_at" },
+                    IdentifierExpression { "p.updated_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -575,8 +575,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new IdentifierExpression { "p.created_at" },
-                    new StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -601,8 +601,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new StringLiteral { "2001-01-01" },
-                    new IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -627,8 +627,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new StringLiteral { "2000-12-31" },
-                    new StringLiteral { "2001-01-01" },
+                    StringLiteral { "2000-12-31" },
+                    StringLiteral { "2001-01-01" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -674,8 +674,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new IdentifierExpression { "p.created_at" },
-                    new IdentifierExpression { "p.updated_at" },
+                    IdentifierExpression { "p.created_at" },
+                    IdentifierExpression { "p.updated_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -701,8 +701,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new IdentifierExpression { "p.created_at" },
-                    new StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -727,8 +727,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new StringLiteral { "2001-01-01" },
-                    new IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -753,8 +753,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new StringLiteral { "2001-01-01" },
-                    new StringLiteral { "2000-12-31" },
+                    StringLiteral { "2001-01-01" },
+                    StringLiteral { "2000-12-31" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -800,8 +800,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new IdentifierExpression { "p.created_at" },
-                    new IdentifierExpression { "p.updated_at" },
+                    IdentifierExpression { "p.created_at" },
+                    IdentifierExpression { "p.updated_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -827,8 +827,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new IdentifierExpression { "p.created_at" },
-                    new StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -853,8 +853,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new StringLiteral { "2001-01-01" },
-                    new IdentifierExpression { "p.created_at" },
+                    StringLiteral { "2001-01-01" },
+                    IdentifierExpression { "p.created_at" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -880,8 +880,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new StringLiteral { "2001-01-01" },
-                    new StringLiteral { "2000-12-31" },
+                    StringLiteral { "2001-01-01" },
+                    StringLiteral { "2000-12-31" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -927,8 +927,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new IdentifierExpression { "p.nickname" },
-                    new IdentifierExpression { "p.nickname" },
+                    IdentifierExpression { "p.nickname" },
+                    IdentifierExpression { "p.nickname" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -953,8 +953,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new IdentifierExpression { "p.nickname" },
-                    new NullLiteral { },
+                    IdentifierExpression { "p.nickname" },
+                    NullLiteral { },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -979,8 +979,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new NullLiteral { },
-                    new IdentifierExpression { "p.nickname" },
+                    NullLiteral { },
+                    IdentifierExpression { "p.nickname" },
                 },
 
                 // テスト対象オブジェクト - DSL記法
@@ -1005,8 +1005,8 @@ inline namespace expression
                 // テスト対象オブジェクト - 非DSL記法
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new NullLiteral { },
-                    new NullLiteral { },
+                    NullLiteral { },
+                    NullLiteral { },
                 },
 
                 // テスト対象オブジェクト - DSL記法

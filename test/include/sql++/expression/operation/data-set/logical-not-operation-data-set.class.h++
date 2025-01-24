@@ -725,8 +725,8 @@ inline namespace expression
                 LogicalNotOperation {
                     BinaryOperation {
                         BinaryOperationKind::EqualTo,
-                        new IdentifierExpression { "p.id" },
-                        new IntegerLiteral { 1234 },
+                        IdentifierExpression { "p.id" },
+                        IntegerLiteral { 1234 },
                     },
                 },
 
@@ -750,15 +750,15 @@ inline namespace expression
                 LogicalNotOperation {
                     BinaryOperation {
                         BinaryOperationKind::LogicalAnd,
-                        new BinaryOperation {
+                        BinaryOperation {
                             BinaryOperationKind::EqualTo,
-                            new IdentifierExpression { "p.name" },
-                            new StringLiteral { "John Doe" },
+                            IdentifierExpression { "p.name" },
+                            StringLiteral { "John Doe" },
                         },
-                        new BinaryOperation {
+                        BinaryOperation {
                             BinaryOperationKind::LessEqual,
-                            new IdentifierExpression { "p.birth_day" },
-                            new StringLiteral { "2000-12-31" },
+                            IdentifierExpression { "p.birth_day" },
+                            StringLiteral { "2000-12-31" },
                         },
                     },
                 },
@@ -820,8 +820,8 @@ inline namespace expression
                     GroupedExpression {
                         BinaryOperation {
                             BinaryOperationKind::EqualTo,
-                            new IdentifierExpression { "p.id" },
-                            new IntegerLiteral { 1234 },
+                            IdentifierExpression { "p.id" },
+                            IntegerLiteral { 1234 },
                         },
                     },
                 },
@@ -847,15 +847,15 @@ inline namespace expression
                     GroupedExpression {
                         BinaryOperation {
                             BinaryOperationKind::LogicalAnd,
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::EqualTo,
-                                new IdentifierExpression { "p.name" },
-                                new StringLiteral { "John Doe" },
+                                IdentifierExpression { "p.name" },
+                                StringLiteral { "John Doe" },
                             },
-                            new BinaryOperation {
+                            BinaryOperation {
                                 BinaryOperationKind::LessEqual,
-                                new IdentifierExpression { "p.birth_day" },
-                                new StringLiteral { "2000-12-31" },
+                                IdentifierExpression { "p.birth_day" },
+                                StringLiteral { "2000-12-31" },
                             },
                         },
                     },

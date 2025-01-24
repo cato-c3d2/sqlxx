@@ -53,19 +53,19 @@ inline namespace statement
      * |-----|----------|----------|----------|
      * | _71 | o        | o        | o        |
      * |-----|          |          |----------|
-     * | _72 |          |          | x        |
+     * | _72 |          |          | -        |
      * |-----|          |----------|----------|
-     * | _73 |          | x        | o        |
+     * | _73 |          | -        | o        |
      * |-----|          |          |----------|
-     * | _74 |          |          | x        |
+     * | _74 |          |          | -        |
      * |-----|----------|----------|----------|
      * | _75 | x        | o        | o        |
      * |-----|          |          |----------|
-     * | _76 |          |          | x        |
+     * | _76 |          |          | -        |
      * |-----|          |----------|----------|
-     * | _77 |          | x        | o        |
+     * | _77 |          | -        | o        |
      * |-----|          |          |----------|
-     * | _78 |          |          | x        |
+     * | _78 |          |          | -        |
      * ----------------------------------------
      * </pre>
      *
@@ -73,8 +73,7 @@ inline namespace statement
      * @li - ... 未指定
      * @li o ... 有効値
      * @li x ... 無効値 (
-     *           @c operater : @c BinaryOperationKind::None /
-     *           @c left & @c right : @c nullptr )
+     *           @c operater : @c BinaryOperationKind::None )
      *
      * [ 構成 ] @n
      * @li       _69 : @link with_where_clause_of_built_by_default_construction()   @endlink
@@ -251,8 +250,8 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::EqualTo,
-                            new IdentifierExpression { "p.id" },
-                            new IntegerLiteral { 1234 },
+                            IdentifierExpression { "p.id" },
+                            IntegerLiteral { 1234 },
                         },
                     },
                 },
@@ -268,7 +267,7 @@ inline namespace statement
             //     + BinaryOperation
             //         + operater : 有効値
             //         + left     : 有効値
-            //         + right    : 無効値
+            //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
@@ -283,8 +282,7 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::EqualTo,
-                            new IdentifierExpression { "p.id" },
-                            nullptr,
+                            IdentifierExpression { "p.id" },
                         },
                     },
                 },
@@ -294,12 +292,13 @@ inline namespace statement
             },
 
             // _73
+            // FIXME 削除予定
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
             //         + operater : 有効値
-            //         + left     : 無効値
+            //         + left     : 未指定
             //         + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
@@ -314,9 +313,9 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            BinaryOperationKind::EqualTo,
-                            nullptr,
-                            new IntegerLiteral { 1234 },
+                            // BinaryOperationKind::EqualTo,
+                            // nullptr,
+                            // IntegerLiteral { 1234 },
                         },
                     },
                 },
@@ -331,8 +330,8 @@ inline namespace statement
             // + WhereClause
             //     + BinaryOperation
             //         + operater : 有効値
-            //         + left     : 無効値
-            //         + right    : 無効値
+            //         + left     : 未指定
+            //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
@@ -347,8 +346,6 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::EqualTo,
-                            nullptr,
-                            nullptr,
                         },
                     },
                 },
@@ -379,8 +376,8 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::None,
-                            new IdentifierExpression { "p.id" },
-                            new IntegerLiteral { 1234 },
+                            IdentifierExpression { "p.id" },
+                            IntegerLiteral { 1234 },
                         },
                     },
                 },
@@ -396,7 +393,7 @@ inline namespace statement
             //     + BinaryOperation
             //         + operater : 無効値
             //         + left     : 有効値
-            //         + right    : 無効値
+            //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
@@ -411,8 +408,7 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::None,
-                            new IdentifierExpression { "p.id" },
-                            nullptr,
+                            IdentifierExpression { "p.id" },
                         },
                     },
                 },
@@ -422,12 +418,13 @@ inline namespace statement
             },
 
             // _77
+            // FIXME 削除予定
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
             //         + operater : 無効値
-            //         + left     : 無効値
+            //         + left     : 未指定
             //         + right    : 有効値
             ////////////////////////////////////////////////////////////////////
             {
@@ -442,9 +439,9 @@ inline namespace statement
                     },
                     WhereClause {
                         BinaryOperation {
-                            BinaryOperationKind::None,
-                            nullptr,
-                            new IntegerLiteral { 1234 },
+                            // BinaryOperationKind::None,
+                            // nullptr,
+                            // IntegerLiteral { 1234 },
                         },
                     },
                 },
@@ -459,8 +456,8 @@ inline namespace statement
             // + WhereClause
             //     + BinaryOperation
             //         + operater : 無効値
-            //         + left     : 無効値
-            //         + right    : 無効値
+            //         + left     : 未指定
+            //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト - 非DSL記法
@@ -475,8 +472,6 @@ inline namespace statement
                     WhereClause {
                         BinaryOperation {
                             BinaryOperationKind::None,
-                            nullptr,
-                            nullptr,
                         },
                     },
                 },

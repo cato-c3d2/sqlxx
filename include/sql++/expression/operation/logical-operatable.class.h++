@@ -74,8 +74,8 @@ inline namespace expression
         Expression const & operand) const -> BinaryOperationType
     {
         return BinaryOperationType { BinaryOperationKind::LogicalAnd,
-                                     this->clone(),
-                                     operand.clone() };
+                                     *this,
+                                     operand };
     }
 
     template<typename BinaryOperationType>
@@ -83,8 +83,8 @@ inline namespace expression
         Expression const & operand) const -> BinaryOperationType
     {
         return BinaryOperationType { BinaryOperationKind::LogicalOr,
-                                     this->clone(),
-                                     operand.clone() };
+                                     *this,
+                                     operand };
     }
 } // namespace expression
 } // namespace sqlxx

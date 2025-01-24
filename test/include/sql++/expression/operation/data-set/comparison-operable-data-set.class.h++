@@ -97,50 +97,50 @@ inline namespace expression
                 // 期待結果 - equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - is メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockX {},
                 },
             },
 
@@ -160,50 +160,50 @@ inline namespace expression
                 // 期待結果 - equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - is メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new ComparisonOperableMockX {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
                 },
             },
 
@@ -223,50 +223,50 @@ inline namespace expression
                 // 期待結果 - equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
 
                 // 期待結果 - is メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockX {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockX {},
                 },
             },
 
@@ -286,50 +286,50 @@ inline namespace expression
                 // 期待結果 - equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::EqualTo,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - not_equal_to メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::NotEqualTo,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Less,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - less_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::LessEqual,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Greater,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - greater_equal メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::GreaterEqual,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
 
                 // 期待結果 - is メンバ関数
                 BinaryOperation {
                     BinaryOperationKind::Is,
-                    new ComparisonOperableMockY {},
-                    new ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
+                    ComparisonOperableMockY {},
                 },
             },
         };
