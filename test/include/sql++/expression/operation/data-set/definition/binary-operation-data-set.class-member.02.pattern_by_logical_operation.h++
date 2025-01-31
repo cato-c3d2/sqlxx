@@ -34,21 +34,21 @@ inline namespace expression
      * |     |--------------------------------|
      * |     | operater | left     | right    |
      * |=====|==========|==========|==========|
-     * | _37 | AND      | CE       | CE       |
+     * | _35 | AND      | CE       | CE       |
+     * |-----|          |          |----------|
+     * | _36 |          |          | GE       |
+     * |-----|          |----------|----------|
+     * | _37 |          | GE       | CE       |
      * |-----|          |          |----------|
      * | _38 |          |          | GE       |
-     * |-----|          |----------|----------|
-     * | _39 |          | GE       | CE       |
+     * |-----|----------|----------|----------|
+     * | _39 | OR       | CE       | CE       |
      * |-----|          |          |----------|
      * | _40 |          |          | GE       |
-     * |-----|----------|----------|----------|
-     * | _41 | OR       | CE       | CE       |
+     * |-----|          |----------|----------|
+     * | _41 |          | GE       | CE       |
      * |-----|          |          |----------|
      * | _42 |          |          | GE       |
-     * |-----|          |----------|----------|
-     * | _43 |          | GE       | CE       |
-     * |-----|          |          |----------|
-     * | _44 |          |          | GE       |
      * ----------------------------------------
      * </pre>
      *
@@ -59,8 +59,8 @@ inline namespace expression
      * @li GE  ... ≪グループ化された式≫ ( @c GroupedExpression )
      *
      * [ 構成 ] @n
-     * @li _37 ~ _40 : @link pattern_by_logical_and() @endlink
-     * @li _41 ~ _44 : @link pattern_by_logical_or()  @endlink
+     * @li _35 ~ _38 : @link pattern_by_logical_and() @endlink
+     * @li _39 ~ _42 : @link pattern_by_logical_or()  @endlink
      *
      * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
@@ -103,7 +103,7 @@ inline namespace expression
 
         // clang-format off
         return {
-            // _37
+            // _35
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -140,7 +140,7 @@ inline namespace expression
                 "p.birth_day >= '1901-01-01' AND p.birth_day <= '2000-12-31'",
             },
 
-            // _38
+            // _36
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -193,7 +193,7 @@ inline namespace expression
                     "AND (p.birth_day >= '1901-01-01' AND p.birth_day <= '2000-12-31')",
             },
 
-            // _39
+            // _37
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -246,7 +246,7 @@ inline namespace expression
                     "AND p.name = 'John Doe'",
             },
 
-            // _40
+            // _38
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -335,7 +335,7 @@ inline namespace expression
 
         // clang-format off
         return {
-            // _41
+            // _39
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -372,7 +372,7 @@ inline namespace expression
                 "p.name = 'John Doe' OR p.name = 'Jane Doe'",
             },
 
-            // _42
+            // _40
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -425,7 +425,7 @@ inline namespace expression
                     "OR (p.birth_day >= '1901-01-01' AND p.birth_day <= '2000-12-31')",
             },
 
-            // _43
+            // _41
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
@@ -478,7 +478,7 @@ inline namespace expression
                     "OR p.name = 'John Doe'",
             },
 
-            // _44
+            // _42
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation

@@ -55,17 +55,17 @@ inline namespace statement
      * |-----|          |          |----------|
      * | _72 |          |          | -        |
      * |-----|          |----------|----------|
-     * | _73 |          | -        | o        |
+     * | ___ |          | -        | o        | ※コンパイル不可
      * |-----|          |          |----------|
-     * | _74 |          |          | -        |
+     * | _73 |          |          | -        |
      * |-----|----------|----------|----------|
-     * | _75 | x        | o        | o        |
+     * | _74 | x        | o        | o        |
+     * |-----|          |          |----------|
+     * | ___ |          |          | -        | ※コンパイル不可
+     * |-----|          |----------|----------|
+     * | _75 |          | -        | o        |
      * |-----|          |          |----------|
      * | _76 |          |          | -        |
-     * |-----|          |----------|----------|
-     * | _77 |          | -        | o        |
-     * |-----|          |          |----------|
-     * | _78 |          |          | -        |
      * ----------------------------------------
      * </pre>
      *
@@ -77,7 +77,7 @@ inline namespace statement
      *
      * [ 構成 ] @n
      * @li       _69 : @link with_where_clause_of_built_by_default_construction()   @endlink
-     * @li _70 ~ _78 : @link with_where_clause_of_built_by_undefault_construction() @endlink
+     * @li _70 ~ _76 : @link with_where_clause_of_built_by_undefault_construction() @endlink
      *
      * [ 備考 ] @n
      * @c SelectClause 及び @c FromClause は各データパターンにおいて共通のものを使用する（下記参照）。 @n
@@ -292,39 +292,6 @@ inline namespace statement
             },
 
             // _73
-            // FIXME 削除予定
-            ////////////////////////////////////////////////////////////////////
-            // [ データパターン ]
-            // + WhereClause
-            //     + BinaryOperation
-            //         + operater : 有効値
-            //         + left     : 未指定
-            //         + right    : 有効値
-            ////////////////////////////////////////////////////////////////////
-            {
-                // テスト対象オブジェクト - 非DSL記法
-                SelectStatement {
-                    SelectClause {{
-                        ColumnIdentifier { "id" }.as({ "p.id" }),
-                        ColumnIdentifier { "name" }.as({ "p.name" }),
-                    }},
-                    FromClause {
-                        TableIdentifier { "people" }.as({ "p" }),
-                    },
-                    WhereClause {
-                        BinaryOperation {
-                            // BinaryOperationKind::EqualTo,
-                            // nullptr,
-                            // IntegerLiteral { 1234 },
-                        },
-                    },
-                },
-
-                // 期待結果 - to_string メンバ関数
-                "SELECT id AS p.id, name AS p.name FROM people AS p",
-            },
-
-            // _74
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -354,7 +321,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p",
             },
 
-            // _75
+            // _74
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -386,7 +353,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p",
             },
 
-            // _76
+            // _75
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -417,40 +384,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p",
             },
 
-            // _77
-            // FIXME 削除予定
-            ////////////////////////////////////////////////////////////////////
-            // [ データパターン ]
-            // + WhereClause
-            //     + BinaryOperation
-            //         + operater : 無効値
-            //         + left     : 未指定
-            //         + right    : 有効値
-            ////////////////////////////////////////////////////////////////////
-            {
-                // テスト対象オブジェクト - 非DSL記法
-                SelectStatement {
-                    SelectClause {{
-                        ColumnIdentifier { "id" }.as({ "p.id" }),
-                        ColumnIdentifier { "name" }.as({ "p.name" }),
-                    }},
-                    FromClause {
-                        TableIdentifier { "people" }.as({ "p" }),
-                    },
-                    WhereClause {
-                        BinaryOperation {
-                            // BinaryOperationKind::None,
-                            // nullptr,
-                            // IntegerLiteral { 1234 },
-                        },
-                    },
-                },
-
-                // 期待結果 - to_string メンバ関数
-                "SELECT id AS p.id, name AS p.name FROM people AS p",
-            },
-
-            // _78
+            // _76
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause

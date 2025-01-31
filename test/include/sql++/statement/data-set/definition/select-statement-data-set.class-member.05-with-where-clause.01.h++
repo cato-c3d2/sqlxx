@@ -42,61 +42,61 @@ inline namespace statement
      * |      |--------------------------------|
      * |      | operater | left     | right    |
      * |======|==========|==========|==========|
-     * |  _79 | =        | IE       | IE       |
+     * |  _77 | =        | IE       | IE       |
+     * |------|          |          |----------|
+     * |  _78 |          |          | LE       |
+     * |------|          |----------|----------|
+     * |  _79 |          | LE       | IE       |
      * |------|          |          |----------|
      * |  _80 |          |          | LE       |
-     * |------|          |----------|----------|
-     * |  _81 |          | LE       | IE       |
+     * |------|----------|----------|----------|
+     * |  _81 | <>       | IE       | IE       |
      * |------|          |          |----------|
      * |  _82 |          |          | LE       |
-     * |------|----------|----------|----------|
-     * |  _83 | <>       | IE       | IE       |
+     * |------|          |----------|----------|
+     * |  _83 |          | LE       | IE       |
      * |------|          |          |----------|
      * |  _84 |          |          | LE       |
-     * |------|          |----------|----------|
-     * |  _85 |          | LE       | IE       |
+     * |------|----------|----------|----------|
+     * |  _85 | <        | IE       | IE       |
      * |------|          |          |----------|
      * |  _86 |          |          | LE       |
-     * |------|----------|----------|----------|
-     * |  _87 | <        | IE       | IE       |
+     * |------|          |----------|----------|
+     * |  _87 |          | LE       | IE       |
      * |------|          |          |----------|
      * |  _88 |          |          | LE       |
-     * |------|          |----------|----------|
-     * |  _89 |          | LE       | IE       |
+     * |------|----------|----------|----------|
+     * |  _89 | <=       | IE       | IE       |
      * |------|          |          |----------|
      * |  _90 |          |          | LE       |
-     * |------|----------|----------|----------|
-     * |  _91 | <=       | IE       | IE       |
+     * |------|          |----------|----------|
+     * |  _91 |          | LE       | IE       |
      * |------|          |          |----------|
      * |  _92 |          |          | LE       |
-     * |------|          |----------|----------|
-     * |  _93 |          | LE       | IE       |
+     * |------|----------|----------|----------|
+     * |  _93 | >        | IE       | IE       |
      * |------|          |          |----------|
      * |  _94 |          |          | LE       |
-     * |------|----------|----------|----------|
-     * |  _95 | >        | IE       | IE       |
+     * |------|          |----------|----------|
+     * |  _95 |          | LE       | IE       |
      * |------|          |          |----------|
      * |  _96 |          |          | LE       |
-     * |------|          |----------|----------|
-     * |  _97 |          | LE       | IE       |
+     * |------|----------|----------|----------|
+     * |  _97 | >=       | IE       | IE       |
      * |------|          |          |----------|
      * |  _98 |          |          | LE       |
-     * |------|----------|----------|----------|
-     * |  _99 | >=       | IE       | IE       |
+     * |------|          |----------|----------|
+     * |  _99 |          | LE       | IE       |
      * |------|          |          |----------|
      * | _100 |          |          | LE       |
-     * |------|          |----------|----------|
-     * | _101 |          | LE       | IE       |
+     * |------|----------|----------|----------|
+     * | _101 | IS       | IE       | IE       |
      * |------|          |          |----------|
      * | _102 |          |          | LE       |
-     * |------|----------|----------|----------|
-     * | _103 | IS       | IE       | IE       |
+     * |------|          |----------|----------|
+     * | _103 |          | LE       | IE       |
      * |------|          |          |----------|
      * | _104 |          |          | LE       |
-     * |------|          |----------|----------|
-     * | _105 |          | LE       | IE       |
-     * |------|          |          |----------|
-     * | _106 |          |          | LE       |
      * -----------------------------------------
      * </pre>
      *
@@ -112,13 +112,13 @@ inline namespace statement
      * @li LE ... ≪リテラル式≫ ( @c BasicLiteral )
      *
      * [ 構成 ] @n
-     * @li  _79 ~  _82 : @link with_where_clause_and_equal_to()      @endlink
-     * @li  _83 ~  _86 : @link with_where_clause_and_not_equal_to()  @endlink
-     * @li  _87 ~  _90 : @link with_where_clause_and_less()          @endlink
-     * @li  _91 ~  _94 : @link with_where_clause_and_less_equal()    @endlink
-     * @li  _95 ~  _98 : @link with_where_clause_and_greater()       @endlink
-     * @li  _99 ~ _102 : @link with_where_clause_and_greater_equal() @endlink
-     * @li _103 ~ _106 : @link with_where_clause_and_is()            @endlink
+     * @li  _77 ~  _80 : @link with_where_clause_and_equal_to()      @endlink
+     * @li  _81 ~  _84 : @link with_where_clause_and_not_equal_to()  @endlink
+     * @li  _85 ~  _88 : @link with_where_clause_and_less()          @endlink
+     * @li  _89 ~  _92 : @link with_where_clause_and_less_equal()    @endlink
+     * @li  _93 ~  _96 : @link with_where_clause_and_greater()       @endlink
+     * @li  _97 ~ _100 : @link with_where_clause_and_greater_equal() @endlink
+     * @li _101 ~ _104 : @link with_where_clause_and_is()            @endlink
      *
      * [ 備考 ] @n
      * @c SelectClause 及び @c FromClause は各データパターンにおいて共通のものを使用する（下記参照）。 @n
@@ -191,7 +191,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _79
+            // _77
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -239,7 +239,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name = p.nickname",
             },
 
-            // _80
+            // _78
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -286,7 +286,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name = 'John Doe'",
             },
 
-            // _81
+            // _79
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -333,7 +333,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE 'John Doe' = p.name",
             },
 
-            // _82
+            // _80
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -404,7 +404,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _83
+            // _81
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -452,7 +452,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name <> p.nickname",
             },
 
-            // _84
+            // _82
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -499,7 +499,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.name <> 'John Doe'",
             },
 
-            // _85
+            // _83
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -547,7 +547,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE 'John Doe' <> p.name",
             },
 
-            // _86
+            // _84
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -618,7 +618,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _87
+            // _85
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -667,7 +667,7 @@ inline namespace statement
                 " WHERE p.created_at < p.updated_at",
             },
 
-            // _88
+            // _86
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -715,7 +715,7 @@ inline namespace statement
                 " WHERE p.created_at < '2001-01-01'",
             },
 
-            // _89
+            // _87
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -764,7 +764,7 @@ inline namespace statement
                 " WHERE '2001-01-01' < p.created_at",
             },
 
-            // _90
+            // _88
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -836,7 +836,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _91
+            // _89
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -885,7 +885,7 @@ inline namespace statement
                 " WHERE p.created_at <= p.updated_at",
             },
 
-            // _92
+            // _90
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -933,7 +933,7 @@ inline namespace statement
                 " WHERE p.created_at <= '2001-01-01'",
             },
 
-            // _93
+            // _91
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -982,7 +982,7 @@ inline namespace statement
                 " WHERE '2001-01-01' <= p.created_at",
             },
 
-            // _94
+            // _92
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1054,7 +1054,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _95
+            // _93
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1103,7 +1103,7 @@ inline namespace statement
                 " WHERE p.created_at > p.updated_at",
             },
 
-            // _96
+            // _94
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1151,7 +1151,7 @@ inline namespace statement
                 " WHERE p.created_at > '2001-01-01'",
             },
 
-            // _97
+            // _95
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1200,7 +1200,7 @@ inline namespace statement
                 " WHERE '2001-01-01' > p.created_at",
             },
 
-            // _98
+            // _96
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1272,7 +1272,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _99
+            // _97
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1321,7 +1321,7 @@ inline namespace statement
                 " WHERE p.created_at >= p.updated_at",
             },
 
-            // _100
+            // _98
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1369,7 +1369,7 @@ inline namespace statement
                 " WHERE p.created_at >= '2001-01-01'",
             },
 
-            // _101
+            // _99
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1418,7 +1418,7 @@ inline namespace statement
                 " WHERE '2001-01-01' >= p.created_at",
             },
 
-            // _102
+            // _100
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1490,7 +1490,7 @@ inline namespace statement
 
         // clang-format off
         return {
-            // _103
+            // _101
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1538,7 +1538,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.nickname IS p.nickname",
             },
 
-            // _104
+            // _102
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1585,7 +1585,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE p.nickname IS NULL",
             },
 
-            // _105
+            // _103
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
@@ -1632,7 +1632,7 @@ inline namespace statement
                 "SELECT id AS p.id, name AS p.name FROM people AS p WHERE NULL IS p.nickname",
             },
 
-            // _106
+            // _104
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + WhereClause
