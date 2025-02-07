@@ -64,6 +64,27 @@ inline namespace expression
         auto operator=(GroupedExpression const & origin) -> GroupedExpression &;
 
         /*!
+         * @brief 内部の式を取得する
+         *
+         * このオブジェクトが保持する内部の式を複製し、そのポインタを返却する。
+         *
+         * @return 内部の式
+         */
+        auto inner_expression() const -> Expression *;
+
+        /*!
+         * @brief 内部の式を設定する
+         *
+         * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの内部の式として保持する。
+         *
+         * @param[in] inner_expression 内部の式
+         *
+         * @return このオブジェクトの参照
+         */
+        auto inner_expression(Expression const & inner_expression)
+            -> GroupedExpression &;
+
+        /*!
          * @brief このオブジェクトが空か判定する
          *
          * @return このオブジェクトが空の場合は @c true を,
@@ -169,6 +190,21 @@ inline namespace expression
         -> GroupedExpression &
     {
         this->assignment(origin);
+        return *this;
+    }
+
+    auto GroupedExpression::inner_expression() const -> Expression *
+    {
+        return this->_inner_expression != nullptr
+                   ? this->_inner_expression->clone()
+                   : nullptr;
+    }
+
+    auto
+    GroupedExpression::inner_expression(Expression const & inner_expression)
+        -> GroupedExpression &
+    {
+        this->_inner_expression = inner_expression.clone();
         return *this;
     }
 

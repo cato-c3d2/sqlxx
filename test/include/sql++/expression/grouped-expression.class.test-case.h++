@@ -13,6 +13,7 @@
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/grouped-expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
+#include <sql++/expression/operation/binary-operation.class.h++>
 
 #include "./data-set/grouped-expression-data-set.class.h++"
 
@@ -26,6 +27,7 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__expression)
 
 BOOST_AUTO_TEST_SUITE(class__GroupedExpression)
 
+using sqlxx::BinaryOperation;
 using sqlxx::Expression;
 using sqlxx::GroupedExpression;
 using sqlxx::IdentifierExpression;
@@ -108,6 +110,55 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
 
     // 二つのオブジェクトのアドレスは異なること
     BOOST_CHECK(std::addressof(source) != std::addressof(destination));
+}
+
+/*!
+ * @brief テストパターン :
+ *        @c GroupedExpression オブジェクトに対して
+ *        @c inner_expression メンバ関数（ getter 及び setter ）を呼び出す
+ *
+ * @see sqlxx::expression::GroupedExpression                     テスト対象クラス
+ * @see sqlxx::expression::GroupedExpression::inner_expression() テスト対象メンバ関数（ getter 及び setter ）
+ */
+BOOST_AUTO_TEST_CASE(inner_expression)
+{
+    // テスト対象オブジェクト
+    GroupedExpression grouped_expression {};
+
+    // テスト対象メンバ関数（ getter ）を実行し、初期状態のテスト対象オブジェクトの≪内部の式≫を取得する
+    // そのときの≪内部の式≫はヌルポインタであること
+    BOOST_CHECK(grouped_expression.inner_expression() == nullptr);
+
+    // テスト対象オブジェクトに設定する≪内部の式≫
+    BinaryOperation const inner_expression_to_set =
+        IdentifierExpression { "p.id" }.equal_to(1234);
+
+    // テスト対象メンバ関数（ setter ）を実行し、テスト対象オブジェクトに≪内部の式≫を設定する
+    GroupedExpression & grouped_expression_reference =
+        grouped_expression.inner_expression(inner_expression_to_set);
+
+    // テスト対象メンバ関数の戻り値はテスト対象オブジェクトを指す参照であること
+    // （アドレスが一致すること）
+    BOOST_CHECK(
+        std::addressof(grouped_expression)
+        == std::addressof(grouped_expression_reference));
+
+    // テスト対象メンバ関数（ getter ）を実行し、テスト対象オブジェクトの≪内部の式≫を取得する
+    Expression * inner_expression_to_get =
+        grouped_expression.inner_expression();
+
+    // テスト対象オブジェクトから取得した≪内部の式≫と
+    // テスト対象オブジェクトに設定した≪内部の式≫は等価であること
+    BOOST_CHECK(
+        inner_expression_to_get->evaluate()
+        == inner_expression_to_set.evaluate());
+
+    // テスト対象オブジェクトから取得した≪内部の式≫と
+    // テスト対象オブジェクトに設定した≪内部の式≫は等値ではないこと
+    // （アドレスが一致しないこと）
+    BOOST_CHECK(
+        std::addressof(*inner_expression_to_get)
+        != std::addressof(inner_expression_to_set));
 }
 
 /*!

@@ -64,24 +64,24 @@ auto main() -> int
     binary_operation =
         people_name_identifier.not_equal_to(people_nick_name_identifier);
 
-    grouped_expression =
+    grouped_expression.inner_expression(
         people_name_identifier.not_equal_to("John Doe")
-            .logical_or(people_name_identifier.not_equal_to("Jane Doe"));
+            .logical_or(people_name_identifier.not_equal_to("Jane Doe")));
 
     binary_operation = binary_operation.logical_and(grouped_expression);
 
-    grouped_expression =
+    grouped_expression.inner_expression(
         people_birth_day_identifier.is(logical_not(null))
             .logical_and(people_birth_day_identifier.greater("1901-01-01"s))
-            .logical_and(people_birth_day_identifier.less("2000-12-31"s));
+            .logical_and(people_birth_day_identifier.less("2000-12-31"s)));
 
     binary_operation = binary_operation.logical_or(grouped_expression);
 
-    grouped_expression =
+    grouped_expression.inner_expression(
         people_longitude_identifier.greater_equal(122.5557)
             .logical_and(people_longitude_identifier.less_equal(153.5912))
             .logical_and(people_latitude_identifier.greater_equal(20.2531))
-            .logical_and(people_latitude_identifier.less_equal(45.3326));
+            .logical_and(people_latitude_identifier.less_equal(45.3326)));
 
     binary_operation = binary_operation.logical_or(grouped_expression);
 
