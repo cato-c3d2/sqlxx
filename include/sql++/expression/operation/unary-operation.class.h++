@@ -71,11 +71,40 @@ inline namespace expression
         auto operator=(UnaryOperation const & origin) -> UnaryOperation &;
 
         /*!
+         * @brief ≪単項演算種別≫を取得する
+         *
+         * @return ≪単項演算種別≫
+         */
+        auto operater() const -> UnaryOperationKind;
+
+        /*!
+         * @brief ≪単項演算種別≫を設定する
+         *
+         * @param[in] operater ≪単項演算種別≫
+         *
+         * @return このオブジェクトの参照
+         */
+        auto operater(UnaryOperationKind operater) -> UnaryOperation &;
+
+        /*!
          * @brief 演算される≪式≫を取得する
          *
-         * @return 演算される≪式≫
+         * このオブジェクトが保持する演算される≪式≫を複製し、そのポインタを返却する。
+         *
+         * @return 複製した演算される≪式≫のポインタ
          */
         auto operand() const -> Expression *;
+
+        /*!
+         * @brief 演算される≪式≫を設定する
+         *
+         * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの演算される≪式≫として保持する。
+         *
+         * @param[in] operand 演算される≪式≫
+         *
+         * @return このオブジェクトの参照
+         */
+        auto operand(Expression const & operand) -> UnaryOperation &;
 
         /*!
          * @brief このオブジェクトが空か判定する
@@ -186,9 +215,27 @@ inline namespace expression
         return *this;
     }
 
+    auto UnaryOperation::operater() const -> UnaryOperationKind
+    {
+        return this->_operater;
+    }
+
+    auto UnaryOperation::operater(UnaryOperationKind operater)
+        -> UnaryOperation &
+    {
+        this->_operater = operater;
+        return *this;
+    }
+
     auto UnaryOperation::operand() const -> Expression *
     {
         return this->_operand != nullptr ? this->_operand->clone() : nullptr;
+    }
+
+    auto UnaryOperation::operand(Expression const & operand) -> UnaryOperation &
+    {
+        this->_operand = operand.clone();
+        return *this;
     }
 
     auto UnaryOperation::empty() const -> bool

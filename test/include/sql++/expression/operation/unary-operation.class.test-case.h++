@@ -116,6 +116,74 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
 
 /*!
  * @brief テストパターン :
+ *        @c UnaryOperation オブジェクトに対して各種アクセサを呼び出す
+ *
+ * @see sqlxx::expression::UnaryOperation             テスト対象クラス
+ * @see sqlxx::expression::UnaryOperation::operater() テスト対象メンバ関数（ getter 及び setter ）
+ * @see sqlxx::expression::UnaryOperation::operand()  テスト対象メンバ関数（ getter 及び setter ）
+ */
+BOOST_AUTO_TEST_CASE(accessers)
+{
+    // テスト対象オブジェクト
+    UnaryOperation unary_operation {};
+
+    // テスト対象オブジェクトに設定する≪単項演算種別≫
+    UnaryOperationKind const operater_to_set = UnaryOperationKind::LogicalNot;
+
+    // テスト対象オブジェクトに設定する演算される≪式≫
+    NullLiteral const operand_to_set = {};
+
+    ////////////////////////////////////////////////////////////////////////////
+    // 初期値の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // ≪単項演算種別≫は≪未定≫であること
+    BOOST_CHECK(unary_operation.operater() == UnaryOperationKind::None);
+
+    // 演算される≪式≫はヌルポインタであること
+    BOOST_CHECK(unary_operation.operand() == nullptr);
+
+    ////////////////////////////////////////////////////////////////////////////
+    // テスト対象メンバ関数（ setter ）の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // テスト対象オブジェクトに≪単項演算種別≫及び演算される≪式≫を設定する
+    UnaryOperation & unary_operation_reference =
+        unary_operation.operater(operater_to_set).operand(operand_to_set);
+
+    // 【戻り値の検証】
+    // テスト対象オブジェクトを指す参照であること（アドレスが一致すること）
+    BOOST_CHECK(
+        std::addressof(unary_operation)
+        == std::addressof(unary_operation_reference));
+
+    ////////////////////////////////////////////////////////////////////////////
+    // テスト対象メンバ関数（ getter ）の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // テスト対象オブジェクトが保持する≪単項演算種別≫及び演算される≪式≫を取得する
+    UnaryOperationKind const operater_to_get = unary_operation.operater();
+    Expression const * const operand_to_get  = unary_operation.operand();
+
+    // 【戻り値の検証】
+    // 設定した各種オブジェクトとは等価ではあるが等値ではないこと（アドレスが一致しないこと）
+    BOOST_CHECK(operater_to_get == operater_to_set);
+    BOOST_CHECK(
+        std::addressof(operater_to_get) != std::addressof(operater_to_set));
+    BOOST_CHECK(operand_to_get->evaluate() == operand_to_set.evaluate());
+    BOOST_CHECK(
+        std::addressof(*operand_to_get) != std::addressof(operand_to_set));
+
+    ////////////////////////////////////////////////////////////////////////////
+    // テスト対象メンバ関数（ getter ）の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // テスト対象オブジェクトを SQL として評価し、その結果が期待結果と一致すること
+    BOOST_CHECK_EQUAL(unary_operation.evaluate(), "NOT NULL");
+}
+
+/*!
+ * @brief テストパターン :
  *        非 DSL 記法で構築した @c UnaryOperation オブジェクトに対して @c empty メンバ関数を呼び出す
  *
  * @see sqlxx::expression::UnaryOperation           テスト対象クラス
