@@ -12,6 +12,8 @@
 
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/identifier-expression.class.h++>
+#include <sql++/expression/literal/integer-literal.class.h++>
+#include <sql++/expression/operation/binary-operation-kind.enum-class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
 
 #include "./data-set/binary-operation-data-set.class.h++"
@@ -27,8 +29,10 @@ BOOST_AUTO_TEST_SUITE(namespace__sqlxx__expression)
 BOOST_AUTO_TEST_SUITE(class__BinaryOperation)
 
 using sqlxx::BinaryOperation;
+using sqlxx::BinaryOperationKind;
 using sqlxx::Expression;
 using sqlxx::IdentifierExpression;
+using sqlxx::IntegerLiteral;
 using sqlxx::test::BinaryOperationDataSet;
 
 /*!
@@ -106,6 +110,95 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
 
     // 二つのオブジェクトのアドレスは異なること
     BOOST_CHECK(std::addressof(source) != std::addressof(destination));
+}
+
+/*!
+ * @brief テストパターン :
+ *        @c BinaryOperation オブジェクトに対して各種アクセサを呼び出す
+ *
+ * @see sqlxx::expression::BinaryOperation                     テスト対象クラス
+ * @see sqlxx::expression::BinaryOperation::operater()         テスト対象メンバ関数（ getter 及び setter ）
+ * @see sqlxx::expression::BinaryOperation::left_expression()  テスト対象メンバ関数（ getter 及び setter ）
+ * @see sqlxx::expression::BinaryOperation::right_expression() テスト対象メンバ関数（ getter 及び setter ）
+ */
+BOOST_AUTO_TEST_CASE(accessers)
+{
+    // テスト対象オブジェクト
+    BinaryOperation binary_operation {};
+
+    // テスト対象オブジェクトに設定する≪二項演算種別≫
+    BinaryOperationKind const operater_to_set = BinaryOperationKind::EqualTo;
+
+    // テスト対象オブジェクトに設定する左辺の≪式≫
+    IdentifierExpression const left_expression_to_set = { "p.id" };
+
+    // テスト対象オブジェクトに設定する右辺の≪式≫
+    IntegerLiteral const right_expression_to_set = { 1234 };
+
+    ////////////////////////////////////////////////////////////////////////////
+    // 初期値の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // ≪二項演算種別≫は≪未定≫であること
+    BOOST_CHECK(binary_operation.operater() == BinaryOperationKind::None);
+
+    // 左辺の≪式≫はヌルポインタであること
+    BOOST_CHECK(binary_operation.left_expression() == nullptr);
+
+    // 右辺の≪式≫はヌルポインタであること
+    BOOST_CHECK(binary_operation.right_expression() == nullptr);
+
+    ////////////////////////////////////////////////////////////////////////////
+    // テスト対象メンバ関数（ setter ）の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // テスト対象オブジェクトに≪二項演算種別≫、左辺の≪式≫及び右辺の≪式≫を設定する
+    BinaryOperation & binary_operation_reference =
+        binary_operation.operater(operater_to_set)
+            .left_expression(left_expression_to_set)
+            .right_expression(right_expression_to_set);
+
+    // 【戻り値の検証】
+    // テスト対象オブジェクトを指す参照であること（アドレスが一致すること）
+    BOOST_CHECK(
+        std::addressof(binary_operation)
+        == std::addressof(binary_operation_reference));
+
+    ////////////////////////////////////////////////////////////////////////////
+    // テスト対象メンバ関数（ getter ）の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // テスト対象オブジェクトが保持する≪二項演算種別≫、左辺の≪式≫及び右辺の≪式≫を取得する
+    BinaryOperationKind const operater_to_get = binary_operation.operater();
+    Expression const * const  left_expression_to_get =
+        binary_operation.left_expression();
+    Expression const * const right_expression_to_get =
+        binary_operation.right_expression();
+
+    // 【戻り値の検証】
+    // 設定した各種オブジェクトとは等価ではあるが等値ではないこと（アドレスが一致しないこと）
+    BOOST_CHECK(operater_to_get == operater_to_set);
+    BOOST_CHECK(
+        std::addressof(operater_to_get) != std::addressof(operater_to_set));
+    BOOST_CHECK(
+        left_expression_to_get->evaluate()
+        == left_expression_to_set.evaluate());
+    BOOST_CHECK(
+        std::addressof(*left_expression_to_get)
+        != std::addressof(left_expression_to_set));
+    BOOST_CHECK(
+        right_expression_to_get->evaluate()
+        == right_expression_to_set.evaluate());
+    BOOST_CHECK(
+        std::addressof(*right_expression_to_get)
+        != std::addressof(right_expression_to_set));
+
+    ////////////////////////////////////////////////////////////////////////////
+    // テスト対象メンバ関数（ getter ）の検証
+    ////////////////////////////////////////////////////////////////////////////
+
+    // テスト対象オブジェクトを SQL として評価し、その結果が期待結果と一致すること
+    BOOST_CHECK_EQUAL(binary_operation.evaluate(), "p.id = 1234");
 }
 
 /*!

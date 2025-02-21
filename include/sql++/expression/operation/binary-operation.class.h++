@@ -90,6 +90,64 @@ inline namespace expression
         auto operator=(BinaryOperation const & origin) -> BinaryOperation &;
 
         /*!
+         * @brief ≪二項演算種別≫を取得する
+         *
+         * @return ≪二項演算種別≫
+         */
+        auto operater() const -> BinaryOperationKind;
+
+        /*!
+         * @brief ≪二項演算種別≫を設定する
+         *
+         * @param[in] operater ≪二項演算種別≫
+         *
+         * @return このオブジェクトの参照
+         */
+        auto operater(BinaryOperationKind operater) -> BinaryOperation &;
+
+        /*!
+         * @brief 左辺の≪式≫を取得する
+         *
+         * このオブジェクトが保持する左辺の≪式≫を複製し、そのポインタを返却する。
+         *
+         * @return 複製した左辺の≪式≫のポインタ
+         */
+        auto left_expression() const -> Expression *;
+
+        /*!
+         * @brief 左辺の≪式≫を設定する
+         *
+         * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの左辺の≪式≫として保持する。
+         *
+         * @param[in] left_expression 左辺の≪式≫
+         *
+         * @return このオブジェクトの参照
+         */
+        auto left_expression(Expression const & left_expression)
+            -> BinaryOperation &;
+
+        /*!
+         * @brief 右辺の≪式≫を取得する
+         *
+         * このオブジェクトが保持する右辺の≪式≫を複製し、そのポインタを返却する。
+         *
+         * @return 複製した右辺の≪式≫のポインタ
+         */
+        auto right_expression() const -> Expression *;
+
+        /*!
+         * @brief 右辺の≪式≫を設定する
+         *
+         * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの右辺の≪式≫として保持する。
+         *
+         * @param[in] right_expression 右辺の≪式≫
+         *
+         * @return このオブジェクトの参照
+         */
+        auto right_expression(Expression const & right_expression)
+            -> BinaryOperation &;
+
+        /*!
          * @brief このオブジェクトが空か判定する
          *
          * @return このオブジェクトが空の場合は @c true を,
@@ -218,6 +276,46 @@ inline namespace expression
         -> BinaryOperation &
     {
         this->assignment(origin);
+        return *this;
+    }
+
+    auto BinaryOperation::operater() const -> BinaryOperationKind
+    {
+        return this->_operater;
+    }
+
+    auto BinaryOperation::operater(BinaryOperationKind operater)
+        -> BinaryOperation &
+    {
+        this->_operater = operater;
+        return *this;
+    }
+
+    auto BinaryOperation::left_expression() const -> Expression *
+    {
+        return this->_left_expression != nullptr
+                   ? this->_left_expression->clone()
+                   : nullptr;
+    }
+
+    auto BinaryOperation::left_expression(Expression const & left_expression)
+        -> BinaryOperation &
+    {
+        this->_left_expression = left_expression.clone();
+        return *this;
+    }
+
+    auto BinaryOperation::right_expression() const -> Expression *
+    {
+        return this->_right_expression != nullptr
+                   ? this->_right_expression->clone()
+                   : nullptr;
+    }
+
+    auto BinaryOperation::right_expression(Expression const & right_expression)
+        -> BinaryOperation &
+    {
+        this->_right_expression = right_expression.clone();
         return *this;
     }
 
