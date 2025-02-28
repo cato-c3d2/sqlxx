@@ -32,21 +32,21 @@ inline namespace expression
         /*!
          * @brief デフォルトコンストラクタ
          */
-        LogicalOperatableMock() : _operater(BinaryOperationKind::None)
+        LogicalOperatableMock() : _operation_kind(BinaryOperationKind::None)
         {}
 
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] operater         演算子
-         * @param[in] left_expression  左辺の式（使用しない）
-         * @param[in] right_expression 右辺の式（使用しない）
+         * @param[in] operation_kind 演算子
+         * @param[in] left_operand   左辺の式（使用しない）
+         * @param[in] right_operand  右辺の式（使用しない）
          */
         LogicalOperatableMock(
-            BinaryOperationKind operater,
-            Expression const &  left_expression,
-            Expression const &  right_expression)
-            : _operater(operater)
+            BinaryOperationKind operation_kind,
+            Expression const &  left_operand,
+            Expression const &  right_operand)
+            : _operation_kind(operation_kind)
         {}
 
         /*!
@@ -61,7 +61,7 @@ inline namespace expression
          */
         LogicalOperatableMock(LogicalOperatableMock const & origin)
         {
-            this->_operater = origin._operater;
+            this->_operation_kind = origin._operation_kind;
         };
 
         /*!
@@ -82,7 +82,7 @@ inline namespace expression
         /*!
          * @brief 演算子
          */
-        BinaryOperationKind _operater;
+        BinaryOperationKind _operation_kind;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -112,14 +112,15 @@ inline namespace expression
     {
         using namespace std::literals::string_literals;
 
-        std::string operater;
-        if (this->_operater != BinaryOperationKind::None) {
-            operater = sqlxx::expression::to_string(this->_operater);
+        std::string operation_kind;
+        if (this->_operation_kind != BinaryOperationKind::None) {
+            operation_kind =
+                sqlxx::expression::to_string(this->_operation_kind);
         } else {
-            operater = "(operater-none)";
+            operation_kind = "(operation_kind-none)";
         }
 
-        return "L "s + operater + " R"s;
+        return "L "s + operation_kind + " R"s;
     }
 
     auto LogicalOperatableMock::clone() const -> LogicalOperatableMock *

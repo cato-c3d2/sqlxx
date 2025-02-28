@@ -116,10 +116,10 @@ BOOST_AUTO_TEST_CASE(clone_of_non_constant)
  * @brief テストパターン :
  *        @c BinaryOperation オブジェクトに対して各種アクセサを呼び出す
  *
- * @see sqlxx::expression::BinaryOperation                     テスト対象クラス
- * @see sqlxx::expression::BinaryOperation::operater()         テスト対象メンバ関数（ getter 及び setter ）
- * @see sqlxx::expression::BinaryOperation::left_expression()  テスト対象メンバ関数（ getter 及び setter ）
- * @see sqlxx::expression::BinaryOperation::right_expression() テスト対象メンバ関数（ getter 及び setter ）
+ * @see sqlxx::expression::BinaryOperation                   テスト対象クラス
+ * @see sqlxx::expression::BinaryOperation::operation_kind() テスト対象メンバ関数（ getter 及び setter ）
+ * @see sqlxx::expression::BinaryOperation::left_operand()   テスト対象メンバ関数（ getter 及び setter ）
+ * @see sqlxx::expression::BinaryOperation::right_operand()  テスト対象メンバ関数（ getter 及び setter ）
  */
 BOOST_AUTO_TEST_CASE(accessers)
 {
@@ -127,26 +127,27 @@ BOOST_AUTO_TEST_CASE(accessers)
     BinaryOperation binary_operation {};
 
     // テスト対象オブジェクトに設定する≪二項演算種別≫
-    BinaryOperationKind const operater_to_set = BinaryOperationKind::EqualTo;
+    BinaryOperationKind const operation_kind_to_set =
+        BinaryOperationKind::EqualTo;
 
     // テスト対象オブジェクトに設定する左辺の≪式≫
-    IdentifierExpression const left_expression_to_set = { "p.id" };
+    IdentifierExpression const left_operand_to_set = { "p.id" };
 
     // テスト対象オブジェクトに設定する右辺の≪式≫
-    IntegerLiteral const right_expression_to_set = { 1234 };
+    IntegerLiteral const right_operand_to_set = { 1234 };
 
     ////////////////////////////////////////////////////////////////////////////
     // 初期値の検証
     ////////////////////////////////////////////////////////////////////////////
 
     // ≪二項演算種別≫は≪未定≫であること
-    BOOST_CHECK(binary_operation.operater() == BinaryOperationKind::None);
+    BOOST_CHECK(binary_operation.operation_kind() == BinaryOperationKind::None);
 
     // 左辺の≪式≫はヌルポインタであること
-    BOOST_CHECK(binary_operation.left_expression() == nullptr);
+    BOOST_CHECK(binary_operation.left_operand() == nullptr);
 
     // 右辺の≪式≫はヌルポインタであること
-    BOOST_CHECK(binary_operation.right_expression() == nullptr);
+    BOOST_CHECK(binary_operation.right_operand() == nullptr);
 
     ////////////////////////////////////////////////////////////////////////////
     // テスト対象メンバ関数（ setter ）の検証
@@ -154,9 +155,9 @@ BOOST_AUTO_TEST_CASE(accessers)
 
     // テスト対象オブジェクトに≪二項演算種別≫、左辺の≪式≫及び右辺の≪式≫を設定する
     BinaryOperation & binary_operation_reference =
-        binary_operation.operater(operater_to_set)
-            .left_expression(left_expression_to_set)
-            .right_expression(right_expression_to_set);
+        binary_operation.operation_kind(operation_kind_to_set)
+            .left_operand(left_operand_to_set)
+            .right_operand(right_operand_to_set);
 
     // 【戻り値の検証】
     // テスト対象オブジェクトを指す参照であること（アドレスが一致すること）
@@ -169,29 +170,29 @@ BOOST_AUTO_TEST_CASE(accessers)
     ////////////////////////////////////////////////////////////////////////////
 
     // テスト対象オブジェクトが保持する≪二項演算種別≫、左辺の≪式≫及び右辺の≪式≫を取得する
-    BinaryOperationKind const operater_to_get = binary_operation.operater();
-    Expression const * const  left_expression_to_get =
-        binary_operation.left_expression();
-    Expression const * const right_expression_to_get =
-        binary_operation.right_expression();
+    BinaryOperationKind const operation_kind_to_get =
+        binary_operation.operation_kind();
+    Expression const * const left_operand_to_get =
+        binary_operation.left_operand();
+    Expression const * const right_operand_to_get =
+        binary_operation.right_operand();
 
     // 【戻り値の検証】
     // 設定した各種オブジェクトとは等価ではあるが等値ではないこと（アドレスが一致しないこと）
-    BOOST_CHECK(operater_to_get == operater_to_set);
+    BOOST_CHECK(operation_kind_to_get == operation_kind_to_set);
     BOOST_CHECK(
-        std::addressof(operater_to_get) != std::addressof(operater_to_set));
+        std::addressof(operation_kind_to_get)
+        != std::addressof(operation_kind_to_set));
     BOOST_CHECK(
-        left_expression_to_get->evaluate()
-        == left_expression_to_set.evaluate());
+        left_operand_to_get->evaluate() == left_operand_to_set.evaluate());
     BOOST_CHECK(
-        std::addressof(*left_expression_to_get)
-        != std::addressof(left_expression_to_set));
+        std::addressof(*left_operand_to_get)
+        != std::addressof(left_operand_to_set));
     BOOST_CHECK(
-        right_expression_to_get->evaluate()
-        == right_expression_to_set.evaluate());
+        right_operand_to_get->evaluate() == right_operand_to_set.evaluate());
     BOOST_CHECK(
-        std::addressof(*right_expression_to_get)
-        != std::addressof(right_expression_to_set));
+        std::addressof(*right_operand_to_get)
+        != std::addressof(right_operand_to_set));
 
     ////////////////////////////////////////////////////////////////////////////
     // テスト対象メンバ関数（ getter ）の検証

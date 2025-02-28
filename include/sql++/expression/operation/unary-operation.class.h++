@@ -35,19 +35,20 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] operater ≪単項演算種別≫
-         * @param[in] operand  演算される≪式≫
+         * @param[in] operation_kind ≪単項演算種別≫
+         * @param[in] operand        演算される≪式≫
          */
-        UnaryOperation(UnaryOperationKind operater, Expression const & operand);
+        UnaryOperation(
+            UnaryOperationKind operation_kind, Expression const & operand);
 
         /*!
          * @brief コンストラクタ
          *
          * ≪単項演算種別≫のみを設定し、演算される≪式≫を後から設定する場合に使用する。
          *
-         * @param[in] operater ≪単項演算種別≫
+         * @param[in] operation_kind ≪単項演算種別≫
          */
-        UnaryOperation(UnaryOperationKind operater);
+        UnaryOperation(UnaryOperationKind operation_kind);
 
         /*!
          * @brief デストラクタ
@@ -75,16 +76,17 @@ inline namespace expression
          *
          * @return ≪単項演算種別≫
          */
-        auto operater() const -> UnaryOperationKind;
+        auto operation_kind() const -> UnaryOperationKind;
 
         /*!
          * @brief ≪単項演算種別≫を設定する
          *
-         * @param[in] operater ≪単項演算種別≫
+         * @param[in] operation_kind ≪単項演算種別≫
          *
          * @return このオブジェクトの参照
          */
-        auto operater(UnaryOperationKind operater) -> UnaryOperation &;
+        auto operation_kind(UnaryOperationKind operation_kind)
+            -> UnaryOperation &;
 
         /*!
          * @brief 演算される≪式≫を取得する
@@ -152,7 +154,7 @@ inline namespace expression
         /*!
          * @brief ≪単項演算種別≫
          */
-        UnaryOperationKind _operater;
+        UnaryOperationKind _operation_kind;
 
         /*!
          * @brief 演算される≪式≫
@@ -188,12 +190,12 @@ inline namespace expression
     {}
 
     UnaryOperation::UnaryOperation(
-        UnaryOperationKind operater, Expression const & operand)
-        : _operater(operater), _operand(operand.clone())
+        UnaryOperationKind operation_kind, Expression const & operand)
+        : _operation_kind(operation_kind), _operand(operand.clone())
     {}
 
-    UnaryOperation::UnaryOperation(UnaryOperationKind operater)
-        : _operater(operater), _operand(nullptr)
+    UnaryOperation::UnaryOperation(UnaryOperationKind operation_kind)
+        : _operation_kind(operation_kind), _operand(nullptr)
     {}
 
     UnaryOperation::~UnaryOperation()
@@ -215,15 +217,15 @@ inline namespace expression
         return *this;
     }
 
-    auto UnaryOperation::operater() const -> UnaryOperationKind
+    auto UnaryOperation::operation_kind() const -> UnaryOperationKind
     {
-        return this->_operater;
+        return this->_operation_kind;
     }
 
-    auto UnaryOperation::operater(UnaryOperationKind operater)
+    auto UnaryOperation::operation_kind(UnaryOperationKind operation_kind)
         -> UnaryOperation &
     {
-        this->_operater = operater;
+        this->_operation_kind = operation_kind;
         return *this;
     }
 
@@ -240,7 +242,7 @@ inline namespace expression
 
     auto UnaryOperation::empty() const -> bool
     {
-        return this->_operater == UnaryOperationKind::None
+        return this->_operation_kind == UnaryOperationKind::None
                || this->_operand == nullptr;
     }
 
@@ -254,14 +256,14 @@ inline namespace expression
 
     auto UnaryOperation::evaluate() const -> std::string
     {
-        if (this->_operater == UnaryOperationKind::None) {
-            throw std::runtime_error("'_operater' is empty!");
+        if (this->_operation_kind == UnaryOperationKind::None) {
+            throw std::runtime_error("'_operation_kind' is empty!");
         }
         if (this->_operand == nullptr) {
             throw std::runtime_error("'_operand' is null-pointer!");
         }
 
-        return sqlxx::expression::to_string(this->_operater) + " "
+        return sqlxx::expression::to_string(this->_operation_kind) + " "
                + this->_operand->evaluate();
     }
 
@@ -272,7 +274,7 @@ inline namespace expression
 
     auto UnaryOperation::assignment(UnaryOperation const & origin) -> void
     {
-        this->_operater = origin._operater;
+        this->_operation_kind = origin._operation_kind;
         this->_operand =
             (origin._operand != nullptr) ? origin._operand->clone() : nullptr;
     }

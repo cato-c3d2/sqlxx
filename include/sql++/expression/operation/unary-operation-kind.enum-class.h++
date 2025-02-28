@@ -44,11 +44,11 @@ inline namespace expression
     /**
      * @brief 単項演算子の文字列表現を返却する
      *
-     * @param[in] operation_type 文字列に変換する単項演算子
+     * @param[in] operation_kind 文字列に変換する単項演算子
      *
-     * @return @c operation_type の文字列表現
+     * @return @c operation_kind の文字列表現
      */
-    auto to_string(UnaryOperationKind operation_type) -> std::string;
+    auto to_string(UnaryOperationKind operation_kind) -> std::string;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -76,9 +76,9 @@ inline namespace expression
         };
     } // namespace
 
-    auto to_string(UnaryOperationKind operation_type) -> std::string
+    auto to_string(UnaryOperationKind operation_kind) -> std::string
     {
-        switch (operation_type) {
+        switch (operation_kind) {
         case UnaryOperationKind::LogicalNot:
             return UnaryOperatorSymbol::LOGICAL_NOT;
         case UnaryOperationKind::None:

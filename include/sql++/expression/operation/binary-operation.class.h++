@@ -39,34 +39,35 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] operater         ≪二項演算種別≫
-         * @param[in] left_expression  左辺の≪式≫
-         * @param[in] right_expression 右辺の≪式≫
+         * @param[in] operation_kind ≪二項演算種別≫
+         * @param[in] left_operand   左辺の≪式≫
+         * @param[in] right_operand  右辺の≪式≫
          */
         BinaryOperation(
-            BinaryOperationKind operater,
-            Expression const &  left_expression,
-            Expression const &  right_expression);
+            BinaryOperationKind operation_kind,
+            Expression const &  left_operand,
+            Expression const &  right_operand);
 
         /*!
          * @brief コンストラクタ
          *
          * ≪二項演算種別≫のみを設定し、左辺の≪式≫及び右辺の≪式≫を後から設定する場合に使用する。
          *
-         * @param[in] operater ≪二項演算種別≫
+         * @param[in] operation_kind ≪二項演算種別≫
          */
-        BinaryOperation(BinaryOperationKind operater);
+        BinaryOperation(BinaryOperationKind operation_kind);
 
         /*!
          * @brief コンストラクタ
          *
          * ≪二項演算種別≫と左辺の≪式≫を設定し、右辺の≪式≫を後から設定する場合に使用する。
          *
-         * @param[in] operater        ≪二項演算種別≫
-         * @param[in] left_expression 左辺の≪式≫
+         * @param[in] operation_kind ≪二項演算種別≫
+         * @param[in] left_operand   左辺の≪式≫
          */
         BinaryOperation(
-            BinaryOperationKind operater, Expression const & left_expression);
+            BinaryOperationKind operation_kind,
+            Expression const &  left_operand);
 
         /*!
          * @brief デストラクタ
@@ -94,16 +95,17 @@ inline namespace expression
          *
          * @return ≪二項演算種別≫
          */
-        auto operater() const -> BinaryOperationKind;
+        auto operation_kind() const -> BinaryOperationKind;
 
         /*!
          * @brief ≪二項演算種別≫を設定する
          *
-         * @param[in] operater ≪二項演算種別≫
+         * @param[in] operation_kind ≪二項演算種別≫
          *
          * @return このオブジェクトの参照
          */
-        auto operater(BinaryOperationKind operater) -> BinaryOperation &;
+        auto operation_kind(BinaryOperationKind operation_kind)
+            -> BinaryOperation &;
 
         /*!
          * @brief 左辺の≪式≫を取得する
@@ -112,19 +114,18 @@ inline namespace expression
          *
          * @return 複製した左辺の≪式≫のポインタ
          */
-        auto left_expression() const -> Expression *;
+        auto left_operand() const -> Expression *;
 
         /*!
          * @brief 左辺の≪式≫を設定する
          *
          * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの左辺の≪式≫として保持する。
          *
-         * @param[in] left_expression 左辺の≪式≫
+         * @param[in] left_operand 左辺の≪式≫
          *
          * @return このオブジェクトの参照
          */
-        auto left_expression(Expression const & left_expression)
-            -> BinaryOperation &;
+        auto left_operand(Expression const & left_operand) -> BinaryOperation &;
 
         /*!
          * @brief 右辺の≪式≫を取得する
@@ -133,18 +134,18 @@ inline namespace expression
          *
          * @return 複製した右辺の≪式≫のポインタ
          */
-        auto right_expression() const -> Expression *;
+        auto right_operand() const -> Expression *;
 
         /*!
          * @brief 右辺の≪式≫を設定する
          *
          * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの右辺の≪式≫として保持する。
          *
-         * @param[in] right_expression 右辺の≪式≫
+         * @param[in] right_operand 右辺の≪式≫
          *
          * @return このオブジェクトの参照
          */
-        auto right_expression(Expression const & right_expression)
+        auto right_operand(Expression const & right_operand)
             -> BinaryOperation &;
 
         /*!
@@ -193,19 +194,19 @@ inline namespace expression
         /*!
          * @brief ≪二項演算種別≫
          */
-        BinaryOperationKind _operater;
+        BinaryOperationKind _operation_kind;
 
         /*!
          * @brief 左辺の≪式≫
          */
         // TODO 暫定的に生のポインタを使用しているが、将来的にスマートポインタに変更する予定。
-        Expression const * _left_expression;
+        Expression const * _left_operand;
 
         /*!
          * @brief 右辺の≪式≫
          */
         // TODO 暫定的に生のポインタを使用しているが、将来的にスマートポインタに変更する予定。
-        Expression const * _right_expression;
+        Expression const * _right_operand;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -236,34 +237,34 @@ inline namespace expression
     {}
 
     BinaryOperation::BinaryOperation(
-        BinaryOperationKind operater,
-        Expression const &  left_expression,
-        Expression const &  right_expression)
-        : _operater(operater)
-        , _left_expression(left_expression.clone())
-        , _right_expression(right_expression.clone())
+        BinaryOperationKind operation_kind,
+        Expression const &  left_operand,
+        Expression const &  right_operand)
+        : _operation_kind(operation_kind)
+        , _left_operand(left_operand.clone())
+        , _right_operand(right_operand.clone())
     {}
 
-    BinaryOperation::BinaryOperation(BinaryOperationKind operater)
-        : _operater(operater)
-        , _left_expression(nullptr)
-        , _right_expression(nullptr)
+    BinaryOperation::BinaryOperation(BinaryOperationKind operation_kind)
+        : _operation_kind(operation_kind)
+        , _left_operand(nullptr)
+        , _right_operand(nullptr)
     {}
 
     BinaryOperation::BinaryOperation(
-        BinaryOperationKind operater, Expression const & left_expression)
-        : _operater(operater)
-        , _left_expression(left_expression.clone())
-        , _right_expression(nullptr)
+        BinaryOperationKind operation_kind, Expression const & left_operand)
+        : _operation_kind(operation_kind)
+        , _left_operand(left_operand.clone())
+        , _right_operand(nullptr)
     {}
 
     BinaryOperation::~BinaryOperation()
     {
-        if (this->_left_expression != nullptr) {
-            delete this->_left_expression;
+        if (this->_left_operand != nullptr) {
+            delete this->_left_operand;
         }
-        if (this->_right_expression != nullptr) {
-            delete this->_right_expression;
+        if (this->_right_operand != nullptr) {
+            delete this->_right_operand;
         }
     }
 
@@ -279,51 +280,49 @@ inline namespace expression
         return *this;
     }
 
-    auto BinaryOperation::operater() const -> BinaryOperationKind
+    auto BinaryOperation::operation_kind() const -> BinaryOperationKind
     {
-        return this->_operater;
+        return this->_operation_kind;
     }
 
-    auto BinaryOperation::operater(BinaryOperationKind operater)
+    auto BinaryOperation::operation_kind(BinaryOperationKind operation_kind)
         -> BinaryOperation &
     {
-        this->_operater = operater;
+        this->_operation_kind = operation_kind;
         return *this;
     }
 
-    auto BinaryOperation::left_expression() const -> Expression *
+    auto BinaryOperation::left_operand() const -> Expression *
     {
-        return this->_left_expression != nullptr
-                   ? this->_left_expression->clone()
-                   : nullptr;
+        return this->_left_operand != nullptr ? this->_left_operand->clone()
+                                              : nullptr;
     }
 
-    auto BinaryOperation::left_expression(Expression const & left_expression)
+    auto BinaryOperation::left_operand(Expression const & left_operand)
         -> BinaryOperation &
     {
-        this->_left_expression = left_expression.clone();
+        this->_left_operand = left_operand.clone();
         return *this;
     }
 
-    auto BinaryOperation::right_expression() const -> Expression *
+    auto BinaryOperation::right_operand() const -> Expression *
     {
-        return this->_right_expression != nullptr
-                   ? this->_right_expression->clone()
-                   : nullptr;
+        return this->_right_operand != nullptr ? this->_right_operand->clone()
+                                               : nullptr;
     }
 
-    auto BinaryOperation::right_expression(Expression const & right_expression)
+    auto BinaryOperation::right_operand(Expression const & right_operand)
         -> BinaryOperation &
     {
-        this->_right_expression = right_expression.clone();
+        this->_right_operand = right_operand.clone();
         return *this;
     }
 
     auto BinaryOperation::empty() const -> bool
     {
-        return this->_operater == BinaryOperationKind::None
-               || this->_left_expression == nullptr
-               || this->_right_expression == nullptr;
+        return this->_operation_kind == BinaryOperationKind::None
+               || this->_left_operand == nullptr
+               || this->_right_operand == nullptr;
     }
 
     auto BinaryOperation::to_string() const -> std::string
@@ -336,19 +335,19 @@ inline namespace expression
 
     auto BinaryOperation::evaluate() const -> std::string
     {
-        if (this->_operater == BinaryOperationKind::None) {
-            throw std::runtime_error("'_operater' is empty!");
+        if (this->_operation_kind == BinaryOperationKind::None) {
+            throw std::runtime_error("'_operation_kind' is empty!");
         }
-        if (this->_left_expression == nullptr) {
-            throw std::runtime_error("'_left_expression' is null-pointer!");
+        if (this->_left_operand == nullptr) {
+            throw std::runtime_error("'_left_operand' is null-pointer!");
         }
-        if (this->_right_expression == nullptr) {
-            throw std::runtime_error("'_right_expression' is null-pointer!");
+        if (this->_right_operand == nullptr) {
+            throw std::runtime_error("'_right_operand' is null-pointer!");
         }
 
-        return this->_left_expression->evaluate() + " "
-               + sqlxx::expression::to_string(this->_operater) + " "
-               + this->_right_expression->evaluate();
+        return this->_left_operand->evaluate() + " "
+               + sqlxx::expression::to_string(this->_operation_kind) + " "
+               + this->_right_operand->evaluate();
     }
 
     auto BinaryOperation::clone() const -> BinaryOperation *
@@ -358,13 +357,13 @@ inline namespace expression
 
     auto BinaryOperation::assignment(BinaryOperation const & origin) -> void
     {
-        this->_operater        = origin._operater;
-        this->_left_expression = (origin._left_expression != nullptr)
-                                     ? origin._left_expression->clone()
-                                     : nullptr;
-        this->_right_expression = (origin._right_expression != nullptr)
-                                      ? origin._right_expression->clone()
-                                      : nullptr;
+        this->_operation_kind = origin._operation_kind;
+        this->_left_operand   = (origin._left_operand != nullptr)
+                                  ? origin._left_operand->clone()
+                                  : nullptr;
+        this->_right_operand = (origin._right_operand != nullptr)
+                                   ? origin._right_operand->clone()
+                                   : nullptr;
     }
 
     ////////////////////////////////////////////////////////////////////////////

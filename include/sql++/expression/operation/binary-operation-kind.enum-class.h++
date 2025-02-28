@@ -84,11 +84,11 @@ inline namespace expression
     /**
      * @brief 二項演算子の文字列表現を返却する
      *
-     * @param[in] operation_type 文字列に変換する二項演算子
+     * @param[in] operation_kind 文字列に変換する二項演算子
      *
-     * @return @c operation_type の文字列表現
+     * @return @c operation_kind の文字列表現
      */
-    auto to_string(BinaryOperationKind operation_type) -> std::string;
+    auto to_string(BinaryOperationKind operation_kind) -> std::string;
 
     ////////////////////////////////////////////////////////////////////////////
     //
@@ -156,9 +156,9 @@ inline namespace expression
         };
     } // namespace
 
-    auto to_string(BinaryOperationKind operation_type) -> std::string
+    auto to_string(BinaryOperationKind operation_kind) -> std::string
     {
-        switch (operation_type) {
+        switch (operation_kind) {
         case BinaryOperationKind::EqualTo:
             return BinaryOperatorSymbol::EQUAL_TO;
         case BinaryOperationKind::NotEqualTo:
