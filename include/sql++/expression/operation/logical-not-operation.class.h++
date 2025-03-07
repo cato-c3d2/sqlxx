@@ -132,7 +132,7 @@ inline namespace expression
 
     auto LogicalNotOperation::clone() const -> LogicalNotOperation *
     {
-        return new LogicalNotOperation(*this);
+        return new LogicalNotOperation { *this };
     }
 
     ////////////////////////////////////////////////////////////////////////////

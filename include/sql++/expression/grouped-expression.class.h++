@@ -249,7 +249,7 @@ inline namespace expression
 
     auto GroupedExpression::clone() const -> GroupedExpression *
     {
-        return new GroupedExpression(*this);
+        return new GroupedExpression { *this };
     }
 
     auto GroupedExpression::assignment(GroupedExpression const & origin) -> void

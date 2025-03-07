@@ -237,7 +237,7 @@ inline namespace expression
     template<typename Type>
     auto BasicLiteral<Type>::clone() const -> BasicLiteral<Type> *
     {
-        return new BasicLiteral(*this);
+        return new BasicLiteral { *this };
     }
 
     ////////////////////////////////////////////////////////////////////////////

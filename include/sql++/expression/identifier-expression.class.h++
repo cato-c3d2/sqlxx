@@ -159,7 +159,7 @@ inline namespace expression
 
     auto IdentifierExpression::clone() const -> IdentifierExpression *
     {
-        return new IdentifierExpression(*this);
+        return new IdentifierExpression { *this };
     }
 
     ////////////////////////////////////////////////////////////////////////////
