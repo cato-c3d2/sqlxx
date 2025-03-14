@@ -39,7 +39,7 @@ inline namespace expression
          * このメンバ関数の名称は、標準ライブラリ関数
          * @c std::logical_and （ @c \<functional\> ）を参考に命名した。 @n
          *
-         * @param[in] operand 右辺の条件式
+         * @param[in] operand 右辺の式
          *
          * @return 論理積演算式
          */
@@ -55,7 +55,7 @@ inline namespace expression
          * このメンバ関数の名称は、標準ライブラリ関数
          * @c std::logical_or （ @c \<functional\> ）を参考に命名した。 @n
          *
-         * @param[in] operand 右辺値の条件式
+         * @param[in] operand 右辺の式
          *
          * @return 論理和演算式
          */
