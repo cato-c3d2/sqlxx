@@ -25,7 +25,7 @@ inline namespace expression
      *
      * テスト対象のオブジェクトとテスト対象の関数の期待結果を保持する。
      *
-     * @see sqlxx::expression::BinaryOperationKind              テスト対象オブジェクトの型
+     * @see sqlxx::expression::BinaryOperationKind              テスト対象列挙型
      * @see sqlxx::test::expression::BinaryOperationKindDataSet データセット
      */
     struct BinaryOperationKindDataSetElement

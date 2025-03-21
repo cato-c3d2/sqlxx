@@ -29,7 +29,7 @@ using sqlxx::test::UnaryOperationKindDataSet;
  * @brief テストパターン :
  *        様々な @c UnaryOperationKind オブジェクトを引数として @c to_string 関数を呼び出す
  *
- * @see sqlxx::expression::UnaryOperationKind           テスト対象オブジェクトの型
+ * @see sqlxx::expression::UnaryOperationKind           テスト対象列挙型
  * @see sqlxx::expression::to_string()                  テスト対象関数
  * @see UnaryOperationKindDataSet::for_some_test_case() データセット
  */

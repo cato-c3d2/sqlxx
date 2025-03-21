@@ -24,7 +24,7 @@ inline namespace expression
     /*!
      * @brief ≪二項演算種別≫のテストケースで使用するデータセットを生成するクラス
      *
-     * @see sqlxx::expression::BinaryOperationKind              テスト対象オブジェクトの型
+     * @see sqlxx::expression::BinaryOperationKind              テスト対象列挙型
      * @see sqlxx::test::expression::BinaryOperationKindDataSet データセット要素
      */
     class BinaryOperationKindDataSet

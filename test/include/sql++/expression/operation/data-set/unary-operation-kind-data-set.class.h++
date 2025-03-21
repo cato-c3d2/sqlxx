@@ -24,7 +24,7 @@ inline namespace expression
     /*!
      * @brief ≪単項演算種別≫のテストケースで使用するデータセットを生成するクラス
      *
-     * @see sqlxx::expression::UnaryOperationKind              テスト対象オブジェクトの型
+     * @see sqlxx::expression::UnaryOperationKind              テスト対象列挙型
      * @see sqlxx::test::expression::UnaryOperationKindDataSet データセット要素
      */
     class UnaryOperationKindDataSet
