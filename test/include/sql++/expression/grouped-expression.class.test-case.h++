@@ -125,15 +125,15 @@ BOOST_AUTO_TEST_CASE(inner_expression)
     // テスト対象オブジェクト
     GroupedExpression grouped_expression {};
 
-    // テスト対象メンバ関数（ getter ）を実行し、初期状態のテスト対象オブジェクトの≪内部の式≫を取得する
-    // そのときの≪内部の式≫はヌルポインタであること
+    // テスト対象メンバ関数（ getter ）を実行し、初期状態のテスト対象オブジェクトの内包される≪式≫を取得する
+    // そのときの内包される≪式≫はヌルポインタであること
     BOOST_CHECK(grouped_expression.inner_expression() == nullptr);
 
-    // テスト対象オブジェクトに設定する≪内部の式≫
+    // テスト対象オブジェクトに設定する内包される≪式≫
     BinaryOperation const inner_expression_to_set =
         IdentifierExpression { "p.id" }.equal_to(1234);
 
-    // テスト対象メンバ関数（ setter ）を実行し、テスト対象オブジェクトに≪内部の式≫を設定する
+    // テスト対象メンバ関数（ setter ）を実行し、テスト対象オブジェクトに内包される≪式≫を設定する
     GroupedExpression & grouped_expression_reference =
         grouped_expression.inner_expression(inner_expression_to_set);
 
@@ -143,18 +143,18 @@ BOOST_AUTO_TEST_CASE(inner_expression)
         std::addressof(grouped_expression)
         == std::addressof(grouped_expression_reference));
 
-    // テスト対象メンバ関数（ getter ）を実行し、テスト対象オブジェクトの≪内部の式≫を取得する
+    // テスト対象メンバ関数（ getter ）を実行し、テスト対象オブジェクトの内包される≪式≫を取得する
     Expression * inner_expression_to_get =
         grouped_expression.inner_expression();
 
-    // テスト対象オブジェクトから取得した≪内部の式≫と
-    // テスト対象オブジェクトに設定した≪内部の式≫は等価であること
+    // テスト対象オブジェクトから取得した内包される≪式≫と
+    // テスト対象オブジェクトに設定した内包される≪式≫は等価であること
     BOOST_CHECK(
         inner_expression_to_get->evaluate()
         == inner_expression_to_set.evaluate());
 
-    // テスト対象オブジェクトから取得した≪内部の式≫と
-    // テスト対象オブジェクトに設定した≪内部の式≫は等値ではないこと
+    // テスト対象オブジェクトから取得した内包される≪式≫と
+    // テスト対象オブジェクトに設定した内包される≪式≫は等値ではないこと
     // （アドレスが一致しないこと）
     BOOST_CHECK(
         std::addressof(*inner_expression_to_get)

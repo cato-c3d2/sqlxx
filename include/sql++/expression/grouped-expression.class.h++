@@ -23,7 +23,10 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief グループ化された式を表現するクラス
+     * @brief ≪グループ化された式≫を表現するクラス
+     *
+     * ≪グループ化された式≫とは、丸括弧（ @c '(' @c ')' ）で囲まれた式のことである。 @n
+     * GROUP 句とは何の関係もない点に注意されたし。 @n
      */
     class GroupedExpression :
         public virtual Expression,
@@ -38,7 +41,7 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] inner_expression 内部の式
+         * @param[in] inner_expression 内包される≪式≫
          */
         GroupedExpression(Expression const & inner_expression);
 
@@ -64,20 +67,20 @@ inline namespace expression
         auto operator=(GroupedExpression const & origin) -> GroupedExpression &;
 
         /*!
-         * @brief 内部の式を取得する
+         * @brief 内包される≪式≫を取得する
          *
-         * このオブジェクトが保持する内部の式を複製し、そのポインタを返却する。
+         * このオブジェクトが保持する内包される≪式≫を複製し、そのポインタを返却する。
          *
-         * @return 内部の式
+         * @return 複製した内包される≪式≫のポインタ
          */
         auto inner_expression() const -> Expression *;
 
         /*!
-         * @brief 内部の式を設定する
+         * @brief 内包される≪式≫を設定する
          *
-         * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの内部の式として保持する。
+         * 引数として指定した≪式≫を複製し、そのポインタをこのオブジェクトの内包される≪式≫として保持する。
          *
-         * @param[in] inner_expression 内部の式
+         * @param[in] inner_expression 内包される≪式≫
          *
          * @return このオブジェクトの参照
          */
@@ -128,7 +131,7 @@ inline namespace expression
 
     private:
         /*!
-         * @brief 内部の式
+         * @brief 内包される≪式≫
          */
         // TODO 暫定的に生のポインタを使用しているが、将来的にスマートポインタに変更する予定。
         Expression const * _inner_expression;
@@ -141,11 +144,11 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief グループ化された式を生成する
+     * @brief ≪グループ化された式≫を生成する
      *
      * @param[in] expression グループ化する式のオブジェクト
      *
-     * @return グループ化された式
+     * @return ≪グループ化された式≫
      */
     auto parentheses(Expression const & expression) -> GroupedExpression;
 
@@ -153,7 +156,7 @@ inline namespace expression
      * @brief ストリーム出力演算
      *
      * @param[in] out                出力ストリーム
-     * @param[in] grouped_expression グループ化された式のオブジェクト
+     * @param[in] grouped_expression ≪グループ化された式≫のオブジェクト
      *
      * @return 出力ストリーム
      */
@@ -215,8 +218,8 @@ inline namespace expression
         }
         try {
             // TODO [要検討] このオブジェクトが空であるか否かの判定について、
-            //      ≪内部の式≫の evaluate メンバ関数の戻り値で判定せず、
-            //      直接、≪内部の式≫が空であるか否かを判定すべき。
+            //      内包される≪式≫の evaluate メンバ関数の戻り値で判定せず、
+            //      直接、内包される≪式≫が空であるか否かを判定すべき。
             //      従って、 Expression::empty メンバ関数等を実装すべき。
             return this->_inner_expression->evaluate().empty();
         } catch (std::runtime_error &) {

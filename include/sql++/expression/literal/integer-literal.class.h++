@@ -18,7 +18,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 整数リテラルを表現するクラス（エイリアス）
+     * @brief ≪整数リテラル式≫を表現するクラス（エイリアステンプレート）
      */
     using IntegerLiteral = BasicLiteral<int>;
 } // namespace expression

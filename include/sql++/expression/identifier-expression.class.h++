@@ -21,9 +21,9 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 識別子式（式中の識別子）を表現するクラス
+     * @brief ≪識別子式≫を表現するクラス
      *
-     * 本コードベースでは式中の識別子を「識別子式」と呼称する。 @n
+     * 本コードベースでは式中の識別子を≪識別子式≫と呼称する。 @n
      */
     class IdentifierExpression :
         public virtual Expression,
@@ -31,13 +31,13 @@ inline namespace expression
     {
     public:
         /*!
-         * @brief 識別子の名称の型
+         * @brief ≪識別子式≫の名称の型
          */
         using NameType = std::string;
 
     public:
         /*!
-         * @brief 識別子の名称の初期値
+         * @brief ≪識別子式≫の名称の初期値
          */
         static NameType initial_name;
 
@@ -50,7 +50,7 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] name 識別子の名称
+         * @param[in] name ≪識別子式≫の名称
          */
         IdentifierExpression(NameType name);
 
@@ -60,16 +60,16 @@ inline namespace expression
         virtual ~IdentifierExpression() override = default;
 
         /*!
-         * @brief 識別子の名称を取得する
+         * @brief ≪識別子式≫の名称を取得する
          *
-         * @return 識別子の名称
+         * @return ≪識別子式≫の名称
          */
         auto name() const -> NameType;
 
         /*!
-         * @brief 識別子の名称を設定する
+         * @brief ≪識別子式≫の名称を設定する
          *
-         * @param[in] name 識別子の名称
+         * @param[in] name ≪識別子式≫の名称
          *
          * @return このオブジェクトの参照
          */
@@ -98,7 +98,7 @@ inline namespace expression
 
     private:
         /*!
-         * @brief 識別子の名称
+         * @brief ≪識別子式≫の名称
          */
         NameType _name;
     };
@@ -113,7 +113,7 @@ inline namespace expression
      * @brief ストリーム出力演算
      *
      * @param[in] out                   出力ストリーム
-     * @param[in] identifier_expression 識別子式のオブジェクト
+     * @param[in] identifier_expression ≪識別子式≫のオブジェクト
      *
      * @return 出力ストリーム
      */

@@ -18,19 +18,19 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /**
-     * @brief 単項演算子の種類
+     * @brief ≪単項演算種別≫を定義する列挙型
      */
     enum class UnaryOperationKind
     {
         /**
-         * @brief 未定
+         * @brief ≪演算種別未定≫
          *
-         * 演算子の種類が未定である場合等に使用する。
+         * 演算の種類が未定である場合等に使用する。
          */
         None = 0,
 
         /**
-         * @brief 論理否定演算子
+         * @brief ≪論理否定演算子≫
          */
         LogicalNot,
     };
@@ -42,9 +42,9 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /**
-     * @brief 単項演算子の文字列表現を返却する
+     * @brief ≪単項演算種別≫の文字列表現を返却する
      *
-     * @param[in] operation_kind 文字列に変換する単項演算子
+     * @param[in] operation_kind 文字列に変換する≪単項演算種別≫
      *
      * @return @c operation_kind の文字列表現
      */
@@ -59,9 +59,9 @@ inline namespace expression
     inline namespace
     {
         /*!
-         * @brief 各種単項演算子の文字列表現を定義するクラス
+         * @brief 各種≪単項演算種別≫の文字列表現を定義するクラス
          *
-         * 各種単項演算子の文字列表現は
+         * 各種≪単項演算種別≫の文字列表現は
          * @c sqlxx::expression::to_string(UnaryOperationKind)
          * を使用して取得する想定のため、このクラスは外部に公開しない。 @n
          * （そのために無名名前空間内に定義している。） @n
@@ -70,7 +70,7 @@ inline namespace expression
         {
         public:
             /**
-             * @brief 論理否定演算子のキーワード
+             * @brief 演算子のキーワード : ≪論理否定演算≫
              */
             static constexpr auto LOGICAL_NOT = "NOT";
         };

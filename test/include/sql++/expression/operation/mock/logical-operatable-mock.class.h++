@@ -38,9 +38,9 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] operation_kind 演算子
-         * @param[in] left_operand   左辺の式（使用しない）
-         * @param[in] right_operand  右辺の式（使用しない）
+         * @param[in] operation_kind ≪二項演算種別≫
+         * @param[in] left_operand   左辺の≪式≫（使用しない）
+         * @param[in] right_operand  右辺の≪式≫（使用しない）
          */
         LogicalOperatableMock(
             BinaryOperationKind operation_kind,
@@ -80,7 +80,7 @@ inline namespace expression
 
     private:
         /*!
-         * @brief 演算子
+         * @brief ≪二項演算種別≫
          */
         BinaryOperationKind _operation_kind;
     };

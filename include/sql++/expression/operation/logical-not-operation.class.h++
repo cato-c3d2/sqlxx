@@ -23,7 +23,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 論理否定演算式を表現するクラス
+     * @brief ≪論理否定演算式≫を表現するクラス
      */
     class LogicalNotOperation : public virtual UnaryOperation
     {
@@ -36,7 +36,7 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] operand 内部の式
+         * @param[in] operand 演算される≪式≫
          */
         LogicalNotOperation(Expression const & operand);
 
@@ -70,11 +70,11 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 論理否定演算式を生成する
+     * @brief ≪論理否定演算式≫を生成する
      *
-     * @param[in] operand 被演算子となる式のオブジェクト
+     * @param[in] operand 演算される≪式≫のオブジェクト
      *
-     * @return 論理否定演算式
+     * @return ≪論理否定演算式≫
      */
     auto logical_not(Expression const & operand) -> LogicalNotOperation;
 
@@ -82,7 +82,7 @@ inline namespace expression
      * @brief ストリーム出力演算
      *
      * @param[in] out                    出力ストリーム
-     * @param[in] logical_not_expression 論理否定演算式のオブジェクト
+     * @param[in] logical_not_expression ≪論理否定演算式≫のオブジェクト
      *
      * @return 出力ストリーム
      */
@@ -112,8 +112,8 @@ inline namespace expression
         }
         try {
             // TODO [要検討] このオブジェクトが空であるか否かの判定について、
-            //      ≪内部の式≫の evaluate メンバ関数の戻り値で判定せず、
-            //      直接、≪内部の式≫が空であるか否かを判定すべき。
+            //      演算される≪式≫の evaluate メンバ関数の戻り値で判定せず、
+            //      直接、演算される≪式≫が空であるか否かを判定すべき。
             //      従って、 Expression::empty メンバ関数等を実装すべき。
             return operand->evaluate().empty();
         } catch (std::runtime_error &) {

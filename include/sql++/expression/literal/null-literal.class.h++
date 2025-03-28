@@ -20,7 +20,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief NULL リテラルを表現するクラス（エイリアス）
+     * @brief ≪NULLリテラル式≫を表現するクラス（エイリアステンプレート）
      */
     using NullLiteral = BasicLiteral<std::nullptr_t>;
 
@@ -31,7 +31,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief NULL リテラルのオブジェクト
+     * @brief ≪NULLリテラル式≫のオブジェクト
      */
     static NullLiteral null {};
 } // namespace expression

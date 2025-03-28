@@ -20,7 +20,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 文字列リテラルを表現するクラス（エイリアス）
+     * @brief ≪文字列リテラル式≫を表現するクラス（エイリアステンプレート）
      */
     using StringLiteral = BasicLiteral<std::string>;
 } // namespace expression

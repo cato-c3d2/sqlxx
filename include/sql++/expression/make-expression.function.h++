@@ -29,15 +29,15 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 式のオブジェクトを生成する
+     * @brief ≪式≫のオブジェクトを生成する
      *
-     * @param[in] expression_or_literal_inner_value 式のオブジェクトまたはリテラルの内部値
+     * @param[in] expression_or_literal_inner_value ≪式≫のオブジェクトまたは≪リテラル式≫の内部値
      *
-     * @return 式のオブジェクト
-     *         @c expression_or_literal_inner_value が式のオブジェクトの場合は、
-     *         @c expression_or_literal_inner_value を元に生成した式のオブジェクトを返却する。 @n
-     *         @c expression_or_literal_inner_value がリテラルの内部値の場合は、
-     *         @c expression_or_literal_inner_value を元に生成したリテラル式のオブジェクトを返却する。 @n
+     * @return ≪式≫のオブジェクト
+     *         @c expression_or_literal_inner_value が≪式≫のオブジェクトの場合は、
+     *         @c expression_or_literal_inner_value を元に生成した≪式≫のオブジェクトを返却する。 @n
+     *         @c expression_or_literal_inner_value が≪リテラル式≫の内部値の場合は、
+     *         @c expression_or_literal_inner_value を元に生成した≪リテラル式≫のオブジェクトを返却する。 @n
      */
     template<typename Type>
     auto make_expression(Type expression_or_literal_inner_value)

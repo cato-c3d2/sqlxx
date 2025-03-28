@@ -140,7 +140,7 @@ BOOST_AUTO_TEST_CASE(accessers)
     // 初期値の検証
     ////////////////////////////////////////////////////////////////////////////
 
-    // ≪二項演算種別≫は≪未定≫であること
+    // ≪二項演算種別≫は≪演算種別未定≫であること
     BOOST_CHECK(binary_operation.operation_kind() == BinaryOperationKind::None);
 
     // 左辺の≪式≫はヌルポインタであること

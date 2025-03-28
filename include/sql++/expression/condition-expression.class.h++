@@ -20,7 +20,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 条件式を表現する抽象クラス
+     * @brief ≪条件式≫を表現する抽象クラス
      */
     class ConditionExpression : public virtual Expression
     {

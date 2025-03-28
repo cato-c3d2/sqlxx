@@ -18,7 +18,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 論理値のリテラルを表現するクラス（エイリアス）
+     * @brief ≪論理値リテラル式≫を表現するクラス（エイリアステンプレート）
      */
     using BooleanLiteral = BasicLiteral<bool>;
 } // namespace expression

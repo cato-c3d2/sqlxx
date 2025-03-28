@@ -21,9 +21,9 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief リテラル式（式中のリテラル）を表現するクラス
+     * @brief ≪リテラル式≫を表現するクラス
      *
-     * 本コードベースでは式中のリテラルを「リテラル式」と呼称する。 @n
+     * 本コードベースでは式中のリテラルを≪リテラル式≫と呼称する。 @n
      */
     template<typename Type>
     class BasicLiteral :
@@ -32,7 +32,7 @@ inline namespace expression
     {
     public:
         /*!
-         * @brief リテラルの内部値の型
+         * @brief ≪リテラル式≫の内部値の型
          */
         using InnerValueType = Type;
 
@@ -56,7 +56,7 @@ inline namespace expression
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] inner_value リテラルの内部値
+         * @param[in] inner_value ≪リテラル式≫の内部値
          */
         BasicLiteral(Type inner_value);
 
@@ -66,16 +66,16 @@ inline namespace expression
         virtual ~BasicLiteral() override = default;
 
         /*!
-         * @brief リテラルの内部値を取得する
+         * @brief ≪リテラル式≫の内部値を取得する
          *
-         * @return リテラルの内部値
+         * @return ≪リテラル式≫の内部値
          */
         auto inner_value() const -> InnerValueType;
 
         /*!
-         * @brief リテラルの内部値を設定する
+         * @brief ≪リテラル式≫の内部値を設定する
          *
-         * @param[in] inner_value リテラルの内部値
+         * @param[in] inner_value ≪リテラル式≫の内部値
          *
          * @return このオブジェクトの参照
          */
@@ -104,7 +104,7 @@ inline namespace expression
 
     private:
         /*!
-         * @brief リテラルの内部値
+         * @brief ≪リテラル式≫の内部値
          */
         Type _inner_value;
     };
@@ -119,7 +119,7 @@ inline namespace expression
      * @brief ストリーム出力演算
      *
      * @param[in] out                      出力ストリーム
-     * @param[in] basic_literal_expression リテラル式のオブジェクト
+     * @param[in] basic_literal_expression ≪リテラル式≫のオブジェクト
      *
      * @return 出力ストリーム
      */
@@ -167,7 +167,7 @@ inline namespace expression
      * @brief このオブジェクトの文字列表現を返却する
      *
      * 【メンバ関数の特殊化について】 @n
-     * このリテラルの内部値の型が @c bool の場合、
+     * この≪リテラル式≫の内部値の型が @c bool の場合、
      * 論理値を示す文字列を返却する。 @n
      *
      * @return このオブジェクトの文字列表現
@@ -183,7 +183,7 @@ inline namespace expression
      * @brief このオブジェクトの文字列表現を返却する
      *
      * 【メンバ関数の特殊化について】 @n
-     * このリテラルの内部値の型が @c std::string の場合、
+     * この≪リテラル式≫の内部値の型が @c std::string の場合、
      * 内部値の両端をシングルクォーテーションで囲んだ文字列を返却する。 @n
      *
      * @return このオブジェクトの文字列表現
@@ -200,7 +200,7 @@ inline namespace expression
      * @brief このオブジェクトの文字列表現を返却する
      *
      * 【メンバ関数の特殊化について】 @n
-     * このリテラルの内部値の型が <tt>char const *</tt> の場合、
+     * この≪リテラル式≫の内部値の型が <tt>char const *</tt> の場合、
      * 内部値の両端をシングルクォーテーションで囲んだ文字列を返却する。 @n
      *
      * @return このオブジェクトの文字列表現
@@ -217,7 +217,7 @@ inline namespace expression
      * @brief このオブジェクトの文字列表現を返却する
      *
      * 【メンバ関数の特殊化について】 @n
-     * このリテラルの内部値の型が @c std::nullptr_t の場合、
+     * この≪リテラル式≫の内部値の型が @c std::nullptr_t の場合、
      * NULL を示す文字列を返却する。 @n
      *
      * @return このオブジェクトの文字列表現

@@ -166,8 +166,8 @@ inline namespace expression
      * @li empty-string     ... 空文字列
      * @li white-space      ... 半角スペース
      * @li any-string       ... 任意の文字列
-     * @li one-expression   ... 単一の式
-     * @li some-expressions ... 複数の式
+     * @li one-expression   ... 単一の≪式≫
+     * @li some-expressions ... 複数の≪式≫
      *
      * [ 構成 ] @n
      * @li        _0 : @link pattern_by_default_construction()           @endlink
@@ -696,7 +696,7 @@ inline namespace expression
             // [ データパターン ]
             // + LogicalNotOperation
             //     + expression
-            //         + Type       : 条件式
+            //         + Type       : ≪条件式≫
             //         + expression : 未指定
             ////////////////////////////////////////////////////////////////////
             {
@@ -717,8 +717,8 @@ inline namespace expression
             // [ データパターン ]
             // + LogicalNotOperation
             //     + expression
-            //         + Type       : 条件式
-            //         + expression : 単一の式
+            //         + Type       : ≪条件式≫
+            //         + expression : 単一の≪式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -742,8 +742,8 @@ inline namespace expression
             // [ データパターン ]
             // + LogicalNotOperation
             //     + expression
-            //         + Type       : 条件式
-            //         + expression : 複数の式
+            //         + Type       : ≪条件式≫
+            //         + expression : 複数の≪式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -776,7 +776,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : グループ化された式 ( @c GroupedExpression )
+     * @li @c expression : ≪グループ化された式≫ ( @c GroupedExpression )
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -790,7 +790,7 @@ inline namespace expression
             // [ データパターン ]
             // + LogicalNotOperation
             //     + expression
-            //         + Type       : グループ化された式
+            //         + Type       : ≪グループ化された式≫
             //         + expression : 未指定
             ////////////////////////////////////////////////////////////////////
             {
@@ -811,8 +811,8 @@ inline namespace expression
             // [ データパターン ]
             // + LogicalNotOperation
             //     + expression
-            //         + Type       : グループ化された式
-            //         + expression : 単一の式
+            //         + Type       : ≪グループ化された式≫
+            //         + expression : 単一の≪式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -838,8 +838,8 @@ inline namespace expression
             // [ データパターン ]
             // + LogicalNotOperation
             //     + expression
-            //         + Type       : グループ化された式
-            //         + expression : 複数の式
+            //         + Type       : ≪グループ化された式≫
+            //         + expression : 複数の≪式≫
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト

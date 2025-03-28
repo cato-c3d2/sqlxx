@@ -18,7 +18,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief 実数リテラルを表現するクラス（エイリアス）
+     * @brief ≪実数リテラル式≫を表現するクラス（エイリアステンプレート）
      */
     using RealNumberLiteral = BasicLiteral<float>;
 } // namespace expression

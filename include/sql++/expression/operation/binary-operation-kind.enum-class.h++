@@ -18,59 +18,59 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /**
-     * @brief 二項演算子の種類
+     * @brief ≪二項演算種別≫を定義する列挙型
      */
     enum class BinaryOperationKind
     {
         /**
-         * @brief 未定
+         * @brief ≪演算種別未定≫
          *
-         * 演算子の種類が未定である場合等に使用する。
+         * 演算の種類が未定である場合等に使用する。
          */
         None = 0,
 
         /**
-         * @brief 等値比較演算子
+         * @brief ≪等値比較演算≫
          */
         EqualTo,
 
         /**
-         * @brief 非等値比較演算子
+         * @brief ≪非等値比較演算≫
          */
         NotEqualTo,
 
         /**
-         * @brief 比較演算子（小なり）
+         * @brief ≪比較演算（小なり）≫
          */
         Less,
 
         /**
-         * @brief 比較演算子（以下）
+         * @brief ≪比較演算（以下）≫
          */
         LessEqual,
 
         /**
-         * @brief 比較演算子（大なり）
+         * @brief ≪比較演算（大なり）≫
          */
         Greater,
 
         /**
-         * @brief 比較演算子（以上）
+         * @brief ≪比較演算（以上）≫
          */
         GreaterEqual,
 
         /**
-         * @brief 論理積演算子
+         * @brief ≪論理積演算≫
          */
         LogicalAnd,
 
         /**
-         * @brief 論理和演算子
+         * @brief ≪論理和演算≫
          */
         LogicalOr,
 
         /**
-         * @brief IS 演算子
+         * @brief ≪IS演算≫
          */
         Is,
     };
@@ -82,9 +82,9 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /**
-     * @brief 二項演算子の文字列表現を返却する
+     * @brief ≪二項演算種別≫の文字列表現を返却する
      *
-     * @param[in] operation_kind 文字列に変換する二項演算子
+     * @param[in] operation_kind 文字列に変換する≪二項演算種別≫
      *
      * @return @c operation_kind の文字列表現
      */
@@ -99,9 +99,9 @@ inline namespace expression
     inline namespace
     {
         /*!
-         * @brief 各種二項演算子の文字列表現を定義するクラス
+         * @brief 各種≪二項演算種別≫の演算子の記号又はキーワードを定義するクラス
          *
-         * 各種二項演算子の文字列表現は
+         * 各種≪二項演算種別≫の文字列表現は
          * @c sqlxx::expression::to_string(BinaryOperationKind)
          * を使用して取得する想定のため、このクラスは外部に公開しない。 @n
          * （そのために無名名前空間内に定義している。） @n
@@ -110,47 +110,47 @@ inline namespace expression
         {
         public:
             /**
-             * @brief 等値比較演算子の記号
+             * @brief 演算子の記号 : ≪等値比較演算≫
              */
             static constexpr auto EQUAL_TO = "=";
 
             /**
-             * @brief 非等値比較演算子の記号
+             * @brief 演算子の記号 : ≪非等値比較演算≫
              */
             static constexpr auto NOT_EQUAL_TO = "<>";
 
             /**
-             * @brief 比較演算子（小なり）の記号
+             * @brief 演算子の記号 : ≪比較演算（小なり）≫
              */
             static constexpr auto LESS = "<";
 
             /**
-             * @brief 比較演算子（以下）の記号
+             * @brief 演算子の記号 : ≪比較演算（以下）≫
              */
             static constexpr auto LESS_EQUAL = "<=";
 
             /**
-             * @brief 比較演算子（大なり）の記号
+             * @brief 演算子の記号 : ≪比較演算（大なり）≫
              */
             static constexpr auto GREATER = ">";
 
             /**
-             * @brief 比較演算子（以上）の記号
+             * @brief 演算子の記号 : ≪比較演算（以上）≫
              */
             static constexpr auto GREATER_EQUAL = ">=";
 
             /**
-             * @brief 論理積演算子のキーワード
+             * @brief 演算子のキーワード : ≪論理積演算≫
              */
             static constexpr auto LOGICAL_AND = "AND";
 
             /**
-             * @brief 論理和演算子のキーワード
+             * @brief 演算子のキーワード : ≪論理和演算≫
              */
             static constexpr auto LOGICAL_OR = "OR";
 
             /**
-             * @brief IS 演算子のキーワード
+             * @brief 演算子のキーワード : ≪IS演算≫
              */
             static constexpr auto IS = "IS";
         };

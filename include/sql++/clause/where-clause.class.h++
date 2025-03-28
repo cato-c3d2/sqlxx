@@ -21,7 +21,7 @@ inline namespace clause
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief "WHERE 句" の文法クラス
+     * @brief ≪WHERE句≫を表現するクラス
      */
     class WhereClause
     {
@@ -34,7 +34,7 @@ inline namespace clause
         /*!
          * @brief コンストラクタ
          *
-         * @param[in] condition_expression "条件式" の文法オブジェクト
+         * @param[in] condition_expression ≪条件式≫のオブジェクト
          */
         WhereClause(ConditionExpression const & condition_expression);
 
@@ -60,16 +60,20 @@ inline namespace clause
         auto operator=(WhereClause const & origin) -> WhereClause &;
 
         /*!
-         * @brief "条件式" を取得する
+         * @brief ≪条件式≫を取得する
          *
-         * @return 複製した "条件式" の文法オブジェクトのポインタ
+         * このオブジェクトが保持する≪条件式≫を複製し、そのポインタを返却する。
+         *
+         * @return 複製した≪条件式≫のポインタ
          */
         auto condition_expression() const -> ConditionExpression *;
 
         /*!
-         * @brief "条件式" を設定する
+         * @brief ≪条件式≫を設定する
          *
-         * @param[in] condition_expression "条件式" の文法オブジェクト
+         * 引数として指定した≪条件式≫を複製し、そのポインタをこのオブジェクトの≪条件式≫として保持する。
+         *
+         * @param[in] condition_expression ≪条件式≫
          *
          * @return このオブジェクトの参照
          */
@@ -107,7 +111,7 @@ inline namespace clause
 
     private:
         /*!
-         * @brief "条件式"
+         * @brief ≪条件式≫
          */
         // TODO 暫定的に生のポインタを使用しているが、将来的にスマートポインタに変更する予定。
         ConditionExpression const * _condition_expression;
@@ -123,7 +127,7 @@ inline namespace clause
      * @brief ストリーム出力演算
      *
      * @param[in] out          出力ストリーム
-     * @param[in] where_clause "WHERE 句" の文法オブジェクト
+     * @param[in] where_clause ≪WHERE句≫のオブジェクト
      *
      * @return 出力ストリーム
      */
