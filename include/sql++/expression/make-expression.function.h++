@@ -33,7 +33,7 @@ inline namespace expression
      *
      * @param[in] expression_or_literal_inner_value ≪式≫のオブジェクトまたは≪リテラル式≫の内部値
      *
-     * @return ≪式≫のオブジェクト
+     * @return ≪式≫のオブジェクト @n
      *         @c expression_or_literal_inner_value が≪式≫のオブジェクトの場合は、
      *         @c expression_or_literal_inner_value を元に生成した≪式≫のオブジェクトを返却する。 @n
      *         @c expression_or_literal_inner_value が≪リテラル式≫の内部値の場合は、

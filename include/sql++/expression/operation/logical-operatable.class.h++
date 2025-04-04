@@ -24,7 +24,7 @@ inline namespace expression
      * @brief ≪論理演算可能≫を表現する Mix-in クラス
      *
      * このクラスは派生クラスに「各種≪二項論理演算式≫を生成する機能」を混入する Mix-in クラスである。 @n
-     *
+     * @n
      * NOTE 相互参照によるコンパイルエラーを避けるために、
      *      @c BinaryOperation を型パラメータとして受け取るように実装している。 @n
      */
@@ -37,7 +37,7 @@ inline namespace expression
          *
          * このオブジェクトを左辺の≪式≫、
          * @c operand を右辺の≪式≫とした、≪論理積演算式≫を生成する。 @n
-         *
+         * @n
          * このメンバ関数の名称は、標準ライブラリ関数
          * @c std::logical_and （ @c \<functional\> ）を参考に命名した。 @n
          *
@@ -53,7 +53,7 @@ inline namespace expression
          *
          * このオブジェクトを左辺の≪式≫、
          * @c operand を右辺の≪式≫とした、≪論理和演算式≫を生成する。 @n
-         *
+         * @n
          * このメンバ関数の名称は、標準ライブラリ関数
          * @c std::logical_or （ @c \<functional\> ）を参考に命名した。 @n
          *

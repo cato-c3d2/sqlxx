@@ -25,7 +25,7 @@ inline namespace expression
         /**
          * @brief ≪演算種別未定≫
          *
-         * 演算の種類が未定である場合等に使用する。
+         * 演算の種類が未定である場合等に使用する。 @n
          */
         None = 0,
 

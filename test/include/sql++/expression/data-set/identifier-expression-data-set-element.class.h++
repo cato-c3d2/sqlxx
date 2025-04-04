@@ -23,7 +23,7 @@ inline namespace expression
     /*!
      * @brief ≪リテラル式≫のテストケースで使用するデータセット要素
      *
-     * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する。
+     * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する。 @n
      *
      * @see sqlxx::expression::IdentifierExpression              テスト対象クラス
      * @see sqlxx::test::expression::IdentifierExpressionDataSet データセット

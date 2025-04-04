@@ -23,7 +23,7 @@ inline namespace expression
     /*!
      * @brief ≪二項演算種別≫のテストケースで使用するデータセット要素
      *
-     * テスト対象のオブジェクトとテスト対象の関数の期待結果を保持する。
+     * テスト対象のオブジェクトとテスト対象の関数の期待結果を保持する。 @n
      *
      * @see sqlxx::expression::BinaryOperationKind              テスト対象列挙型
      * @see sqlxx::test::expression::BinaryOperationKindDataSet データセット

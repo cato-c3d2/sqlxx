@@ -23,7 +23,7 @@ inline namespace expression
     /*!
      * @brief ≪実数リテラル式≫のテストケースで使用するデータセット要素
      *
-     * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する。
+     * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する。 @n
      *
      * @see sqlxx::expression::RealNumberLiteral              テスト対象クラス
      * @see sqlxx::test::expression::RealNumberLiteralDataSet データセット
