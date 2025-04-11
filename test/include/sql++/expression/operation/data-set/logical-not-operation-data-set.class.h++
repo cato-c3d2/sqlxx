@@ -161,8 +161,8 @@ inline namespace expression
      * [ 凡例 ] @n
      * @li -                ... 未指定
      * @li o                ... 指定
-     * @li MIN              ... 内部値の型( @c int または @c float )の最小値
-     * @li MAX              ... 内部値の型( @c int または @c float )の最大値
+     * @li MIN              ... 内部値の型（ @c int または @c float ）の最小値
+     * @li MAX              ... 内部値の型（ @c int または @c float ）の最大値
      * @li empty-string     ... 空文字列
      * @li white-space      ... 半角スペース
      * @li any-string       ... 任意の文字列
@@ -244,7 +244,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪NULLリテラル式≫ ( @c NullLiteral )
+     * @li @c expression : ≪NULLリテラル式≫（ @c NullLiteral ）
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -301,7 +301,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪論理値リテラル式≫ ( @c BooleanLiteral )
+     * @li @c expression : ≪論理値リテラル式≫（ @c BooleanLiteral ）
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -379,7 +379,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪整数リテラル式≫ ( @c IntegerLiteral )
+     * @li @c expression : ≪整数リテラル式≫（ @c IntegerLiteral ）
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -436,7 +436,7 @@ inline namespace expression
             // + LogicalNotOperation
             //     + expression
             //         + Type        : ≪整数リテラル式≫
-            //         + inner_value : -2,147,483,648 (int 型の最小値)
+            //         + inner_value : -2,147,483,648 （ int 型の最小値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -457,7 +457,7 @@ inline namespace expression
             // + LogicalNotOperation
             //     + expression
             //         + Type        : ≪整数リテラル式≫
-            //         + inner_value : +2,147,483,647 (int 型の最大値)
+            //         + inner_value : +2,147,483,647 （ int 型の最大値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -478,7 +478,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪実数リテラル式≫ ( @c RealNumberLiteral )
+     * @li @c expression : ≪実数リテラル式≫（ @c RealNumberLiteral ）
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -535,7 +535,7 @@ inline namespace expression
             // + LogicalNotOperation
             //     + expression
             //         + Type        : ≪実数リテラル式≫
-            //         + inner_value : -3.402823466E+38 (float 型の最小値)
+            //         + inner_value : -3.402823466E+38 （ float 型の最小値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -560,7 +560,7 @@ inline namespace expression
             // + LogicalNotOperation
             //     + expression
             //         + Type        : ≪実数リテラル式≫
-            //         + inner_value : +3.402823466E+38 (float 型の最大値)
+            //         + inner_value : +3.402823466E+38 （ float 型の最大値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -583,7 +583,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪文字列リテラル式≫ ( @c StringLiteral )
+     * @li @c expression : ≪文字列リテラル式≫（ @c StringLiteral ）
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -682,7 +682,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪条件式≫(≪二項演算式≫( @c BinaryOperation ))
+     * @li @c expression : ≪条件式≫（≪二項演算式≫（ @c BinaryOperation ））
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */
@@ -776,7 +776,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c LogicalNotOperation @n
-     * @li @c expression : ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li @c expression : ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * @return ≪論理否定演算式≫のテストケースで使用するデータセット
      */

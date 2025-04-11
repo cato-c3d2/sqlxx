@@ -63,7 +63,7 @@ inline namespace clause
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief ストリーム出力演算(本データセット要素)
+     * @brief ストリーム出力演算（本データセット要素）
      *
      * @param[in] out              出力ストリーム
      * @param[in] data_set_element データセット要素
@@ -75,10 +75,10 @@ inline namespace clause
         -> std::ostream &;
 
     /*!
-     * @brief ストリーム出力演算(テスト対象オブジェクト(任意指定))
+     * @brief ストリーム出力演算（テスト対象オブジェクト（任意指定））
      *
      * @param[in] out                   出力ストリーム
-     * @param[in] optional_where_clause テスト対象オブジェクト(任意指定)
+     * @param[in] optional_where_clause テスト対象オブジェクト（任意指定）
      *
      * @return 出力ストリーム
      */

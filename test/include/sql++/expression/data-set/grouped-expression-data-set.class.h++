@@ -143,8 +143,8 @@ inline namespace expression
      * [ 凡例 ] @n
      * @li -            ... 未指定
      * @li o            ... 指定
-     * @li MIN          ... 内部値の型( @c int または @c float )の最小値
-     * @li MAX          ... 内部値の型( @c int または @c float )の最大値
+     * @li MIN          ... 内部値の型（ @c int または @c float ）の最小値
+     * @li MAX          ... 内部値の型（ @c int または @c float ）の最大値
      * @li empty-string ... 空文字列
      * @li white-space  ... 半角スペース
      * @li any-string   ... 任意の文字列
@@ -246,7 +246,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪識別子式≫
-            //         + value : 指定 (テーブル名 (エイリアス名) + カラム名)
+            //         + value : 指定（テーブル名（エイリアス名） + カラム名）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -416,7 +416,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪整数リテラル式≫
-            //         + value : -2,147,483,649 (int 型の最小値 - 1)
+            //         + value : -2,147,483,649 （ int 型の最小値 - 1 ）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -436,7 +436,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪整数リテラル式≫
-            //         + value : -2,147,483,648 (int 型の最小値)
+            //         + value : -2,147,483,648 （ int 型の最小値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -516,7 +516,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪整数リテラル式≫
-            //         + value : +2,147,483,647 (int 型の最大値)
+            //         + value : +2,147,483,647 （ int 型の最大値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -536,7 +536,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪整数リテラル式≫
-            //         + value : +2,147,483,648 (int 型の最大値 + 1)
+            //         + value : +2,147,483,648 （ int 型の最大値 + 1 ）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -581,7 +581,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪実数リテラル式≫
-            //         + value : -3.402823466E+38 - 0.1E+38 (float 型の最小値 - 0.1E+38)
+            //         + value : -3.402823466E+38 - 0.1E+38 （ float 型の最小値 - 0.1E+38 ）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -606,7 +606,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪実数リテラル式≫
-            //         + value : -3.402823466E+38 (float 型の最小値)
+            //         + value : -3.402823466E+38 （ float 型の最小値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -690,7 +690,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪実数リテラル式≫
-            //         + value : +3.402823466E+38 (float 型の最大値)
+            //         + value : +3.402823466E+38 （ float 型の最大値）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
@@ -712,7 +712,7 @@ inline namespace expression
             // + GroupedExpression
             //     + expression
             //         + Type  : ≪実数リテラル式≫
-            //         + value : +3.402823466E+38 + 0.1E+38 (float 型の最大値 + 0.1E+38)
+            //         + value : +3.402823466E+38 + 0.1E+38 （ float 型の最大値 + 0.1E+38 ）
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト

@@ -53,10 +53,10 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li AND ... ≪論理積演算≫ ( @c logical_and )
-     * @li OR  ... ≪論理和演算≫ ( @c logical_or )
-     * @li CE  ... ≪条件式≫ ( @c ConditionExpression )
-     * @li GE  ... ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li AND ... ≪論理積演算≫（ @c logical_and ）
+     * @li OR  ... ≪論理和演算≫（ @c logical_or ）
+     * @li CE  ... ≪条件式≫（ @c ConditionExpression ）
+     * @li GE  ... ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * [ 構成 ] @n
      * @li _35 ~ _38 : @link pattern_by_logical_and() @endlink
@@ -88,11 +88,11 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪論理積演算≫ ( @c logical_and )
-     * @li @c left     : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
-     * @li @c right    : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li @c operater : ≪論理積演算≫（ @c logical_and ）
+     * @li @c left     : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
+     * @li @c right    : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * @return ≪二項演算式≫のテストケースで使用するデータセット
      */
@@ -320,11 +320,11 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪論理和演算≫ ( @c logical_or )
-     * @li @c left     : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
-     * @li @c right    : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li @c operater : ≪論理和演算≫（ @c logical_or ）
+     * @li @c left     : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
+     * @li @c right    : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * @return ≪二項演算式≫のテストケースで使用するデータセット
      */

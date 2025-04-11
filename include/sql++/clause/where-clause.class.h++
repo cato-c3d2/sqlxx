@@ -84,7 +84,7 @@ inline namespace clause
         /*!
          * @brief このオブジェクトが空か判定する
          *
-         * @return このオブジェクトが空の場合は @c true を,
+         * @return このオブジェクトが空の場合は @c true を、
          *         そうではない場合は @c false を返却する
          */
         auto empty() const -> bool;

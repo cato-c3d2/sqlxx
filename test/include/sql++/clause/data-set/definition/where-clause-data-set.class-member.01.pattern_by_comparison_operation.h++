@@ -98,15 +98,15 @@ inline namespace clause
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li =  ... ≪等値比較演算≫ ( @c equal_to )
-     * @li <> ... ≪非等値比較演算≫ ( @c not_equal_to )
-     * @li <  ... ≪比較演算（小なり）≫ ( @c less )
-     * @li <= ... ≪比較演算（以下）≫ ( @c less_equal )
-     * @li >  ... ≪比較演算（大なり）≫ ( @c greater )
-     * @li >= ... ≪比較演算（以上）≫ ( @c greater_equal )
-     * @li IS ... ≪IS演算≫ ( @c is )
-     * @li IE ... ≪識別子式≫ ( @c IdentifierExpression )
-     * @li LE ... ≪リテラル式≫ ( @c BasicLiteral )
+     * @li =  ... ≪等値比較演算≫（ @c equal_to ）
+     * @li <> ... ≪非等値比較演算≫（ @c not_equal_to ）
+     * @li <  ... ≪比較演算（小なり）≫（ @c less ）
+     * @li <= ... ≪比較演算（以下）≫（ @c less_equal ）
+     * @li >  ... ≪比較演算（大なり）≫（ @c greater ）
+     * @li >= ... ≪比較演算（以上）≫（ @c greater_equal ）
+     * @li IS ... ≪IS演算≫（ @c is ）
+     * @li IE ... ≪識別子式≫（ @c IdentifierExpression ）
+     * @li LE ... ≪リテラル式≫（ @c BasicLiteral ）
      *
      * [ 構成 ] @n
      * @li  _8 ~ _11 : @link pattern_by_equal_to()      @endlink
@@ -147,14 +147,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪等値比較演算≫ ( @c equal_to )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪等値比較演算≫（ @c equal_to ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */
@@ -296,14 +296,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪非等値比較演算≫ ( @c not_equal_to )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪非等値比較演算≫（ @c not_equal_to ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */
@@ -445,14 +445,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（小なり）≫ ( @c less )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪比較演算（小なり）≫（ @c less ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */
@@ -594,14 +594,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（以下）≫ ( @c less_equal )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪比較演算（以下）≫（ @c less_equal ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */
@@ -744,14 +744,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（大なり）≫ ( @c greater )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪比較演算（大なり）≫（ @c greater ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */
@@ -893,14 +893,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（以上）≫ ( @c greater_equal )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪比較演算（以上）≫（ @c greater_equal ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */
@@ -1043,14 +1043,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪IS演算≫ ( @c is )
-     * @li @c left     : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
-     * @li @c right    : ≪識別子式≫ ( @c IdentifierExpression ) or
-     *                   ≪リテラル式≫ ( @c BasicLiteral )
+     * @li @c operater : ≪IS演算≫（ @c is ）
+     * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
+     * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
+     *                   ≪リテラル式≫（ @c BasicLiteral ）
      *
      * @return ≪WHERE句≫のテストケースで使用するデータセット
      */

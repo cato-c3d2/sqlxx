@@ -48,8 +48,8 @@ inline namespace expression
      * [ 凡例 ] @n
      * @li - ... 未指定
      * @li o ... 有効値
-     * @li x ... 無効値 (
-     *           @c operater : @c UnaryOperationKind::None )
+     * @li x ... 無効値（
+     *           @c operater : @c UnaryOperationKind::None ）
      *
      * [ 構成 ] @n
      * @li      _0 : @link pattern_by_default_construction()   @endlink
@@ -114,8 +114,8 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c UnaryOperation @n
-     * @li @c operater : 有効値 or 無効値 ( @c UnaryOperationKind::None )
-     * @li @c operand  : 有効値 or 無効値 ( @c nullptr )
+     * @li @c operater : 有効値 or 無効値（ @c UnaryOperationKind::None ）
+     * @li @c operand  : 有効値 or 無効値（ @c nullptr ）
      *
      * @return ≪二項演算式≫のテストケースで使用するデータセット
      */

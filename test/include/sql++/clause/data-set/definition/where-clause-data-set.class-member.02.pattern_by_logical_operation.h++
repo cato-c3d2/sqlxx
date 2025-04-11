@@ -58,10 +58,10 @@ inline namespace clause
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li AND ... ≪論理積演算≫ ( @c logical_and )
-     * @li OR  ... ≪論理和演算≫ ( @c logical_or )
-     * @li CE  ... ≪条件式≫ ( @c ConditionExpression )
-     * @li GE  ... ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li AND ... ≪論理積演算≫（ @c logical_and ）
+     * @li OR  ... ≪論理和演算≫（ @c logical_or ）
+     * @li CE  ... ≪条件式≫（ @c ConditionExpression ）
+     * @li GE  ... ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * [ 構成 ] @n
      * @li _36 ~ _39 : @link pattern_by_logical_and() @endlink
@@ -92,14 +92,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪論理積演算≫ ( @c logical_and )
-     * @li @c left     : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
-     * @li @c right    : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li @c operater : ≪論理積演算≫（ @c logical_and ）
+     * @li @c left     : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
+     * @li @c right    : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * @return ≪条件式≫のテストケースで使用するデータセット
      */
@@ -347,14 +347,14 @@ inline namespace clause
     /*!
      * [ データパターン ] @n
      * @c WhereClause @n
-     * @li @c condition_expression : @c BinaryOperation ( 下記参照 )
+     * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪論理和演算≫ ( @c logical_or )
-     * @li @c left     : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
-     * @li @c right    : ≪条件式≫ ( @c ConditionExpression ) or
-     *                   ≪グループ化された式≫ ( @c GroupedExpression )
+     * @li @c operater : ≪論理和演算≫（ @c logical_or ）
+     * @li @c left     : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
+     * @li @c right    : ≪条件式≫（ @c ConditionExpression ） or
+     *                   ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * @return ≪条件式≫のテストケースで使用するデータセット
      */
