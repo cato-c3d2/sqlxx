@@ -54,7 +54,7 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li UnaryOperationKind ... テスト対象関数の引数となるオブジェクト
+     * @li UnaryOperationKind : テスト対象関数の引数となるオブジェクト
      *
      * @return ≪単項演算種別≫のテストケースで使用するデータセット
      *

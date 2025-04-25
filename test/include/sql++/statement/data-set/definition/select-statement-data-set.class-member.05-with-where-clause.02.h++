@@ -62,10 +62,10 @@ inline namespace statement
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li AND ... ≪論理積演算≫（ @c logical_and ）
-     * @li OR  ... ≪論理和演算≫（ @c logical_or ）
-     * @li CE  ... ≪条件式≫（ @c ConditionExpression ）
-     * @li GE  ... ≪グループ化された式≫（ @c GroupedExpression ）
+     * @li AND : ≪論理積演算≫（ @c logical_and ）
+     * @li OR  : ≪論理和演算≫（ @c logical_or ）
+     * @li CE  : ≪条件式≫（ @c ConditionExpression ）
+     * @li GE  : ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * [ 構成 ] @n
      * @li _105 ~ _108 : @link with_where_clause_and_logical_and() @endlink

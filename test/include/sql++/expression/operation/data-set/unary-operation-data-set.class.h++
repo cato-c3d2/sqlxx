@@ -64,8 +64,8 @@ inline namespace expression
 
     /*!
      * [ データパターンと構成 ] @n
-     * @li @link pattern_by_construction()      @endlink ... 任意の引数によりオブジェクトを構築する
-     * @li @link pattern_by_logical_operation() @endlink ... ≪論理演算≫を指定する
+     * @li @link pattern_by_construction()      @endlink : 任意の引数によりオブジェクトを構築する
+     * @li @link pattern_by_logical_operation() @endlink : ≪論理演算≫を指定する
      *
      * @return ≪単項演算式≫のテストケースで使用するデータセット
      *

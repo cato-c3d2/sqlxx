@@ -93,15 +93,15 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li =  ... ≪等値比較演算≫（ @c equal_to ）
-     * @li <> ... ≪非等値比較演算≫（ @c not_equal_to ）
-     * @li <  ... ≪比較演算（小なり）≫（ @c less ）
-     * @li <= ... ≪比較演算（以下）≫（ @c less_equal ）
-     * @li >  ... ≪比較演算（大なり）≫（ @c greater ）
-     * @li >= ... ≪比較演算（以上）≫（ @c greater_equal ）
-     * @li IS ... ≪IS演算≫（ @c is ）
-     * @li IE ... ≪識別子式≫（ @c IdentifierExpression ）
-     * @li LE ... ≪リテラル式≫（ @c BasicLiteral ）
+     * @li =  : ≪等値比較演算≫（ @c equal_to ）
+     * @li <> : ≪非等値比較演算≫（ @c not_equal_to ）
+     * @li <  : ≪比較演算（小なり）≫（ @c less ）
+     * @li <= : ≪比較演算（以下）≫（ @c less_equal ）
+     * @li >  : ≪比較演算（大なり）≫（ @c greater ）
+     * @li >= : ≪比較演算（以上）≫（ @c greater_equal ）
+     * @li IS : ≪IS演算≫（ @c is ）
+     * @li IE : ≪識別子式≫（ @c IdentifierExpression ）
+     * @li LE : ≪リテラル式≫（ @c BasicLiteral ）
      *
      * [ 構成 ] @n
      * @li  _7 ~ _10 : @link pattern_by_equal_to()      @endlink

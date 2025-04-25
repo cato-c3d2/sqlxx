@@ -74,10 +74,10 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li -   ... 未指定
-     * @li o   ... 指定
-     * @li MIN ... @c int の最小値（ @c -2,147,483,648 ）
-     * @li MAX ... @c int の最大値（ @c +2,147,483,647 ）
+     * @li -   : 未指定
+     * @li o   : 指定
+     * @li MIN : @c int の最小値（ @c -2,147,483,648 ）
+     * @li MAX : @c int の最大値（ @c +2,147,483,647 ）
      *
      * [ 構成 ] @n
      * @li _0 ~ _7 : @link pattern_by_construction() @endlink

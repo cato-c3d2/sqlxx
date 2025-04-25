@@ -159,15 +159,15 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li -                ... 未指定
-     * @li o                ... 指定
-     * @li MIN              ... 内部値の型（ @c int または @c float ）の最小値
-     * @li MAX              ... 内部値の型（ @c int または @c float ）の最大値
-     * @li empty-string     ... 空文字列
-     * @li white-space      ... 半角スペース
-     * @li any-string       ... 任意の文字列
-     * @li one-expression   ... 単一の≪式≫
-     * @li some-expressions ... 複数の≪式≫
+     * @li -                : 未指定
+     * @li o                : 指定
+     * @li MIN              : 内部値の型（ @c int または @c float ）の最小値
+     * @li MAX              : 内部値の型（ @c int または @c float ）の最大値
+     * @li empty-string     : 空文字列
+     * @li white-space      : 半角スペース
+     * @li any-string       : 任意の文字列
+     * @li one-expression   : 単一の≪式≫
+     * @li some-expressions : 複数の≪式≫
      *
      * [ 構成 ] @n
      * @li        _0 : @link pattern_by_default_construction()           @endlink

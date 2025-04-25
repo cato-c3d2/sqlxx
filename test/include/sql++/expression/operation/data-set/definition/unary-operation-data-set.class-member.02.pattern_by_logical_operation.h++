@@ -43,9 +43,9 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li NOT ... ≪論理否定演算式≫（ @c logical_not ）
-     * @li CE  ... ≪条件式≫（ @c ConditionExpression ）
-     * @li GE  ... ≪グループ化された式≫（ @c GroupedExpression ）
+     * @li NOT : ≪論理否定演算式≫（ @c logical_not ）
+     * @li CE  : ≪条件式≫（ @c ConditionExpression ）
+     * @li GE  : ≪グループ化された式≫（ @c GroupedExpression ）
      *
      * [ 構成 ] @n
      * @li _5 ~ _6 : @link pattern_by_logical_not() @endlink

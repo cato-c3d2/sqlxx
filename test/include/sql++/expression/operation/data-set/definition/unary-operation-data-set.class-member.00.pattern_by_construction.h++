@@ -46,10 +46,10 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li - ... 未指定
-     * @li o ... 有効値
-     * @li x ... 無効値（
-     *           @c operater : @c UnaryOperationKind::None ）
+     * @li - : 未指定
+     * @li o : 有効値
+     * @li x : 無効値（
+     *         @c operater : @c UnaryOperationKind::None ）
      *
      * [ 構成 ] @n
      * @li      _0 : @link pattern_by_default_construction()   @endlink

@@ -61,8 +61,8 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li - ... 未指定
-     * @li o ... 指定
+     * @li - : 未指定
+     * @li o : 指定
      *
      * [ 構成 ] @n
      * @li _0 ~ _1 : @link pattern_by_construction() @endlink

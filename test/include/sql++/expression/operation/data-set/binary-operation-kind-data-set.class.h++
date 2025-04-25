@@ -70,7 +70,7 @@ inline namespace expression
      * </pre>
      *
      * [ 凡例 ] @n
-     * @li BinaryOperationKind ... テスト対象関数の引数となるオブジェクト
+     * @li BinaryOperationKind : テスト対象関数の引数となるオブジェクト
      *
      * @return ≪二項演算種別≫のテストケースで使用するデータセット
      *
