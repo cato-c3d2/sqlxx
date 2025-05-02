@@ -72,8 +72,7 @@ inline namespace statement
      * [ 凡例 ] @n
      * @li - : 未指定
      * @li o : 有効値
-     * @li x : 無効値（
-     *         @c operater : @c BinaryOperationKind::None ）
+     * @li x : 無効値（ @c operater : @c BinaryOperationKind::None ）
      *
      * [ 構成 ] @n
      * @li       _69 : @link with_where_clause_of_built_by_default_construction()   @endlink
