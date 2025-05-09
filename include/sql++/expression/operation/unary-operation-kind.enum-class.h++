@@ -70,7 +70,7 @@ inline namespace expression
         {
         public:
             /**
-             * @brief 演算子のキーワード : ≪論理否定演算≫
+             * brief 演算子のキーワード - ≪論理否定演算≫
              */
             static constexpr auto LOGICAL_NOT = "NOT";
         };

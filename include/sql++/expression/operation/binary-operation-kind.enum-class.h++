@@ -110,47 +110,47 @@ inline namespace expression
         {
         public:
             /**
-             * @brief 演算子の記号 : ≪等値比較演算≫
+             * @brief 演算子の記号 - ≪等値比較演算≫
              */
             static constexpr auto EQUAL_TO = "=";
 
             /**
-             * @brief 演算子の記号 : ≪非等値比較演算≫
+             * @brief 演算子の記号 - ≪非等値比較演算≫
              */
             static constexpr auto NOT_EQUAL_TO = "<>";
 
             /**
-             * @brief 演算子の記号 : ≪比較演算（小なり）≫
+             * @brief 演算子の記号 - ≪比較演算（小なり）≫
              */
             static constexpr auto LESS = "<";
 
             /**
-             * @brief 演算子の記号 : ≪比較演算（以下）≫
+             * @brief 演算子の記号 - ≪比較演算（以下）≫
              */
             static constexpr auto LESS_EQUAL = "<=";
 
             /**
-             * @brief 演算子の記号 : ≪比較演算（大なり）≫
+             * @brief 演算子の記号 - ≪比較演算（大なり）≫
              */
             static constexpr auto GREATER = ">";
 
             /**
-             * @brief 演算子の記号 : ≪比較演算（以上）≫
+             * @brief 演算子の記号 - ≪比較演算（以上）≫
              */
             static constexpr auto GREATER_EQUAL = ">=";
 
             /**
-             * @brief 演算子のキーワード : ≪論理積演算≫
+             * brief 演算子のキーワード - ≪論理積演算≫
              */
             static constexpr auto LOGICAL_AND = "AND";
 
             /**
-             * @brief 演算子のキーワード : ≪論理和演算≫
+             * brief 演算子のキーワード - ≪論理和演算≫
              */
             static constexpr auto LOGICAL_OR = "OR";
 
             /**
-             * @brief 演算子のキーワード : ≪IS演算≫
+             * brief 演算子のキーワード - ≪IS演算≫
              */
             static constexpr auto IS = "IS";
         };
