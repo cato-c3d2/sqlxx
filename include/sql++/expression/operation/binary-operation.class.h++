@@ -70,7 +70,7 @@ inline namespace expression
             Expression const &  left_operand);
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~BinaryOperation() override;
 

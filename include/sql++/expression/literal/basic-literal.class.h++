@@ -61,7 +61,7 @@ inline namespace expression
         BasicLiteral(Type inner_value);
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~BasicLiteral() override = default;
 

@@ -50,7 +50,7 @@ inline namespace expression
         {}
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~LogicalOperatableMock() override = default;
 

@@ -46,7 +46,7 @@ inline namespace expression
         GroupedExpression(Expression const & inner_expression);
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~GroupedExpression() override;
 

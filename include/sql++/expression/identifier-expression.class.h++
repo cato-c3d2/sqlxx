@@ -55,7 +55,7 @@ inline namespace expression
         IdentifierExpression(NameType name);
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~IdentifierExpression() override = default;
 

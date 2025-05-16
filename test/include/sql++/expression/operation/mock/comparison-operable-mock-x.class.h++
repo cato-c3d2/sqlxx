@@ -28,7 +28,7 @@ inline namespace expression
     {
     public:
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~ComparisonOperableMockX() override = default;
 

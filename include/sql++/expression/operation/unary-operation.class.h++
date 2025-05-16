@@ -51,7 +51,7 @@ inline namespace expression
         UnaryOperation(UnaryOperationKind operation_kind);
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~UnaryOperation() override;
 

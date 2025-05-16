@@ -39,7 +39,7 @@ inline namespace clause
         WhereClause(ConditionExpression const & condition_expression);
 
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~WhereClause();
 

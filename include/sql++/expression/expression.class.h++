@@ -24,7 +24,7 @@ inline namespace expression
     {
     public:
         /*!
-         * @brief デストラクタ
+         * @brief 仮想デストラクタ
          */
         virtual ~Expression() = 0;
 
