@@ -24,7 +24,7 @@ inline namespace clause
     /*!
      * @brief ≪WHERE句≫のテストケースで使用するデータセット要素
      *
-     * テスト対象のオブジェクトとテスト対象のメンバ関数の期待結果を保持する。
+     * テスト対象オブジェクト及びテスト対象メンバ関数の期待結果を保持する。
      *
      * @see sqlxx::clause::WhereClause              テスト対象クラス
      * @see sqlxx::test::clause::WhereClauseDataSet データセット
