@@ -45,7 +45,7 @@ inline namespace clause
      * |    |--------------------------------|
      * |    | BinaryOperation                |
      * |    |--------------------------------|
-     * |    | operater | left     | right    |
+     * |    | operator | left     | right    |
      * |====|==========|==========|==========|
      * | _1 | -        | -        | -        |
      * |----|----------|----------|----------|
@@ -70,7 +70,7 @@ inline namespace clause
      * [ 凡例 ] @n
      * @li - : 未指定
      * @li o : 有効値
-     * @li x : 無効値（ @c operater : @c BinaryOperationKind::None ）
+     * @li x : 無効値（ @c operator : @c BinaryOperationKind::None ）
      *
      * [ 構成 ] @n
      * @li      _0 : @link pattern_by_default_construction()   @endlink
@@ -140,7 +140,7 @@ inline namespace clause
      * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : 有効値 or 無効値（ @c BinaryOperationKind::None ）
+     * @li @c operator : 有効値 or 無効値（ @c BinaryOperationKind::None ）
      * @li @c left     : 有効値 or 無効値（ @c nullptr ）
      * @li @c right    : 有効値 or 無効値（ @c nullptr ）
      *
@@ -156,7 +156,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 未指定
+            //         + operator : 未指定
             //         + left     : 未指定
             //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -181,7 +181,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 有効値
+            //         + operator : 有効値
             //         + left     : 有効値
             //         + right    : 有効値
             ////////////////////////////////////////////////////////////////////
@@ -210,7 +210,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 有効値
+            //         + operator : 有効値
             //         + left     : 有効値
             //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -238,7 +238,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 有効値
+            //         + operator : 有効値
             //         + left     : 未指定
             //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -265,7 +265,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 無効値
+            //         + operator : 無効値
             //         + left     : 有効値
             //         + right    : 有効値
             ////////////////////////////////////////////////////////////////////
@@ -294,7 +294,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 無効値
+            //         + operator : 無効値
             //         + left     : 有効値
             //         + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -322,7 +322,7 @@ inline namespace clause
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : 無効値
+            //         + operator : 無効値
             //         + left     : 無効値
             //         + right    : 無効値
             ////////////////////////////////////////////////////////////////////

@@ -41,7 +41,7 @@ inline namespace statement
      * |      |--------------------------------|
      * |      | BinaryOperation                |
      * |      |--------------------------------|
-     * |      | operater | left     | right    |
+     * |      | operator | left     | right    |
      * |======|==========|==========|==========|
      * | _105 | AND      | CE       | CE       |
      * |------|          |          |----------|
@@ -122,7 +122,7 @@ inline namespace statement
      * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪論理積演算≫（ @c logical_and ）
+     * @li @c operator : ≪論理積演算≫（ @c logical_and ）
      * @li @c left     : ≪条件式≫（ @c ConditionExpression ） or
      *                   ≪グループ化された式≫（ @c GroupedExpression ）
      * @li @c right    : ≪条件式≫（ @c ConditionExpression ） or
@@ -142,7 +142,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理積演算≫
+            //         + operator : ≪論理積演算≫
             //         + left     : ≪条件式≫
             //         + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
@@ -201,7 +201,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理積演算≫
+            //         + operator : ≪論理積演算≫
             //         + left     : ≪条件式≫
             //         + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
@@ -276,7 +276,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理積演算≫
+            //         + operator : ≪論理積演算≫
             //         + left     : ≪グループ化された式≫
             //         + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
@@ -351,7 +351,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理積演算≫
+            //         + operator : ≪論理積演算≫
             //         + left     : ≪グループ化された式≫
             //         + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
@@ -445,7 +445,7 @@ inline namespace statement
      * @li @c condition_expression : @c BinaryOperation （下記参照）
      *
      * @c BinaryOperation @n
-     * @li @c operater : ≪論理和演算≫（ @c logical_or ）
+     * @li @c operator : ≪論理和演算≫（ @c logical_or ）
      * @li @c left     : ≪条件式≫（ @c ConditionExpression ） or
      *                   ≪グループ化された式≫（ @c GroupedExpression ）
      * @li @c right    : ≪条件式≫（ @c ConditionExpression ） or
@@ -465,7 +465,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理和演算≫
+            //         + operator : ≪論理和演算≫
             //         + left     : ≪条件式≫
             //         + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
@@ -524,7 +524,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理和演算≫
+            //         + operator : ≪論理和演算≫
             //         + left     : ≪条件式≫
             //         + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
@@ -599,7 +599,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理和演算≫
+            //         + operator : ≪論理和演算≫
             //         + left     : ≪グループ化された式≫
             //         + right    : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
@@ -674,7 +674,7 @@ inline namespace statement
             // [ データパターン ]
             // + WhereClause
             //     + BinaryOperation
-            //         + operater : ≪論理和演算≫
+            //         + operator : ≪論理和演算≫
             //         + left     : ≪グループ化された式≫
             //         + right    : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////

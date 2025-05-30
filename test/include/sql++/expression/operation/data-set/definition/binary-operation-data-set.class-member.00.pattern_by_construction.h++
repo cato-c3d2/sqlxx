@@ -32,7 +32,7 @@ inline namespace expression
      * ----------------------------------------
      * |     | BinaryOperation                |
      * |     |--------------------------------|
-     * |     | operater | left     | right    |
+     * |     | operator | left     | right    |
      * |=====|==========|==========|==========|
      * |  _0 | -        | -        | -        |
      * |-----|----------|----------|----------|
@@ -57,7 +57,7 @@ inline namespace expression
      * [ 凡例 ] @n
      * @li - : 未指定
      * @li o : 有効値
-     * @li x : 無効値（ @c operater : @c BinaryOperationKind::None ）
+     * @li x : 無効値（ @c operator : @c BinaryOperationKind::None ）
      *
      * [ 構成 ] @n
      * @li      _0 : @link pattern_by_default_construction()   @endlink
@@ -122,7 +122,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : 有効値 or 無効値（ @c BinaryOperationKind::None ）
+     * @li @c operator : 有効値 or 無効値（ @c BinaryOperationKind::None ）
      * @li @c left     : 有効値 or 無効値（ @c nullptr ）
      * @li @c right    : 有効値 or 無効値（ @c nullptr ）
      *
@@ -137,7 +137,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : 有効値
+            //     + operator : 有効値
             //     + left     : 有効値
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
@@ -163,7 +163,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : 有効値
+            //     + operator : 有効値
             //     + left     : 有効値
             //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -188,7 +188,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : 有効値
+            //     + operator : 有効値
             //     + left     : 未指定
             //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -212,7 +212,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : 無効値
+            //     + operator : 無効値
             //     + left     : 有効値
             //     + right    : 有効値
             ////////////////////////////////////////////////////////////////////
@@ -238,7 +238,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : 無効値
+            //     + operator : 無効値
             //     + left     : 有効値
             //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////
@@ -263,7 +263,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : 無効値
+            //     + operator : 無効値
             //     + left     : 未指定
             //     + right    : 未指定
             ////////////////////////////////////////////////////////////////////

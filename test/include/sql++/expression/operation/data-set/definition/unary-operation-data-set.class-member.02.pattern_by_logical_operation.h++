@@ -34,7 +34,7 @@ inline namespace expression
      * ----------------------------
      * |    | UnaryOperation      |
      * |    |---------------------|
-     * |    | operater | operand  |
+     * |    | operator | operand  |
      * |====|==========|==========|
      * | _5 | NOT      | CE       |
      * |----|          |----------|
@@ -75,7 +75,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c UnaryOperation @n
-     * @li @c operater : ≪論理否定演算式≫（ @c logical_not ）
+     * @li @c operator : ≪論理否定演算式≫（ @c logical_not ）
      * @li @c operand  : ≪条件式≫（ @c ConditionExpression ） or
      *                   ≪グループ化された式≫（ @c GroupedExpression ）
      *
@@ -92,7 +92,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + UnaryOperation
-            //     + operater : ≪論理否定演算式≫
+            //     + operator : ≪論理否定演算式≫
             //     + operand  : ≪条件式≫
             ////////////////////////////////////////////////////////////////////
             {
@@ -122,7 +122,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + UnaryOperation
-            //     + operater : ≪論理否定演算式≫
+            //     + operator : ≪論理否定演算式≫
             //     + operand  : ≪グループ化された式≫
             ////////////////////////////////////////////////////////////////////
             {

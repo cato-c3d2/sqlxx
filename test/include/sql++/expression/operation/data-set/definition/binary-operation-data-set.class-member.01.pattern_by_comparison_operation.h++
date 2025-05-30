@@ -32,7 +32,7 @@ inline namespace expression
      * ----------------------------------------
      * |     | BinaryOperation                |
      * |     |--------------------------------|
-     * |     | operater | left     | right    |
+     * |     | operator | left     | right    |
      * |=====|==========|==========|==========|
      * |  _7 | =        | IE       | IE       |
      * |-----|          |          |----------|
@@ -143,7 +143,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪等値比較演算≫（ @c equal_to ）
+     * @li @c operator : ≪等値比較演算≫（ @c equal_to ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -162,7 +162,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪等値比較演算≫
+            //     + operator : ≪等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -189,7 +189,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪等値比較演算≫
+            //     + operator : ≪等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -215,7 +215,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪等値比較演算≫
+            //     + operator : ≪等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -241,7 +241,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪等値比較演算≫
+            //     + operator : ≪等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -269,7 +269,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪非等値比較演算≫（ @c not_equal_to ）
+     * @li @c operator : ≪非等値比較演算≫（ @c not_equal_to ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -288,7 +288,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪非等値比較演算≫
+            //     + operator : ≪非等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -315,7 +315,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪非等値比較演算≫
+            //     + operator : ≪非等値比較演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -341,7 +341,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪非等値比較演算≫
+            //     + operator : ≪非等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -367,7 +367,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪非等値比較演算≫
+            //     + operator : ≪非等値比較演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -395,7 +395,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（小なり）≫（ @c less ）
+     * @li @c operator : ≪比較演算（小なり）≫（ @c less ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -414,7 +414,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（小なり）≫
+            //     + operator : ≪比較演算（小なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -441,7 +441,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（小なり）≫
+            //     + operator : ≪比較演算（小なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -467,7 +467,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（小なり）≫
+            //     + operator : ≪比較演算（小なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -493,7 +493,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（小なり）≫
+            //     + operator : ≪比較演算（小なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -521,7 +521,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（以下）≫（ @c less_equal ）
+     * @li @c operator : ≪比較演算（以下）≫（ @c less_equal ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -540,7 +540,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以下）≫
+            //     + operator : ≪比較演算（以下）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -567,7 +567,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以下）≫
+            //     + operator : ≪比較演算（以下）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -593,7 +593,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以下）≫
+            //     + operator : ≪比較演算（以下）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -619,7 +619,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以下）≫
+            //     + operator : ≪比較演算（以下）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -647,7 +647,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（大なり）≫（ @c greater ）
+     * @li @c operator : ≪比較演算（大なり）≫（ @c greater ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -666,7 +666,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（大なり）≫
+            //     + operator : ≪比較演算（大なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -693,7 +693,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（大なり）≫
+            //     + operator : ≪比較演算（大なり）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -719,7 +719,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（大なり）≫
+            //     + operator : ≪比較演算（大なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -745,7 +745,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（大なり）≫
+            //     + operator : ≪比較演算（大なり）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -773,7 +773,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪比較演算（以上）≫（ @c greater_equal ）
+     * @li @c operator : ≪比較演算（以上）≫（ @c greater_equal ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -792,7 +792,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以上）≫
+            //     + operator : ≪比較演算（以上）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -819,7 +819,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以上）≫
+            //     + operator : ≪比較演算（以上）≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -845,7 +845,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以上）≫
+            //     + operator : ≪比較演算（以上）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -872,7 +872,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪比較演算（以上）≫
+            //     + operator : ≪比較演算（以上）≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -900,7 +900,7 @@ inline namespace expression
     /*!
      * [ データパターン ] @n
      * @c BinaryOperation @n
-     * @li @c operater : ≪IS演算≫（ @c is ）
+     * @li @c operator : ≪IS演算≫（ @c is ）
      * @li @c left     : ≪識別子式≫（ @c IdentifierExpression ） or
      *                   ≪リテラル式≫（ @c BasicLiteral ）
      * @li @c right    : ≪識別子式≫（ @c IdentifierExpression ） or
@@ -919,7 +919,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪IS演算≫
+            //     + operator : ≪IS演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -945,7 +945,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪IS演算≫
+            //     + operator : ≪IS演算≫
             //     + left     : ≪識別子式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
@@ -971,7 +971,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪IS演算≫
+            //     + operator : ≪IS演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪識別子式≫
             ////////////////////////////////////////////////////////////////////
@@ -997,7 +997,7 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             // [ データパターン ]
             // + BinaryOperation
-            //     + operater : ≪IS演算≫
+            //     + operator : ≪IS演算≫
             //     + left     : ≪リテラル式≫
             //     + right    : ≪リテラル式≫
             ////////////////////////////////////////////////////////////////////
