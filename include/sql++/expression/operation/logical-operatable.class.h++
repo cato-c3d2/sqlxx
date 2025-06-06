@@ -2,6 +2,8 @@
  * @file logical-operatable.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
+
 #ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
 #define SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
 
@@ -29,7 +31,7 @@ inline namespace expression
      *      @c BinaryOperation を型パラメータとして受け取るように実装している。 @n
      */
     template<typename BinaryOperationType>
-    class LogicalOperatable : public virtual Expression
+    class LogicalOperable : public virtual Expression
     {
     public:
         /*!
@@ -72,7 +74,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     template<typename BinaryOperationType>
-    auto LogicalOperatable<BinaryOperationType>::logical_and(
+    auto LogicalOperable<BinaryOperationType>::logical_and(
         Expression const & operand) const -> BinaryOperationType
     {
         return BinaryOperationType { BinaryOperationKind::LogicalAnd,
@@ -81,7 +83,7 @@ inline namespace expression
     }
 
     template<typename BinaryOperationType>
-    auto LogicalOperatable<BinaryOperationType>::logical_or(
+    auto LogicalOperable<BinaryOperationType>::logical_or(
         Expression const & operand) const -> BinaryOperationType
     {
         return BinaryOperationType { BinaryOperationKind::LogicalOr,

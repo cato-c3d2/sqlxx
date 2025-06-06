@@ -2,6 +2,8 @@
  * @file logical-operatable-data-set-element.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_ELEMENT_CLASS_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_ELEMENT_CLASS_HXX
 
@@ -27,37 +29,37 @@ inline namespace expression
      *
      * テスト対象オブジェクト及びテスト対象メンバ関数の期待結果を保持する。 @n
      *
-     * @see sqlxx::expression::LogicalOperatable              テスト対象クラス
-     * @see sqlxx::test::expression::LogicalOperatableDataSet データセット
+     * @see sqlxx::expression::LogicalOperable              テスト対象クラス
+     * @see sqlxx::test::expression::LogicalOperableDataSet データセット
      */
-    struct LogicalOperatableDataSetElement
+    struct LogicalOperableDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
          */
-        LogicalOperatableMock object;
+        LogicalOperableMock object;
 
         /*!
          * @brief テスト対象メンバ関数の引数
          *
-         * @see sqlxx::expression::LogicalOperatable::logical_and() テスト対象メンバ関数
-         * @see sqlxx::expression::LogicalOperatable::logical_or()  テスト対象メンバ関数
+         * @see sqlxx::expression::LogicalOperable::logical_and() テスト対象メンバ関数
+         * @see sqlxx::expression::LogicalOperable::logical_or()  テスト対象メンバ関数
          */
-        LogicalOperatableMock argument;
+        LogicalOperableMock argument;
 
         /*!
          * @brief 期待結果 - @c logical_and メンバ関数
          *
-         * @see sqlxx::expression::LogicalOperatable::logical_and() テスト対象メンバ関数
+         * @see sqlxx::expression::LogicalOperable::logical_and() テスト対象メンバ関数
          */
-        LogicalOperatableMock expectation_of_logical_and;
+        LogicalOperableMock expectation_of_logical_and;
 
         /*!
          * @brief 期待結果 - @c logical_or メンバ関数
          *
-         * @see sqlxx::expression::LogicalOperatable::logical_or() テスト対象メンバ関数
+         * @see sqlxx::expression::LogicalOperable::logical_or() テスト対象メンバ関数
          */
-        LogicalOperatableMock expectation_of_logical_or;
+        LogicalOperableMock expectation_of_logical_or;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -75,8 +77,8 @@ inline namespace expression
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream &                          out,
-        LogicalOperatableDataSetElement const & data_set_element)
+        std::ostream &                        out,
+        LogicalOperableDataSetElement const & data_set_element)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -92,8 +94,8 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(
-        std::ostream &                          out,
-        LogicalOperatableDataSetElement const & data_set_element)
+        std::ostream &                        out,
+        LogicalOperableDataSetElement const & data_set_element)
         -> std::ostream &
     {
         // clang-format off

@@ -30,7 +30,7 @@ inline namespace expression
      */
     class GroupedExpression :
         public virtual Expression,
-        public virtual LogicalOperatable<BinaryOperation>
+        public virtual LogicalOperable<BinaryOperation>
     {
     public:
         /*!

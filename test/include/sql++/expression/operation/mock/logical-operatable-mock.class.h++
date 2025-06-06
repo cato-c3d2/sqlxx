@@ -2,6 +2,8 @@
  * @file logical-operatable-mock.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__LOGICAL_OPERATABLE_MOCK_CLASS_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__LOGICAL_OPERATABLE_MOCK_CLASS_HXX
 
@@ -23,16 +25,16 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief @c LogicalOperatable クラスを継承したモッククラス
+     * @brief @c LogicalOperable クラスを継承したモッククラス
      */
-    class LogicalOperatableMock :
-        public virtual LogicalOperatable<LogicalOperatableMock>
+    class LogicalOperableMock :
+        public virtual LogicalOperable<LogicalOperableMock>
     {
     public:
         /*!
          * @brief デフォルトコンストラクタ
          */
-        LogicalOperatableMock() : _operation_kind(BinaryOperationKind::None)
+        LogicalOperableMock() : _operation_kind(BinaryOperationKind::None)
         {}
 
         /*!
@@ -42,7 +44,7 @@ inline namespace expression
          * @param[in] left_operand   左辺の≪式≫（使用しない）
          * @param[in] right_operand  右辺の≪式≫（使用しない）
          */
-        LogicalOperatableMock(
+        LogicalOperableMock(
             BinaryOperationKind operation_kind,
             Expression const &  left_operand,
             Expression const &  right_operand)
@@ -52,14 +54,14 @@ inline namespace expression
         /*!
          * @brief 仮想デストラクタ
          */
-        virtual ~LogicalOperatableMock() override = default;
+        virtual ~LogicalOperableMock() override = default;
 
         /*!
          * @brief コピーコンストラクタ
          *
          * @param[in] origin コピー元のオブジェクト
          */
-        LogicalOperatableMock(LogicalOperatableMock const & origin)
+        LogicalOperableMock(LogicalOperableMock const & origin)
         {
             this->_operation_kind = origin._operation_kind;
         };
@@ -76,7 +78,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> LogicalOperatableMock * override;
+        virtual auto clone() const -> LogicalOperableMock * override;
 
     private:
         /*!
@@ -99,7 +101,7 @@ inline namespace expression
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, LogicalOperatableMock const & operand)
+    auto operator<<(std::ostream & out, LogicalOperableMock const & operand)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -108,7 +110,7 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto LogicalOperatableMock::evaluate() const -> std::string
+    auto LogicalOperableMock::evaluate() const -> std::string
     {
         using namespace std::literals::string_literals;
 
@@ -123,9 +125,9 @@ inline namespace expression
         return "L "s + operation_kind + " R"s;
     }
 
-    auto LogicalOperatableMock::clone() const -> LogicalOperatableMock *
+    auto LogicalOperableMock::clone() const -> LogicalOperableMock *
     {
-        return new LogicalOperatableMock { *this };
+        return new LogicalOperableMock { *this };
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -134,7 +136,7 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, LogicalOperatableMock const & operand)
+    auto operator<<(std::ostream & out, LogicalOperableMock const & operand)
         -> std::ostream &
     {
         return out << operand.evaluate();

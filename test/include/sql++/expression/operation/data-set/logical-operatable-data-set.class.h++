@@ -2,6 +2,8 @@
  * @file logical-operatable-data-set.class.h++
  */
 
+// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
+
 #ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_HXX
 #define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_HXX
 
@@ -25,15 +27,15 @@ inline namespace expression
     /*!
      * @brief ≪二項論理演算可能≫のテストケースで使用するデータセットを生成するクラス
      *
-     * @see sqlxx::expression::LogicalOperatable              テスト対象クラス
-     * @see sqlxx::test::expression::LogicalOperatableDataSet データセット要素
+     * @see sqlxx::expression::LogicalOperable              テスト対象クラス
+     * @see sqlxx::test::expression::LogicalOperableDataSet データセット要素
      */
-    class LogicalOperatableDataSet
+    class LogicalOperableDataSet
     {
     public:
         /*! @brief ≪二項論理演算可能≫のテストケースで使用するデータセットを生成する */
         static auto for_some_test_case()
-            -> std::vector<LogicalOperatableDataSetElement>;
+            -> std::vector<LogicalOperableDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -59,11 +61,11 @@ inline namespace expression
      *
      * @return ≪二項論理演算可能≫のテストケースで使用するデータセット
      *
-     * @see sqlxx::expression::LogicalOperatable::logical_and() テスト対象メンバ関数
-     * @see sqlxx::expression::LogicalOperatable::logical_or()  テスト対象メンバ関数
+     * @see sqlxx::expression::LogicalOperable::logical_and() テスト対象メンバ関数
+     * @see sqlxx::expression::LogicalOperable::logical_or()  テスト対象メンバ関数
      */
-    auto LogicalOperatableDataSet::for_some_test_case()
-        -> std::vector<LogicalOperatableDataSetElement>
+    auto LogicalOperableDataSet::for_some_test_case()
+        -> std::vector<LogicalOperableDataSetElement>
     {
         // clang-format off
         return {
@@ -75,23 +77,23 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                LogicalOperatableMock {},
+                LogicalOperableMock {},
 
                 // テスト対象メンバ関数の引数
-                LogicalOperatableMock {},
+                LogicalOperableMock {},
 
                 // 期待結果 - logical_and メンバ関数
-                LogicalOperatableMock {
+                LogicalOperableMock {
                     BinaryOperationKind::LogicalAnd,
-                    LogicalOperatableMock {},
-                    LogicalOperatableMock {},
+                    LogicalOperableMock {},
+                    LogicalOperableMock {},
                 },
 
                 // 期待結果 - logical_or メンバ関数
-                LogicalOperatableMock {
+                LogicalOperableMock {
                     BinaryOperationKind::LogicalOr,
-                    LogicalOperatableMock {},
-                    LogicalOperatableMock {},
+                    LogicalOperableMock {},
+                    LogicalOperableMock {},
                 },
             },
         };
