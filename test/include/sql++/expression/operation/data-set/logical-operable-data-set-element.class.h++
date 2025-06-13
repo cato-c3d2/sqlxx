@@ -1,18 +1,16 @@
 /*!
- * @file logical-operatable-data-set-element.class.h++
+ * @file logical-operable-data-set-element.class.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
-
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
-#include <sql++/expression/operation/logical-operatable.class.h++>
+#include <sql++/expression/operation/logical-operable.class.h++>
 
-#include "../mock/logical-operatable-mock.class.h++"
+#include "../mock/logical-operable-mock.class.h++"
 
 namespace sqlxx::test
 {
@@ -113,4 +111,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERATABLE_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX */

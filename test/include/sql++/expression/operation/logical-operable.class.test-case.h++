@@ -1,19 +1,17 @@
 /*!
- * @file logical-operatable.class.test-case.h++
+ * @file logical-operable.class.test-case.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
-
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERATABLE_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERATABLE_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX
 
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/expression/operation/logical-operatable.class.h++>
+#include <sql++/expression/operation/logical-operable.class.h++>
 
-#include "./data-set/logical-operatable-data-set.class.h++"
-#include "./mock/logical-operatable-mock.class.h++"
+#include "./data-set/logical-operable-data-set.class.h++"
+#include "./mock/logical-operable-mock.class.h++"
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -99,4 +97,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__LogicalOperable */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__expression */)
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERATABLE_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX */

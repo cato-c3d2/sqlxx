@@ -10,7 +10,7 @@
 
 #include <sql++/expression/expression.class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
-#include <sql++/expression/operation/logical-operatable.class.h++>
+#include <sql++/expression/operation/logical-operable.class.h++>
 
 namespace sqlxx
 {

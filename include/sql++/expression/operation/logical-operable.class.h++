@@ -1,11 +1,9 @@
 /*!
- * @file logical-operatable.class.h++
+ * @file logical-operable.class.h++
  */
 
-// FIXME 【要修正】ファイル名を変更する予定 : logical-operatable*.h++ => logical-operable*.h++
-
-#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
-#define SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERABLE_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERABLE_CLASS_HXX
 
 #include <string>
 
@@ -93,4 +91,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERATABLE_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERABLE_CLASS_HXX
