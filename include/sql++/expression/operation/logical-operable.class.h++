@@ -21,7 +21,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief ≪論理演算可能≫を表現する Mix-in クラス
+     * @brief ≪二項論理演可能≫を表現する Mix-in クラス
      *
      * このクラスは派生クラスに「各種≪二項論理演算式≫を生成する機能」を混入する Mix-in クラスである。 @n
      * @n
@@ -29,7 +29,7 @@ inline namespace expression
      *      @c BinaryOperation を型パラメータとして受け取るように実装している。 @n
      */
     template<typename BinaryOperationType>
-    class LogicalOperable : public virtual Expression
+    class BinaryLogicalOperable : public virtual Expression
     {
     public:
         /*!
@@ -72,7 +72,7 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     template<typename BinaryOperationType>
-    auto LogicalOperable<BinaryOperationType>::logical_and(
+    auto BinaryLogicalOperable<BinaryOperationType>::logical_and(
         Expression const & operand) const -> BinaryOperationType
     {
         return BinaryOperationType { BinaryOperationKind::LogicalAnd,
@@ -81,7 +81,7 @@ inline namespace expression
     }
 
     template<typename BinaryOperationType>
-    auto LogicalOperable<BinaryOperationType>::logical_or(
+    auto BinaryLogicalOperable<BinaryOperationType>::logical_or(
         Expression const & operand) const -> BinaryOperationType
     {
         return BinaryOperationType { BinaryOperationKind::LogicalOr,

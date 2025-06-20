@@ -25,15 +25,15 @@ inline namespace expression
     /*!
      * @brief ≪二項論理演算可能≫のテストケースで使用するデータセットを生成するクラス
      *
-     * @see sqlxx::expression::LogicalOperable              テスト対象クラス
-     * @see sqlxx::test::expression::LogicalOperableDataSet データセット要素
+     * @see sqlxx::expression::BinaryLogicalOperable              テスト対象クラス
+     * @see sqlxx::test::expression::BinaryLogicalOperableDataSet データセット要素
      */
-    class LogicalOperableDataSet
+    class BinaryLogicalOperableDataSet
     {
     public:
         /*! @brief ≪二項論理演算可能≫のテストケースで使用するデータセットを生成する */
         static auto for_some_test_case()
-            -> std::vector<LogicalOperableDataSetElement>;
+            -> std::vector<BinaryLogicalOperableDataSetElement>;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -59,11 +59,11 @@ inline namespace expression
      *
      * @return ≪二項論理演算可能≫のテストケースで使用するデータセット
      *
-     * @see sqlxx::expression::LogicalOperable::logical_and() テスト対象メンバ関数
-     * @see sqlxx::expression::LogicalOperable::logical_or()  テスト対象メンバ関数
+     * @see sqlxx::expression::BinaryLogicalOperable::logical_and() テスト対象メンバ関数
+     * @see sqlxx::expression::BinaryLogicalOperable::logical_or()  テスト対象メンバ関数
      */
-    auto LogicalOperableDataSet::for_some_test_case()
-        -> std::vector<LogicalOperableDataSetElement>
+    auto BinaryLogicalOperableDataSet::for_some_test_case()
+        -> std::vector<BinaryLogicalOperableDataSetElement>
     {
         // clang-format off
         return {
@@ -75,23 +75,23 @@ inline namespace expression
             ////////////////////////////////////////////////////////////////////
             {
                 // テスト対象オブジェクト
-                LogicalOperableMock {},
+                BinaryLogicalOperableMock {},
 
                 // テスト対象メンバ関数の引数
-                LogicalOperableMock {},
+                BinaryLogicalOperableMock {},
 
                 // 期待結果 - logical_and メンバ関数
-                LogicalOperableMock {
+                BinaryLogicalOperableMock {
                     BinaryOperationKind::LogicalAnd,
-                    LogicalOperableMock {},
-                    LogicalOperableMock {},
+                    BinaryLogicalOperableMock {},
+                    BinaryLogicalOperableMock {},
                 },
 
                 // 期待結果 - logical_or メンバ関数
-                LogicalOperableMock {
+                BinaryLogicalOperableMock {
                     BinaryOperationKind::LogicalOr,
-                    LogicalOperableMock {},
-                    LogicalOperableMock {},
+                    BinaryLogicalOperableMock {},
+                    BinaryLogicalOperableMock {},
                 },
             },
         };

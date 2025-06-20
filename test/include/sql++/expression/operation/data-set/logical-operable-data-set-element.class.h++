@@ -27,37 +27,37 @@ inline namespace expression
      *
      * テスト対象オブジェクト及びテスト対象メンバ関数の期待結果を保持する。 @n
      *
-     * @see sqlxx::expression::LogicalOperable              テスト対象クラス
-     * @see sqlxx::test::expression::LogicalOperableDataSet データセット
+     * @see sqlxx::expression::BinaryLogicalOperable              テスト対象クラス
+     * @see sqlxx::test::expression::BinaryLogicalOperableDataSet データセット
      */
-    struct LogicalOperableDataSetElement
+    struct BinaryLogicalOperableDataSetElement
     {
         /*!
          * @brief テスト対象オブジェクト
          */
-        LogicalOperableMock object;
+        BinaryLogicalOperableMock object;
 
         /*!
          * @brief テスト対象メンバ関数の引数
          *
-         * @see sqlxx::expression::LogicalOperable::logical_and() テスト対象メンバ関数
-         * @see sqlxx::expression::LogicalOperable::logical_or()  テスト対象メンバ関数
+         * @see sqlxx::expression::BinaryLogicalOperable::logical_and() テスト対象メンバ関数
+         * @see sqlxx::expression::BinaryLogicalOperable::logical_or()  テスト対象メンバ関数
          */
-        LogicalOperableMock argument;
+        BinaryLogicalOperableMock argument;
 
         /*!
          * @brief 期待結果 - @c logical_and メンバ関数
          *
-         * @see sqlxx::expression::LogicalOperable::logical_and() テスト対象メンバ関数
+         * @see sqlxx::expression::BinaryLogicalOperable::logical_and() テスト対象メンバ関数
          */
-        LogicalOperableMock expectation_of_logical_and;
+        BinaryLogicalOperableMock expectation_of_logical_and;
 
         /*!
          * @brief 期待結果 - @c logical_or メンバ関数
          *
-         * @see sqlxx::expression::LogicalOperable::logical_or() テスト対象メンバ関数
+         * @see sqlxx::expression::BinaryLogicalOperable::logical_or() テスト対象メンバ関数
          */
-        LogicalOperableMock expectation_of_logical_or;
+        BinaryLogicalOperableMock expectation_of_logical_or;
     };
 
     ////////////////////////////////////////////////////////////////////////////
@@ -75,8 +75,8 @@ inline namespace expression
      * @return 出力ストリーム
      */
     auto operator<<(
-        std::ostream &                        out,
-        LogicalOperableDataSetElement const & data_set_element)
+        std::ostream &                              out,
+        BinaryLogicalOperableDataSetElement const & data_set_element)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -92,8 +92,8 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     auto operator<<(
-        std::ostream &                        out,
-        LogicalOperableDataSetElement const & data_set_element)
+        std::ostream &                              out,
+        BinaryLogicalOperableDataSetElement const & data_set_element)
         -> std::ostream &
     {
         // clang-format off

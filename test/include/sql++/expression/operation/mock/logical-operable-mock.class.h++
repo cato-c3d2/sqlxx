@@ -23,16 +23,16 @@ inline namespace expression
     ////////////////////////////////////////////////////////////////////////////
 
     /*!
-     * @brief @c LogicalOperable クラスを継承したモッククラス
+     * @brief @c BinaryLogicalOperable クラスを継承したモッククラス
      */
-    class LogicalOperableMock :
-        public virtual LogicalOperable<LogicalOperableMock>
+    class BinaryLogicalOperableMock :
+        public virtual BinaryLogicalOperable<BinaryLogicalOperableMock>
     {
     public:
         /*!
          * @brief デフォルトコンストラクタ
          */
-        LogicalOperableMock() : _operation_kind(BinaryOperationKind::None)
+        BinaryLogicalOperableMock() : _operation_kind(BinaryOperationKind::None)
         {}
 
         /*!
@@ -42,7 +42,7 @@ inline namespace expression
          * @param[in] left_operand   左辺の≪式≫（使用しない）
          * @param[in] right_operand  右辺の≪式≫（使用しない）
          */
-        LogicalOperableMock(
+        BinaryLogicalOperableMock(
             BinaryOperationKind operation_kind,
             Expression const &  left_operand,
             Expression const &  right_operand)
@@ -52,14 +52,14 @@ inline namespace expression
         /*!
          * @brief 仮想デストラクタ
          */
-        virtual ~LogicalOperableMock() override = default;
+        virtual ~BinaryLogicalOperableMock() override = default;
 
         /*!
          * @brief コピーコンストラクタ
          *
          * @param[in] origin コピー元のオブジェクト
          */
-        LogicalOperableMock(LogicalOperableMock const & origin)
+        BinaryLogicalOperableMock(BinaryLogicalOperableMock const & origin)
         {
             this->_operation_kind = origin._operation_kind;
         };
@@ -76,7 +76,7 @@ inline namespace expression
          *
          * @return 複製したオブジェクトのポインタ
          */
-        virtual auto clone() const -> LogicalOperableMock * override;
+        virtual auto clone() const -> BinaryLogicalOperableMock * override;
 
     private:
         /*!
@@ -99,7 +99,8 @@ inline namespace expression
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, LogicalOperableMock const & operand)
+    auto
+    operator<<(std::ostream & out, BinaryLogicalOperableMock const & operand)
         -> std::ostream &;
 
     ////////////////////////////////////////////////////////////////////////////
@@ -108,7 +109,7 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto LogicalOperableMock::evaluate() const -> std::string
+    auto BinaryLogicalOperableMock::evaluate() const -> std::string
     {
         using namespace std::literals::string_literals;
 
@@ -123,9 +124,9 @@ inline namespace expression
         return "L "s + operation_kind + " R"s;
     }
 
-    auto LogicalOperableMock::clone() const -> LogicalOperableMock *
+    auto BinaryLogicalOperableMock::clone() const -> BinaryLogicalOperableMock *
     {
-        return new LogicalOperableMock { *this };
+        return new BinaryLogicalOperableMock { *this };
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -134,7 +135,8 @@ inline namespace expression
     //
     ////////////////////////////////////////////////////////////////////////////
 
-    auto operator<<(std::ostream & out, LogicalOperableMock const & operand)
+    auto
+    operator<<(std::ostream & out, BinaryLogicalOperableMock const & operand)
         -> std::ostream &
     {
         return out << operand.evaluate();

@@ -28,7 +28,7 @@ inline namespace expression
      */
     class BinaryOperation :
         public virtual ConditionExpression,
-        public virtual LogicalOperable<BinaryOperation>
+        public virtual BinaryLogicalOperable<BinaryOperation>
     {
     public:
         /*!
