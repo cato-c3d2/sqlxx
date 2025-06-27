@@ -1,9 +1,9 @@
 /*!
- * @file logical-operable.class.h++
+ * @file binary-logical-operable.class.h++
  */
 
-#ifndef SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERABLE_CLASS_HXX
-#define SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERABLE_CLASS_HXX
+#ifndef SQLXX__EXPRESSION__OPERATION__BINARY_LOGICAL_OPERABLE_CLASS_HXX
+#define SQLXX__EXPRESSION__OPERATION__BINARY_LOGICAL_OPERABLE_CLASS_HXX
 
 #include <string>
 
@@ -91,4 +91,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx
 
-#endif // SQLXX__EXPRESSION__OPERATION__LOGICAL_OPERABLE_CLASS_HXX
+#endif // SQLXX__EXPRESSION__OPERATION__BINARY_LOGICAL_OPERABLE_CLASS_HXX

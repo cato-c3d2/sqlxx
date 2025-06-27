@@ -1,16 +1,16 @@
 /*!
- * @file logical-operable-data-set-element.class.h++
+ * @file binary-logical-operable-data-set-element.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__BINARY_LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__BINARY_LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
-#include <sql++/expression/operation/logical-operable.class.h++>
+#include <sql++/expression/operation/binary-logical-operable.class.h++>
 
-#include "../mock/logical-operable-mock.class.h++"
+#include "../mock/binary-logical-operable-mock.class.h++"
 
 namespace sqlxx::test
 {
@@ -111,4 +111,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__DATA_SET__BINARY_LOGICAL_OPERABLE_DATA_SET_ELEMENT_CLASS_HXX */

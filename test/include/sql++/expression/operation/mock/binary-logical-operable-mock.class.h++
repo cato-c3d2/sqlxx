@@ -1,16 +1,16 @@
 /*!
- * @file logical-operable-mock.class.h++
+ * @file binary-logical-operable-mock.class.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__LOGICAL_OPERABLE_MOCK_CLASS_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__LOGICAL_OPERABLE_MOCK_CLASS_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__BINARY_LOGICAL_OPERABLE_MOCK_CLASS_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__BINARY_LOGICAL_OPERABLE_MOCK_CLASS_HXX
 
 #include <iostream>
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/binary-logical-operable.class.h++>
 #include <sql++/expression/operation/binary-operation-kind.enum-class.h++>
-#include <sql++/expression/operation/logical-operable.class.h++>
 
 namespace sqlxx::test
 {
@@ -144,4 +144,4 @@ inline namespace expression
 } // namespace expression
 } // namespace sqlxx::test
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__LOGICAL_OPERABLE_MOCK_CLASS_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__MOCK__BINARY_LOGICAL_OPERABLE_MOCK_CLASS_HXX */

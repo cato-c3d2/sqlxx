@@ -1,17 +1,17 @@
 /*!
- * @file logical-operable.class.test-case.h++
+ * @file binary-logical-operable.class.test-case.h++
  */
 
-#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX
-#define TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX
+#ifndef TEST__INCLUDE__SQLXX__EXPRESSION__BINARY_LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX
+#define TEST__INCLUDE__SQLXX__EXPRESSION__BINARY_LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX
 
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
-#include <sql++/expression/operation/logical-operable.class.h++>
+#include <sql++/expression/operation/binary-logical-operable.class.h++>
 
-#include "./data-set/logical-operable-data-set.class.h++"
-#include "./mock/logical-operable-mock.class.h++"
+#include "./data-set/binary-logical-operable-data-set.class.h++"
+#include "./mock/binary-logical-operable-mock.class.h++"
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -99,4 +99,4 @@ BOOST_AUTO_TEST_SUITE_END(/* class__BinaryLogicalOperable */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__sqlxx__expression */)
 
-#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX */
+#endif /* TEST__INCLUDE__SQLXX__EXPRESSION__BINARY_LOGICAL_OPERABLE_CLASS_TEST_CASE_HXX */

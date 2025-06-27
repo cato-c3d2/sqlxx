@@ -9,8 +9,8 @@
 #include <string>
 
 #include <sql++/expression/expression.class.h++>
+#include <sql++/expression/operation/binary-logical-operable.class.h++>
 #include <sql++/expression/operation/binary-operation.class.h++>
-#include <sql++/expression/operation/logical-operable.class.h++>
 
 namespace sqlxx
 {
